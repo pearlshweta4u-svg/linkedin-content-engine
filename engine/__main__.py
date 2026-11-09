@@ -149,7 +149,7 @@ def cmd_publish(a):
         gitsync.pull()
     res = publisher.run(d, now, s, dry_run=a.dry_run, persist=_git_persist(a.git and not a.dry_run),
                         external=(a.via == "composio"))
-    warn = publisher.token_warning(s, now.date()) if a.via == "api" else None
+    warn = publisher.token_warning(s, now.date()) if (a.via == "api" and s.get("publisher", "api") == "api") else None
     if warn:
         res["token_warning"] = warn
     _print(res)
@@ -243,6 +243,37 @@ def cmd_history(a):
     _print(out)
 
 
+def cmd_fetch_analytics(a):
+    """Pull impressions/reactions/comments/etc. for recently published posts via Zernio."""
+    from . import zernio
+    s = load_settings()
+    acct = (s.get("zernio") or {}).get("account_id")
+    if not acct:
+        sys.exit("zernio.account_id not set")
+    client = zernio.Client()
+    since = now_ist().date() - timedelta(days=a.days)
+    out = []
+    for rec in store.all_records():
+        urn = (rec.get("linkedin") or {}).get("urn")
+        if rec["publish_status"] != "published" or not urn or date.fromisoformat(rec["date"]) < since:
+            continue
+        try:
+            m = client.post_analytics(acct, urn)
+        except Exception as e:  # keep going; one bad post shouldn't stop the rest
+            out.append({"post_id": rec["post_id"], "error": str(e)})
+            continue
+        rec["analytics"].update({k: m.get(k) for k in ("impressions", "reach", "likes", "comments", "shares",
+                                                       "saves", "sends", "engagementRate")})
+        rec["analytics"]["reactions"] = m.get("likes")
+        rec["analytics"]["reposts"] = m.get("shares")
+        rec["analytics"]["updated_at"] = now_ist().isoformat(timespec="seconds")
+        store.save(rec)
+        out.append({"post_id": rec["post_id"], **rec["analytics"]})
+    if a.git and out:
+        gitsync.commit_and_push("analytics refresh", ["content/posts"])
+    _print(out)
+
+
 def cmd_analytics(a):
     rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
     for k in ("impressions", "reactions", "comments", "reposts"):
@@ -280,6 +311,7 @@ def main(argv=None):
     for k in ("impressions", "reactions", "comments", "reposts"):
         sp.add_argument(f"--{k}", type=int)
     g(sp); sp.set_defaults(f=cmd_analytics)
+    sp = sub.add_parser("fetch-analytics"); sp.add_argument("--days", type=int, default=30); g(sp); sp.set_defaults(f=cmd_fetch_analytics)
     sp = sub.add_parser("next-slot"); sp.set_defaults(f=lambda a: print(schedule.next_publish_day(now_ist().date(), load_settings())))
     a = p.parse_args(argv)
     a.f(a)

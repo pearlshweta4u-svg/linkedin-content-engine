@@ -21,4 +21,5 @@ This repo is Shweta Mehta's (TrainWithShweta) LinkedIn content engine. Scheduled
 - `content/posts/<YYYY-MM-DD-ddd>.json`: one record per slot (source of truth). `content/images/`: images.
 - `engine/`: Python, stdlib only. `python -m engine --help`. Tests: `python3 -m unittest`.
 - `config/settings.json`: mode, pause, times, emails, LinkedIn settings (no secrets).
-- The LinkedIn token is **never** in the repo. It's a network secret on the cloud environment (injected for api.linkedin.com) or the `LINKEDIN_ACCESS_TOKEN` env var.
+- Publishing backend is `config/settings.json` → `publisher`: `zernio` (default, image posts + analytics), `api` (LinkedIn official API, backup), `composio` (text-only fallback).
+- No secrets in the repo. The Zernio API key is a network secret for zernio.com on the cloud environment (or `ZERNIO_API_KEY` locally); the LinkedIn token likewise for api.linkedin.com (or `LINKEDIN_ACCESS_TOKEN`).

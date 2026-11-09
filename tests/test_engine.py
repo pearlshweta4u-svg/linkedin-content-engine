@@ -284,6 +284,96 @@ class TestExternalPublish(unittest.TestCase):
         self.assertEqual(publisher.run(MON, at(MON, 9), settings(), posts_dir=self.tmp, external=True)["result"], "ready_external")
 
 
+class FakeZernio:
+    idempotent_create = True
+
+    def __init__(self, error=None):
+        self.calls, self.keys, self.error, self.uploads = 0, [], error, 0
+
+    def upload_image(self, owner, data, ctype, name):
+        self.uploads += 1
+        return "https://media.zernio.com/x.png"
+
+    def create_post(self, acct, text, image_url=None, alt=None, idempotency_key=None):
+        self.calls += 1
+        self.keys.append(idempotency_key)
+        if self.error:
+            raise self.error
+        return "urn:li:share:55", "https://www.linkedin.com/feed/update/urn:li:share:55/"
+
+
+class TestZernioBackend(unittest.TestCase):
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.s = settings(publisher="zernio", zernio={"account_id": "acc1"})
+
+    def test_publish_once_with_stable_key(self):
+        make(self.tmp, approval_status="approved")
+        z = FakeZernio(LinkedInError("timeout", None, ambiguous=True))
+        self.assertEqual(publisher.run(MON, at(MON, 8), self.s, client=z, posts_dir=self.tmp)["result"], "failed")
+        z.error = None
+        r = publisher.run(MON, at(MON, 9), self.s, client=z, posts_dir=self.tmp)
+        self.assertEqual(r["result"], "published")
+        self.assertEqual(len(set(z.keys)), 1)  # same idempotency key on the retry
+        self.assertEqual(publisher.run(MON, at(MON, 10), self.s, client=z, posts_dir=self.tmp)["result"], "already_published")
+        self.assertEqual(z.calls, 2)
+
+    def test_stale_lock_resumes_safely(self):
+        make(self.tmp, approval_status="approved", publish_status="publishing")
+        z = FakeZernio()
+        self.assertEqual(publisher.run(MON, at(MON, 9), self.s, client=z, posts_dir=self.tmp)["result"], "published")
+
+    def test_image_uploaded_when_enabled(self):
+        img = self.tmp / "img.png"
+        img.write_bytes(b"png")
+        make(self.tmp, approval_status="approved", image_path=str(img))
+        z = FakeZernio()
+        s = dict(self.s, images_enabled=True)
+        publisher.run(MON, at(MON, 8), s, client=z, posts_dir=self.tmp)
+        self.assertEqual(z.uploads, 1)
+
+    def test_missing_account_id(self):
+        make(self.tmp, approval_status="approved")
+        s = settings(publisher="zernio", zernio={})
+        self.assertEqual(publisher.run(MON, at(MON, 8), s, client=FakeZernio(), posts_dir=self.tmp)["result"], "config_missing")
+
+
+class TestZernioClient(unittest.TestCase):
+    def test_create_post_request_and_parse(self):
+        from engine import zernio
+        seen = {}
+
+        def opener(req, timeout):
+            seen["url"], seen["headers"], seen["body"] = req.full_url, dict(req.header_items()), json.loads(req.data)
+            body = {"post": {"_id": "p1", "status": "published", "platforms": [
+                {"platform": "linkedin", "status": "published", "platformPostId": "urn:li:share:9",
+                 "platformPostUrl": "https://www.linkedin.com/feed/update/urn:li:share:9/"}]}}
+            return _Resp(201, {}, json.dumps(body).encode())
+        c = zernio.Client(key="k", opener=opener, sleep=lambda s: None)
+        pid, url = c.create_post("acc1", "Hi (x) #Tag", "https://m/x.png", "alt", idempotency_key="key-1")
+        self.assertEqual(pid, "urn:li:share:9")
+        self.assertEqual(seen["url"], "https://zernio.com/api/v1/posts")
+        self.assertEqual(seen["headers"]["Idempotency-key"], "key-1")
+        self.assertEqual(seen["body"]["content"], "Hi (x) #Tag")  # raw text: Zernio formats for LinkedIn
+        self.assertTrue(seen["body"]["publishNow"])
+        self.assertEqual(seen["body"]["mediaItems"][0]["url"], "https://m/x.png")
+        self.assertEqual(seen["body"]["platforms"], [{"platform": "linkedin", "accountId": "acc1"}])
+
+    def test_failed_auth_category(self):
+        from engine import zernio
+        body = {"post": {"status": "failed", "platforms": [{"platform": "linkedin", "status": "failed",
+                 "errorCategory": "auth_expired", "errorMessage": "token expired"}]}}
+        c = zernio.Client(key="k", opener=lambda r, timeout: _Resp(201, {}, json.dumps(body).encode()))
+        with self.assertRaises(LinkedInError) as cm:
+            c.create_post("acc1", "x")
+        self.assertEqual(cm.exception.status, 401)
+
+    def test_key_is_stable_per_slot(self):
+        from engine import zernio
+        self.assertEqual(zernio.idempotency_key("2026-11-10-tue"), zernio.idempotency_key("2026-11-10-tue"))
+        self.assertNotEqual(zernio.idempotency_key("2026-11-10-tue"), zernio.idempotency_key("2026-11-11-wed"))
+
+
 class _Resp:
     def __init__(self, status=201, headers=None, body=b""):
         self.status, self.headers, self._b = status, headers or {}, body

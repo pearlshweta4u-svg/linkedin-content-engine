@@ -17,8 +17,9 @@ The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any
    - Don't publish at 07:00.
 
 3. **08:00 and later**: publish with the method in `config/settings.json` → `publisher`.
-   - `"api"`: run `python3 -m engine publish $D --git`.
-   - `"composio"` (default): run `python3 -m engine publish $D --via composio --git`. If `result` is `ready_external`:
+   - `"zernio"` (default since 9 Nov 2026, supports images): run `python3 -m engine publish $D --git`. The engine uploads the image (if any) and publishes through Zernio with a fixed idempotency key, so a retry can never double-post.
+   - `"api"` (backup: LinkedIn's official API, needs the developer-app token from docs/SETUP.md): set `publisher` to `"api"` and run `python3 -m engine publish $D --git`.
+   - `"composio"` (text-only fallback): run `python3 -m engine publish $D --via composio --git`. If `result` is `ready_external`:
      1. Call Composio `LINKEDIN_CREATE_LINKED_IN_POST` **once** with account `composio.linkedin_account`, `author` = `composio.person_urn`, `commentary` = the returned `commentary` exactly, `visibility` PUBLIC, `lifecycleState` PUBLISHED.
      2. Success with a post URN → `python3 -m engine record $D published --urn <urn> --git`.
      3. Clear rejection (validation error, 4xx, auth) → `python3 -m engine record $D failed --error "<msg>" --git` (the next hourly run retries; auth errors → email Shweta to reconnect LinkedIn in Composio).
@@ -31,9 +32,11 @@ The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any
    | `already_published`, `too_early`, `weekend`, `skipped` | Nothing. |
    | `awaiting_approval` | At 11:00 only, email "Last call: today's post will be skipped at 12:00 unless approved". |
    | `expired` | Email "Today's post was skipped (not approved by 12:00). It stays in the backlog." |
-   | `auth_failed` | Email: "LinkedIn connection expired/failed. Follow docs/SETUP.md step 4 (2 minutes)". |
+   | `auth_failed` | Email: "LinkedIn connection expired. Reconnect LinkedIn in Zernio (Accounts → Reconnect), or, on the API route, docs/SETUP.md step 4". |
    | `needs_check` | Email **urgently**: "Outcome unknown. Please check your LinkedIn profile. If the post is there, reply POSTED <url>; if not, reply RETRY." Then handle her reply with `engine mark-published $D --url <url> --git` or `engine reset-publish $D --git`. |
    | `failed` | Email the error only if it's the 11:00 run or later (earlier runs will retry automatically). |
    | `quality_failed`, `config_missing`, `missing` | Email the message. |
 
-4. Never edit `publish_status` by hand, and never call LinkedIn directly.
+4. **12:00 run only**: `python3 -m engine fetch-analytics --git` (impressions, reach, reactions, comments, shares, saves for posts from the last 30 days, via Zernio).
+
+5. Never edit `publish_status` by hand, and never call LinkedIn directly.

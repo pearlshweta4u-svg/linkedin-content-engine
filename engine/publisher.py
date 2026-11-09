@@ -54,7 +54,15 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
     # --- idempotency guards: checked before anything else -------------------
     if rec["publish_status"] == "published" or rec["linkedin"].get("urn"):
         return out("already_published", "Already published", url=rec["linkedin"].get("url"))
-    if rec["publish_status"] in ("publishing", "needs_check"):
+    backend = "composio" if external else settings.get("publisher", "api")
+    if backend not in ("api", "zernio", "composio"):
+        backend = "api"
+    resume = False
+    if rec["publish_status"] == "publishing" and backend == "zernio":
+        # Zernio de-duplicates by Idempotency-Key, so re-sending the same slot is safe.
+        resume = True
+        store.log_event(rec, "resume_after_stale_lock", detail="re-sending with the same idempotency key")
+    elif rec["publish_status"] in ("publishing", "needs_check"):
         if rec["publish_status"] == "publishing":
             rec["publish_status"] = "needs_check"
             store.log_event(rec, "stale_publishing_lock", detail="previous run did not finish; not retrying")
@@ -67,7 +75,7 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
     state = schedule.window_state(d, now, settings)
     if state == "early":
         return out("too_early", "Before the 08:00 IST slot")
-    if state == "closed":
+    if state == "closed" and not resume:
         rec["publish_status"] = "expired"
         store.log_event(rec, "expired", detail=f"not published by {settings['publish_deadline']} IST")
         persist(rec, f"{rec['post_id']}: expired")
@@ -87,9 +95,14 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
         persist(rec, f"{rec['post_id']}: quality gate failed at publish")
         return out("quality_failed", "Quality gate failed: " + "; ".join(i for i in issues if i.startswith("BLOCK")))
 
-    author = settings["linkedin"].get("person_urn")
-    if not author and not external:
-        return out("config_missing", "linkedin.person_urn not set (run `python -m engine whoami`)")
+    if backend == "zernio":
+        author = (settings.get("zernio") or {}).get("account_id")
+        if not author:
+            return out("config_missing", "zernio.account_id not set in config/settings.json")
+    else:
+        author = settings["linkedin"].get("person_urn")
+        if not author and backend == "api":
+            return out("config_missing", "linkedin.person_urn not set (run `python -m engine whoami`)")
 
     if dry_run:
         return out("dry_run_ok", "All checks passed; would publish now", chars=len(rec["final"]))
@@ -107,18 +120,34 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
         return out("ready_external", "Lock taken. Publish exactly this text once, then record the outcome.",
                    commentary=rec["final"], author=author, image_path=rec.get("image_path"))
 
-    client = client or Client(settings["linkedin"]["api_version"])
+    if client is None:
+        if backend == "zernio":
+            from . import zernio
+            client = zernio.Client()
+        else:
+            client = Client(settings["linkedin"]["api_version"])
     try:
-        image_urn = None
+        image_ref = None
         if rec.get("image_path") and settings.get("images_enabled"):
-            img = (ROOT / rec["image_path"]).read_bytes()
-            image_urn = client.upload_image(author, img)
-            rec["linkedin"]["image_urn"] = image_urn
-        urn = client.create_post(author, rec["final"], image_urn, rec.get("image_alt"))
+            ipath = ROOT / rec["image_path"]
+            img = ipath.read_bytes()
+            if backend == "zernio":
+                from . import zernio
+                image_ref = client.upload_image(author, img, zernio.guess_type(str(ipath)), ipath.name)
+            else:
+                image_ref = client.upload_image(author, img)
+            rec["linkedin"]["image_urn"] = image_ref
+        if backend == "zernio":
+            from . import zernio
+            urn, url = client.create_post(author, rec["final"], image_ref, rec.get("image_alt"),
+                                          idempotency_key=zernio.idempotency_key(rec["post_id"]))
+        else:
+            urn = client.create_post(author, rec["final"], image_ref, rec.get("image_alt"))
+            url = post_url(urn)
     except LinkedInError as e:
         rec["errors"].append({"at": now.isoformat(timespec="seconds"), "status": e.status,
                               "message": str(e), "body": e.body[:500]})
-        if e.ambiguous:
+        if e.ambiguous and not getattr(client, "idempotent_create", False):
             rec["publish_status"] = "needs_check"
             attempt["outcome"] = "ambiguous"
             code = "needs_check"
@@ -135,7 +164,8 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
         return out(code, str(e))
 
     rec["linkedin"]["urn"] = urn
-    rec["linkedin"]["url"] = post_url(urn)
+    rec["linkedin"]["url"] = url
+    rec["linkedin"]["via"] = backend
     rec["publish_status"] = "published"
     rec["published_at"] = now.isoformat(timespec="seconds")
     attempt["outcome"] = "published"

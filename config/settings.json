@@ -35,10 +35,15 @@
     "topic_cooldown_days": 42
   },
   "images_enabled": false,
-  "publisher": "composio",
+  "publisher": "zernio",
   "composio": {
     "linkedin_account": "linkedin_libra-rifter",
     "person_urn": "urn:li:person:I5qjBjt3sE",
     "escaping_verified": false
+  },
+  "zernio": {
+    "account_id": "6af19f14437dc93e25c945ee",
+    "profile_url": "https://www.linkedin.com/in/shwetam/",
+    "formatting_verified": false
   }
 }
