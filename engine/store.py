@@ -43,6 +43,7 @@ def new_record(d: date, settings: dict) -> dict:
         "draft": "",
         "final": "",
         "hashtags": [],
+        "image_spec": None,
         "image_path": None,
         "image_alt": None,
         "sources": [],

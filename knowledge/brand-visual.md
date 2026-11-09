@@ -1,6 +1,6 @@
 # Visual brand guide (proposal, needs Shweta's approval)
 
-Status: **proposed**. Image *generation* is on the To-do list (`docs/TODO.md`) per Shweta's instruction. This guide is ready for when it starts and for any manual Canva work.
+Status: **in use** (approved for build by Shweta, 9 Nov 2026). Images are rendered by `engine/images.py` from four HTML templates (story, steps, checklist, stat) using these tokens; Poppins is bundled in `assets/fonts/`, body text uses Inter. Output: `content/images/<post-id>.png`.
 
 Basis: the colours she already uses in her client documents ("Keerthi format": dark blue, teal, orange) and her invoices (teal, dark, grey) [ME]. No logo is defined in memory, so none is invented. Use a text wordmark until she supplies one.
 

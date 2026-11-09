@@ -17,8 +17,8 @@
   "draft": "I'm 41, and I'm in a fat-loss phase right now.\n\nIt's a three-month plan at a medium pace. The target is 5 to 6 kg. Four workouts a week, 12,000 steps a day.\n\nI'm sharing it because a lot of women assume coaches have it figured out. That we eat clean and our bodies just behave.\n\nI competed in natural bodybuilding in December 2023. Before my Phuket trip this year I ran a 10-week cut. I still did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nTwo things I hold myself to.\n\nI pick a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, training. A plan I can keep for three months beats a plan I can survive for three weeks.\n\nAnd I track weeks, not streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people quit. A week can still be a winning week with one bad day inside it.\n\nNone of this is glamorous. It's mostly walking, lifting, and writing things down.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
   "final": "I'm 41, and I'm in a fat-loss phase right now.\n\nIt's a three-month plan at a medium pace: a few kilos, four workouts a week and a lot of walking.\n\nA lot of women assume coaches have this figured out, that we eat clean and our bodies behave. I competed in natural bodybuilding in December 2023, and before my Phuket trip this year I ran a 10-week cut. I still did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nI chose a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, my own training. I'd rather keep a plan going for three months than survive three weeks of a harsh one.\n\nI also track weeks instead of streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people give up. A week with one bad day in it can still be a winning week.\n\nMost days it's a walk, a workout and a few lines in the tracker.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
   "hashtags": [],
-  "image_path": null,
-  "image_alt": null,
+  "image_path": "content/images/2026-11-16-mon.png",
+  "image_alt": "Quote card: I'm 41, and I'm in a fat-loss phase right now. A medium pace I can keep, tracked one winning week at a time.",
   "sources": [],
   "claims_checked": [
     {
@@ -40,7 +40,7 @@
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T15:31:54+05:30"
+    "checked_at": "2026-11-09T17:45:28+05:30"
   },
   "approval_status": "pending",
   "approval": {
@@ -82,6 +82,16 @@
     {
       "at": "2026-11-09T15:31:54+05:30",
       "event": "numbers_trimmed"
+    },
+    {
+      "at": "2026-11-09T17:44:36+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-16-mon.png"
+    },
+    {
+      "at": "2026-11-09T17:45:06+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-16-mon.png"
     }
   ],
   "story_structure": {
@@ -90,5 +100,12 @@
     "action": "Chose a medium pace; uses a printed plan and habit tracker, same as clients; tracks winning weeks instead of streaks.",
     "change": "Ran a 10-week cut before Phuket this year with the same tools; now on a pace she can keep for three months.",
     "lesson": "A winning week can contain a bad day; pick a pace you can keep."
+  },
+  "image_spec": {
+    "template": "story",
+    "eyebrow": "Behind the scenes",
+    "title": "I'm 41, and I'm in a fat-loss phase right now.",
+    "subtitle": "A medium pace I can keep, tracked one winning week at a time.",
+    "alt": "Quote card: I'm 41, and I'm in a fat-loss phase right now. A medium pace I can keep, tracked one winning week at a time."
   }
 }

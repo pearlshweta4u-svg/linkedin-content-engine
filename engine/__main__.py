@@ -79,7 +79,9 @@ def cmd_email_body(a):
         "", "=" * 60, "", rec["final"], "", "=" * 60, "",
     ]
     if rec.get("image_path"):
-        lines.append(f"Image: {rec['image_path']} (alt: {rec.get('image_alt')})")
+        lines.append(f"Image (attached): {rec['image_path']}")
+        lines.append(f"  View online: https://github.com/pearlshweta4u-svg/linkedin-content-engine/blob/main/{rec['image_path']}")
+        lines.append(f"  Alt text: {rec.get('image_alt')}")
     if rec.get("story_ids"):
         lines.append("Story/case refs: " + ", ".join(rec["story_ids"]))
     if rec.get("sources"):
@@ -243,6 +245,25 @@ def cmd_history(a):
     _print(out)
 
 
+def cmd_image(a):
+    from . import images
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    if not rec.get("image_spec"):
+        sys.exit("record has no image_spec")
+    try:
+        path = images.render(rec)
+    except images.ImageError as e:
+        _print({"ok": False, "error": str(e)})
+        sys.exit(1)
+    rec["image_path"] = path
+    rec["image_alt"] = rec["image_spec"]["alt"]
+    store.log_event(rec, "image_rendered", path=path)
+    _git_persist(a.git)(rec, f"{rec['post_id']}: image")
+    if a.git:
+        gitsync.commit_and_push(f"{rec['post_id']}: image file", [path])
+    _print({"ok": True, "image_path": path})
+
+
 def cmd_fetch_analytics(a):
     """Pull impressions/reactions/comments/etc. for recently published posts via Zernio."""
     from . import zernio
@@ -311,6 +332,7 @@ def main(argv=None):
     for k in ("impressions", "reactions", "comments", "reposts"):
         sp.add_argument(f"--{k}", type=int)
     g(sp); sp.set_defaults(f=cmd_analytics)
+    sp = sub.add_parser("image"); sp.add_argument("date"); g(sp); sp.set_defaults(f=cmd_image)
     sp = sub.add_parser("fetch-analytics"); sp.add_argument("--days", type=int, default=30); g(sp); sp.set_defaults(f=cmd_fetch_analytics)
     sp = sub.add_parser("next-slot"); sp.set_defaults(f=lambda a: print(schedule.next_publish_day(now_ist().date(), load_settings())))
     a = p.parse_args(argv)

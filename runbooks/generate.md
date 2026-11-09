@@ -4,7 +4,9 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
 
 0. **Setup**
    - `cd` to the repo (clone `pearlshweta4u-svg/linkedin-content-engine` if missing), then `git pull --rebase`.
-   - `D=$(python3 -m engine next-slot)`. If the file `content/posts/$D-*.json` already exists and isn't `draft`, stop: it has already been generated (duplicate prevention).
+   - `D=$(python3 -m engine next-slot)`. If the file `content/posts/$D-*.json` already exists:
+     - status `pending` with `approval.requested_at` empty → skip to step 7 (image, if missing) and step 8 (send the approval email). Don't regenerate.
+     - otherwise (already emailed, approved, skipped) → stop. Duplicate prevention.
    - If `config/settings.json` has `"paused": true`, stop.
 
 1. **Context**
@@ -37,12 +39,18 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - Fix every `BLOCK` (re-apply the Humanizer to the changed passage) and re-run. Up to 3 rounds.
    - If it still fails, email Shweta "No post ready for <D>: <issues>" and stop. A missed day is better than a weak post.
 
-7. **Image**: only if `images_enabled` is true (currently false; see `docs/TODO.md`).
+7. **Image** (`images_enabled` is true). Write `image_spec` into the record, then run `python3 -m engine image $D`:
+   - Template by day: Mon/Tue `story` (a headline from the post plus a one-line takeaway), Wed `steps` (2–4 short steps), Thu `checklist` (portrait, up to 7 items), Fri `stat` (one verified number, with `source`).
+   - The image must only contain words and numbers that are already in the post or its sources. It must add structure (steps, a checklist, a key number), not repeat the first line. Always set `alt`.
+   - If the command says the text doesn't fit, shorten the copy and re-run. Never accept a clipped image.
+   - Look at the PNG (Read tool) before emailing. Check the layout, that nothing is cut off, and that it's readable at phone size.
+   - Output: `content/images/<post-id>.png` (2× resolution).
 
 8. **Approval email** (Gmail tool, from trainwithshweta@gmail.com):
    - To both addresses in `notify_emails`.
    - Subject: `[LinkedIn] Approve: <Weekday> <D>: <topic>`
-   - Body: the output of `python3 -m engine email-body $D`
+   - Body: the output of `python3 -m engine email-body $D`.
+   - Attach the image `content/images/<post-id>.png` (base64 attachment, mimeType image/png). Also link it: https://github.com/pearlshweta4u-svg/linkedin-content-engine/blob/main/content/images/<post-id>.png
    - In auto mode, use the subject `[LinkedIn] Scheduled: …` and add "Reply SKIP to stop it".
 
 9. Run `python3 -m engine mark $D approval-requested --git`. This commits the record and pushes. Confirm the push succeeded.

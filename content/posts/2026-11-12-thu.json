@@ -13,8 +13,8 @@
   "draft": "Joint pain, migraines or pelvic pain that get worse in your 40s often get filed under \"age\". The International Menopause Society made chronic pain at midlife the theme of World Menopause Day this year (18 October), and its white paper says roughly half of midlife women live with chronic pain, often more than one kind at once.\n\nI see a version of this in my practice too: clients who come in for thyroid or weight and mention, almost in passing, that their knees, back or hands hurt.\n\nIf that's you, here's a checklist worth saving:\n\n1. Track pain for four weeks alongside your cycle, sleep and stress. Patterns are easier to show a doctor than to describe.\n2. Ask whether perimenopause could be part of it.\n3. Get the basics checked: thyroid (TSH, free T4), vitamin D, ferritin, and an inflammation marker like CRP. An underactive thyroid can cause muscle aches.\n4. Movement is part of the plan, not something to stop. Ask for a physiotherapist if a joint keeps flaring.\n5. Protect sleep. Pain and poor sleep make each other worse.\n6. Be careful with promises about HRT. The same IMS paper says the evidence for hormone therapy in established chronic musculoskeletal pain is limited and inconsistent.\n7. Red flags: swollen or hot joints, pain that wakes you at night, or long morning stiffness need a doctor, not a checklist.\n\nPain that's new in your 40s deserves an explanation, not just a painkiller.",
   "final": "Joint pain, migraines or pelvic pain that get worse in your 40s usually get put down to age.\n\nThe International Menopause Society chose chronic pain at midlife as this year's World Menopause Day theme (18 October). Its white paper describes chronic pain as common in midlife women, often with more than one kind at once.\n\nI see this in my practice. Women come to me for thyroid or weight, and only later mention that their knees, back or hands hurt.\n\nIf that sounds like you, this is the list I'd go through:\n\n1. Track the pain for four weeks next to your cycle, sleep and stress. A pattern on paper is easier for a doctor to work with than a description.\n2. Ask whether perimenopause could be part of it.\n3. Get the basics checked: TSH and free T4, vitamin D, ferritin and CRP. An underactive thyroid can cause muscle aches on its own.\n4. Keep training, adjusted around the sore joint, and see a physiotherapist if it keeps flaring.\n5. Protect your sleep. Pain makes sleep worse, and poor sleep makes pain feel worse.\n6. Be wary of anyone promising HRT will fix it. The same IMS paper says the evidence for hormone therapy in established chronic musculoskeletal pain is limited and inconsistent. HRT can help other menopause symptoms, and that decision belongs with your gynaecologist.\n7. See a doctor promptly for swollen or hot joints, pain that wakes you at night, or morning stiffness that takes a long time to ease.\n\nWhich of these has anyone actually checked for you?\n\n#Perimenopause #WomensHealth",
   "hashtags": [],
-  "image_path": null,
-  "image_alt": null,
+  "image_path": "content/images/2026-11-12-thu.png",
+  "image_alt": "Checklist for new pain in your 40s: track pain for four weeks with your cycle, sleep and stress; ask about perimenopause; check TSH, free T4, vitamin D, ferritin and CRP; keep training around the sore joint and see a physio; protect your sleep; be wary of promises that HRT will fix the pain; see a doctor for swollen joints or pain at night.",
   "sources": [
     {
       "title": "IMS World Menopause Day 2026: Chronic Pain in Midlife",
@@ -84,7 +84,7 @@
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T15:31:29+05:30"
+    "checked_at": "2026-11-09T17:45:28+05:30"
   },
   "approval_status": "approved",
   "approval": {
@@ -127,6 +127,32 @@
     {
       "at": "2026-11-09T15:31:28+05:30",
       "event": "approved_in_chat"
+    },
+    {
+      "at": "2026-11-09T17:44:35+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-12-thu.png"
+    },
+    {
+      "at": "2026-11-09T17:44:53+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-12-thu.png"
     }
-  ]
+  ],
+  "image_spec": {
+    "template": "checklist",
+    "eyebrow": "Save this",
+    "title": "New pain in your 40s? Go through this list",
+    "items": [
+      "Track pain for 4 weeks next to your cycle, sleep and stress",
+      "Ask whether perimenopause could be part of it",
+      "Check TSH, free T4, vitamin D, ferritin and CRP",
+      "Keep training around the sore joint; see a physio",
+      "Protect your sleep",
+      "Be wary of promises that HRT will fix the pain",
+      "See a doctor for swollen joints or pain at night"
+    ],
+    "source": "World Menopause Day 2026 theme: Chronic pain at midlife (International Menopause Society)",
+    "alt": "Checklist for new pain in your 40s: track pain for four weeks with your cycle, sleep and stress; ask about perimenopause; check TSH, free T4, vitamin D, ferritin and CRP; keep training around the sore joint and see a physio; protect your sleep; be wary of promises that HRT will fix the pain; see a doctor for swollen joints or pain at night."
+  }
 }

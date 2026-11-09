@@ -34,7 +34,7 @@
     "story_cooldown_days": 56,
     "topic_cooldown_days": 42
   },
-  "images_enabled": false,
+  "images_enabled": true,
   "publisher": "zernio",
   "composio": {
     "linkedin_account": "linkedin_libra-rifter",

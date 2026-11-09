@@ -13,8 +13,8 @@
   "draft": "Tomorrow is World Diabetes Day, and the number I keep thinking about isn't the diabetes one.\n\nIndia's largest national study, ICMR-INDIAB, estimated about 101 million people with diabetes. It estimated even more, about 136 million, with prediabetes. That's 15.3% of adults (Lancet Diabetes & Endocrinology, 2023; data collected 2008 to 2020).\n\nPrediabetes means your blood sugar is higher than normal but not yet in the diabetes range. By American Diabetes Association criteria, that's an HbA1c of 5.7 to 6.4%, or a fasting glucose of 100 to 125 mg/dL.\n\nIt usually has no symptoms. Which is why it's worth knowing your number.\n\nWomen with PCOS should pay particular attention. The 2023 international PCOS guideline says PCOS raises the risk of type 2 diabetes, recommends checking glucose at diagnosis and every 1 to 3 years after, and names the oral glucose tolerance test as the most accurate test.\n\nThe good news is the window is real. In the Indian Diabetes Prevention Programme, 55% of people in the control group developed diabetes within three years. With lifestyle changes, it was 39.3%.\n\nWhat I'd do this week:\n- Find your last HbA1c and fasting glucose.\n- If it's in the prediabetes range, treat it as the early warning it is and make a plan with your doctor.\n- If you have PCOS, ask about an oral glucose tolerance test.\n\nPrediabetes is the stage where you still have the most room to change course. Do you know your HbA1c?",
   "final": "Tomorrow is World Diabetes Day. The number I'd like you to look at is the one for prediabetes.\n\nIndia's national ICMR-INDIAB study estimated about 101 million people with diabetes and about 136 million with prediabetes, which is 15.3% of adults. It was published in The Lancet Diabetes & Endocrinology in 2023, from data collected between 2008 and 2020.\n\nPrediabetes means your blood sugar is above normal but not yet in the diabetes range. The American Diabetes Association puts it at an HbA1c of 5.7 to 6.4%, or a fasting glucose of 100 to 125 mg/dL. Most people feel nothing, so the only way to know is a test.\n\nIf you have PCOS, this applies to you more directly. The 2023 international PCOS guideline says PCOS raises the risk of type 2 diabetes. It recommends checking blood sugar at diagnosis and every one to three years after that, and names the oral glucose tolerance test as the most accurate option.\n\nThe Indian prevention data is encouraging. In the Indian Diabetes Prevention Programme, 55% of people with impaired glucose tolerance in the control group developed diabetes within three years. In the group given lifestyle advice on physical activity and diet, it was 39.3%.\n\nWhat I'd suggest this week:\n\n- Look up your last HbA1c and fasting glucose. If you don't have recent ones, ask your doctor whether you should test.\n- If you're in the prediabetes range, make a plan with your doctor and treat it as the early warning it is.\n- If you have PCOS, ask about an oral glucose tolerance test.\n\nDo you know your HbA1c?\n\n#Prediabetes #PCOS",
   "hashtags": [],
-  "image_path": null,
-  "image_alt": null,
+  "image_path": "content/images/2026-11-13-fri.png",
+  "image_alt": "136 million people in India are estimated to have prediabetes, 15.3% of adults. Prediabetes is an HbA1c of 5.7 to 6.4% or fasting glucose of 100 to 125 mg/dL. If you have PCOS, ask your doctor about a glucose tolerance test. In India's prevention trial, lifestyle changes cut new cases.",
   "sources": [
     {
       "title": "Anjana RM et al. Metabolic NCD health report of India: ICMR-INDIAB national cross-sectional study. Lancet Diabetes Endocrinol 2023;11:474-89",
@@ -85,7 +85,7 @@
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T15:31:29+05:30"
+    "checked_at": "2026-11-09T17:45:28+05:30"
   },
   "approval_status": "approved",
   "approval": {
@@ -123,6 +123,30 @@
     {
       "at": "2026-11-09T15:31:28+05:30",
       "event": "approved_in_chat"
+    },
+    {
+      "at": "2026-11-09T17:44:35+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-13-fri.png"
+    },
+    {
+      "at": "2026-11-09T17:44:54+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-13-fri.png"
     }
-  ]
+  ],
+  "image_spec": {
+    "template": "stat",
+    "eyebrow": "World Diabetes Day, 14 November",
+    "stat": "136M",
+    "stat_label": "people in India estimated to have prediabetes (15.3% of adults)",
+    "title": "Do you know your number?",
+    "items": [
+      "Prediabetes: HbA1c 5.7 to 6.4% or fasting glucose 100 to 125 mg/dL",
+      "PCOS? Ask your doctor about a glucose tolerance test",
+      "In India's prevention trial, lifestyle changes cut new cases"
+    ],
+    "source": "ICMR-INDIAB (Lancet Diabetes & Endocrinology, 2023); ADA Standards of Care 2026; IDPP (Diabetologia, 2006)",
+    "alt": "136 million people in India are estimated to have prediabetes, 15.3% of adults. Prediabetes is an HbA1c of 5.7 to 6.4% or fasting glucose of 100 to 125 mg/dL. If you have PCOS, ask your doctor about a glucose tolerance test. In India's prevention trial, lifestyle changes cut new cases."
+  }
 }

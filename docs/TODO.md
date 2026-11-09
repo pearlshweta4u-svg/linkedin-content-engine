@@ -9,7 +9,7 @@
 - [ ] Approve or adjust the visual style in `knowledge/brand-visual.md`; share Canva brand kit / logo if one exists.
 - [ ] Explicit go-ahead before automatic publishing (only after she's happy with quality).
 
-## Image generation (deferred by Shweta, 9 Nov 2026: "need to figure out")
+## Image generation: DONE (9 Nov 2026), branded templates via `python -m engine image <date>`; options below kept for later upgrades
 Options to decide between:
 1. **Free, template-based**: HTML/SVG templates in brand colours rendered to PNG with the pre-installed headless browser. Best for Thursday checklists, lab-marker cards and diagrams. No cost, fully consistent branding. Recommended first step.
 2. **AI image API** (OpenAI / Google Imagen): illustrations and concept art; roughly ₹3–10 per image; needs an API key (stored as a network secret, never in the repo).

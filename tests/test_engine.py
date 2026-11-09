@@ -375,6 +375,18 @@ class TestZernioClient(unittest.TestCase):
         self.assertNotEqual(zernio.idempotency_key("2026-11-10-tue"), zernio.idempotency_key("2026-11-11-wed"))
 
 
+class TestImageSpec(unittest.TestCase):
+    def test_validate(self):
+        from engine import images
+        ok = {"template": "checklist", "title": "T", "items": ["a", "b"], "alt": "x"}
+        self.assertEqual(images.validate(ok), [])
+        self.assertTrue(images.validate({"template": "nope", "title": "T", "alt": "x"}))
+        self.assertTrue(images.validate({"template": "story", "title": "T"}))  # alt required
+        self.assertTrue(images.validate({"template": "stat", "title": "T", "alt": "x", "stat": "123456789"}))
+        self.assertTrue(images.validate(dict(ok, items=["a"] * 8)))
+        self.assertTrue(images.validate(dict(ok, title="x" * 91)))
+
+
 class _Resp:
     def __init__(self, status=201, headers=None, body=b""):
         self.status, self.headers, self._b = status, headers or {}, body
