@@ -22,6 +22,7 @@ def settings(**over):
     s = load_settings()
     s["linkedin"]["person_urn"] = "urn:li:person:abc"
     s["linkedin"]["token_issued_on"] = "2026-11-01"
+    s["publisher"] = "api"  # tests choose their backend explicitly
     s.update(over)
     return s
 
