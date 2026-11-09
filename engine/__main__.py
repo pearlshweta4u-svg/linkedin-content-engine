@@ -81,7 +81,9 @@ def cmd_email_body(a):
     ]
     if rec.get("image_path"):
         lines.append(f"Image: {rec['image_path']}")
-        lines.append(f"  View online: https://github.com/pearlshweta4u-svg/linkedin-content-engine/blob/main/{rec['image_path']}")
+        if rec.get("drive_file_id"):
+            lines.append(f"  Google Drive: https://drive.google.com/file/d/{rec['drive_file_id']}/view")
+        lines.append(f"  GitHub: https://github.com/pearlshweta4u-svg/linkedin-content-engine/blob/main/{rec['image_path']}")
         lines.append(f"  Alt text: {rec.get('image_alt')}")
     if rec.get("story_ids"):
         lines.append("Story/case refs: " + ", ".join(rec["story_ids"]))

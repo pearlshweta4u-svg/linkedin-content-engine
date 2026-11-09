@@ -18,7 +18,7 @@
   "final": "I coach women through fat loss. Right now, at 41, I'm in a fat-loss phase myself.\n\nIt's a three-month plan at a medium pace: a few kilos, four workouts a week and a lot of walking.\n\nA lot of women assume coaches have this figured out, that we eat clean and our bodies behave. I competed in natural bodybuilding in December 2023, and before my Phuket trip this year I ran a 10-week cut. I did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nI chose a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, my own training. I'd rather keep a plan going for three months than survive three weeks of a harsh one.\n\nI also track weeks instead of streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people give up. A week with one bad day in it can still be a winning week.\n\nMost days it's a walk, a workout and a few lines in the tracker.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
   "hashtags": [],
   "image_path": "content/images/2026-11-16-mon.png",
-  "image_alt": "Quote card: I'm 41, and I'm in a fat-loss phase right now. A medium pace I can keep, tracked one winning week at a time.",
+  "image_alt": "Card: I coach women through fat loss. At 41, I'm doing it myself right now. A medium pace I can keep, tracked one winning week at a time.",
   "sources": [],
   "claims_checked": [
     {
@@ -112,6 +112,16 @@
       "at": "2026-11-09T20:19:34+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-16-mon.png"
+    },
+    {
+      "at": "2026-11-09T20:20:24+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794235823233_b972d8dab80ff19a_2026-11-16-mon.png"
+    },
+    {
+      "at": "2026-11-09T20:23:05+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1K0FPu62ufxBg6yHxRUHOsaB_gxbg8Tt0"
     }
   ],
   "story_structure": {
@@ -126,9 +136,9 @@
     "eyebrow": "Behind the scenes",
     "title": "I coach women through fat loss. At 41, I'm doing it myself right now.",
     "subtitle": "A medium pace I can keep, tracked one winning week at a time.",
-    "alt": "Quote card: I'm 41, and I'm in a fat-loss phase right now. A medium pace I can keep, tracked one winning week at a time."
+    "alt": "Card: I coach women through fat loss. At 41, I'm doing it myself right now. A medium pace I can keep, tracked one winning week at a time."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794233712691_f4917bf080a1ad44_2026-11-16-mon.png",
-  "drive_file_id": "16IbaVzVCK30RK6IealQ4Lmxm0e9_lH07",
+  "image_public_url": "https://media.zernio.com/temp/1794235823233_b972d8dab80ff19a_2026-11-16-mon.png",
+  "drive_file_id": "1K0FPu62ufxBg6yHxRUHOsaB_gxbg8Tt0",
   "hook_style": "story_drop_in"
 }

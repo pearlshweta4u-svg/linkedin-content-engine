@@ -52,7 +52,7 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
      2. Run `python3 -m engine image-url $D --git` to get a public URL.
      3. Call Composio `GOOGLEDRIVE_UPLOAD_FROM_URL` with `source_url` = that URL, `name` = `<post-id>.png`, `mime_type` image/png, and `parent_folder_id` = `google_drive.images_folder_id` from config/settings.json.
      4. Run `python3 -m engine mark-drive $D <drive file id> --git`.
-     5. If the image is re-rendered later, upload the new file with the same name (Drive keeps both; the newer one is the current image).
+     5. If the image is re-rendered later (record already has `drive_file_id`): upload the new file, then move the old one to Drive trash with Composio `GOOGLEDRIVE_TRASH_FILE` (`file_id` = the old `drive_file_id`), then `mark-drive` the new id.
      6. If Composio is unavailable, skip this step; the image is still in the repo, and say so in the approval email.
 
 8. **Approval email** (Gmail tool, from trainwithshweta@gmail.com):
