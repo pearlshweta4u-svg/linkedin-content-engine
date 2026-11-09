@@ -1,0 +1,281 @@
+"""CLI: python -m engine <command> ...   (run from the repo root)"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from collections import Counter
+from datetime import date, datetime, timedelta
+
+from . import approval, gitsync, publisher, quality, schedule, store
+from .config import CATEGORY_BY_WEEKDAY, POSTS_DIR, load_settings, now_ist, save_settings
+from .linkedin import Client
+
+PILLARS = ["thyroid_hashimotos", "pcos_insulin", "perimenopause", "gut", "iron_b12_vitd",
+           "strength_fatloss", "sleep_stress", "mental_emotional", "self_advocacy", "founder_life"]
+
+
+def _date(s: str) -> date:
+    if s == "today":
+        return now_ist().date()
+    if s == "tomorrow":
+        return now_ist().date() + timedelta(days=1)
+    if s == "next":
+        return schedule.next_publish_day(now_ist().date(), load_settings())
+    return date.fromisoformat(s)
+
+
+def _git_persist(enabled: bool):
+    def persist(rec: dict, msg: str) -> None:
+        p = store.save(rec)
+        if enabled:
+            gitsync.commit_and_push(msg, [str(p.relative_to(p.parents[2]))])
+    return persist
+
+
+def _print(obj) -> None:
+    print(json.dumps(obj, indent=2, ensure_ascii=False))
+
+
+def cmd_new(a):
+    s = load_settings()
+    d = _date(a.date)
+    if not schedule.is_publish_day(d, s):
+        sys.exit(f"{d} is not a publishing day")
+    if store.load(schedule.post_id_for(d)):
+        sys.exit(f"record for {d} already exists (duplicate prevention); edit it instead")
+    rec = store.new_record(d, s)
+    print(store.save(rec))
+
+
+def cmd_check(a):
+    s = load_settings()
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    issues = quality.check(rec, s, store.all_records())
+    ok = quality.passed(issues)
+    rec["quality"] = {"passed": ok, "issues": issues, "checked_at": now_ist().isoformat(timespec="seconds")}
+    rec["hook"] = quality.first_line(rec.get("final") or "")
+    if ok and rec["approval_status"] == "draft":
+        rec["approval_status"] = "pending"
+        store.log_event(rec, "ready_for_approval")
+    store.save(rec)
+    _print({"passed": ok, "issues": issues, "approval_status": rec["approval_status"]})
+    sys.exit(0 if ok else 1)
+
+
+def cmd_email_body(a):
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    s = load_settings()
+    lines = [
+        f"LinkedIn post for {rec['weekday']} {rec['date']}, 08:00 IST",
+        f"Category: {rec['category']}   Pillar: {rec['pillar']}   Topic: {rec['topic']}",
+        "",
+        "Reply with ONE of these as the first line:",
+        "  APPROVE                (publish as written)",
+        "  APPROVE WITH EDIT      (then paste your full edited post below; published as you wrote it)",
+        "  EDIT                   (then paste the full post or describe changes; I'll revise and re-send)",
+        "  SKIP                   (no post in this slot)",
+        f"If it isn't approved by {s['publish_deadline']} IST it will be skipped automatically.",
+        "", "=" * 60, "", rec["final"], "", "=" * 60, "",
+    ]
+    if rec.get("image_path"):
+        lines.append(f"Image: {rec['image_path']} (alt: {rec.get('image_alt')})")
+    if rec.get("story_ids"):
+        lines.append("Story/case refs: " + ", ".join(rec["story_ids"]))
+    if rec.get("sources"):
+        lines.append("Sources:")
+        lines += [f"  - {x.get('title')}: {x.get('url')}" for x in rec["sources"]]
+    if rec.get("questions_for_shweta"):
+        lines.append("Please check:")
+        lines += [f"  - {q}" for q in rec["questions_for_shweta"]]
+    warns = [i for i in rec["quality"].get("issues", []) if i.startswith("WARN")]
+    if warns:
+        lines.append("Quality notes: " + "; ".join(warns))
+    lines.append(f"\nPost ID: {rec['post_id']}")
+    print("\n".join(lines))
+
+
+def cmd_mark(a):
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    ts = now_ist().isoformat(timespec="seconds")
+    if a.what == "approval-requested":
+        rec["approval"]["requested_at"] = ts
+    elif a.what == "reminded":
+        rec["approval"]["reminder_sent_at"] = ts
+    store.log_event(rec, a.what)
+    _git_persist(a.git)(rec, f"{rec['post_id']}: {a.what}")
+    print("ok")
+
+
+def cmd_decide(a):
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    body = open(a.reply_file, encoding="utf-8").read() if a.reply_file else sys.stdin.read()
+    res = approval.parse_reply(body)
+    ts = now_ist().isoformat(timespec="seconds")
+    if rec["publish_status"] == "published":
+        res["applied"] = False
+        res["note"] = "already published; decision ignored"
+        _print(res)
+        return
+    if res["decision"] == "approve":
+        if res["text"]:
+            rec["final"] = res["text"]
+            store.log_event(rec, "replaced_by_shweta")
+        rec["approval_status"] = "approved"
+        rec["approval"].update(decided_at=ts, decided_by=a.by, channel="email", note=res["note"])
+        if rec["publish_status"] == "failed":
+            pass  # retry allowed in window
+        else:
+            rec["publish_status"] = "not_ready"
+    elif res["decision"] == "skip":
+        rec["approval_status"] = "skipped"
+        rec["publish_status"] = "skipped"
+        rec["approval"].update(decided_at=ts, decided_by=a.by, channel="email", note=res["note"])
+    elif res["decision"] == "edit":
+        rec["final"] = res["text"]
+        rec["approval_status"] = "draft"   # must be re-humanized lightly, re-checked, re-approved
+        rec["humanizer"]["applied"] = False
+    store.log_event(rec, f"decision_{res['decision']}", by=a.by)
+    _git_persist(a.git)(rec, f"{rec['post_id']}: {res['decision']}")
+    res["applied"] = res["decision"] != "unclear"
+    _print(res)
+
+
+def cmd_publish(a):
+    s = load_settings()
+    d = _date(a.date)
+    now = datetime.fromisoformat(a.now) if a.now else now_ist()
+    if a.git and not a.dry_run:
+        gitsync.pull()
+    res = publisher.run(d, now, s, dry_run=a.dry_run, persist=_git_persist(a.git and not a.dry_run))
+    warn = publisher.token_warning(s, now.date())
+    if warn:
+        res["token_warning"] = warn
+    _print(res)
+    sys.exit(0 if res["result"] in ("published", "already_published", "dry_run_ok", "too_early",
+                                    "awaiting_approval", "weekend", "paused", "skipped") else 2)
+
+
+def cmd_resolve(a):
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    if a.url:
+        urn = a.url.rstrip("/").split("/")[-1]
+        rec["linkedin"].update(urn=urn, url=a.url)
+        rec["publish_status"] = "published"
+        rec["published_at"] = rec["published_at"] or now_ist().isoformat(timespec="seconds")
+        store.log_event(rec, "manually_marked_published", url=a.url)
+    else:
+        if rec["linkedin"].get("urn"):
+            sys.exit("record has a LinkedIn URN; refusing to reset (it was published)")
+        rec["publish_status"] = "failed"
+        store.log_event(rec, "publish_lock_reset_after_manual_check")
+    _git_persist(a.git)(rec, f"{rec['post_id']}: manual resolve")
+    print(rec["publish_status"])
+
+
+def cmd_mode(a):
+    s = load_settings()
+    if a.mode == "auto" and a.confirmation != "SHWETA-CONFIRMED-AUTO":
+        sys.exit("Automatic publishing needs Shweta's explicit confirmation: "
+                 "--confirmation SHWETA-CONFIRMED-AUTO")
+    if a.mode in ("approval", "auto"):
+        s["mode"] = a.mode
+    elif a.mode == "pause":
+        s["paused"] = True
+    elif a.mode == "resume":
+        s["paused"] = False
+    save_settings(s)
+    if a.git:
+        gitsync.commit_and_push(f"settings: {a.mode}", ["config/settings.json"])
+    print(f"mode={s['mode']} paused={s['paused']}")
+
+
+def cmd_whoami(a):
+    s = load_settings()
+    info = Client(s["linkedin"]["api_version"]).userinfo()
+    urn = f"urn:li:person:{info['sub']}"
+    _print({"name": info.get("name"), "person_urn": urn})
+    if a.save:
+        s["linkedin"]["person_urn"] = urn
+        save_settings(s)
+
+
+def cmd_status(a):
+    recs = store.all_records()
+    if a.last:
+        recs = recs[-a.last:]
+    for r in recs:
+        print(f"{r['post_id']:<16} {r['category']:<16} appr={r['approval_status']:<9} "
+              f"pub={r['publish_status']:<11} {(r['linkedin'] or {}).get('url') or ''}  {r['topic'][:50]}")
+
+
+def cmd_history(a):
+    """Content index for the generator: what's been used and what's missing."""
+    s = load_settings()
+    recs = [r for r in store.all_records() if r["approval_status"] in ("approved", "pending")
+            or r["publish_status"] == "published"]
+    recs.sort(key=lambda r: r["date"])
+    today = now_ist().date()
+    q = s["quality"]
+    pillar_counts = Counter(r.get("pillar") for r in recs if date.fromisoformat(r["date"]) >= today - timedelta(days=28))
+    out = {
+        "recent_hooks": [{"post_id": r["post_id"], "hook": r.get("hook") or quality.first_line(r.get("final", "")),
+                          "shape": quality.hook_shape(r.get("final", ""))} for r in recs[-q["hook_lookback_posts"]:]],
+        "stories_on_cooldown": sorted({sid for r in recs for sid in r.get("story_ids", [])
+                                       if date.fromisoformat(r["date"]) >= today - timedelta(days=q["story_cooldown_days"])}),
+        "topics_on_cooldown": [r["topic"] for r in recs
+                               if date.fromisoformat(r["date"]) >= today - timedelta(days=q["topic_cooldown_days"])],
+        "pillars_last_5": [r.get("pillar") for r in recs[-5:]],
+        "pillars_missing_last_28d": [p for p in PILLARS[:9] if pillar_counts.get(p, 0) == 0],
+        "formats_last_8": [r.get("format") for r in recs[-8:]],
+    }
+    con = store.build_index()
+    rows = con.execute("SELECT category, COUNT(*), AVG(impressions), AVG(reactions), AVG(comments) "
+                       "FROM posts WHERE publish_status='published' GROUP BY category").fetchall()
+    out["performance_by_category"] = [dict(zip(["category", "posts", "avg_impr", "avg_react", "avg_comments"], r)) for r in rows]
+    _print(out)
+
+
+def cmd_analytics(a):
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    for k in ("impressions", "reactions", "comments", "reposts"):
+        v = getattr(a, k)
+        if v is not None:
+            rec["analytics"][k] = v
+    a_ = rec["analytics"]
+    if a_.get("impressions"):
+        eng = sum(a_.get(k, 0) or 0 for k in ("reactions", "comments", "reposts"))
+        a_["engagement_rate"] = round(eng / a_["impressions"], 4)
+    a_["updated_at"] = now_ist().isoformat(timespec="seconds")
+    _git_persist(a.git)(rec, f"{rec['post_id']}: analytics")
+    _print(a_)
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="engine")
+    sub = p.add_subparsers(dest="cmd", required=True)
+    g = lambda sp: sp.add_argument("--git", action="store_true", help="commit+push the change")
+
+    sp = sub.add_parser("new"); sp.add_argument("date"); sp.set_defaults(f=cmd_new)
+    sp = sub.add_parser("check"); sp.add_argument("date"); sp.set_defaults(f=cmd_check)
+    sp = sub.add_parser("email-body"); sp.add_argument("date"); sp.set_defaults(f=cmd_email_body)
+    sp = sub.add_parser("mark"); sp.add_argument("date"); sp.add_argument("what", choices=["approval-requested", "reminded"]); g(sp); sp.set_defaults(f=cmd_mark)
+    sp = sub.add_parser("decide"); sp.add_argument("date"); sp.add_argument("--reply-file"); sp.add_argument("--by", default="shweta"); g(sp); sp.set_defaults(f=cmd_decide)
+    sp = sub.add_parser("publish"); sp.add_argument("date"); sp.add_argument("--dry-run", action="store_true"); sp.add_argument("--now"); g(sp); sp.set_defaults(f=cmd_publish)
+    sp = sub.add_parser("mark-published"); sp.add_argument("date"); sp.add_argument("--url", required=True); g(sp); sp.set_defaults(f=cmd_resolve)
+    sp = sub.add_parser("reset-publish"); sp.add_argument("date"); sp.set_defaults(url=None); g(sp); sp.set_defaults(f=cmd_resolve)
+    sp = sub.add_parser("mode"); sp.add_argument("mode", choices=["approval", "auto", "pause", "resume"]); sp.add_argument("--confirmation"); g(sp); sp.set_defaults(f=cmd_mode)
+    sp = sub.add_parser("whoami"); sp.add_argument("--save", action="store_true"); sp.set_defaults(f=cmd_whoami)
+    sp = sub.add_parser("status"); sp.add_argument("--last", type=int); sp.set_defaults(f=cmd_status)
+    sp = sub.add_parser("history"); sp.set_defaults(f=cmd_history)
+    sp = sub.add_parser("analytics"); sp.add_argument("date")
+    for k in ("impressions", "reactions", "comments", "reposts"):
+        sp.add_argument(f"--{k}", type=int)
+    g(sp); sp.set_defaults(f=cmd_analytics)
+    sp = sub.add_parser("next-slot"); sp.set_defaults(f=lambda a: print(schedule.next_publish_day(now_ist().date(), load_settings())))
+    a = p.parse_args(argv)
+    a.f(a)
+
+
+if __name__ == "__main__":
+    main()

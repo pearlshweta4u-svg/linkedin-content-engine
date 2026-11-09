@@ -1,0 +1,29 @@
+{
+  "mode": "approval",
+  "paused": false,
+  "timezone": "Asia/Kolkata",
+  "publish_time": "08:00",
+  "publish_weekdays": [0, 1, 2, 3, 4],
+  "publish_deadline": "12:00",
+  "generate_time_previous_day": "19:00",
+  "reminder_time": "07:00",
+  "notify_emails": ["trainwithshweta@gmail.com", "pearl.shweta4u@gmail.com"],
+  "approval_inbox": "trainwithshweta@gmail.com",
+  "linkedin": {
+    "person_urn": "",
+    "api_version": "202606",
+    "token_issued_on": "",
+    "token_lifetime_days": 60,
+    "token_warn_days_before": 10
+  },
+  "quality": {
+    "min_words": 120,
+    "max_words": 320,
+    "max_words_save_worthy": 450,
+    "max_hashtags": 3,
+    "hook_lookback_posts": 15,
+    "story_cooldown_days": 56,
+    "topic_cooldown_days": 42
+  },
+  "images_enabled": false
+}

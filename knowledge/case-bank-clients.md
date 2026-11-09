@@ -1,0 +1,36 @@
+# Client case bank (Tuesday, plus support for Thursday)
+
+Confidentiality rules (agreed by Shweta, 9 Nov 2026):
+- Posts never carry a name. A first name is used only if Shweta adds it at approval.
+- Strip or change identifiers the story doesn't need: city, employer, exact age (use a band like "late 30s"), family details, rare professions.
+- Use a lab number only if it appears below (verified in memory). Rounding is fine. Don't present one person's result as typical.
+- Never claim causation where something else changed at the same time (a new medication, an infusion, a doctor's prescription). The confounders are noted below and must be respected.
+- **Excluded from posts entirely:** minors (and their family members' records via them), fertility or conception cases, epilepsy and other non-coaching medical issues, and any case Shweta flags. Current exclusions: CASE "H" (16-year-old), "K.B." (epilepsy, proctology), "I.K." and "P.G." (conception plans), prospects who never became clients.
+- Source refs use initials only.
+
+| ID | Situation | What she did | Verified outcome | Confounders / caveats | Lesson angle | Source | Used |
+|---|---|---|---|---|---|---|---|
+| C01 | Woman in her 30s, 20-year thyroid history, on a high levothyroxine dose. Ferritin 8.1, vitamin D 8.3, B12 209, TSH 6.09. | Rebuilt iron, D and B12 first; magnesium; home workouts from week 4; selenium after Hashimoto's was confirmed. | Ferritin 27.65, vit D 40.7, B12 367; **TSH fell from 6.09 to 0.35 on the same dose**, which led to an urgent conversation with her doctor about the dose. | Doctor changed dose afterwards. Ashwagandha added. | When cofactors are fixed, the same dose can become *too much*. Why retesting and staying in touch with your doctor matters. | KR [ME] | |
+| C02 | Woman, TSH 5.28, B12 123, ferritin 33, CRP 6.0, HbA1c 6.2, high insulin. | 6-month programme; B12, iron, protein, strength training. | TSH 1.77 on an unchanged 25 mcg (optimal *on dose*, not cured); ferritin 86.5; HbA1c 6.0. **CRP did not improve (7.7 at the end)** and became the main remaining issue. | Festival travel before the final panel. | Honest results: not every marker moves; "optimal on dose" ≠ cured. | NR [ME] | |
+| C03 | Woman who strongly resisted thyroid medication; TSH ~7; poor sleep and gut; prolactin 30.1. | Agreed she'd see an endocrinologist; asked for a supervised trial window; gut, sleep, protein. | Gut 9/10, sleep 8/10 in about 6 weeks; prolactin 7.72; TSH 7.03 → 6.10 → 4.5; her endo decided no medication for now and to retest. | Doctor-led decision. Must NOT read as "avoid medication". | Fear of medication is real; the answer is a plan *with* your doctor, not avoiding the doctor. | HD [ME] | |
+| C04 | Woman with a TSH history from 18 to 9.36, Hashimoto's (Anti-TPO 187), ferritin 49, reversed cortisol rhythm, lichen planus flares under stress. | Diet structure, ginger water for acidity, iron timing, sleep routine; endocrinologist started a low dose. | By ~6 weeks: energy 9/10, waking naturally at 6:30, lichen planus cleared, baby hairs. | Medication started at about the same time. Don't attribute the TSH change to coaching. | Small daily structure plus medical care beats doing either alone. | G [ME] | |
+| C05 | Man in his late 40s, a doctor, on laxatives for a month, sleeping 5.5–6 hrs, fat-loss plateau after 3 years of dieting. | 15–20 day gut reset; removed raw vegetables and salads; structured meals; magnesium; training capped at 5 days a week. | Sleep score 2 → 7; bowels unaided 6 of 7 days by day 10; **no laxatives** from the start; weight up ~3.5–4 kg (glycogen and water after a 3-year deficit). | Self-reported scores. | "Healthy" foods (raw salads) can be the problem; a doctor needed coaching on what he knew in theory. | IJ [ME] | |
+| C06 | Woman with refractory iron deficiency: ferritin 5–6 for over two years despite iron supplements. | Investigated the gut first: H. pylori, coeliac screen, pinworm treatment; iron timing away from levothyroxine; wheat reduced. | Ferritin 6.30 → 34.62 in ~2 months. | Her TSH *rose* in the same period and her endo increased the dose. Don't imply thyroid improved. | When iron won't rise, ask *why* before taking more iron. | RP [ME] | |
+| C07 | Woman (gynaecologist herself), 4–5 years of seeing dietitians and dermatologists without an answer. | 15-day trial on gut, sleep and energy only. | During week 1 she quietly self-started an antihistamine and iron without telling the coach. | No outcome to claim. | Even doctors manage symptoms privately; the plan only works if you tell the person running it. | AP [ME] | |
+| C08 | Woman with no period for about 4 months. | Gut work, fat-loss plan, retests. | Period returned and was regular for 4 months; a later retest revealed **new Hashimoto's antibodies** (previously negative) → referral to an endocrinologist. | Single case. | Retest antibodies; a negative test once isn't forever. | CT [ME] | |
+| C09 | Woman in her 40s, Hashimoto's, ferritin and B12 critically low. | Iron doubled, retests. | Ferritin 25 → 36, but free T3 kept *falling* (2.66 → 2.24), pointing to autoimmunity; advised to loop in her prescribing doctor. | — | When numbers don't move the way you planned, that's information, not failure. | BJ [ME] | |
+| C10 | Woman (46), late perimenopause confirmed by labs; 3 PM cravings, binge eating, food guilt. | 6-month programme. | 3 PM cravings gone by week 2; no binge eating; food guilt gone; better sleep; family eating healthier; weight −3.6 kg in 6 months. | Modest weight change; say so. | Wins that don't show on a scale. | AR [ME] | |
+| C11 | Woman (41) with prediabetes (HbA1c 6.5), ferritin 10, subclinical hypothyroidism. | With her doctor's clearance for lifestyle first: gut, iron, morning yoga, sunlight, walking. | HbA1c 6.5 → 6.2 → 6.0. | Doctor-cleared approach; iron supplementation. | Prediabetes has a window: what "lifestyle first" actually looks like. | DV [ME] | |
+| C12 | Woman with an iron, thyroid and perimenopause picture, plus injuries. | Iron and thyroid cofactors over 24+ weeks. | Ferritin 14.4 → 49; free T3 up 19%. | Long time frame. | Slow is still progress. | AM [ME] | |
+| C13 | Woman with ferritin 4.7 who needed iron infusions, Hashimoto's, exhausted. | Trial started with only B12 + magnesium; iron and zinc deferred until the retest. | Converted to the full programme. | No outcomes yet. | Doing less at the start, on purpose. | EM [ME] | |
+| C14 | Woman whose period returned after 3+ months; vitamin D 15.9 → 52.8; TSH 3.1 off medication. | Gut, vitamin D, structure. | As listed. | **Duphaston prescribed by her doctor**; don't credit coaching for the period. | Hold off on claims: what changed and what didn't. | SL [ME] | |
+
+## Patterns across many clients (usable as "what I see")
+- Entry symptom ≠ real problem: women book for hair fall, weight or fatigue; the full picture comes out in labs and conversation.
+- "My reports are normal" while feeling unwell.
+- Years of trying things alone: Instagram diet plans, naturopathy, oils and serums, dhania water, homeopathy, low-FODMAP for months.
+- Protein shakes not tolerated (bloating) in several clients; whey removed for some.
+- Fear of lifelong medication.
+- Women managing symptoms privately.
+- Iron taken at the same time as levothyroxine (absorption clash).
+- Switching to pink salt (iodine gap).
