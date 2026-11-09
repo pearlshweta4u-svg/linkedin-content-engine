@@ -149,7 +149,7 @@ def cmd_publish(a):
         gitsync.pull()
     res = publisher.run(d, now, s, dry_run=a.dry_run, persist=_git_persist(a.git and not a.dry_run),
                         external=(a.via == "composio"))
-    warn = publisher.token_warning(s, now.date())
+    warn = publisher.token_warning(s, now.date()) if a.via == "api" else None
     if warn:
         res["token_warning"] = warn
     _print(res)
