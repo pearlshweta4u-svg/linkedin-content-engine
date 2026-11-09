@@ -38,6 +38,7 @@ def new_record(d: date, settings: dict) -> dict:
         "angle": "",
         "format": "",
         "story_ids": [],
+        "story_structure": {},
         "hook": "",
         "draft": "",
         "final": "",

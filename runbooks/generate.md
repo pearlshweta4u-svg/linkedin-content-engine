@@ -24,6 +24,8 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - Fill in `pillar` (one of the keys in `engine/__main__.py` PILLARS), `topic`, `angle`, `format`, `story_ids`, `sources` (`{title, url, publisher, published, accessed, claim}`), `claims_checked`, and `questions_for_shweta`.
 
 4. **Draft** following `knowledge/voice-and-style.md`. Write it to `draft`.
+   - Mon/Tue: first fill `story_structure` (Tue STAR: situation, task, action, result, lesson; Mon story arc: moment, struggle, action, change, lesson), one or two lines per beat from verified facts only, then write the post in that order. Keep it plain: max 4 medical terms, max 3 numbers.
+   - Tue: also check the client's recent Fathom calls (Composio tools `FATHOM_LIST_MEETINGS`, `FATHOM_GET_RECORDING_SUMMARY`, `FATHOM_GET_RECORDING_TRANSCRIPT`) for fresh, verified details and her own phrasing. Anonymize everything.
 
 5. **Humanize (mandatory)**
    - Apply the Humanizer skill to the draft. Write the result to `final`.

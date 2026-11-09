@@ -8,6 +8,6 @@ Highest value first:
 4. **Example posts in her own words.** Two or three past LinkedIn posts or captions she's proud of would sharpen the voice guide.
 5. **The 18 December post** (the analytics outlier). What was it?
 6. **Brand assets.** Canva brand kit / logo file / fonts, or Instagram handle examples to match (see `brand-visual.md`).
-7. **Fathom transcripts.** The Fathom connector returned errors on 9 Nov 2026. Retry before relying on it for Tuesday stories and verbatim client phrasing.
+7. **Fathom transcripts.** The direct Fathom connector errors; Fathom works through Composio (verified 9 Nov 2026). Use it for Tuesday stories.
 8. **LinkedIn analytics.** Personal-profile analytics need restricted API access (see `docs/LINKEDIN_API.md`). Until then, a weekly CSV export or manual entry.
-9. **Permission for sensitive personal stories.** P09 (her own mistakes on calls), P10 and P11 (family). Ask before use.
+9. **Permission for sensitive personal stories.** P09 (her own mistakes on calls), P11 (husband) and homeschooling details. Ask before use. (Mentioning her sons is approved.)

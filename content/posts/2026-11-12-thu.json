@@ -84,16 +84,16 @@
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T14:32:48+05:30"
+    "checked_at": "2026-11-09T15:31:29+05:30"
   },
-  "approval_status": "pending",
+  "approval_status": "approved",
   "approval": {
     "requested_at": null,
     "reminder_sent_at": null,
-    "decided_at": null,
-    "decided_by": null,
-    "channel": null,
-    "note": null
+    "decided_at": "2026-11-09T15:31:28+05:30",
+    "decided_by": "shweta",
+    "channel": "chat (build session)",
+    "note": "Thu: \"sounds about right\"; Fri: \"okay\""
   },
   "publish_status": "not_ready",
   "linkedin": {
@@ -123,6 +123,10 @@
       "at": "2026-11-09T14:32:48+05:30",
       "event": "claim_softened",
       "detail": "unverified prevalence figure removed"
+    },
+    {
+      "at": "2026-11-09T15:31:28+05:30",
+      "event": "approved_in_chat"
     }
   ]
 }

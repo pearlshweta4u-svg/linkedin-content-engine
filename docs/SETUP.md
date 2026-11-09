@@ -1,5 +1,7 @@
 # Setup (Shweta's steps are marked 👤)
 
+> **Shortcut (default since 9 Nov 2026):** your LinkedIn account is already connected in **Composio** (Shweta Mehta, member `I5qjBjt3sE`) with posting permission, so the engine publishes through Composio's LinkedIn tool and steps 1–4 are **optional** (a fallback). If Composio's LinkedIn connection expires, reconnect it in Composio (one click) when the engine emails you.
+
 ## 1. 👤 LinkedIn Company Page (skip if you have one), ~5 min
 LinkedIn → **For Business** (top right) → **Create a Company Page** → Company → name "TrainWithShweta", URL `trainwithshweta`, logo optional → Create.
 

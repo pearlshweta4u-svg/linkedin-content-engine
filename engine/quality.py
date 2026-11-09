@@ -22,6 +22,21 @@ MEDICAL_RED_FLAGS = [
     r"\bdetox\b", r"\bmiracle\b",
 ]
 REQUIRES_SOURCE_CATEGORIES = {"save_worthy", "health_wellness"}
+
+# Story posts must follow a named storytelling structure (Shweta, 9 Nov 2026).
+STORY_FRAMEWORKS = {
+    "client_story": ("STAR", ["situation", "task", "action", "result", "lesson"]),
+    "personal_story": ("story_arc", ["moment", "struggle", "action", "change", "lesson"]),
+}
+# Plain language in story posts: few medical terms, few numbers.
+MEDICAL_TERMS = [
+    "tsh", "t3", "t4", "ferritin", "b12", "hba1c", "anti-tpo", "antibod", "cortisol",
+    "insulin", "homa", "crp", "haemoglobin", "hemoglobin", "levothyroxine", "thyroxine",
+    "selenium", "ashwagandha", "magnesium", "berberine", "inositol", "hashimoto",
+    "prolactin", "conversion", "deficien", "inflammat", "glucose", "supplement",
+]
+STORY_MAX_TERMS = 4
+STORY_MAX_NUMBERS = 3
 NUMBER_CLAIM = re.compile(r"\b\d+(\.\d+)?\s?%|\b\d+\s+(in|out of)\s+\d+\b", re.I)
 
 
@@ -105,6 +120,22 @@ def check(record: dict, settings: dict, history: list[dict] | None = None) -> li
     for s in record.get("sources") or []:
         if not s.get("url"):
             issues.append(f"BLOCK: source without URL: {s.get('title', '?')}")
+
+    # Storytelling structure + plain language for story categories
+    cat = record.get("category")
+    if cat in STORY_FRAMEWORKS:
+        name, beats = STORY_FRAMEWORKS[cat]
+        struct = record.get("story_structure") or {}
+        missing = [b for b in beats if not str(struct.get(b, "")).strip()]
+        if missing:
+            issues.append(f"BLOCK: {name} structure incomplete, missing beats: {', '.join(missing)}")
+        body = re.sub(r"(?<!\w)#\w+", "", lower)
+        terms = sorted({t for t in MEDICAL_TERMS if t in body})
+        if len(terms) > STORY_MAX_TERMS:
+            issues.append(f"BLOCK: too clinical for a story post ({len(terms)} medical terms: {', '.join(terms)}; max {STORY_MAX_TERMS})")
+        nums = re.findall(r"\b\d+(?:\.\d+)?\b", body)
+        if len(nums) > STORY_MAX_NUMBERS:
+            issues.append(f"WARN: {len(nums)} numbers in a story post; keep the {STORY_MAX_NUMBERS} that matter most")
 
     # Repetition against history
     history = [h for h in (history or []) if h.get("post_id") != record.get("post_id")]

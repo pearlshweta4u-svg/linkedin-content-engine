@@ -147,13 +147,20 @@ def cmd_publish(a):
     now = datetime.fromisoformat(a.now) if a.now else now_ist()
     if a.git and not a.dry_run:
         gitsync.pull()
-    res = publisher.run(d, now, s, dry_run=a.dry_run, persist=_git_persist(a.git and not a.dry_run))
+    res = publisher.run(d, now, s, dry_run=a.dry_run, persist=_git_persist(a.git and not a.dry_run),
+                        external=(a.via == "composio"))
     warn = publisher.token_warning(s, now.date())
     if warn:
         res["token_warning"] = warn
     _print(res)
-    sys.exit(0 if res["result"] in ("published", "already_published", "dry_run_ok", "too_early",
+    sys.exit(0 if res["result"] in ("published", "already_published", "dry_run_ok", "too_early", "ready_external",
                                     "awaiting_approval", "weekend", "paused", "skipped") else 2)
+
+
+def cmd_record(a):
+    res = publisher.record_outcome(_date(a.date), now_ist(), a.outcome, urn=a.urn, error=a.error,
+                                   persist=_git_persist(a.git))
+    _print(res)
 
 
 def cmd_resolve(a):
@@ -261,7 +268,8 @@ def main(argv=None):
     sp = sub.add_parser("email-body"); sp.add_argument("date"); sp.set_defaults(f=cmd_email_body)
     sp = sub.add_parser("mark"); sp.add_argument("date"); sp.add_argument("what", choices=["approval-requested", "reminded"]); g(sp); sp.set_defaults(f=cmd_mark)
     sp = sub.add_parser("decide"); sp.add_argument("date"); sp.add_argument("--reply-file"); sp.add_argument("--by", default="shweta"); g(sp); sp.set_defaults(f=cmd_decide)
-    sp = sub.add_parser("publish"); sp.add_argument("date"); sp.add_argument("--dry-run", action="store_true"); sp.add_argument("--now"); g(sp); sp.set_defaults(f=cmd_publish)
+    sp = sub.add_parser("publish"); sp.add_argument("date"); sp.add_argument("--dry-run", action="store_true"); sp.add_argument("--now"); sp.add_argument("--via", choices=["api", "composio"], default="api"); g(sp); sp.set_defaults(f=cmd_publish)
+    sp = sub.add_parser("record"); sp.add_argument("date"); sp.add_argument("outcome", choices=["published", "failed", "ambiguous"]); sp.add_argument("--urn"); sp.add_argument("--error"); g(sp); sp.set_defaults(f=cmd_record)
     sp = sub.add_parser("mark-published"); sp.add_argument("date"); sp.add_argument("--url", required=True); g(sp); sp.set_defaults(f=cmd_resolve)
     sp = sub.add_parser("reset-publish"); sp.add_argument("date"); sp.set_defaults(url=None); g(sp); sp.set_defaults(f=cmd_resolve)
     sp = sub.add_parser("mode"); sp.add_argument("mode", choices=["approval", "auto", "pause", "resume"]); sp.add_argument("--confirmation"); g(sp); sp.set_defaults(f=cmd_mode)

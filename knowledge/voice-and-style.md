@@ -8,6 +8,26 @@ How she communicates with clients [ME]: "warm, direct, specific; lead with the c
 ## Reader
 A woman aged 30–50, often in tech or another corporate job, who has been told her reports are "normal", has tried the Instagram plan, and is tired. Secondary readers: doctors and other professionals who will judge credibility.
 
+## Storytelling (Monday and Tuesday; rule set by Shweta, 9 Nov 2026)
+Story posts must read as a story, not a lab report. Plan the beats first, store them in the record's `story_structure`, then write.
+
+**Tuesday client stories: STAR + lesson**
+| Beat | What it holds | Example |
+|---|---|---|
+| Situation | Who she is (anonymized) and what life felt like, in human terms first | "Early 30s, on thyroid tablets for twenty years, catching a cold almost every week" |
+| Task | What had to change, and what made it hard | "Fix what her body was missing without touching her medicine" |
+| Action | What we actually did, in plain words, in order | "Iron from day 10, vitamin D, short home workouts" |
+| Result | Verified outcome, honest about limits | "Her doctor had to lower her dose" |
+| Lesson | One takeaway the reader can act on | "Ask for iron, D and B12, and retest after fixing them" |
+
+**Monday personal stories: story arc**
+moment (a specific scene) → struggle (what was hard, or what people assume) → action (what she did) → change (what's different now) → lesson.
+
+**Plain language in story posts** (checked by `engine/quality.py`):
+- At most 4 different medical terms, each explained in everyday words the first time. Lead with how she *felt* or *lived* (tired, colds, puffy face), not with markers.
+- At most 3 numbers. Prefer "more than tripled" to "8.1 to 27.65".
+- No supplement or drug names unless the story needs them.
+
 ## Do
 - Open with a specific moment, number, or sentence a client actually said. First two lines must earn the "see more" click.
 - One idea per post. If there are two, make two posts.

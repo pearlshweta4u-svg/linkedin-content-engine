@@ -16,7 +16,14 @@ The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any
    - If `python3 -m engine publish $D --dry-run` output contains `token_warning`, email it.
    - Don't publish at 07:00.
 
-3. **08:00 and later**: run `python3 -m engine publish $D --git`. Then act on `result`:
+3. **08:00 and later**: publish with the method in `config/settings.json` → `publisher`.
+   - `"api"`: run `python3 -m engine publish $D --git`.
+   - `"composio"` (default): run `python3 -m engine publish $D --via composio --git`. If `result` is `ready_external`:
+     1. Call Composio `LINKEDIN_CREATE_LINKED_IN_POST` **once** with account `composio.linkedin_account`, `author` = `composio.person_urn`, `commentary` = the returned `commentary` exactly, `visibility` PUBLIC, `lifecycleState` PUBLISHED.
+     2. Success with a post URN → `python3 -m engine record $D published --urn <urn> --git`.
+     3. Clear rejection (validation error, 4xx, auth) → `python3 -m engine record $D failed --error "<msg>" --git` (the next hourly run retries; auth errors → email Shweta to reconnect LinkedIn in Composio).
+     4. Timeout or unclear response → `python3 -m engine record $D ambiguous --error "<msg>" --git` and email Shweta to check her profile. **Never call the post tool a second time in the same run.**
+   Then act on `result`:
 
    | result | action |
    |---|---|

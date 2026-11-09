@@ -34,7 +34,7 @@ def token_warning(settings: dict, today: date) -> str | None:
 
 def run(d: date, now: datetime, settings: dict, client: Client | None = None,
         dry_run: bool = False, posts_dir: Path | None = None,
-        persist: Persist | None = None) -> dict:
+        persist: Persist | None = None, external: bool = False) -> dict:
     """Returns {"result": <code>, "message": str, ...}. Result codes:
     weekend, paused, missing, already_published, needs_check, skipped, too_early,
     expired, awaiting_approval, quality_failed, config_missing, dry_run_ok,
@@ -88,7 +88,7 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
         return out("quality_failed", "Quality gate failed: " + "; ".join(i for i in issues if i.startswith("BLOCK")))
 
     author = settings["linkedin"].get("person_urn")
-    if not author:
+    if not author and not external:
         return out("config_missing", "linkedin.person_urn not set (run `python -m engine whoami`)")
 
     if dry_run:
@@ -100,6 +100,12 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
     rec["publish_status"] = "publishing"
     store.log_event(rec, "publish_started")
     persist(rec, f"{rec['post_id']}: publishing")  # raises if not durable -> we stop here
+
+    if external:
+        # Another tool (e.g. Composio LINKEDIN_CREATE_LINKED_IN_POST) makes the call;
+        # it MUST report back with record_outcome(). The lock stays until then.
+        return out("ready_external", "Lock taken. Publish exactly this text once, then record the outcome.",
+                   commentary=rec["final"], author=author, image_path=rec.get("image_path"))
 
     client = client or Client(settings["linkedin"]["api_version"])
     try:
@@ -136,3 +142,36 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
     store.log_event(rec, "published", urn=urn)
     persist(rec, f"{rec['post_id']}: published {urn}")
     return out("published", "Published", url=rec["linkedin"]["url"], urn=urn)
+
+
+def record_outcome(d: date, now: datetime, outcome: str, urn: str | None = None,
+                   error: str | None = None, posts_dir: Path | None = None,
+                   persist: Persist | None = None) -> dict:
+    """Close an external publish started with run(..., external=True).
+    outcome: published | failed (request certainly rejected) | ambiguous (unknown)."""
+    persist = persist or _default_persist(posts_dir)
+    rec = store.load(schedule.post_id_for(d), posts_dir)
+    if rec is None:
+        raise ValueError("no record")
+    if rec["publish_status"] != "publishing":
+        raise ValueError(f"no publish in progress (status {rec['publish_status']})")
+    ts = now.isoformat(timespec="seconds")
+    attempt = rec["attempts"][-1] if rec["attempts"] else {}
+    if outcome == "published":
+        if not urn:
+            raise ValueError("published needs --urn")
+        rec["linkedin"].update(urn=urn, url=post_url(urn))
+        rec["publish_status"] = "published"
+        rec["published_at"] = ts
+    elif outcome == "failed":
+        rec["publish_status"] = "failed"
+        rec["errors"].append({"at": ts, "status": None, "message": error or "external publish failed"})
+    elif outcome == "ambiguous":
+        rec["publish_status"] = "needs_check"
+        rec["errors"].append({"at": ts, "status": None, "message": error or "external publish outcome unknown"})
+    else:
+        raise ValueError("outcome must be published|failed|ambiguous")
+    attempt["outcome"] = outcome
+    store.log_event(rec, f"external_{outcome}", urn=urn, detail=error)
+    persist(rec, f"{rec['post_id']}: external publish {outcome}")
+    return {"result": rec["publish_status"], "url": rec["linkedin"].get("url")}

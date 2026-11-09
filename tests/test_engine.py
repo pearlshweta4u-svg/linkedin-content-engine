@@ -33,7 +33,7 @@ def at(d, hh, mm=0):
 def make(tmp, d=MON, **fields):
     s = settings()
     r = store.new_record(d, s)
-    r.update(final=GOOD_TEXT, draft=GOOD_TEXT, topic="normal reports", pillar="self_advocacy")
+    r.update(final=GOOD_TEXT, draft=GOOD_TEXT, topic="normal reports", pillar="self_advocacy", category="educational")
     r["humanizer"]["applied"] = True
     r.update(fields)
     store.save(r, tmp)
@@ -80,6 +80,7 @@ class TestQuality(unittest.TestCase):
         r = store.new_record(MON, settings())
         r["final"] = text
         r["humanizer"]["applied"] = True
+        r["category"] = "educational"
         r.update(kw)
         return r
 
@@ -110,6 +111,17 @@ class TestQuality(unittest.TestCase):
     def test_negated_medical_phrase_ok(self):
         r = self.rec(GOOD_TEXT + " She was optimal on dose, not cured.")
         self.assertTrue(quality.passed(quality.check(r, settings())))
+
+    def test_story_posts_need_structure_and_plain_language(self):
+        s = settings()
+        r = self.rec(GOOD_TEXT, category="client_story")
+        self.assertIn("STAR", " ".join(quality.check(r, s)))
+        r["story_structure"] = {k: "x" for k in ["situation", "task", "action", "result", "lesson"]}
+        self.assertTrue(quality.passed(quality.check(r, s)))
+        r["final"] = GOOD_TEXT + " TSH, ferritin, B12, selenium, ashwagandha and cortisol."
+        self.assertIn("too clinical", " ".join(quality.check(r, s)))
+        p = self.rec(GOOD_TEXT, category="personal_story")
+        self.assertIn("story_arc", " ".join(quality.check(p, s)))
 
     def test_humanizer_mandatory(self):
         r = self.rec(GOOD_TEXT)
@@ -243,6 +255,33 @@ class TestPublisher(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             self.run_pub(at(MON, 8), c, persist=persist)
         self.assertEqual(c.calls, 0)
+
+
+class TestExternalPublish(unittest.TestCase):
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+
+    def test_two_phase_and_no_double_publish(self):
+        make(self.tmp, approval_status="approved")
+        s = settings()
+        r = publisher.run(MON, at(MON, 8), s, posts_dir=self.tmp, external=True)
+        self.assertEqual(r["result"], "ready_external")
+        self.assertEqual(r["commentary"], GOOD_TEXT)
+        # a second run while the lock is held must not hand out the text again
+        self.assertEqual(publisher.run(MON, at(MON, 9), s, posts_dir=self.tmp, external=True)["result"], "needs_check")
+
+    def test_record_published(self):
+        make(self.tmp, approval_status="approved")
+        publisher.run(MON, at(MON, 8), settings(), posts_dir=self.tmp, external=True)
+        out = publisher.record_outcome(MON, at(MON, 8, 1), "published", urn="urn:li:share:7", posts_dir=self.tmp)
+        self.assertEqual(out["result"], "published")
+        self.assertEqual(publisher.run(MON, at(MON, 9), settings(), posts_dir=self.tmp, external=True)["result"], "already_published")
+
+    def test_record_failed_allows_retry(self):
+        make(self.tmp, approval_status="approved")
+        publisher.run(MON, at(MON, 8), settings(), posts_dir=self.tmp, external=True)
+        publisher.record_outcome(MON, at(MON, 8, 1), "failed", error="429", posts_dir=self.tmp)
+        self.assertEqual(publisher.run(MON, at(MON, 9), settings(), posts_dir=self.tmp, external=True)["result"], "ready_external")
 
 
 class _Resp:

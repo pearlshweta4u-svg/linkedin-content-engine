@@ -7,48 +7,56 @@
   "pillar": "thyroid_hashimotos",
   "topic": "Same thyroid dose becomes too strong after cofactors are fixed",
   "angle": "Fixing ferritin/D/B12 can change how much medication you need; retest and involve your doctor",
-  "format": "client case",
+  "format": "client story (STAR)",
   "story_ids": [
     "C01"
   ],
-  "hook": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on the same dose of thyroxine. On paper that looks like a win. For her it meant the dose needed checking, fast.",
-  "draft": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on exactly the same dose of thyroxine.\n\nThat sounds like a win. It wasn't, at least not yet.\n\nShe's in her early 30s and has been on thyroid medication for twenty years. Her first reports showed ferritin at 8.1, vitamin D at 8.3 and B12 at 209. These are things the body leans on to turn T4, the hormone in the tablet, into T3, the one your cells actually use.\n\nSo we didn't touch the medication. We rebuilt the base. Iron from day 10. Vitamin D and B12. Magnesium at night. Selenium and ashwagandha once her antibody test confirmed Hashimoto's. Short home workouts from week 4.\n\nAt the retest her ferritin was 27.65, vitamin D 40.7 and B12 367. And her TSH had dropped low enough that the same dose needed a second look.\n\nThat's the part nobody tells you. When conversion starts working again, the dose that suited a depleted body can become too strong. We had an urgent conversation, and her doctor adjusted the dose.\n\nTwo things I'd want every woman on thyroid medication to know:\n\n1. If your symptoms don't match your dose, ask about ferritin, vitamin D and B12, not just TSH.\n2. If you fix those, retest. Don't assume the old dose still fits.\n\nAnd never change the dose yourself. Take the numbers to your doctor.\n\n#ThyroidHealth #Hashimotos",
-  "final": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on the same dose of thyroxine. On paper that looks like a win. For her it meant the dose needed checking, fast.\n\nShe's in her early 30s and has been on thyroid medication for twenty years. Her first reports showed ferritin at 8.1, vitamin D at 8.3 and B12 at 209. Your body needs iron, vitamin D and B12, among other things, to turn T4 (the hormone in the tablet) into T3, the form your cells use.\n\nWe left her medication alone and worked on those first. She started iron on day 10, along with vitamin D, B12 and magnesium at night. When her antibody test confirmed Hashimoto's, we added selenium and ashwagandha. From week 4 she did short workouts at home.\n\nAt the retest, ferritin was 27.65, vitamin D 40.7 and B12 367. Her TSH had dropped far enough that the old dose now looked too strong for her. Once conversion improves, a dose set for a depleted body can overshoot. We had an urgent conversation about it, and her doctor adjusted the dose.\n\nIf you're on thyroid medication, two things are worth knowing:\n\n1. If your symptoms don't match your dose, ask about ferritin, vitamin D and B12 as well as TSH.\n2. If those get corrected, retest. The old dose may not fit anymore.\n\nPlease don't change the dose yourself. Take the numbers to your doctor.\n\n#ThyroidHealth #Hashimotos",
+  "hook": "She had taken her thyroid tablet every morning for twenty years. She was in her early 30s, catching a cold almost every week, and her heels hurt.",
+  "draft": "She took her thyroid tablet every morning for twenty years. Early 30s. A cold almost every week. Heels that hurt.\n\nHer blood tests explained a lot: iron, vitamin D and B12 were all very low. Your body needs those to use thyroid medicine properly.\n\nMy job was to rebuild what was missing without touching her medicine. That part stays with her doctor.\n\nVitamin D and B12. Iron from day 10. Short home workouts from week 4.\n\nEight weeks later her iron had more than tripled and her vitamin D was about five times higher. The puffiness in her face had gone down.\n\nThen came the surprise. Her thyroid test showed the same tablet was now too strong. Her body was finally using it. We had an urgent conversation, she saw her doctor, and the dose was lowered.\n\nThe lesson: if you're on thyroid medicine and still don't feel right, ask your doctor to check iron, vitamin D and B12. If you fix them, retest your thyroid. Never change the dose on your own.",
+  "final": "She had taken her thyroid tablet every morning for twenty years. She was in her early 30s, catching a cold almost every week, and her heels hurt.\n\nHer blood tests explained a lot. Her iron, vitamin D and B12 were all very low, and your body needs those to make proper use of thyroid medicine.\n\nMy job was to rebuild what was missing without touching her medicine. That stays with her doctor.\n\nShe took vitamin D and B12, and started iron on day 10. A few weeks in, she added short home workouts three times a week.\n\nEight weeks later her iron had more than tripled and her vitamin D was about five times higher. The puffiness in her face had gone down.\n\nThe surprise came from her thyroid test. The same tablet was now too strong for her, because her body was finally using it properly. We had an urgent conversation, she saw her doctor, and her dose was lowered.\n\nIf you're on thyroid medicine and still don't feel right, ask your doctor to check iron, vitamin D and B12 too. If you fix them, get your thyroid retested, because the dose that suited you before may not suit you now. And please never change it on your own.\n\n#ThyroidHealth #WomensHealth",
   "hashtags": [],
   "image_path": null,
   "image_alt": null,
   "sources": [],
   "claims_checked": [
     {
-      "claim": "TSH 6.09 -> 0.35, ferritin 8.1->27.65, vit D 8.3->40.7, B12 209->367; ~8 weeks (1 Jul -> 29 Aug)",
+      "claim": "20-year thyroid history, early 30s, weekly colds, heel pain (plantar fasciitis)",
       "status": "verified",
       "source": "memory export, client KR"
     },
     {
-      "claim": "Doctor changed the dose afterwards",
-      "status": "verified",
-      "source": "memory export, client KR (split dosing)"
-    },
-    {
-      "claim": "Selenium + ashwagandha added after Hashimoto's confirmed 31 Jul",
+      "claim": "ferritin 8.1->27.65 (>3x), vit D 8.3->40.7 (~4.9x), ~8 weeks (1 Jul -> 29 Aug); puffiness reduced",
       "status": "verified",
       "source": "memory export, client KR"
+    },
+    {
+      "claim": "Iron from day 10; home workouts from week 4, 3x/week",
+      "status": "verified",
+      "source": "memory export, client KR"
+    },
+    {
+      "claim": "TSH 0.35 -> urgent dose conversation; new endo lowered dose (split dosing)",
+      "status": "verified",
+      "source": "memory export, client KR"
+    },
+    {
+      "claim": "Magnesium, selenium, ashwagandha omitted for plain language (not claimed as the cause)",
+      "status": "omission noted"
     }
   ],
   "questions_for_shweta": [
-    "Confirm the client is comfortable with this anonymized case (early 30s, 20-year thyroid history).",
-    "Okay to mention ashwagandha? (It was part of the protocol and is a possible confounder, so I kept it for honesty.)"
+    "Rewritten in STAR story form with plain language. Is the client comfortable with this anonymized version?"
   ],
   "humanizer": {
     "applied": true,
-    "at": "2026-11-09T14:31:05+05:30",
+    "at": "2026-11-09T15:31:28+05:30",
     "version": "3.1.0",
-    "changes_summary": "Removed staged lines ('That's the part nobody tells you', 'It wasn't, at least not yet'), merged a row of fragments into sentences, cut a not-X-but-Y."
+    "changes_summary": "Merged fragment rows into sentences, removed 'Then came the surprise' and 'The lesson:' run-ups, varied sentence openings."
   },
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T14:31:20+05:30"
+    "checked_at": "2026-11-09T15:31:28+05:30"
   },
   "approval_status": "pending",
   "approval": {
@@ -82,6 +90,23 @@
     {
       "at": "2026-11-09T14:31:06+05:30",
       "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-09T15:31:28+05:30",
+      "event": "rewritten",
+      "detail": "STAR + plain language per Shweta feedback 9 Nov"
+    },
+    {
+      "at": "2026-11-09T15:31:28+05:30",
+      "event": "ready_for_approval"
     }
-  ]
+  ],
+  "draft_v1": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on the same dose of thyroxine. On paper that looks like a win. For her it meant the dose needed checking, fast.\n\nShe's in her early 30s and has been on thyroid medication for twenty years. Her first reports showed ferritin at 8.1, vitamin D at 8.3 and B12 at 209. Your body needs iron, vitamin D and B12, among other things, to turn T4 (the hormone in the tablet) into T3, the form your cells use.\n\nWe left her medication alone and worked on those first. She started iron on day 10, along with vitamin D, B12 and magnesium at night. When her antibody test confirmed Hashimoto's, we added selenium and ashwagandha. From week 4 she did short workouts at home.\n\nAt the retest, ferritin was 27.65, vitamin D 40.7 and B12 367. Her TSH had dropped far enough that the old dose now looked too strong for her. Once conversion improves, a dose set for a depleted body can overshoot. We had an urgent conversation about it, and her doctor adjusted the dose.\n\nIf you're on thyroid medication, two things are worth knowing:\n\n1. If your symptoms don't match your dose, ask about ferritin, vitamin D and B12 as well as TSH.\n2. If those get corrected, retest. The old dose may not fit anymore.\n\nPlease don't change the dose yourself. Take the numbers to your doctor.\n\n#ThyroidHealth #Hashimotos",
+  "story_structure": {
+    "situation": "Early 30s, on a thyroid tablet every day for twenty years; catching a cold almost every week; heel pain (memory: recurring weekly colds, plantar fasciitis).",
+    "task": "Rebuild what her body was missing (iron, vitamin D, B12 were very low) without touching her medicine, which stays with her doctor.",
+    "action": "Vitamin D and B12; iron from day 10; short home workouts three times a week from week 4.",
+    "result": "~8 weeks: ferritin 8.1 -> 27.65 (more than tripled), vit D 8.3 -> 40.7 (~5x), facial puffiness down; TSH 0.35 meant the same dose was now too strong; urgent conversation; her doctor lowered the dose (split dosing).",
+    "lesson": "Still not feeling right on thyroid medicine? Ask for iron, D, B12; after fixing them, retest; never change the dose yourself."
+  }
 }

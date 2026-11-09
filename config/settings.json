@@ -3,11 +3,20 @@
   "paused": false,
   "timezone": "Asia/Kolkata",
   "publish_time": "08:00",
-  "publish_weekdays": [0, 1, 2, 3, 4],
+  "publish_weekdays": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
   "publish_deadline": "12:00",
   "generate_time_previous_day": "19:00",
   "reminder_time": "07:00",
-  "notify_emails": ["trainwithshweta@gmail.com", "pearl.shweta4u@gmail.com"],
+  "notify_emails": [
+    "trainwithshweta@gmail.com",
+    "pearl.shweta4u@gmail.com"
+  ],
   "approval_inbox": "trainwithshweta@gmail.com",
   "linkedin": {
     "person_urn": "",
@@ -25,5 +34,11 @@
     "story_cooldown_days": 56,
     "topic_cooldown_days": 42
   },
-  "images_enabled": false
+  "images_enabled": false,
+  "publisher": "composio",
+  "composio": {
+    "linkedin_account": "linkedin_libra-rifter",
+    "person_urn": "urn:li:person:I5qjBjt3sE",
+    "escaping_verified": false
+  }
 }
