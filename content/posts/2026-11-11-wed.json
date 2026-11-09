@@ -1,0 +1,96 @@
+{
+  "post_id": "2026-11-11-wed",
+  "date": "2026-11-11",
+  "scheduled_for": "2026-11-11T08:00:00+05:30",
+  "weekday": "Wednesday",
+  "category": "educational",
+  "pillar": "iron_b12_vitd",
+  "topic": "Normal ferritin but still exhausted",
+  "angle": "Low-normal ferritin and inflammation-masked ferritin; what to ask for",
+  "format": "explainer + checklist",
+  "story_ids": [],
+  "hook": "Your report says your ferritin is normal. You're still exhausted, and nobody can tell you why.",
+  "draft": "Your ferritin is \"normal\". You're still exhausted. Both can be true.\n\nThink of haemoglobin as the money in your wallet and ferritin as your savings. You can have enough in the wallet, so no anaemia, while the savings are almost empty.\n\nMost lab reports flag ferritin only when it's very low. A low-normal number rarely gets a second look.\n\nThere's a well-known trial on exactly this. In 2012, researchers gave 198 menstruating women with unexplained fatigue either iron or a placebo for 12 weeks. None of them were anaemic. All had ferritin under 50. Fatigue scores dropped 47.7% with iron and 28.8% with the placebo.\n\nThere's a second catch. Ferritin rises when there's inflammation in the body, even if your iron stores are low. That's why WHO guidance says that in adults with infection or inflammation, a ferritin below 70 may still point to iron deficiency.\n\nWhat I look at with clients:\n\n- Ferritin with a CRP, never alone.\n- Where the iron is going: heavy periods, or a gut that isn't absorbing it.\n- If you take thyroid medication, iron timing. The two compete, so ask your doctor how far apart to take them.\n\nIf you're tired and your report says normal, ask for the actual ferritin number and a CRP. Then take both to your doctor.\n\n#IronDeficiency #WomensHealth",
+  "final": "Your report says your ferritin is normal. You're still exhausted, and nobody can tell you why.\n\nThink of haemoglobin as the cash in your wallet and ferritin as your savings. Your wallet can be fine, so you're not anaemic, while your savings are nearly gone.\n\nMost reports only flag ferritin when it's very low, so a low-normal number rarely gets a second look.\n\nA 2012 trial in the Canadian Medical Association Journal tested what happens next. It gave 198 menstruating women with unexplained fatigue either iron or a placebo for 12 weeks. None were anaemic, and all had ferritin under 50. Fatigue scores fell 47.7% with iron and 28.8% with the placebo.\n\nInflammation muddies the number further. Ferritin goes up when the body is inflamed, even if iron stores are low. WHO guidance says that in adults with infection or inflammation, a ferritin below 70 may still point to iron deficiency.\n\nSo with my clients I check:\n\n- Ferritin alongside CRP, not on its own.\n- Where the iron is going: heavy periods, or a gut that isn't absorbing it.\n- Iron timing for anyone on thyroid medication, because the two interfere with each other. Your doctor can tell you how far apart to take them.\n\nIf you're tired and your report says normal, ask for the actual ferritin value and a CRP, and take both to your doctor.\n\n#IronDeficiency #WomensHealth",
+  "hashtags": [],
+  "image_path": null,
+  "image_alt": null,
+  "sources": [
+    {
+      "title": "Vaucher P et al. Effect of iron supplementation on fatigue in nonanemic menstruating women with low ferritin: RCT. CMAJ 2012;184(11):1247-54",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3414597/",
+      "publisher": "CMAJ",
+      "published": "2012-07",
+      "accessed": "2026-11-09",
+      "claim": "198 women, ferritin <50, Hb >12; fatigue -47.7% iron vs -28.8% placebo over 12 weeks"
+    },
+    {
+      "title": "WHO guideline on use of ferritin concentrations to assess iron status in individuals and populations (2020)",
+      "url": "https://www.who.int/tools/elena/interventions/ferritin-concentrations",
+      "publisher": "WHO",
+      "published": "2020-04",
+      "accessed": "2026-11-09",
+      "claim": "With infection/inflammation, ferritin <70 ug/L in adults may indicate iron deficiency (conditional, low-certainty)"
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "Trial numbers",
+      "status": "verified via PubMed/PMC abstract"
+    },
+    {
+      "claim": "WHO <70 with inflammation",
+      "status": "verified via WHO/NCBI bookshelf"
+    },
+    {
+      "claim": "Trial was industry-funded (Pierre Fabre); effect on fatigue only, not quality of life",
+      "status": "noted, not in post"
+    }
+  ],
+  "questions_for_shweta": [],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-09T14:31:05+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed 'Both can be true' closer, 'There's a well-known trial' run-up (replaced with the named journal), 'There's a second catch' staging."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-09T14:31:20+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "sample_generated",
+      "detail": "Phase 4 sample, build session 9 Nov 2026"
+    },
+    {
+      "at": "2026-11-09T14:31:06+05:30",
+      "event": "ready_for_approval"
+    }
+  ]
+}

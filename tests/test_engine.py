@@ -93,11 +93,19 @@ class TestQuality(unittest.TestCase):
             "banned phrase": GOOD_TEXT + " Let's delve in.",
             "medical": GOOD_TEXT + " This will cure your thyroid.",
             "dose": GOOD_TEXT + " Take 60000 IU weekly.",
+            "detox": GOOD_TEXT + " Try this detox.",
+            "miracle": GOOD_TEXT + " A miracle drink.",
             "hashtags": GOOD_TEXT + " #a #b #c #d",
         }
         for name, text in cases.items():
             with self.subTest(name):
                 self.assertFalse(quality.passed(quality.check(self.rec(text), s)))
+
+    def test_lab_units_are_not_doses(self):
+        r = self.rec(GOOD_TEXT + " Fasting glucose of 100 to 125 mg/dL is prediabetes.")
+        self.assertTrue(quality.passed(quality.check(r, settings())))
+        r = self.rec(GOOD_TEXT + " Take 500 mg daily.")
+        self.assertFalse(quality.passed(quality.check(r, settings())))
 
     def test_negated_medical_phrase_ok(self):
         r = self.rec(GOOD_TEXT + " She was optimal on dose, not cured.")

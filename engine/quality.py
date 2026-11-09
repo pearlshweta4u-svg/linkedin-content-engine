@@ -18,7 +18,8 @@ MEDICAL_RED_FLAGS = [
     r"\bcure[sd]?\b", r"\breverse[sd]?\s+(your\s+)?(thyroid|pcos|hashimoto|diabetes)",
     r"\bheal(ed|s)?\s+your\b", r"\bget\s+off\s+(your\s+)?(medication|meds|thyroxine|thyronorm)",
     r"\bstop\s+(taking\s+)?(your\s+)?(medication|meds)\b", r"\bguarantee[sd]?\b",
-    r"\b\d+\s?(mg|mcg|iu)\b", r"\bdetox\b", r"\bmiracle\b",
+    r"\b\d+\s?(mg|mcg|iu)\b(?!\s*/)",  # doses; lab units like mg/dL are fine
+    r"\bdetox\b", r"\bmiracle\b",
 ]
 REQUIRES_SOURCE_CATEGORIES = {"save_worthy", "health_wellness"}
 NUMBER_CLAIM = re.compile(r"\b\d+(\.\d+)?\s?%|\b\d+\s+(in|out of)\s+\d+\b", re.I)

@@ -1,0 +1,80 @@
+{
+  "post_id": "2026-11-16-mon",
+  "date": "2026-11-16",
+  "scheduled_for": "2026-11-16T08:00:00+05:30",
+  "weekday": "Monday",
+  "category": "personal_story",
+  "pillar": "strength_fatloss",
+  "topic": "My own fat-loss phase at 41",
+  "angle": "Coaches use the same tools; medium pace; winning weeks instead of streaks",
+  "format": "personal story",
+  "story_ids": [
+    "P03",
+    "P04",
+    "P02"
+  ],
+  "hook": "I'm 41, and I'm in a fat-loss phase right now.",
+  "draft": "I'm 41, and I'm in a fat-loss phase right now.\n\nIt's a three-month plan at a medium pace. The target is 5 to 6 kg. Four workouts a week, 12,000 steps a day.\n\nI'm sharing it because a lot of women assume coaches have it figured out. That we eat clean and our bodies just behave.\n\nI competed in natural bodybuilding in December 2023. Before my Phuket trip this year I ran a 10-week cut. I still did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nTwo things I hold myself to.\n\nI pick a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, training. A plan I can keep for three months beats a plan I can survive for three weeks.\n\nAnd I track weeks, not streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people quit. A week can still be a winning week with one bad day inside it.\n\nNone of this is glamorous. It's mostly walking, lifting, and writing things down.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
+  "final": "I'm 41, and I'm in a fat-loss phase right now.\n\nIt's a three-month plan at a medium pace: 5 to 6 kg, four workouts a week and 12,000 steps a day.\n\nA lot of women assume coaches have this figured out, that we eat clean and our bodies behave. I competed in natural bodybuilding in December 2023, and before my Phuket trip this year I ran a 10-week cut. I still did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nI chose a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, my own training. I'd rather keep a plan going for three months than survive three weeks of a harsh one.\n\nI also track weeks instead of streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people give up. A week with one bad day in it can still be a winning week.\n\nMost days it's a walk, a workout and a few lines in the tracker.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
+  "hashtags": [],
+  "image_path": null,
+  "image_alt": null,
+  "sources": [],
+  "claims_checked": [
+    {
+      "claim": "41; ICN Dec 2023; 10-week cut before Phuket; 3-month phase, -5-6 kg, 4 workouts, 12k steps; printed plan + habit tracker; winning-week method",
+      "status": "verified",
+      "source": "memory export: Profile, Fitness, Habit-tracking app"
+    }
+  ],
+  "questions_for_shweta": [
+    "How did the 10-week cut go? One real detail (what worked, what slipped) would make this much stronger.",
+    "Okay to mention your sons in passing ('clients, my sons, my own training')?",
+    "Is 'the same tools I give my clients' accurate (printed plan + habit tracker)?"
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-09T14:31:05+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Cut 'Two things I hold myself to' run-up, aphorism ('a plan I can keep… beats…') rewritten plainly, closer + triad 'None of this is glamorous' removed, fragments merged."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-09T14:31:20+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "sample_generated",
+      "detail": "Phase 4 sample, build session 9 Nov 2026"
+    },
+    {
+      "at": "2026-11-09T14:31:06+05:30",
+      "event": "ready_for_approval"
+    }
+  ]
+}

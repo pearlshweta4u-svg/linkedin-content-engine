@@ -1,0 +1,123 @@
+{
+  "post_id": "2026-11-12-thu",
+  "date": "2026-11-12",
+  "scheduled_for": "2026-11-12T08:00:00+05:30",
+  "weekday": "Thursday",
+  "category": "save_worthy",
+  "pillar": "perimenopause",
+  "topic": "Chronic pain at midlife (World Menopause Day 2026 theme)",
+  "angle": "Pain in your 40s deserves a work-up; checklist of what to track and ask; HRT is not a proven pain fix",
+  "format": "checklist",
+  "story_ids": [],
+  "hook": "Joint pain, migraines or pelvic pain that get worse in your 40s usually get put down to age.",
+  "draft": "Joint pain, migraines or pelvic pain that get worse in your 40s often get filed under \"age\". The International Menopause Society made chronic pain at midlife the theme of World Menopause Day this year (18 October), and its white paper says roughly half of midlife women live with chronic pain, often more than one kind at once.\n\nI see a version of this in my practice too: clients who come in for thyroid or weight and mention, almost in passing, that their knees, back or hands hurt.\n\nIf that's you, here's a checklist worth saving:\n\n1. Track pain for four weeks alongside your cycle, sleep and stress. Patterns are easier to show a doctor than to describe.\n2. Ask whether perimenopause could be part of it.\n3. Get the basics checked: thyroid (TSH, free T4), vitamin D, ferritin, and an inflammation marker like CRP. An underactive thyroid can cause muscle aches.\n4. Movement is part of the plan, not something to stop. Ask for a physiotherapist if a joint keeps flaring.\n5. Protect sleep. Pain and poor sleep make each other worse.\n6. Be careful with promises about HRT. The same IMS paper says the evidence for hormone therapy in established chronic musculoskeletal pain is limited and inconsistent.\n7. Red flags: swollen or hot joints, pain that wakes you at night, or long morning stiffness need a doctor, not a checklist.\n\nPain that's new in your 40s deserves an explanation, not just a painkiller.",
+  "final": "Joint pain, migraines or pelvic pain that get worse in your 40s usually get put down to age.\n\nThe International Menopause Society chose chronic pain at midlife as this year's World Menopause Day theme (18 October). Its white paper says roughly half of midlife women live with chronic pain, often more than one kind at once.\n\nI see this in my practice. Women come to me for thyroid or weight, and only later mention that their knees, back or hands hurt.\n\nIf that sounds like you, this is the list I'd go through:\n\n1. Track the pain for four weeks next to your cycle, sleep and stress. A pattern on paper is easier for a doctor to work with than a description.\n2. Ask whether perimenopause could be part of it.\n3. Get the basics checked: TSH and free T4, vitamin D, ferritin and CRP. An underactive thyroid can cause muscle aches on its own.\n4. Keep training, adjusted around the sore joint, and see a physiotherapist if it keeps flaring.\n5. Protect your sleep. Pain makes sleep worse, and poor sleep makes pain feel worse.\n6. Be wary of anyone promising HRT will fix it. The same IMS paper says the evidence for hormone therapy in established chronic musculoskeletal pain is limited and inconsistent. HRT can help other menopause symptoms, and that decision belongs with your gynaecologist.\n7. See a doctor promptly for swollen or hot joints, pain that wakes you at night, or morning stiffness that takes a long time to ease.\n\nWhich of these has anyone actually checked for you?\n\n#Perimenopause #WomensHealth",
+  "hashtags": [],
+  "image_path": null,
+  "image_alt": null,
+  "sources": [
+    {
+      "title": "IMS World Menopause Day 2026: Chronic Pain in Midlife",
+      "url": "https://www.imsociety.org/education/world-menopause-day-2026/",
+      "publisher": "International Menopause Society",
+      "published": "2026-10-18",
+      "accessed": "2026-11-09",
+      "claim": "WMD 2026 theme"
+    },
+    {
+      "title": "IMS White Paper: Chronic pain at midlife (Mailis et al., Climacteric 2026)",
+      "url": "https://www.imsociety.org/wp-content/uploads/2026/09/IMS-White-Paper-2026.pdf",
+      "publisher": "Climacteric / IMS",
+      "published": "2026-09/10",
+      "accessed": "2026-11-09",
+      "claim": "~half of midlife women have chronic pain, often overlapping; MHT evidence for established chronic MSK pain limited and inconsistent; multidisciplinary care"
+    },
+    {
+      "title": "PubMed record of the IMS white paper",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42714958/",
+      "publisher": "NLM",
+      "published": "2026",
+      "accessed": "2026-11-09",
+      "claim": "bibliographic record"
+    },
+    {
+      "title": "NHS: Underactive thyroid (hypothyroidism) symptoms",
+      "url": "https://www.nhs.uk/conditions/underactive-thyroid-hypothyroidism/symptoms/",
+      "publisher": "NHS",
+      "published": "",
+      "accessed": "2026-11-09",
+      "claim": "muscle aches are a symptom of hypothyroidism"
+    },
+    {
+      "title": "Finan PH, Goodin BR, Smith MT. The association of sleep and pain: an update and a path forward. J Pain 2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24290442/",
+      "publisher": "J Pain",
+      "published": "2013-12",
+      "accessed": "2026-11-09",
+      "claim": "sleep and pain are bidirectionally related"
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "'roughly half of midlife women' chronic pain",
+      "status": "NEEDS PRIMARY CHECK: seen in search extracts of the IMS white paper; imsociety.org blocked by this environment's network"
+    },
+    {
+      "claim": "MHT evidence 'limited and inconsistent' for established chronic MSK pain",
+      "status": "NEEDS PRIMARY CHECK: search extracts"
+    },
+    {
+      "claim": "WMD 2026 theme chronic pain at midlife, 18 Oct",
+      "status": "consistent across IMS pages and secondary coverage"
+    }
+  ],
+  "questions_for_shweta": [
+    "The 'roughly half' figure is from search extracts of the IMS paper (I couldn't open the PDF from here). If the network is opened to imsociety.org I'll verify before 8 AM; otherwise I'd soften it to 'a large share'.",
+    "Is the line 'Women come to me for thyroid or weight, and only later mention that their knees, back or hands hurt' true to your experience? It's based on several client records with joint pain."
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-09T14:31:05+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Cut aphorism closer ('deserves an explanation, not just a painkiller'), two not-X-but-Y lines, 'here's a checklist worth saving' run-up; softened engagement framing."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-09T14:31:20+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "sample_generated",
+      "detail": "Phase 4 sample, build session 9 Nov 2026"
+    },
+    {
+      "at": "2026-11-09T14:31:06+05:30",
+      "event": "ready_for_approval"
+    }
+  ]
+}

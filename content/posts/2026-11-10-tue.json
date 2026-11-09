@@ -1,0 +1,87 @@
+{
+  "post_id": "2026-11-10-tue",
+  "date": "2026-11-10",
+  "scheduled_for": "2026-11-10T08:00:00+05:30",
+  "weekday": "Tuesday",
+  "category": "client_story",
+  "pillar": "thyroid_hashimotos",
+  "topic": "Same thyroid dose becomes too strong after cofactors are fixed",
+  "angle": "Fixing ferritin/D/B12 can change how much medication you need; retest and involve your doctor",
+  "format": "client case",
+  "story_ids": [
+    "C01"
+  ],
+  "hook": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on the same dose of thyroxine. On paper that looks like a win. For her it meant the dose needed checking, fast.",
+  "draft": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on exactly the same dose of thyroxine.\n\nThat sounds like a win. It wasn't, at least not yet.\n\nShe's in her early 30s and has been on thyroid medication for twenty years. Her first reports showed ferritin at 8.1, vitamin D at 8.3 and B12 at 209. These are things the body leans on to turn T4, the hormone in the tablet, into T3, the one your cells actually use.\n\nSo we didn't touch the medication. We rebuilt the base. Iron from day 10. Vitamin D and B12. Magnesium at night. Selenium and ashwagandha once her antibody test confirmed Hashimoto's. Short home workouts from week 4.\n\nAt the retest her ferritin was 27.65, vitamin D 40.7 and B12 367. And her TSH had dropped low enough that the same dose needed a second look.\n\nThat's the part nobody tells you. When conversion starts working again, the dose that suited a depleted body can become too strong. We had an urgent conversation, and her doctor adjusted the dose.\n\nTwo things I'd want every woman on thyroid medication to know:\n\n1. If your symptoms don't match your dose, ask about ferritin, vitamin D and B12, not just TSH.\n2. If you fix those, retest. Don't assume the old dose still fits.\n\nAnd never change the dose yourself. Take the numbers to your doctor.\n\n#ThyroidHealth #Hashimotos",
+  "final": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on the same dose of thyroxine. On paper that looks like a win. For her it meant the dose needed checking, fast.\n\nShe's in her early 30s and has been on thyroid medication for twenty years. Her first reports showed ferritin at 8.1, vitamin D at 8.3 and B12 at 209. Your body needs iron, vitamin D and B12, among other things, to turn T4 (the hormone in the tablet) into T3, the form your cells use.\n\nWe left her medication alone and worked on those first. She started iron on day 10, along with vitamin D, B12 and magnesium at night. When her antibody test confirmed Hashimoto's, we added selenium and ashwagandha. From week 4 she did short workouts at home.\n\nAt the retest, ferritin was 27.65, vitamin D 40.7 and B12 367. Her TSH had dropped far enough that the old dose now looked too strong for her. Once conversion improves, a dose set for a depleted body can overshoot. We had an urgent conversation about it, and her doctor adjusted the dose.\n\nIf you're on thyroid medication, two things are worth knowing:\n\n1. If your symptoms don't match your dose, ask about ferritin, vitamin D and B12 as well as TSH.\n2. If those get corrected, retest. The old dose may not fit anymore.\n\nPlease don't change the dose yourself. Take the numbers to your doctor.\n\n#ThyroidHealth #Hashimotos",
+  "hashtags": [],
+  "image_path": null,
+  "image_alt": null,
+  "sources": [],
+  "claims_checked": [
+    {
+      "claim": "TSH 6.09 -> 0.35, ferritin 8.1->27.65, vit D 8.3->40.7, B12 209->367; ~8 weeks (1 Jul -> 29 Aug)",
+      "status": "verified",
+      "source": "memory export, client KR"
+    },
+    {
+      "claim": "Doctor changed the dose afterwards",
+      "status": "verified",
+      "source": "memory export, client KR (split dosing)"
+    },
+    {
+      "claim": "Selenium + ashwagandha added after Hashimoto's confirmed 31 Jul",
+      "status": "verified",
+      "source": "memory export, client KR"
+    }
+  ],
+  "questions_for_shweta": [
+    "Confirm the client is comfortable with this anonymized case (early 30s, 20-year thyroid history).",
+    "Okay to mention ashwagandha? (It was part of the protocol and is a possible confounder, so I kept it for honesty.)"
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-09T14:31:05+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed staged lines ('That's the part nobody tells you', 'It wasn't, at least not yet'), merged a row of fragments into sentences, cut a not-X-but-Y."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-09T14:31:20+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-09T14:31:05+05:30",
+      "event": "sample_generated",
+      "detail": "Phase 4 sample, build session 9 Nov 2026"
+    },
+    {
+      "at": "2026-11-09T14:31:06+05:30",
+      "event": "ready_for_approval"
+    }
+  ]
+}
