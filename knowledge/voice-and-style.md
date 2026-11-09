@@ -8,6 +8,16 @@ How she communicates with clients [ME]: "warm, direct, specific; lead with the c
 ## Reader
 A woman aged 30–50, often in tech or another corporate job, who has been told her reports are "normal", has tried the Instagram plan, and is tired. Secondary readers: doctors and other professionals who will judge credibility.
 
+## Hooks (every post; rule set by Shweta, 9 Nov 2026)
+The first paragraph is all most people see before "…see more" (about 140 characters on mobile, about 210 on desktop). It must make the reader curious enough to tap.
+- Put the most surprising specific first: a twist, a number, a scene, a belief the post challenges. Never warm up.
+- Keep the first paragraph under ~140 characters; one or two short sentences.
+- Open a gap the post closes. Don't give away the answer in the hook, and don't promise anything the post doesn't deliver (no clickbait).
+- Set `hook_style` and rotate it: `curiosity_gap` ("Twenty years on thyroid medicine. Then, in eight weeks, the same dose became too strong for her."), `surprising_number` ("About 136 million people in India are estimated to have prediabetes…"), `contrarian` ("Your iron report can say 'normal' while your iron stores are close to empty."), `story_drop_in`, `relatable_moment`, `direct_question`.
+- Banned openers: "Tomorrow is…", "Today is…", "Did you know…", "Here are…", "In this post…", "As a coach…", "Have you ever wondered…".
+- Write 3 hook options while drafting, keep the strongest, and record the other two in `questions_for_shweta` if they're close.
+- The image headline echoes the hook's curiosity, never the answer.
+
 ## Storytelling (Monday and Tuesday; rule set by Shweta, 9 Nov 2026)
 Story posts must read as a story, not a lab report. Plan the beats first, store them in the record's `story_structure`, then write.
 

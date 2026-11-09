@@ -40,6 +40,7 @@ def new_record(d: date, settings: dict) -> dict:
         "story_ids": [],
         "story_structure": {},
         "hook": "",
+        "hook_style": "",
         "draft": "",
         "final": "",
         "hashtags": [],

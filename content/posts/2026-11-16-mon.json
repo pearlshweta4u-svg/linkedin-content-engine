@@ -13,9 +13,9 @@
     "P04",
     "P02"
   ],
-  "hook": "I'm 41, and I'm in a fat-loss phase right now.",
+  "hook": "I coach women through fat loss. Right now, at 41, I'm in a fat-loss phase myself.",
   "draft": "I'm 41, and I'm in a fat-loss phase right now.\n\nIt's a three-month plan at a medium pace. The target is 5 to 6 kg. Four workouts a week, 12,000 steps a day.\n\nI'm sharing it because a lot of women assume coaches have it figured out. That we eat clean and our bodies just behave.\n\nI competed in natural bodybuilding in December 2023. Before my Phuket trip this year I ran a 10-week cut. I still did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nTwo things I hold myself to.\n\nI pick a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, training. A plan I can keep for three months beats a plan I can survive for three weeks.\n\nAnd I track weeks, not streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people quit. A week can still be a winning week with one bad day inside it.\n\nNone of this is glamorous. It's mostly walking, lifting, and writing things down.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
-  "final": "I'm 41, and I'm in a fat-loss phase right now.\n\nIt's a three-month plan at a medium pace: a few kilos, four workouts a week and a lot of walking.\n\nA lot of women assume coaches have this figured out, that we eat clean and our bodies behave. I competed in natural bodybuilding in December 2023, and before my Phuket trip this year I ran a 10-week cut. I still did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nI chose a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, my own training. I'd rather keep a plan going for three months than survive three weeks of a harsh one.\n\nI also track weeks instead of streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people give up. A week with one bad day in it can still be a winning week.\n\nMost days it's a walk, a workout and a few lines in the tracker.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
+  "final": "I coach women through fat loss. Right now, at 41, I'm in a fat-loss phase myself.\n\nIt's a three-month plan at a medium pace: a few kilos, four workouts a week and a lot of walking.\n\nA lot of women assume coaches have this figured out, that we eat clean and our bodies behave. I competed in natural bodybuilding in December 2023, and before my Phuket trip this year I ran a 10-week cut. I did it with a printed plan and a habit tracker, the same tools I give my clients.\n\nI chose a medium pace on purpose. A crash cut would fight with everything else in my week: clients, my sons, my own training. I'd rather keep a plan going for three months than survive three weeks of a harsh one.\n\nI also track weeks instead of streaks. A streak breaks the first time a work trip or a bad night gets in the way, and that's usually when people give up. A week with one bad day in it can still be a winning week.\n\nMost days it's a walk, a workout and a few lines in the tracker.\n\nWhat would a winning week look like for you, if it didn't have to be perfect?",
   "hashtags": [],
   "image_path": "content/images/2026-11-16-mon.png",
   "image_alt": "Quote card: I'm 41, and I'm in a fat-loss phase right now. A medium pace I can keep, tracked one winning week at a time.",
@@ -33,14 +33,14 @@
   ],
   "humanizer": {
     "applied": true,
-    "at": "2026-11-09T14:31:05+05:30",
+    "at": "2026-11-09T20:19:23+05:30",
     "version": "3.1.0",
-    "changes_summary": "Cut 'Two things I hold myself to' run-up, aphorism ('a plan I can keep… beats…') rewritten plainly, closer + triad 'None of this is glamorous' removed, fragments merged."
+    "changes_summary": "Cut 'Two things I hold myself to' run-up, aphorism ('a plan I can keep… beats…') rewritten plainly, closer + triad 'None of this is glamorous' removed, fragments merged. | Hook rewrite reviewed against Humanizer rules (no new facts)."
   },
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T17:45:28+05:30"
+    "checked_at": "2026-11-09T20:19:23+05:30"
   },
   "approval_status": "pending",
   "approval": {
@@ -102,6 +102,16 @@
       "at": "2026-11-09T20:15:21+05:30",
       "event": "copied_to_drive",
       "file_id": "16IbaVzVCK30RK6IealQ4Lmxm0e9_lH07"
+    },
+    {
+      "at": "2026-11-09T20:19:23+05:30",
+      "event": "hook_rewritten",
+      "detail": "catchier hook per Shweta 9 Nov; needs re-approval"
+    },
+    {
+      "at": "2026-11-09T20:19:34+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-16-mon.png"
     }
   ],
   "story_structure": {
@@ -114,10 +124,11 @@
   "image_spec": {
     "template": "story",
     "eyebrow": "Behind the scenes",
-    "title": "I'm 41, and I'm in a fat-loss phase right now.",
+    "title": "I coach women through fat loss. At 41, I'm doing it myself right now.",
     "subtitle": "A medium pace I can keep, tracked one winning week at a time.",
     "alt": "Quote card: I'm 41, and I'm in a fat-loss phase right now. A medium pace I can keep, tracked one winning week at a time."
   },
   "image_public_url": "https://media.zernio.com/temp/1794233712691_f4917bf080a1ad44_2026-11-16-mon.png",
-  "drive_file_id": "16IbaVzVCK30RK6IealQ4Lmxm0e9_lH07"
+  "drive_file_id": "16IbaVzVCK30RK6IealQ4Lmxm0e9_lH07",
+  "hook_style": "story_drop_in"
 }

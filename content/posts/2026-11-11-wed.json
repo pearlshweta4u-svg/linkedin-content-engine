@@ -9,9 +9,9 @@
   "angle": "Low-normal ferritin and inflammation-masked ferritin; what to ask for",
   "format": "explainer + checklist",
   "story_ids": [],
-  "hook": "Your report says your ferritin is normal. You're still exhausted, and nobody can tell you why.",
+  "hook": "Your iron report can say \"normal\" while your iron stores are close to empty.",
   "draft": "Your ferritin is \"normal\". You're still exhausted. Both can be true.\n\nThink of haemoglobin as the money in your wallet and ferritin as your savings. You can have enough in the wallet, so no anaemia, while the savings are almost empty.\n\nMost lab reports flag ferritin only when it's very low. A low-normal number rarely gets a second look.\n\nThere's a well-known trial on exactly this. In 2012, researchers gave 198 menstruating women with unexplained fatigue either iron or a placebo for 12 weeks. None of them were anaemic. All had ferritin under 50. Fatigue scores dropped 47.7% with iron and 28.8% with the placebo.\n\nThere's a second catch. Ferritin rises when there's inflammation in the body, even if your iron stores are low. That's why WHO guidance says that in adults with infection or inflammation, a ferritin below 70 may still point to iron deficiency.\n\nWhat I look at with clients:\n\n- Ferritin with a CRP, never alone.\n- Where the iron is going: heavy periods, or a gut that isn't absorbing it.\n- If you take thyroid medication, iron timing. The two compete, so ask your doctor how far apart to take them.\n\nIf you're tired and your report says normal, ask for the actual ferritin number and a CRP. Then take both to your doctor.\n\n#IronDeficiency #WomensHealth",
-  "final": "Your report says your ferritin is normal. You're still exhausted, and nobody can tell you why.\n\nThink of haemoglobin as the cash in your wallet and ferritin as your savings. Your wallet can be fine, so you're not anaemic, while your savings are nearly gone.\n\nMost reports only flag ferritin when it's very low, so a low-normal number rarely gets a second look.\n\nA 2012 trial in the Canadian Medical Association Journal tested what happens next. It gave 198 menstruating women with unexplained fatigue either iron or a placebo for 12 weeks. None were anaemic, and all had ferritin under 50. Fatigue scores fell 47.7% with iron and 28.8% with the placebo.\n\nInflammation muddies the number further. Ferritin goes up when the body is inflamed, even if iron stores are low. WHO guidance says that in adults with infection or inflammation, a ferritin below 70 may still point to iron deficiency.\n\nSo with my clients I check:\n\n- Ferritin alongside CRP, not on its own.\n- Where the iron is going: heavy periods, or a gut that isn't absorbing it.\n- Iron timing for anyone on thyroid medication, because the two interfere with each other. Your doctor can tell you how far apart to take them.\n\nIf you're tired and your report says normal, ask for the actual ferritin value and a CRP, and take both to your doctor.\n\n#IronDeficiency #WomensHealth",
+  "final": "Your iron report can say \"normal\" while your iron stores are close to empty.\n\nIf you're exhausted and nobody can tell you why, this is worth checking.\n\nThink of haemoglobin as the cash in your wallet and ferritin as your savings. Your wallet can be fine, so you're not anaemic, while your savings are nearly gone.\n\nMost reports only flag ferritin when it's very low, so a low-normal number rarely gets a second look.\n\nA 2012 trial in the Canadian Medical Association Journal tested what happens next. It gave 198 menstruating women with unexplained fatigue either iron or a placebo for 12 weeks. None were anaemic, and all had ferritin under 50. Fatigue scores fell 47.7% with iron and 28.8% with the placebo.\n\nInflammation muddies the number further. Ferritin goes up when the body is inflamed, even if iron stores are low. WHO guidance says that in adults with infection or inflammation, a ferritin below 70 may still point to iron deficiency.\n\nSo with my clients I check:\n\n- Ferritin alongside CRP, not on its own.\n- Where the iron is going: heavy periods, or a gut that isn't absorbing it.\n- Iron timing for anyone on thyroid medication, because the two interfere with each other. Your doctor can tell you how far apart to take them.\n\nIf you're tired and your report says normal, ask for the actual ferritin value and a CRP, and take both to your doctor.\n\n#IronDeficiency #WomensHealth",
   "hashtags": [],
   "image_path": "content/images/2026-11-11-wed.png",
   "image_alt": "Three steps: ask for the actual ferritin number; check it with a CRP because inflammation can hide low iron; ask where the iron is going, periods or the gut.",
@@ -50,18 +50,18 @@
   "questions_for_shweta": [],
   "humanizer": {
     "applied": true,
-    "at": "2026-11-09T14:31:05+05:30",
+    "at": "2026-11-09T20:19:23+05:30",
     "version": "3.1.0",
-    "changes_summary": "Removed 'Both can be true' closer, 'There's a well-known trial' run-up (replaced with the named journal), 'There's a second catch' staging."
+    "changes_summary": "Removed 'Both can be true' closer, 'There's a well-known trial' run-up (replaced with the named journal), 'There's a second catch' staging. | Hook rewrite reviewed against Humanizer rules (no new facts)."
   },
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T17:45:28+05:30"
+    "checked_at": "2026-11-09T20:19:23+05:30"
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": "2026-11-09T17:47:09+05:30",
+    "requested_at": null,
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
@@ -110,6 +110,16 @@
       "at": "2026-11-09T20:15:20+05:30",
       "event": "copied_to_drive",
       "file_id": "1IX4KnYC7xNCsUUbYNRvNbz6rRtsXth_z"
+    },
+    {
+      "at": "2026-11-09T20:19:23+05:30",
+      "event": "hook_rewritten",
+      "detail": "catchier hook per Shweta 9 Nov; needs re-approval"
+    },
+    {
+      "at": "2026-11-09T20:19:33+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-11-wed.png"
     }
   ],
   "image_spec": {
@@ -124,5 +134,6 @@
     "alt": "Three steps: ask for the actual ferritin number; check it with a CRP because inflammation can hide low iron; ask where the iron is going, periods or the gut."
   },
   "image_public_url": "https://media.zernio.com/temp/1794233708626_b7d394fa02f4d96f_2026-11-11-wed.png",
-  "drive_file_id": "1IX4KnYC7xNCsUUbYNRvNbz6rRtsXth_z"
+  "drive_file_id": "1IX4KnYC7xNCsUUbYNRvNbz6rRtsXth_z",
+  "hook_style": "contrarian"
 }

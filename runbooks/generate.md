@@ -26,6 +26,7 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - Fill in `pillar` (one of the keys in `engine/__main__.py` PILLARS), `topic`, `angle`, `format`, `story_ids`, `sources` (`{title, url, publisher, published, accessed, claim}`), `claims_checked`, and `questions_for_shweta`.
 
 4. **Draft** following `knowledge/voice-and-style.md`. Write it to `draft`.
+   - Hook first: write 3 opening options per the Hooks section, pick the most curiosity-driving one that is fully supported by the post's facts, and set `hook_style` (rotate; check `engine history` → recent_hooks).
    - Mon/Tue: first fill `story_structure` (Tue STAR: situation, task, action, result, lesson; Mon story arc: moment, struggle, action, change, lesson), one or two lines per beat from verified facts only, then write the post in that order. Keep it plain: max 4 medical terms, max 3 numbers.
    - Tue: also check the client's recent Fathom calls (Composio tools `FATHOM_LIST_MEETINGS`, `FATHOM_GET_RECORDING_SUMMARY`, `FATHOM_GET_RECORDING_TRANSCRIPT`) for fresh, verified details and her own phrasing. Anonymize everything.
 
@@ -40,7 +41,8 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - If it still fails, email Shweta "No post ready for <D>: <issues>" and stop. A missed day is better than a weak post.
 
 7. **Image** (`images_enabled` is true). Write `image_spec` into the record, then run `python3 -m engine image $D`:
-   - Template by day: Mon/Tue `story` (a headline from the post plus a one-line takeaway), Wed `steps` (2–4 short steps), Thu `checklist` (portrait, up to 7 items), Fri `stat` (one verified number, with `source`).
+   - Template by day: Mon/Tue `story` (a headline echoing the hook plus a one-line takeaway), Wed `steps` (2–4 short steps), Thu `checklist` (portrait 1080×1350, up to 7 one-line items of ≤45 characters), Fri `stat` (one verified number, with `source`). Cards are square 1080×1080 so they're readable on phones.
+   - Check mobile legibility: `python3 -c "from engine import images; images.phone_preview('content/images/<id>.png','/tmp/p.png')"` and look at /tmp/p.png (360px wide = a phone feed). Body text must be easy to read there.
    - The image must only contain words and numbers that are already in the post or its sources. It must add structure (steps, a checklist, a key number), not repeat the first line. Always set `alt`.
    - If the command says the text doesn't fit, shorten the copy and re-run. Never accept a clipped image.
    - Look at the PNG (Read tool) before emailing. Check the layout, that nothing is cut off, and that it's readable at phone size.

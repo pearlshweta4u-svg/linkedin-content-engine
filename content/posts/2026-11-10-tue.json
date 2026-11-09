@@ -11,9 +11,9 @@
   "story_ids": [
     "C01"
   ],
-  "hook": "She had taken her thyroid tablet every morning for twenty years. She was in her early 30s, catching a cold almost every week, and her heels hurt.",
+  "hook": "Twenty years on thyroid medicine. Then, in eight weeks, the same dose became too strong for her.",
   "draft": "She took her thyroid tablet every morning for twenty years. Early 30s. A cold almost every week. Heels that hurt.\n\nHer blood tests explained a lot: iron, vitamin D and B12 were all very low. Your body needs those to use thyroid medicine properly.\n\nMy job was to rebuild what was missing without touching her medicine. That part stays with her doctor.\n\nVitamin D and B12. Iron from day 10. Short home workouts from week 4.\n\nEight weeks later her iron had more than tripled and her vitamin D was about five times higher. The puffiness in her face had gone down.\n\nThen came the surprise. Her thyroid test showed the same tablet was now too strong. Her body was finally using it. We had an urgent conversation, she saw her doctor, and the dose was lowered.\n\nThe lesson: if you're on thyroid medicine and still don't feel right, ask your doctor to check iron, vitamin D and B12. If you fix them, retest your thyroid. Never change the dose on your own.",
-  "final": "She had taken her thyroid tablet every morning for twenty years. She was in her early 30s, catching a cold almost every week, and her heels hurt.\n\nHer blood tests explained a lot. Her iron, vitamin D and B12 were all very low, and your body needs those to make proper use of thyroid medicine.\n\nMy job was to rebuild what was missing without touching her medicine. That stays with her doctor.\n\nShe took vitamin D and B12, and started iron on day 10. A few weeks in, she added short home workouts three times a week.\n\nEight weeks later her iron had more than tripled and her vitamin D was about five times higher. The puffiness in her face had gone down.\n\nThe surprise came from her thyroid test. The same tablet was now too strong for her, because her body was finally using it properly. We had an urgent conversation, she saw her doctor, and her dose was lowered.\n\nIf you're on thyroid medicine and still don't feel right, ask your doctor to check iron, vitamin D and B12 too. If you fix them, get your thyroid retested, because the dose that suited you before may not suit you now. And please never change it on your own.\n\n#ThyroidHealth #WomensHealth",
+  "final": "Twenty years on thyroid medicine. Then, in eight weeks, the same dose became too strong for her.\n\nShe was in her early 30s, catching a cold almost every week, and her heels hurt.\n\nHer blood tests explained a lot. Her iron, vitamin D and B12 were all very low, and your body needs those to make proper use of thyroid medicine.\n\nMy job was to rebuild what was missing without touching her medicine. That stays with her doctor.\n\nShe took vitamin D and B12, and started iron on day 10. A few weeks in, she added short home workouts three times a week.\n\nBy the retest, her iron had more than tripled and her vitamin D was about five times higher. The puffiness in her face had gone down.\n\nThe surprise came from her thyroid test. The same tablet was now too strong for her, because her body was finally using it properly. We had an urgent conversation, she saw her doctor, and her dose was lowered.\n\nIf you're on thyroid medicine and still don't feel right, ask your doctor to check iron, vitamin D and B12 too. If you fix them, get your thyroid retested, because the dose that suited you before may not suit you now. And please never change it on your own.\n\n#ThyroidHealth #WomensHealth",
   "hashtags": [],
   "image_path": "content/images/2026-11-10-tue.png",
   "image_alt": "Quote card: Same thyroid tablet for twenty years. Then it became too strong. Fix iron, vitamin D and B12 first, then get your thyroid retested.",
@@ -49,18 +49,18 @@
   ],
   "humanizer": {
     "applied": true,
-    "at": "2026-11-09T15:31:28+05:30",
+    "at": "2026-11-09T20:19:23+05:30",
     "version": "3.1.0",
-    "changes_summary": "Merged fragment rows into sentences, removed 'Then came the surprise' and 'The lesson:' run-ups, varied sentence openings."
+    "changes_summary": "Merged fragment rows into sentences, removed 'Then came the surprise' and 'The lesson:' run-ups, varied sentence openings. | Hook rewrite reviewed against Humanizer rules (no new facts)."
   },
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T17:45:28+05:30"
+    "checked_at": "2026-11-09T20:19:23+05:30"
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": "2026-11-09T17:47:09+05:30",
+    "requested_at": null,
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
@@ -123,6 +123,16 @@
       "at": "2026-11-09T20:15:20+05:30",
       "event": "copied_to_drive",
       "file_id": "1J1nLADY7IbdbmxABtX8woLqIjoLECOTd"
+    },
+    {
+      "at": "2026-11-09T20:19:23+05:30",
+      "event": "hook_rewritten",
+      "detail": "catchier hook per Shweta 9 Nov; needs re-approval"
+    },
+    {
+      "at": "2026-11-09T20:19:32+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-10-tue.png"
     }
   ],
   "draft_v1": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on the same dose of thyroxine. On paper that looks like a win. For her it meant the dose needed checking, fast.\n\nShe's in her early 30s and has been on thyroid medication for twenty years. Her first reports showed ferritin at 8.1, vitamin D at 8.3 and B12 at 209. Your body needs iron, vitamin D and B12, among other things, to turn T4 (the hormone in the tablet) into T3, the form your cells use.\n\nWe left her medication alone and worked on those first. She started iron on day 10, along with vitamin D, B12 and magnesium at night. When her antibody test confirmed Hashimoto's, we added selenium and ashwagandha. From week 4 she did short workouts at home.\n\nAt the retest, ferritin was 27.65, vitamin D 40.7 and B12 367. Her TSH had dropped far enough that the old dose now looked too strong for her. Once conversion improves, a dose set for a depleted body can overshoot. We had an urgent conversation about it, and her doctor adjusted the dose.\n\nIf you're on thyroid medication, two things are worth knowing:\n\n1. If your symptoms don't match your dose, ask about ferritin, vitamin D and B12 as well as TSH.\n2. If those get corrected, retest. The old dose may not fit anymore.\n\nPlease don't change the dose yourself. Take the numbers to your doctor.\n\n#ThyroidHealth #Hashimotos",
@@ -136,10 +146,11 @@
   "image_spec": {
     "template": "story",
     "eyebrow": "Client story",
-    "title": "Same thyroid tablet for twenty years. Then it became too strong.",
+    "title": "Twenty years on thyroid medicine. Then the same dose became too strong.",
     "subtitle": "Fix iron, vitamin D and B12 first, then get your thyroid retested.",
     "alt": "Quote card: Same thyroid tablet for twenty years. Then it became too strong. Fix iron, vitamin D and B12 first, then get your thyroid retested."
   },
   "image_public_url": "https://media.zernio.com/temp/1794233707093_07b3ce568e82c8ab_2026-11-10-tue.png",
-  "drive_file_id": "1J1nLADY7IbdbmxABtX8woLqIjoLECOTd"
+  "drive_file_id": "1J1nLADY7IbdbmxABtX8woLqIjoLECOTd",
+  "hook_style": "curiosity_gap"
 }

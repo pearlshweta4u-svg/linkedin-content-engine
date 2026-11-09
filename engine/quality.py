@@ -36,6 +36,14 @@ MEDICAL_TERMS = [
     "prolactin", "conversion", "deficien", "inflammat", "glucose", "supplement",
 ]
 STORY_MAX_TERMS = 4
+
+# Hook: the text LinkedIn shows before "...see more" (~140 chars on mobile, ~210 desktop).
+HOOK_STYLES = {"curiosity_gap", "surprising_number", "story_drop_in", "contrarian", "direct_question", "relatable_moment"}
+HOOK_MAX_MOBILE = 140
+HOOK_MAX_HARD = 210
+WEAK_OPENERS = ("tomorrow is", "today is", "in this post", "let's talk", "lets talk", "here are", "here is",
+                "i want to share", "did you know", "i'm excited", "i am excited", "happy ", "as a coach",
+                "in today's", "have you ever wondered")
 STORY_MAX_NUMBERS = 3
 NUMBER_CLAIM = re.compile(r"\b\d+(\.\d+)?\s?%|\b\d+\s+(in|out of)\s+\d+\b", re.I)
 
@@ -120,6 +128,18 @@ def check(record: dict, settings: dict, history: list[dict] | None = None) -> li
     for s in record.get("sources") or []:
         if not s.get("url"):
             issues.append(f"BLOCK: source without URL: {s.get('title', '?')}")
+
+    # Hook quality: the first paragraph is the preview people decide on
+    hook = text.strip().split("\n\n", 1)[0].strip()
+    if len(hook) > HOOK_MAX_HARD:
+        issues.append(f"BLOCK: hook (first paragraph) is {len(hook)} chars; LinkedIn cuts it at ~{HOOK_MAX_HARD} on desktop, ~{HOOK_MAX_MOBILE} on mobile")
+    elif len(hook) > HOOK_MAX_MOBILE:
+        issues.append(f"WARN: hook is {len(hook)} chars; the curiosity must land in the first ~{HOOK_MAX_MOBILE} for mobile")
+    if hook.lower().startswith(WEAK_OPENERS):
+        issues.append(f"BLOCK: weak, generic opener ('{hook[:30]}...'); open with the most surprising specific")
+    style = record.get("hook_style")
+    if style not in HOOK_STYLES:
+        issues.append(f"BLOCK: hook_style must be one of {sorted(HOOK_STYLES)}")
 
     # Storytelling structure + plain language for story categories
     cat = record.get("category")

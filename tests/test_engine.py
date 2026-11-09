@@ -34,7 +34,8 @@ def at(d, hh, mm=0):
 def make(tmp, d=MON, **fields):
     s = settings()
     r = store.new_record(d, s)
-    r.update(final=GOOD_TEXT, draft=GOOD_TEXT, topic="normal reports", pillar="self_advocacy", category="educational")
+    r.update(final=GOOD_TEXT, draft=GOOD_TEXT, topic="normal reports", pillar="self_advocacy", category="educational",
+             hook_style="relatable_moment")
     r["humanizer"]["applied"] = True
     r.update(fields)
     store.save(r, tmp)
@@ -82,6 +83,7 @@ class TestQuality(unittest.TestCase):
         r["final"] = text
         r["humanizer"]["applied"] = True
         r["category"] = "educational"
+        r["hook_style"] = "relatable_moment"
         r.update(kw)
         return r
 
@@ -123,6 +125,15 @@ class TestQuality(unittest.TestCase):
         self.assertIn("too clinical", " ".join(quality.check(r, s)))
         p = self.rec(GOOD_TEXT, category="personal_story")
         self.assertIn("story_arc", " ".join(quality.check(p, s)))
+
+    def test_hook_rules(self):
+        s = settings()
+        weak = self.rec("Tomorrow is a big day for all of us.\n\n" + GOOD_TEXT)
+        self.assertIn("generic opener", " ".join(quality.check(weak, s)))
+        long_hook = self.rec("word " * 50 + "\n\n" + GOOD_TEXT)
+        self.assertFalse(quality.passed(quality.check(long_hook, s)))
+        no_style = self.rec(GOOD_TEXT, hook_style="")
+        self.assertIn("hook_style", " ".join(quality.check(no_style, s)))
 
     def test_humanizer_mandatory(self):
         r = self.rec(GOOD_TEXT)

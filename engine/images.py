@@ -20,11 +20,14 @@ from pathlib import Path
 from .config import IMAGES_DIR, ROOT
 
 FONTS = ROOT / "assets" / "fonts"
-SIZES = {"story": (1200, 627), "steps": (1200, 627), "stat": (1200, 627), "checklist": (1080, 1350)}
+# Mobile-first: LinkedIn's phone feed shows images ~360px wide, so text must be
+# large at 1080px. Square for cards, 4:5 portrait for checklists.
+SIZES = {"story": (1080, 1080), "steps": (1080, 1080), "stat": (1080, 1080), "checklist": (1080, 1350)}
+MIN_FONT_PX = 30  # smallest body text; ~10px on a phone. Fine print (source) is 22px.
 DEFAULT_TEMPLATE = {"personal_story": "story", "client_story": "story", "educational": "steps",
                     "save_worthy": "checklist", "health_wellness": "stat"}
-LIMITS = {"title": 90, "subtitle": 140, "eyebrow": 40, "item": 70, "items": 7, "stat": 8,
-          "stat_label": 90, "source": 140}
+LIMITS = {"title": 80, "subtitle": 110, "eyebrow": 36, "item": 60, "items": 7, "stat": 7,
+          "stat_label": 80, "source": 120}
 
 
 class ImageError(Exception):
@@ -44,16 +47,16 @@ html, body { width: {w}px; height: {h}px; overflow: hidden; }
 body { background: var(--cream); color: var(--navy); font-family: 'Inter', 'DejaVu Sans', sans-serif;
        position: relative; -webkit-font-smoothing: antialiased; }
 .frame { position: absolute; inset: 0; padding: {pad}px; display: flex; flex-direction: column; }
-.bar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--teal); }
-.eyebrow { font-family: 'Poppins'; font-weight: 600; font-size: 22px; letter-spacing: .14em;
-           text-transform: uppercase; color: var(--teal); margin-bottom: 18px; }
+.bar { position: absolute; left: 0; top: 0; bottom: 0; width: 18px; background: var(--teal); }
+.eyebrow { font-family: 'Poppins'; font-weight: 600; font-size: 30px; letter-spacing: .12em;
+           text-transform: uppercase; color: var(--teal); margin-bottom: 24px; }
 h1 { font-family: 'Poppins'; font-weight: 700; line-height: 1.12; color: var(--navy); }
-.sub { font-size: 26px; line-height: 1.45; color: var(--slate); }
-.foot { position: absolute; left: {pad}px; right: {pad}px; bottom: 34px; display: flex;
-        justify-content: space-between; align-items: flex-end; font-size: 18px; color: var(--slate); }
-.mark { font-family: 'Poppins'; font-weight: 600; font-size: 22px; color: var(--slate); }
+.sub { font-size: 40px; line-height: 1.4; color: var(--slate); }
+.foot { position: absolute; left: {pad}px; right: {pad}px; bottom: 44px; display: flex;
+        justify-content: space-between; align-items: flex-end; gap: 30px; font-size: 22px; color: var(--slate); }
+.mark { font-family: 'Poppins'; font-weight: 600; font-size: 32px; color: var(--slate); white-space: nowrap; }
 .mark b { color: var(--teal); font-weight: 700; }
-.src { max-width: 70%; text-align: right; font-size: 15px; line-height: 1.35; }
+.src { text-align: right; font-size: 22px; line-height: 1.3; }
 .fit { overflow: hidden; }
 """
 
@@ -71,85 +74,78 @@ def _foot(spec: dict) -> str:
 
 def _story(spec, w, h):
     css = """
-    .q { width: 88px; height: 8px; border-radius: 4px; background: var(--orange); margin: 6px 0 30px; }
-    h1 { font-size: 54px; max-width: 980px; }
-    .main { flex: 1; display:flex; flex-direction:column; justify-content:center; padding-bottom: 70px; }
-    .sub { margin-top: 26px; max-width: 940px; }
+    .q { width: 110px; height: 10px; border-radius: 5px; background: var(--orange); margin: 8px 0 40px; }
+    h1 { font-size: 80px; line-height: 1.1; }
+    .main { flex: 1; display:flex; flex-direction:column; justify-content:center; padding-bottom: 110px; }
+    .sub { margin-top: 40px; }
     """
     body = f"""<div class='bar'></div><div class='frame'><div class='main fit' data-name='story'>
       <div class='eyebrow'>{_e(spec.get('eyebrow'))}</div><div class='q'></div>
       <h1>{_e(spec['title'])}</h1>{f"<p class='sub'>{_e(spec['subtitle'])}</p>" if spec.get('subtitle') else ''}
     </div></div>{_foot(spec)}"""
-    return _page(css, body, w, h)
+    return _page(css, body, w, h, pad=84)
 
 
 def _steps(spec, w, h):
     items = spec.get("items") or []
-    n = len(items)
-    css = f"""
-    h1 {{ font-size: 46px; max-width: 1040px; }}
-    .row {{ display:flex; gap: 18px; margin-top: 44px; align-items: stretch; }}
-    .step {{ flex: 1; background: #fff; border-radius: 18px; padding: 26px 24px; position: relative;
-             box-shadow: 0 2px 0 rgba(27,42,74,.06); border-top: 6px solid var(--teal); }}
-    .step:last-child {{ border-top-color: var(--orange); }}
-    .num {{ font-family:'Poppins'; font-weight:700; color: var(--teal); font-size: 22px; margin-bottom: 10px; }}
-    .step:last-child .num {{ color: var(--orange); }}
-    .txt {{ font-size: {26 if n <= 3 else 22}px; line-height: 1.35; color: var(--navy); }}
-    .arrow {{ align-self: center; color: var(--slate); font-size: 34px; }}
-    .main {{ flex:1; padding-bottom: 60px; }}
+    css = """
+    h1 { font-size: 60px; line-height: 1.12; }
+    .col { display:flex; flex-direction:column; gap: 22px; margin-top: 44px; }
+    .step { display:flex; gap: 26px; align-items:center; background:#fff; border-radius: 22px; padding: 28px 32px;
+            border-left: 10px solid var(--teal); }
+    .step:last-child { border-left-color: var(--orange); }
+    .num { font-family:'Poppins'; font-weight:700; color: var(--teal); font-size: 40px; flex: 0 0 64px; }
+    .step:last-child .num { color: var(--orange); }
+    .txt { font-size: 36px; line-height: 1.3; color: var(--navy); }
+    .main { flex:1; padding-bottom: 100px; display:flex; flex-direction:column; justify-content:center; }
     """
-    cells = []
-    for i, it in enumerate(items):
-        if i:
-            cells.append("<div class='arrow'>&rarr;</div>")
-        cells.append(f"<div class='step'><div class='num'>{i + 1:02d}</div><div class='txt'>{_e(it)}</div></div>")
+    cells = "".join(f"<div class='step'><div class='num'>{i + 1:02d}</div><div class='txt'>{_e(it)}</div></div>"
+                    for i, it in enumerate(items))
     body = f"""<div class='bar'></div><div class='frame'><div class='main fit' data-name='steps'>
       <div class='eyebrow'>{_e(spec.get('eyebrow'))}</div><h1>{_e(spec['title'])}</h1>
-      <div class='row'>{''.join(cells)}</div></div></div>{_foot(spec)}"""
-    return _page(css, body, w, h)
+      <div class='col'>{cells}</div></div></div>{_foot(spec)}"""
+    return _page(css, body, w, h, pad=80)
 
 
 def _checklist(spec, w, h):
     items = spec.get("items") or []
     css = """
-    h1 { font-size: 58px; margin-bottom: 18px; }
-    .sub { margin-bottom: 34px; }
-    ol { list-style: none; display:flex; flex-direction:column; gap: 20px; flex: 1; justify-content: center; }
-    li { display:flex; gap: 24px; align-items:center; background:#fff; border-radius: 18px; padding: 30px 30px; }
-    .box { flex: 0 0 40px; height: 40px; border-radius: 10px; border: 3px solid var(--teal);
+    h1 { font-size: 68px; line-height: 1.1; margin-bottom: 14px; }
+    .sub { margin-bottom: 26px; font-size: 36px; }
+    ol { list-style: none; display:flex; flex-direction:column; gap: 18px; flex: 1; justify-content: center; }
+    li { display:flex; gap: 24px; align-items:center; background:#fff; border-radius: 20px; padding: 24px 28px; }
+    .box { flex: 0 0 52px; height: 52px; border-radius: 12px; border: 4px solid var(--teal);
            font-family:'Poppins'; font-weight:700; color: var(--teal); display:flex; align-items:center;
-           justify-content:center; font-size: 20px; }
+           justify-content:center; font-size: 28px; }
     li:last-child .box { border-color: var(--orange); color: var(--orange); }
-    .t { font-size: 32px; line-height: 1.35; color: var(--navy); }
-    .main { flex:1; padding-bottom: 90px; display:flex; flex-direction:column; }
+    .t { font-size: 36px; line-height: 1.25; color: var(--navy); }
+    .main { flex:1; padding-bottom: 110px; display:flex; flex-direction:column; }
     """
     lis = "".join(f"<li><div class='box'>{i + 1}</div><div class='t'>{_e(it)}</div></li>" for i, it in enumerate(items))
     body = f"""<div class='bar'></div><div class='frame'><div class='main fit' data-name='checklist'>
       <div class='eyebrow'>{_e(spec.get('eyebrow'))}</div><h1>{_e(spec['title'])}</h1>
       {f"<p class='sub'>{_e(spec['subtitle'])}</p>" if spec.get('subtitle') else ''}<ol>{lis}</ol>
     </div></div>{_foot(spec)}"""
-    return _page(css, body, w, h, pad=76)
+    return _page(css, body, w, h, pad=72)
 
 
 def _stat(spec, w, h):
     items = spec.get("items") or []
     css = """
-    .grid { flex:1; display:flex; gap: 56px; align-items:center; padding-bottom: 60px; }
-    .left { flex: 0 0 430px; }
-    .big { font-family:'Poppins'; font-weight:700; font-size: 150px; line-height: 1; color: var(--orange); }
-    .lab { font-size: 26px; line-height: 1.4; color: var(--navy); margin-top: 14px; }
-    .right { flex: 1; }
-    h1 { font-size: 40px; margin-bottom: 22px; }
-    ul { list-style:none; display:flex; flex-direction:column; gap: 14px; }
-    li { font-size: 24px; line-height: 1.4; padding-left: 26px; position: relative; color: var(--navy); }
-    li::before { content:''; position:absolute; left:0; top: 12px; width: 12px; height: 12px; border-radius: 3px; background: var(--teal); }
+    .big { font-family:'Poppins'; font-weight:700; font-size: 190px; line-height: .95; color: var(--orange); }
+    .lab { font-size: 38px; line-height: 1.3; color: var(--navy); margin: 14px 0 40px; }
+    h1 { font-size: 50px; margin-bottom: 22px; }
+    ul { list-style:none; display:flex; flex-direction:column; gap: 16px; }
+    li { font-size: 34px; line-height: 1.3; padding-left: 34px; position: relative; color: var(--navy); }
+    li::before { content:''; position:absolute; left:0; top: 15px; width: 16px; height: 16px; border-radius: 4px; background: var(--teal); }
+    .main { flex:1; padding-bottom: 120px; display:flex; flex-direction:column; justify-content:center; }
     """
     lis = "".join(f"<li>{_e(it)}</li>" for it in items)
-    body = f"""<div class='bar'></div><div class='frame'><div class='eyebrow'>{_e(spec.get('eyebrow'))}</div>
-      <div class='grid fit' data-name='stat'><div class='left'><div class='big'>{_e(spec.get('stat'))}</div>
-      <div class='lab'>{_e(spec.get('stat_label'))}</div></div>
-      <div class='right'><h1>{_e(spec['title'])}</h1><ul>{lis}</ul></div></div></div>{_foot(spec)}"""
-    return _page(css, body, w, h)
+    body = f"""<div class='bar'></div><div class='frame'><div class='main fit' data-name='stat'>
+      <div class='eyebrow'>{_e(spec.get('eyebrow'))}</div><div class='big'>{_e(spec.get('stat'))}</div>
+      <div class='lab'>{_e(spec.get('stat_label'))}</div><h1>{_e(spec['title'])}</h1><ul>{lis}</ul>
+    </div></div>{_foot(spec)}"""
+    return _page(css, body, w, h, pad=80)
 
 
 BUILDERS = {"story": _story, "steps": _steps, "checklist": _checklist, "stat": _stat}
@@ -202,3 +198,12 @@ def render(record: dict, out_dir: Path | None = None) -> str:
         return str(out.relative_to(ROOT))
     except ValueError:
         return str(out)
+
+
+def phone_preview(png_path: str, out_path: str, width: int = 360) -> str:
+    """Downscale to phone-feed width so a human (or Claude) can check legibility."""
+    from PIL import Image
+    im = Image.open(png_path)
+    h = round(im.height * width / im.width)
+    im.resize((width, h), Image.LANCZOS).save(out_path)
+    return out_path

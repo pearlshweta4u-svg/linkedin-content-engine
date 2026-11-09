@@ -14,9 +14,11 @@ Basis: the colours she already uses in her client documents ("Keerthi format": d
 
 Typography (free; Google Fonts and Canva both have them): **Poppins SemiBold** for headlines, **Inter** for body. Never more than 2 weights in one image.
 
-Formats:
-- 1200 × 627 px landscape (default for link-style/explainer posts).
-- 1080 × 1350 px portrait (checklists and infographics on Thursday: takes more feed space).
+Formats (mobile-first, revised 9 Nov 2026 after a phone-legibility check):
+- 1080 × 1080 px square: story, steps and stat cards. Shown ~360px wide on phones, so body text is ≥30px and headlines 60–80px.
+- 1080 × 1350 px portrait (4:5): Thursday checklists; takes the most feed space on mobile.
+- Not 1200 × 627 landscape: on a phone it shrinks to ~30% and body text becomes unreadable.
+- Rendered at 2× (2160 px wide) for sharpness.
 - Wordmark bottom-left: "TrainWithShweta" in Poppins 600, slate grey, ~24 px.
 
 Rules:
