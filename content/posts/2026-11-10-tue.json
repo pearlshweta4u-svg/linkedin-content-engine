@@ -60,7 +60,7 @@
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": null,
+    "requested_at": "2026-11-09T17:47:09+05:30",
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
@@ -109,6 +109,10 @@
       "at": "2026-11-09T17:45:06+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-10-tue.png"
+    },
+    {
+      "at": "2026-11-09T17:47:09+05:30",
+      "event": "approval-requested"
     }
   ],
   "draft_v1": "One of my clients came in with a TSH of 6.09. Eight weeks later it was 0.35, on the same dose of thyroxine. On paper that looks like a win. For her it meant the dose needed checking, fast.\n\nShe's in her early 30s and has been on thyroid medication for twenty years. Her first reports showed ferritin at 8.1, vitamin D at 8.3 and B12 at 209. Your body needs iron, vitamin D and B12, among other things, to turn T4 (the hormone in the tablet) into T3, the form your cells use.\n\nWe left her medication alone and worked on those first. She started iron on day 10, along with vitamin D, B12 and magnesium at night. When her antibody test confirmed Hashimoto's, we added selenium and ashwagandha. From week 4 she did short workouts at home.\n\nAt the retest, ferritin was 27.65, vitamin D 40.7 and B12 367. Her TSH had dropped far enough that the old dose now looked too strong for her. Once conversion improves, a dose set for a depleted body can overshoot. We had an urgent conversation about it, and her doctor adjusted the dose.\n\nIf you're on thyroid medication, two things are worth knowing:\n\n1. If your symptoms don't match your dose, ask about ferritin, vitamin D and B12 as well as TSH.\n2. If those get corrected, retest. The old dose may not fit anymore.\n\nPlease don't change the dose yourself. Take the numbers to your doctor.\n\n#ThyroidHealth #Hashimotos",

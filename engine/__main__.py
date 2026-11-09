@@ -79,7 +79,7 @@ def cmd_email_body(a):
         "", "=" * 60, "", rec["final"], "", "=" * 60, "",
     ]
     if rec.get("image_path"):
-        lines.append(f"Image (attached): {rec['image_path']}")
+        lines.append(f"Image: {rec['image_path']}")
         lines.append(f"  View online: https://github.com/pearlshweta4u-svg/linkedin-content-engine/blob/main/{rec['image_path']}")
         lines.append(f"  Alt text: {rec.get('image_alt')}")
     if rec.get("story_ids"):

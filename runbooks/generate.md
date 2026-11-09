@@ -50,7 +50,7 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - To both addresses in `notify_emails`.
    - Subject: `[LinkedIn] Approve: <Weekday> <D>: <topic>`
    - Body: the output of `python3 -m engine email-body $D`.
-   - Attach the image `content/images/<post-id>.png` (base64 attachment, mimeType image/png). Also link it: https://github.com/pearlshweta4u-svg/linkedin-content-engine/blob/main/content/images/<post-id>.png
+   - The body already links the image on GitHub (push the image before sending so the link works). Don't attach the PNG: encoded images are too large to pass through the mail tool.
    - In auto mode, use the subject `[LinkedIn] Scheduled: …` and add "Reply SKIP to stop it".
 
 9. Run `python3 -m engine mark $D approval-requested --git`. This commits the record and pushes. Confirm the push succeeded.

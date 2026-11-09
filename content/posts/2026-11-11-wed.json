@@ -61,7 +61,7 @@
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": null,
+    "requested_at": "2026-11-09T17:47:09+05:30",
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
@@ -96,6 +96,10 @@
       "at": "2026-11-09T17:44:34+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-11-wed.png"
+    },
+    {
+      "at": "2026-11-09T17:47:09+05:30",
+      "event": "approval-requested"
     }
   ],
   "image_spec": {
