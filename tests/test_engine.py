@@ -415,6 +415,30 @@ class TestImageSpec(unittest.TestCase):
         self.assertTrue(images.validate(dict(ok, title="x" * 91)))
 
 
+class TestHistoryImport(unittest.TestCase):
+    def test_import_from_export_zip(self):
+        import zipfile
+        from engine import history_import
+        tmp = Path(tempfile.mkdtemp())
+        z = tmp / "export.zip"
+        shares = ('Date,ShareLink,ShareCommentary,SharedUrl,MediaUrl,Visibility\n'
+                  '2025-12-18 09:00:00,https://www.linkedin.com/feed/update/urn:li:share:1,'
+                  '"Hook line here\nSecond line",,https://media.licdn.com/x.jpg,MEMBER_NETWORK\n'
+                  '2025-11-01 08:00:00,https://www.linkedin.com/feed/update/urn:li:share:2,Text only,,,PUBLIC\n')
+        with zipfile.ZipFile(z, "w") as zf:
+            zf.writestr("Basic_LinkedInDataExport/Shares.csv", shares)
+
+        def opener(req, timeout):
+            return _Resp(200, {"Content-Type": "image/jpeg"}, b"jpg")
+        out = tmp / "history"
+        summary = history_import.import_export(z, out_dir=out, opener=opener)
+        self.assertEqual((summary["posts"], summary["with_media_links"]), (2, 1))
+        data = json.loads((out / "posts.json").read_text())
+        self.assertEqual(data["posts"][1]["hook"], "Hook line here")
+        self.assertEqual(data["posts"][0]["date"][:10], "2025-11-01")
+        self.assertTrue(any(p.suffix == ".jpg" for p in (out / "images").iterdir()))
+
+
 class _Resp:
     def __init__(self, status=201, headers=None, body=b""):
         self.status, self.headers, self._b = status, headers or {}, body

@@ -313,6 +313,11 @@ def cmd_validate(a):
     sys.exit(0 if ok else 1)
 
 
+def cmd_import_history(a):
+    from . import history_import
+    _print(history_import.import_export(Path(a.source), download=not a.no_download))
+
+
 def cmd_mark_drive(a):
     rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
     rec["drive_file_id"] = a.file_id
@@ -392,6 +397,7 @@ def main(argv=None):
     sp = sub.add_parser("image"); sp.add_argument("date"); g(sp); sp.set_defaults(f=cmd_image)
     sp = sub.add_parser("image-url"); sp.add_argument("date"); sp.add_argument("--force", action="store_true"); g(sp); sp.set_defaults(f=cmd_image_url)
     sp = sub.add_parser("validate"); sp.add_argument("date"); g(sp); sp.set_defaults(f=cmd_validate)
+    sp = sub.add_parser("import-history"); sp.add_argument("source", help="LinkedIn data-export ZIP or folder"); sp.add_argument("--no-download", action="store_true"); sp.set_defaults(f=cmd_import_history)
     sp = sub.add_parser("mark-drive"); sp.add_argument("date"); sp.add_argument("file_id"); g(sp); sp.set_defaults(f=cmd_mark_drive)
     sp = sub.add_parser("fetch-analytics"); sp.add_argument("--days", type=int, default=30); g(sp); sp.set_defaults(f=cmd_fetch_analytics)
     sp = sub.add_parser("next-slot"); sp.set_defaults(f=lambda a: print(schedule.next_publish_day(now_ist().date(), load_settings())))
