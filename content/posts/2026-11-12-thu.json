@@ -88,7 +88,7 @@
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": null,
+    "requested_at": "2026-11-09T20:24:12+05:30",
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
@@ -167,6 +167,10 @@
       "at": "2026-11-09T20:23:05+05:30",
       "event": "copied_to_drive",
       "file_id": "1JVvQNxA3jNcRJwYFCwjZXLs1bAyQK15F"
+    },
+    {
+      "at": "2026-11-09T20:24:12+05:30",
+      "event": "approval-requested"
     }
   ],
   "image_spec": {
