@@ -18,7 +18,7 @@ The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any
    - Don't publish at 07:00.
 
 3. **08:00 and later**: publish with the method in `config/settings.json` → `publisher`.
-   - `"zernio"` (default since 9 Nov 2026, supports images): run `python3 -m engine publish $D --git`. The engine uploads the image (if any) and publishes through Zernio with a fixed idempotency key, so a retry can never double-post.
+   - `"zernio"` (default since 9 Nov 2026, supports images): first run the verification test `python3 -m engine validate $D --git` (a Zernio dry-run of the exact text and image; nothing is posted). It must say `"valid": true`. Then run `python3 -m engine publish $D --git`. Publishing is refused (`validation_required`) if the text or image changed after validation. The engine uploads the image (if any) and publishes through Zernio with a fixed idempotency key, so a retry can never double-post.
    - `"api"` (backup: LinkedIn's official API, needs the developer-app token from docs/SETUP.md): set `publisher` to `"api"` and run `python3 -m engine publish $D --git`.
    - `"composio"` (text-only fallback): run `python3 -m engine publish $D --via composio --git`. If `result` is `ready_external`:
      1. Call Composio `LINKEDIN_CREATE_LINKED_IN_POST` **once** with account `composio.linkedin_account`, `author` = `composio.person_urn`, `commentary` = the returned `commentary` exactly, `visibility` PUBLIC, `lifecycleState` PUBLISHED.
@@ -37,6 +37,7 @@ The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any
    | `needs_check` | Email **urgently**: "Outcome unknown. Please check your LinkedIn profile. If the post is there, reply POSTED <url>; if not, reply RETRY." Then handle her reply with `engine mark-published $D --url <url> --git` or `engine reset-publish $D --git`. |
    | `failed` | Email the error only if it's the 11:00 run or later (earlier runs will retry automatically). |
    | `quality_failed`, `config_missing`, `missing` | Email the message. |
+| `validation_required` | Run `engine validate $D --git`. If it is still invalid, email Shweta the Zernio errors and don't publish. |
 
 4. **12:00 run only**: `python3 -m engine fetch-analytics --git` (impressions, reach, reactions, comments, shares, saves for posts from the last 30 days, via Zernio).
 

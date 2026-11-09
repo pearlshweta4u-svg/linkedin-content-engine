@@ -167,6 +167,11 @@
     {
       "at": "2026-11-09T20:24:12+05:30",
       "event": "approval-requested"
+    },
+    {
+      "at": "2026-11-09T20:34:59+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "image_spec": {
@@ -183,7 +188,23 @@
     "source": "ICMR-INDIAB (Lancet Diabetes & Endocrinology, 2023); ADA Standards of Care 2026; IDPP (Diabetologia, 2006)",
     "alt": "136 million people in India are estimated to have prediabetes, 15.3% of adults. Do you know your number? The prediabetes range is an HbA1c of 5.7 to 6.4%. If you have PCOS, ask about a glucose tolerance test. Lifestyle changes cut new cases in India's prevention trial."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794235822317_6bd30fdc03d75717_2026-11-13-fri.png",
+  "image_public_url": "https://media.zernio.com/temp/1794236697657_6959006055426ce6_2026-11-13-fri.png",
   "drive_file_id": "1Ne0SKONqtn1YO8jccFIJL_zcx0T4YkMg",
-  "hook_style": "surprising_number"
+  "hook_style": "surprising_number",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2160,
+      "size": 235493,
+      "code": null
+    },
+    "checked_at": "2026-11-09T20:34:59+05:30",
+    "text_sha": "67b7dd24e9a9808b",
+    "image_path": "content/images/2026-11-13-fri.png"
+  }
 }

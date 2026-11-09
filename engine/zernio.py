@@ -108,6 +108,26 @@ class Client:
         # still processing: retrying with the same idempotency key is safe
         raise PublishError(f"Zernio post {post.get('_id')} not yet published (status {target.get('status')})", None)
 
+    def validate_post(self, account_id: str, commentary: str, image_url: str | None = None) -> dict:
+        """Zernio dry-run of the full post pipeline (no publishing). Returns
+        {"valid": bool, "errors": [...], "warnings": [...], "raw": {...}}."""
+        body = {"content": commentary, "platforms": [{"platform": "linkedin", "accountId": account_id}]}
+        if image_url:
+            body["mediaItems"] = [{"type": "image", "url": image_url}]
+        try:
+            raw = self._json("POST", "/v1/tools/validate/post", body)
+        except PublishError as e:
+            if e.status == 400 and e.body:
+                raw = json.loads(e.body) if e.body.strip().startswith("{") else {"error": e.body}
+            else:
+                raise
+        errors = raw.get("errors") or ([raw["error"]] if raw.get("error") else [])
+        valid = bool(raw.get("valid")) and not errors
+        return {"valid": valid, "errors": errors, "warnings": raw.get("warnings") or [], "raw": raw}
+
+    def validate_media(self, url: str) -> dict:
+        return self._json("POST", "/v1/tools/validate/media", {"url": url})
+
     def post_analytics(self, account_id: str, urn: str) -> dict:
         q = urllib.parse.urlencode({"urn": urn})
         return self._json("GET", f"/v1/accounts/{account_id}/linkedin-post-analytics?{q}").get("analytics", {})

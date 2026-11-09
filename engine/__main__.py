@@ -286,6 +286,33 @@ def cmd_image_url(a):
     _print({"post_id": rec["post_id"], "url": url, "name": path.name})
 
 
+def cmd_validate(a):
+    """Verification test: Zernio dry-run of text + image (nothing is published)."""
+    from . import zernio
+    from .config import ROOT
+    s = load_settings()
+    acct = (s.get("zernio") or {}).get("account_id")
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    c = zernio.Client()
+    url = None
+    if rec.get("image_path"):
+        path = ROOT / rec["image_path"]
+        url = c.upload_image("", path.read_bytes(), zernio.guess_type(str(path)), path.name)
+        rec["image_public_url"] = url
+    res = c.validate_post(acct, rec["final"], url)
+    media = c.validate_media(url) if url else None
+    ok = res["valid"] and (media is None or media.get("valid", False))
+    rec["zernio_validation"] = {"valid": ok, "post_errors": res["errors"], "post_warnings": res["warnings"],
+                                "media": {k: (media or {}).get(k) for k in ("valid", "format", "width", "height", "size", "code")},
+                                "checked_at": now_ist().isoformat(timespec="seconds"),
+                                "text_sha": __import__("hashlib").sha256(rec["final"].encode()).hexdigest()[:16],
+                                "image_path": rec.get("image_path")}
+    store.log_event(rec, "zernio_validated", detail="ok" if ok else "FAILED")
+    _git_persist(a.git)(rec, f"{rec['post_id']}: zernio validation {'ok' if ok else 'FAILED'}")
+    _print(rec["zernio_validation"])
+    sys.exit(0 if ok else 1)
+
+
 def cmd_mark_drive(a):
     rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
     rec["drive_file_id"] = a.file_id
@@ -364,6 +391,7 @@ def main(argv=None):
     g(sp); sp.set_defaults(f=cmd_analytics)
     sp = sub.add_parser("image"); sp.add_argument("date"); g(sp); sp.set_defaults(f=cmd_image)
     sp = sub.add_parser("image-url"); sp.add_argument("date"); sp.add_argument("--force", action="store_true"); g(sp); sp.set_defaults(f=cmd_image_url)
+    sp = sub.add_parser("validate"); sp.add_argument("date"); g(sp); sp.set_defaults(f=cmd_validate)
     sp = sub.add_parser("mark-drive"); sp.add_argument("date"); sp.add_argument("file_id"); g(sp); sp.set_defaults(f=cmd_mark_drive)
     sp = sub.add_parser("fetch-analytics"); sp.add_argument("--days", type=int, default=30); g(sp); sp.set_defaults(f=cmd_fetch_analytics)
     sp = sub.add_parser("next-slot"); sp.set_defaults(f=lambda a: print(schedule.next_publish_day(now_ist().date(), load_settings())))

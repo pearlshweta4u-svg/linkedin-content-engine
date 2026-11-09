@@ -55,6 +55,8 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
      5. If the image is re-rendered later (record already has `drive_file_id`): upload the new file, then move the old one to Drive trash with Composio `GOOGLEDRIVE_TRASH_FILE` (`file_id` = the old `drive_file_id`), then `mark-drive` the new id.
      6. If Composio is unavailable, skip this step; the image is still in the repo, and say so in the approval email.
 
+7b. **Verification test:** `python3 -m engine validate $D --git`, a Zernio dry-run of text and image. If invalid, fix the issue (text length, image format) and re-run; the result goes in the approval email. The Zernio MCP tool `validate_post` (connector "zernio") gives the same check interactively.
+
 8. **Approval email** (Gmail tool, from trainwithshweta@gmail.com):
    - To both addresses in `notify_emails`.
    - Subject: `[LinkedIn] Approve: <Weekday> <D>: <topic>`

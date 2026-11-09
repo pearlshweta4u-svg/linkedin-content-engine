@@ -122,6 +122,11 @@
       "at": "2026-11-09T20:23:05+05:30",
       "event": "copied_to_drive",
       "file_id": "1K0FPu62ufxBg6yHxRUHOsaB_gxbg8Tt0"
+    },
+    {
+      "at": "2026-11-09T20:35:02+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "story_structure": {
@@ -138,7 +143,23 @@
     "subtitle": "A medium pace I can keep, tracked one winning week at a time.",
     "alt": "Card: I coach women through fat loss. At 41, I'm doing it myself right now. A medium pace I can keep, tracked one winning week at a time."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794235823233_b972d8dab80ff19a_2026-11-16-mon.png",
+  "image_public_url": "https://media.zernio.com/temp/1794236699899_cbb0e353aa853d0a_2026-11-16-mon.png",
   "drive_file_id": "1K0FPu62ufxBg6yHxRUHOsaB_gxbg8Tt0",
-  "hook_style": "story_drop_in"
+  "hook_style": "story_drop_in",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2160,
+      "size": 159774,
+      "code": null
+    },
+    "checked_at": "2026-11-09T20:35:02+05:30",
+    "text_sha": "a20e3b16287c07ab",
+    "image_path": "content/images/2026-11-16-mon.png"
+  }
 }

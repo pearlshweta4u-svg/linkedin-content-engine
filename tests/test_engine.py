@@ -296,6 +296,13 @@ class TestExternalPublish(unittest.TestCase):
         self.assertEqual(publisher.run(MON, at(MON, 9), settings(), posts_dir=self.tmp, external=True)["result"], "ready_external")
 
 
+def validated(rec_fields, final=GOOD_TEXT, image_path=None):
+    import hashlib
+    rec_fields["zernio_validation"] = {"valid": True, "text_sha": hashlib.sha256(final.encode()).hexdigest()[:16],
+                                       "image_path": image_path}
+    return rec_fields
+
+
 class FakeZernio:
     idempotent_create = True
 
@@ -320,7 +327,7 @@ class TestZernioBackend(unittest.TestCase):
         self.s = settings(publisher="zernio", zernio={"account_id": "acc1"})
 
     def test_publish_once_with_stable_key(self):
-        make(self.tmp, approval_status="approved")
+        make(self.tmp, **validated({"approval_status": "approved"}))
         z = FakeZernio(LinkedInError("timeout", None, ambiguous=True))
         self.assertEqual(publisher.run(MON, at(MON, 8), self.s, client=z, posts_dir=self.tmp)["result"], "failed")
         z.error = None
@@ -331,18 +338,28 @@ class TestZernioBackend(unittest.TestCase):
         self.assertEqual(z.calls, 2)
 
     def test_stale_lock_resumes_safely(self):
-        make(self.tmp, approval_status="approved", publish_status="publishing")
+        make(self.tmp, **validated({"approval_status": "approved", "publish_status": "publishing"}))
         z = FakeZernio()
         self.assertEqual(publisher.run(MON, at(MON, 9), self.s, client=z, posts_dir=self.tmp)["result"], "published")
 
     def test_image_uploaded_when_enabled(self):
         img = self.tmp / "img.png"
         img.write_bytes(b"png")
-        make(self.tmp, approval_status="approved", image_path=str(img))
+        make(self.tmp, **validated({"approval_status": "approved", "image_path": str(img)}, image_path=str(img)))
         z = FakeZernio()
         s = dict(self.s, images_enabled=True)
         publisher.run(MON, at(MON, 8), s, client=z, posts_dir=self.tmp)
         self.assertEqual(z.uploads, 1)
+
+    def test_validation_required_and_stale(self):
+        make(self.tmp, approval_status="approved")
+        z = FakeZernio()
+        self.assertEqual(publisher.run(MON, at(MON, 8), self.s, client=z, posts_dir=self.tmp)["result"], "validation_required")
+        r = store.load(schedule.post_id_for(MON), self.tmp)
+        validated(r, final="old text")  # validated a different text -> stale
+        store.save(r, self.tmp)
+        self.assertEqual(publisher.run(MON, at(MON, 8), self.s, client=z, posts_dir=self.tmp)["result"], "validation_required")
+        self.assertEqual(z.calls, 0)
 
     def test_missing_account_id(self):
         make(self.tmp, approval_status="approved")

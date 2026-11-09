@@ -171,6 +171,11 @@
     {
       "at": "2026-11-09T20:24:12+05:30",
       "event": "approval-requested"
+    },
+    {
+      "at": "2026-11-09T20:34:57+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "image_spec": {
@@ -189,7 +194,23 @@
     "source": "World Menopause Day 2026 theme: Chronic pain at midlife (International Menopause Society)",
     "alt": "Checklist for aching more in your 40s: track pain for four weeks with your cycle and sleep; ask if perimenopause is part of it; check TSH, free T4, vitamin D, ferritin and CRP; train around the sore joint and see a physio; protect your sleep; doubt promises that HRT fixes pain; see a doctor for swollen joints or night pain."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794235821306_19ee4a04ccc643c9_2026-11-12-thu.png",
+  "image_public_url": "https://media.zernio.com/temp/1794236695259_2d774ffc081b75ef_2026-11-12-thu.png",
   "drive_file_id": "1JVvQNxA3jNcRJwYFCwjZXLs1bAyQK15F",
-  "hook_style": "relatable_moment"
+  "hook_style": "relatable_moment",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2700,
+      "size": 288260,
+      "code": null
+    },
+    "checked_at": "2026-11-09T20:34:57+05:30",
+    "text_sha": "4ea9ecb88d53da88",
+    "image_path": "content/images/2026-11-12-thu.png"
+  }
 }

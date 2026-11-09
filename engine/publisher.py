@@ -104,6 +104,14 @@ def run(d: date, now: datetime, settings: dict, client: Client | None = None,
         if not author and backend == "api":
             return out("config_missing", "linkedin.person_urn not set (run `python -m engine whoami`)")
 
+    if backend == "zernio":
+        import hashlib
+        v = rec.get("zernio_validation") or {}
+        sha = hashlib.sha256(rec["final"].encode()).hexdigest()[:16]
+        if not (v.get("valid") and v.get("text_sha") == sha and v.get("image_path") == rec.get("image_path")):
+            return out("validation_required", "Zernio validation missing, failed or stale for the current text/image; "
+                       "run `python3 -m engine validate <date> --git` first")
+
     if dry_run:
         return out("dry_run_ok", "All checks passed; would publish now", chars=len(rec["final"]))
 
