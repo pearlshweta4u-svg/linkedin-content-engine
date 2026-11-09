@@ -1,6 +1,6 @@
 # Profile: Shweta Mehta
 
-Source key: **[ME]** = Claude memory export dated 9 Nov 2026 (supplied by Shweta in the build session). **[SM]** = Shweta's direct answers in the build session, 9 Nov 2026. Where the two disagree, [SM] wins.
+Source key: **[RT]** = Restaurant Times interview, 30 Apr 2026 (`knowledge/sources/restauranttimes-2026-04-30.md`). **[LI]** = her own published LinkedIn posts (`history/posts.json`). **[ME]** = Claude memory export dated 9 Nov 2026 (supplied by Shweta in the build session). **[SM]** = Shweta's direct answers in the build session, 9 Nov 2026. Where the two disagree, [SM] wins.
 
 ## Who she is
 - Shweta Mehta, 41, Bangalore. [ME]
@@ -18,8 +18,15 @@ Source key: **[ME]** = Claude memory export dated 9 Nov 2026 (supplied by Shweta
 | Functional medicine course, enrolled Oct 2026 [ME] | "I'm currently studying functional medicine" | "functional medicine practitioner", "functional nutritionist" |
 | IAFM membership, applied Nov 2026 [ME] | Don't mention until it's confirmed | "IAFM member" |
 
-## Career path [ME]
-Corporate recruitment / HR → preschool franchise management → health food startup → health coaching.
+## Career path [ME][RT]
+- Corporate recruitment / HR.
+- 2012: started a chain of preschools in Bangalore.
+- Founded PretiumPro, an HR consultancy.
+- Lo! Foods: joined in 2019 as HR consultant → sales → head of the entire B2C channel; 20+ cloud kitchens, four cities, nearly 18,000 people reached; left in 2022.
+- Since 2022: one-to-one hormonal and metabolic health coaching (TrainWithShweta).
+
+## Her own health story [RT]
+After her second pregnancy, with a demanding career, she gained significant weight and had hormonal disruption. Nothing she tried worked until she understood her own physiology; she then **lost over 20 kg**. In her words: "I didn't lack discipline. I lacked a system that respected female physiology under chronic stress." This is why she coaches.
 
 ## Business [SM][ME]
 - Audience: women aged **30–50** (decided by [SM]); educated, busy, urban, Indian; living with PCOS, thyroid, Hashimoto's or other hormonal health issues.

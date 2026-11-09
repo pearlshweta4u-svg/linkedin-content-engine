@@ -11,7 +11,7 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
 
 1. **Context**
    - Read `knowledge/` (all files) and the category for D (Mon `personal_story`, Tue `client_story`, Wed `educational`, Thu `save_worthy`, Fri `health_wellness`).
-   - Run `python3 -m engine history`. Respect `stories_on_cooldown`, `topics_on_cooldown` and `pillars_last_5`, prefer `pillars_missing_last_28d`, avoid the hook shapes in `recent_hooks`, and rotate `formats_last_8`.
+   - Run `python3 -m engine history`. Also read `published_before_engine` (her own earlier LinkedIn posts, from `history/posts.json`): don't repeat a topic or story she posted in the last 6 weeks, and treat her top performers as signals of what resonates. Respect `stories_on_cooldown`, `topics_on_cooldown` and `pillars_last_5`, prefer `pillars_missing_last_28d`, avoid the hook shapes in `recent_hooks`, and rotate `formats_last_8`.
 
 2. **Pick the topic**
    - Mon: one story from `story-bank-personal.md` that isn't on cool-down. Use only its verified facts. Put any missing detail into `questions_for_shweta`.

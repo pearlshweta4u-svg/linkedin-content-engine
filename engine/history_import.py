@@ -109,3 +109,68 @@ def import_export(src: Path, out_dir: Path | None = None, download: bool = True,
     (out_dir / "posts.json").write_text(json.dumps({"summary": summary, "posts": posts, "rich_media": rich},
                                                    indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return summary
+
+
+def parse_public_post(page_html: str) -> dict:
+    """Extract a public LinkedIn post from its page's JSON-LD (SocialMediaPosting)."""
+    import html as _html
+    for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page_html, re.S):
+        try:
+            d = json.loads(blk)
+        except ValueError:
+            continue
+        if isinstance(d, dict) and d.get("@type") in ("SocialMediaPosting", "DiscussionForumPosting"):
+            body = _html.unescape(d.get("articleBody") or d.get("text") or "")
+            imgs = d.get("image") or []
+            imgs = [imgs] if isinstance(imgs, (dict, str)) else imgs
+            urls = [(i.get("url") if isinstance(i, dict) else i) for i in imgs]
+            stats = {}
+            for st in d.get("interactionStatistic") or []:
+                kind = str(st.get("interactionType", "")).rsplit("/", 1)[-1]
+                stats[{"LikeAction": "reactions", "CommentAction": "comments"}.get(kind, kind)] = st.get("userInteractionCount")
+            return {"date": d.get("datePublished", ""), "text": body, "image_urls": [u for u in urls if u],
+                    "reactions": stats.get("reactions"), "comments": stats.get("comments", d.get("commentCount"))}
+    raise ValueError("no public post data found on the page (login wall or changed layout)")
+
+
+def import_public_post(url: str, out_dir: Path | None = None, opener=urllib.request.urlopen) -> dict:
+    """Fetch one public post (short lnkd.in link or linkedin.com URL), save it to
+    history/posts.json (deduplicated by final URL) and download its images."""
+    out_dir = out_dir or HISTORY
+    img_dir = out_dir / "images"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    req = urllib.request.Request(url, headers={"User-Agent": "linkedin-content-engine/1.0"})
+    with opener(req, timeout=60) as r:
+        final_url = r.geturl() if hasattr(r, "geturl") else url
+        page = r.read().decode("utf-8", errors="replace")
+    post = parse_public_post(page)
+    final_url = final_url.split("?")[0]
+    m = re.search(r"(share|activity|ugcPost)-(\d+)", final_url)
+    pid = m.group(2) if m else re.sub(r"\W", "", final_url)[-19:]
+    stem = re.sub(r"[^0-9]", "", post["date"])[:8] or "undated"
+    images, errors = [], []
+    for k, u in enumerate(post["image_urls"]):
+        res = _download(u, img_dir / f"{stem}-{pid}-{k}", opener)
+        if res and res.startswith(str(ROOT)):
+            images.append(str(Path(res).relative_to(ROOT)))
+        elif res and Path(res).exists():
+            images.append(res)
+        else:
+            errors.append(res)
+    text = post["text"]
+    rec = {"date": post["date"], "url": final_url, "short_url": url if "lnkd.in" in url else None,
+           "source": "public_post_page", "text": text,
+           "hook": text.strip().split("\n")[0][:200] if text else "", "word_count": len(text.split()),
+           "reactions": post["reactions"], "comments": post["comments"], "stats_fetched_at": None,
+           "media_urls": post["image_urls"], "images": images, "image_errors": errors}
+    from datetime import datetime, timezone
+    rec["stats_fetched_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    path = out_dir / "posts.json"
+    data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"summary": {}, "posts": [], "rich_media": []}
+    data["posts"] = [p for p in data["posts"] if p.get("url") != final_url] + [rec]
+    data["posts"].sort(key=lambda p: p.get("date") or "")
+    data["summary"] = {"posts": len(data["posts"]),
+                       "images_saved": sum(len(p.get("images") or []) for p in data["posts"])}
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return {"url": final_url, "date": rec["date"], "reactions": rec["reactions"], "comments": rec["comments"],
+            "images": images, "image_errors": errors, "hook": rec["hook"][:90]}

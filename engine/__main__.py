@@ -9,7 +9,7 @@ from collections import Counter
 from datetime import date, datetime, timedelta
 
 from . import approval, gitsync, publisher, quality, schedule, store
-from .config import CATEGORY_BY_WEEKDAY, POSTS_DIR, load_settings, now_ist, save_settings
+from .config import CATEGORY_BY_WEEKDAY, POSTS_DIR, ROOT as ROOT_PATH, load_settings, now_ist, save_settings
 from .linkedin import Client
 
 PILLARS = ["thyroid_hashimotos", "pcos_insulin", "perimenopause", "gut", "iron_b12_vitd",
@@ -241,6 +241,12 @@ def cmd_history(a):
         "pillars_missing_last_28d": [p for p in PILLARS[:9] if pillar_counts.get(p, 0) == 0],
         "formats_last_8": [r.get("format") for r in recs[-8:]],
     }
+    hist = ROOT_PATH / "history" / "posts.json"
+    if hist.exists():
+        past = json.loads(hist.read_text(encoding="utf-8")).get("posts", [])
+        out["published_before_engine"] = [{"date": (p.get("date") or "")[:10], "hook": p.get("hook", "")[:120],
+                                           "reactions": p.get("reactions"), "comments": p.get("comments")}
+                                          for p in past[-30:]]
     con = store.build_index()
     rows = con.execute("SELECT category, COUNT(*), AVG(impressions), AVG(reactions), AVG(comments) "
                        "FROM posts WHERE publish_status='published' GROUP BY category").fetchall()
@@ -316,6 +322,17 @@ def cmd_validate(a):
 def cmd_import_history(a):
     from . import history_import
     _print(history_import.import_export(Path(a.source), download=not a.no_download))
+
+
+def cmd_import_post_url(a):
+    from . import history_import
+    out = []
+    for u in a.urls:
+        try:
+            out.append(history_import.import_public_post(u))
+        except Exception as e:
+            out.append({"url": u, "error": str(e)})
+    _print(out)
 
 
 def cmd_mark_drive(a):
@@ -398,6 +415,7 @@ def main(argv=None):
     sp = sub.add_parser("image-url"); sp.add_argument("date"); sp.add_argument("--force", action="store_true"); g(sp); sp.set_defaults(f=cmd_image_url)
     sp = sub.add_parser("validate"); sp.add_argument("date"); g(sp); sp.set_defaults(f=cmd_validate)
     sp = sub.add_parser("import-history"); sp.add_argument("source", help="LinkedIn data-export ZIP or folder"); sp.add_argument("--no-download", action="store_true"); sp.set_defaults(f=cmd_import_history)
+    sp = sub.add_parser("import-post-url"); sp.add_argument("urls", nargs="+"); sp.set_defaults(f=cmd_import_post_url)
     sp = sub.add_parser("mark-drive"); sp.add_argument("date"); sp.add_argument("file_id"); g(sp); sp.set_defaults(f=cmd_mark_drive)
     sp = sub.add_parser("fetch-analytics"); sp.add_argument("--days", type=int, default=30); g(sp); sp.set_defaults(f=cmd_fetch_analytics)
     sp = sub.add_parser("next-slot"); sp.set_defaults(f=lambda a: print(schedule.next_publish_day(now_ist().date(), load_settings())))

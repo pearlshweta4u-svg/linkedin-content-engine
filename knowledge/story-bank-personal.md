@@ -7,7 +7,7 @@ Rules:
 
 | ID | Story (verified facts) | Source | Possible lessons | Detail needed | Used |
 |---|---|---|---|---|---|
-| P01 | Career path: corporate recruitment/HR → ran a preschool franchise → health food startup → health coach. | [ME] Profile | Non-linear careers; what each job taught her about people, habits and business. | Why she left each one; what made her pick coaching. | |
+| P01 | Career path: corporate recruitment/HR → preschool chain (2012) → PretiumPro → Lo! Foods (2019–2022) → health coach. | [ME][RT] | Non-linear careers; what each job taught her about people, habits and business. | Why she left each one; what made her pick coaching. | |
 | P02 | Competed at ICN (natural bodybuilding), Dec 2023, placed 5th across four categories, in her late 30s. | [ME] Fitness | Strength at 40; discipline vs obsession; not winning and still competing. | What prep felt like; what she'd do differently. | |
 | P03 | Ran a 10-week cut (10 Aug–15 Oct 2026) before a Phuket trip, with a printed plan and habit tracker. Now in a 3-month medium-pace fat-loss phase (target −5 to 6 kg, 4 workouts/week, 12k steps/day). | [ME] Fitness | Coaches follow their own plan; slow loss beats crash diets; tracking without obsession. | How the cut went: what worked, what slipped. | |
 | P04 | Trains 4 days/week, strength-first, 10,000+ steps daily. Works on her own body composition alongside the practice. | [ME] Fitness | Minimum effective routine for busy women. | |  |
@@ -21,8 +21,23 @@ Rules:
 | P12 | Mid-trip to Phuket (Oct 2026) the practice kept running: she hired a junior nutritionist to cover client WhatsApp while she was away. | [ME] Team | Taking a break when you're the business. | | |
 | P13 | Stopped Meta ads in late Oct 2026 and moved to organic content and a consultant. | [ME] Team | Founder decision-making. | Why. | |
 
+| P14 | After her second pregnancy, with a demanding career, she gained significant weight and had hormonal disruption; tried almost everything, nothing worked; once she understood her physiology she lost 20+ kg. Quote: "I didn't lack discipline. I lacked a system that respected female physiology under chronic stress." | [RT] | Why she coaches; discipline isn't the problem; postpartum + career. | Which approaches she tried; the turning point. | |
+| P15 | Lo! Foods: changed the perception that "healthy isn't tasty"; built 20+ cloud kitchens across four cities reaching ~18,000 people; built its own subscription model when delivery apps got in the way; kitchens in "literally 100 square feet". | [RT] | Removing friction from the healthy choice; founder lessons. | | |
+| P16 | Started a preschool chain in Bangalore in 2012; founded HR consultancy PretiumPro; joined Lo! Foods as an HR consultant in 2019 and rose to head B2C. | [RT] | Non-linear career; saying yes to the next door. | | |
+
+## Stories she has ALREADY told on LinkedIn (from `history/posts.json`; don't repeat within a year without a new angle)
+| Date | Story | Likes / comments |
+|---|---|---|
+| 31 Oct 2025 | Stepped on a bodybuilding stage at 38; rebuilt body and confidence after 40 (P02) | 22 / 2 |
+| 8 Jan 2026 | Her father, 69: three diagnoses, seven pills, "I'm fine, don't overthink" | **161 / 29** |
+| 13 Aug 2026 | "The arm around my shoulder lasted 5 seconds": a moment with her son | **182 / 20** |
+| 13 Oct 2026 | Snapped at her son over a wet towel: two bodies, two hormonal shifts, one roof (perimenopause + teen) | 18 / 2 |
+| 19 Oct 2026 | "He takes care of everyone. Who takes care of him?" (husband / men's health) | 30 / 5 |
+| 26 Oct 2026 | Navratri to Diwali: eat, sleep, hydrate without starting over | 37 / 4 |
+| 2 Nov 2026 | Client whose ferritin wouldn't move for 2 years (case C06) | 1 / 2 |
+
 ## Story types for which there is NO verified material yet (do not invent)
-- Her own health history (any thyroid, PCOS, gut or hormonal struggles of her own?).
+- Her own health history beyond the postpartum story in P14 (thyroid, PCOS or gut issues of her own?).
 - Childhood, or a moment that changed her perspective.
 - Her first client and the first failure with a client.
 - Motherhood and health (pregnancy, postpartum).
