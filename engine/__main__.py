@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 import json
 import sys
 from collections import Counter
@@ -264,6 +265,33 @@ def cmd_image(a):
     _print({"ok": True, "image_path": path})
 
 
+def cmd_image_url(a):
+    """Upload the post image to Zernio media storage and print a public HTTPS URL
+    (used to copy images into Google Drive; the URL is saved on the record)."""
+    from . import zernio
+    from .config import ROOT
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    if not rec.get("image_path"):
+        sys.exit("record has no image_path; run `engine image` first")
+    if rec.get("image_public_url") and not a.force:
+        _print({"post_id": rec["post_id"], "url": rec["image_public_url"], "name": Path(rec["image_path"]).name})
+        return
+    path = ROOT / rec["image_path"]
+    url = zernio.Client().upload_image("", path.read_bytes(), zernio.guess_type(str(path)), path.name)
+    rec["image_public_url"] = url
+    store.log_event(rec, "image_public_url", url=url)
+    _git_persist(a.git)(rec, f"{rec['post_id']}: image public url")
+    _print({"post_id": rec["post_id"], "url": url, "name": path.name})
+
+
+def cmd_mark_drive(a):
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    rec["drive_file_id"] = a.file_id
+    store.log_event(rec, "copied_to_drive", file_id=a.file_id)
+    _git_persist(a.git)(rec, f"{rec['post_id']}: copied to Drive")
+    print("ok")
+
+
 def cmd_fetch_analytics(a):
     """Pull impressions/reactions/comments/etc. for recently published posts via Zernio."""
     from . import zernio
@@ -333,6 +361,8 @@ def main(argv=None):
         sp.add_argument(f"--{k}", type=int)
     g(sp); sp.set_defaults(f=cmd_analytics)
     sp = sub.add_parser("image"); sp.add_argument("date"); g(sp); sp.set_defaults(f=cmd_image)
+    sp = sub.add_parser("image-url"); sp.add_argument("date"); sp.add_argument("--force", action="store_true"); g(sp); sp.set_defaults(f=cmd_image_url)
+    sp = sub.add_parser("mark-drive"); sp.add_argument("date"); sp.add_argument("file_id"); g(sp); sp.set_defaults(f=cmd_mark_drive)
     sp = sub.add_parser("fetch-analytics"); sp.add_argument("--days", type=int, default=30); g(sp); sp.set_defaults(f=cmd_fetch_analytics)
     sp = sub.add_parser("next-slot"); sp.set_defaults(f=lambda a: print(schedule.next_publish_day(now_ist().date(), load_settings())))
     a = p.parse_args(argv)

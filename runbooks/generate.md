@@ -45,6 +45,13 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - If the command says the text doesn't fit, shorten the copy and re-run. Never accept a clipped image.
    - Look at the PNG (Read tool) before emailing. Check the layout, that nothing is cut off, and that it's readable at phone size.
    - Output: `content/images/<post-id>.png` (2× resolution).
+   - **Copy to Google Drive** (Shweta's local folder via Drive for desktop):
+     1. Push the image.
+     2. Run `python3 -m engine image-url $D --git` to get a public URL.
+     3. Call Composio `GOOGLEDRIVE_UPLOAD_FROM_URL` with `source_url` = that URL, `name` = `<post-id>.png`, `mime_type` image/png, and `parent_folder_id` = `google_drive.images_folder_id` from config/settings.json.
+     4. Run `python3 -m engine mark-drive $D <drive file id> --git`.
+     5. If the image is re-rendered later, upload the new file with the same name (Drive keeps both; the newer one is the current image).
+     6. If Composio is unavailable, skip this step; the image is still in the repo, and say so in the approval email.
 
 8. **Approval email** (Gmail tool, from trainwithshweta@gmail.com):
    - To both addresses in `notify_emails`.

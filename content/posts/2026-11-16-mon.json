@@ -92,6 +92,16 @@
       "at": "2026-11-09T17:45:06+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-16-mon.png"
+    },
+    {
+      "at": "2026-11-09T19:45:13+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794233712691_f4917bf080a1ad44_2026-11-16-mon.png"
+    },
+    {
+      "at": "2026-11-09T20:15:21+05:30",
+      "event": "copied_to_drive",
+      "file_id": "16IbaVzVCK30RK6IealQ4Lmxm0e9_lH07"
     }
   ],
   "story_structure": {
@@ -107,5 +117,7 @@
     "title": "I'm 41, and I'm in a fat-loss phase right now.",
     "subtitle": "A medium pace I can keep, tracked one winning week at a time.",
     "alt": "Quote card: I'm 41, and I'm in a fat-loss phase right now. A medium pace I can keep, tracked one winning week at a time."
-  }
+  },
+  "image_public_url": "https://media.zernio.com/temp/1794233712691_f4917bf080a1ad44_2026-11-16-mon.png",
+  "drive_file_id": "16IbaVzVCK30RK6IealQ4Lmxm0e9_lH07"
 }

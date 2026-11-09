@@ -137,6 +137,16 @@
       "at": "2026-11-09T17:44:53+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-12-thu.png"
+    },
+    {
+      "at": "2026-11-09T19:45:11+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794233710807_7ddd04edce1dcf9e_2026-11-12-thu.png"
+    },
+    {
+      "at": "2026-11-09T20:15:21+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1nol2-5A2JnaYHvhJKmbpExOFMf2X2I80"
     }
   ],
   "image_spec": {
@@ -154,5 +164,7 @@
     ],
     "source": "World Menopause Day 2026 theme: Chronic pain at midlife (International Menopause Society)",
     "alt": "Checklist for new pain in your 40s: track pain for four weeks with your cycle, sleep and stress; ask about perimenopause; check TSH, free T4, vitamin D, ferritin and CRP; keep training around the sore joint and see a physio; protect your sleep; be wary of promises that HRT will fix the pain; see a doctor for swollen joints or pain at night."
-  }
+  },
+  "image_public_url": "https://media.zernio.com/temp/1794233710807_7ddd04edce1dcf9e_2026-11-12-thu.png",
+  "drive_file_id": "1nol2-5A2JnaYHvhJKmbpExOFMf2X2I80"
 }

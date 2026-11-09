@@ -133,6 +133,16 @@
       "at": "2026-11-09T17:44:54+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-13-fri.png"
+    },
+    {
+      "at": "2026-11-09T19:45:12+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794233711696_8143c66d9eb7f4cf_2026-11-13-fri.png"
+    },
+    {
+      "at": "2026-11-09T20:15:21+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1MHB4qPMznaqTePCclQSBnsIFpmuPtCFO"
     }
   ],
   "image_spec": {
@@ -148,5 +158,7 @@
     ],
     "source": "ICMR-INDIAB (Lancet Diabetes & Endocrinology, 2023); ADA Standards of Care 2026; IDPP (Diabetologia, 2006)",
     "alt": "136 million people in India are estimated to have prediabetes, 15.3% of adults. Prediabetes is an HbA1c of 5.7 to 6.4% or fasting glucose of 100 to 125 mg/dL. If you have PCOS, ask your doctor about a glucose tolerance test. In India's prevention trial, lifestyle changes cut new cases."
-  }
+  },
+  "image_public_url": "https://media.zernio.com/temp/1794233711696_8143c66d9eb7f4cf_2026-11-13-fri.png",
+  "drive_file_id": "1MHB4qPMznaqTePCclQSBnsIFpmuPtCFO"
 }
