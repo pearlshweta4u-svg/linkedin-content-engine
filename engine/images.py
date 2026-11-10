@@ -23,7 +23,7 @@ FONTS = ROOT / "assets" / "fonts"
 # Mobile-first: LinkedIn's phone feed shows images ~360px wide, so text must be
 # large at 1080px. Square for cards, 4:5 portrait for checklists.
 SIZES = {"story": (1080, 1080), "steps": (1080, 1080), "stat": (1080, 1080), "checklist": (1080, 1350),
-         "photo": (1080, 1350)}
+         "photo": (1080, 1350), "scene": (1080, 1350)}
 MIN_FONT_PX = 30  # smallest body text; ~10px on a phone. Fine print (source) is 22px.
 DEFAULT_TEMPLATE = {"personal_story": "story", "client_story": "story", "educational": "steps",
                     "save_worthy": "checklist", "health_wellness": "stat"}
@@ -191,7 +191,35 @@ def _photo(spec, w, h):
     return _page(css, body, w, h)
 
 
-BUILDERS = {"story": _story, "steps": _steps, "checklist": _checklist, "stat": _stat, "photo": _photo}
+def _scene(spec, w, h):
+    """People-free scene photo from Shweta's own library (content/photos/scenes/) filling the
+    frame, with a soft navy gradient behind a white serif headline. Light text only."""
+    photo = (ROOT / spec["photo"]).as_uri()
+    focus = spec.get("focus", "center center")
+    pos = spec.get("text_position", "top")
+    grad = ("180deg, rgba(20,30,52,.82) 0%, rgba(20,30,52,.55) 38%, rgba(20,30,52,0) 62%" if pos == "top"
+            else "0deg, rgba(20,30,52,.85) 0%, rgba(20,30,52,.55) 40%, rgba(20,30,52,0) 65%")
+    place = "top: 110px;" if pos == "top" else "bottom: 150px;"
+    css = f"""
+    .bg {{ position:absolute; inset:0; background: url('{photo}') {focus} / cover no-repeat; }}
+    .shade {{ position:absolute; inset:0; background: linear-gradient({grad}); }}
+    .col {{ position:absolute; left:80px; right:80px; {place} padding-bottom: 10px; }}
+    .eyebrow {{ color: #F2C9A0; }}
+    h1 {{ font-family:'Playfair'; font-weight:700; font-size:86px; line-height:1.05; color:#fff;
+          text-shadow: 0 2px 18px rgba(0,0,0,.35); }}
+    .it {{ font-family:'Playfair'; font-style:italic; font-weight:500; font-size:46px; line-height:1.25;
+           color:#fff; opacity:.95; margin-top: 30px; text-shadow: 0 2px 14px rgba(0,0,0,.35); }}
+    .foot {{ color:#fff; }} .mark {{ color:#fff; text-shadow: 0 1px 8px rgba(0,0,0,.45); }} .mark b {{ color:#9FE0DA; }}
+    .src {{ color:#fff; }}
+    """
+    body = f"""<div class='bg'></div><div class='shade'></div>
+      <div class='col fit' data-name='scene'><div class='eyebrow'>{_e(spec.get('eyebrow'))}</div>
+      <h1>{_e(spec['title'])}</h1>{f"<div class='it'>{_e(spec['subtitle'])}</div>" if spec.get('subtitle') else ''}</div>
+      {_foot(spec)}"""
+    return _page(css, body, w, h)
+
+
+BUILDERS = {"story": _story, "steps": _steps, "checklist": _checklist, "stat": _stat, "photo": _photo, "scene": _scene}
 
 
 def validate(spec: dict) -> list[str]:
@@ -212,6 +240,18 @@ def validate(spec: dict) -> list[str]:
     errs += [f"item {i + 1} too long" for i, it in enumerate(items) if len(it) > LIMITS["item"]]
     if t == "stat" and (not spec.get("stat") or len(spec["stat"]) > LIMITS["stat"]):
         errs.append("stat template needs a short 'stat' (max 8 chars)")
+    if t == "scene":
+        if not spec.get("photo") or not (ROOT / spec["photo"]).exists() or "photos/scenes/" not in spec.get("photo", ""):
+            errs.append("scene template needs 'photo' from content/photos/scenes/")
+        if items:
+            errs.append("scene template takes no list items: don't give away the solution in the image")
+        if len(spec.get("title", "")) > 60:
+            errs.append("scene title too long (max 60 chars)")
+        if spec.get("subtitle") and len(spec["subtitle"]) > 45:
+            errs.append("scene subtitle too long (max 45 chars)")
+        words = sum(len(str(spec.get(k) or "").split()) for k in ("eyebrow", "title", "subtitle"))
+        if words > 18:
+            errs.append(f"scene image has {words} words; max 18")
     if t == "photo":
         # Shweta, 10 Nov 2026: photos carry little text and never give away the solution;
         # the image raises the question, the post answers it.

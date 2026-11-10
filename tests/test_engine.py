@@ -451,6 +451,15 @@ class TestPhotoTemplate(unittest.TestCase):
         self.assertTrue(any("not an image" in e for e in images.validate(dict(base, photo="README.md"))))
 
 
+class TestSceneTemplate(unittest.TestCase):
+    def test_scene_validation(self):
+        from engine import images
+        ok = {"template": "scene", "photo": "content/photos/scenes/pink-sunset-sea.jpg", "title": "It doesn't hurt.", "alt": "x"}
+        self.assertEqual(images.validate(ok), [])
+        self.assertTrue(images.validate(dict(ok, photo="content/photos/album-61.jpg")))  # must come from scenes/
+        self.assertTrue(images.validate(dict(ok, items=["a"])))
+
+
 class _Resp:
     def __init__(self, status=201, headers=None, body=b""):
         self.status, self.headers, self._b = status, headers or {}, body

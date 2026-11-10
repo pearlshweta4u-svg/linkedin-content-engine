@@ -36,3 +36,6 @@ Images by day:
 
 ## Photo template (added 10 Nov 2026)
 Her own best posts are real photos (`history/ANALYSIS.md`), so Monday to Wednesday use the `photo` template: her photo from the shared Google Photos album on the right, a cream panel on the left, a **Playfair Display** serif headline (navy), and an optional short italic teal line. **Less text, no answers** (Shweta, 10 Nov 2026): at most 18 words and no list items. The image raises the question; the post answers it. 1080×1350. Photos: no alcohol branding, no repeats within 28 days.
+
+## Scene template (Thursday/Friday, added 10 Nov 2026)
+Shweta's own people-free photos (river, sunsets, mountain lake, building blocks: `content/photos/scenes/`) fill the frame, with a soft navy gradient behind a white Playfair headline and an italic question. Light text only: 18 words at most, no lists. No photos of Shweta or other people on Thursday/Friday.

@@ -196,6 +196,11 @@
       "at": "2026-11-10T17:22:20+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-10T17:22:23+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794311542260_fc25dc1b916e2546_2026-11-12-thu.png"
     }
   ],
   "image_spec": {
@@ -208,7 +213,7 @@
     "subtitle": "Don't stop at \"it's just age\".",
     "alt": "A leaning tree over a calm river at dusk. Text: Aching more in your 40s? Don't stop at it's just age."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794311537908_1c72310b931bac92_2026-11-12-thu.png",
+  "image_public_url": "https://media.zernio.com/temp/1794311542260_fc25dc1b916e2546_2026-11-12-thu.png",
   "drive_file_id": "1JVvQNxA3jNcRJwYFCwjZXLs1bAyQK15F",
   "hook_style": "relatable_moment",
   "zernio_validation": {

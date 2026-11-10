@@ -192,6 +192,11 @@
       "at": "2026-11-10T17:22:28+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-10T17:22:31+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794311549837_7ae7dbc15fc86396_2026-11-13-fri.png"
     }
   ],
   "image_spec": {
@@ -204,7 +209,7 @@
     "subtitle": "Do you know your number?",
     "alt": "A calm pink sunset over the sea. Text: Prediabetes. It doesn't hurt. That's the problem. Do you know your number?"
   },
-  "image_public_url": "https://media.zernio.com/temp/1794311546032_2c8a1d3f80d72c62_2026-11-13-fri.png",
+  "image_public_url": "https://media.zernio.com/temp/1794311549837_7ae7dbc15fc86396_2026-11-13-fri.png",
   "drive_file_id": "1Ne0SKONqtn1YO8jccFIJL_zcx0T4YkMg",
   "hook_style": "surprising_number",
   "zernio_validation": {
