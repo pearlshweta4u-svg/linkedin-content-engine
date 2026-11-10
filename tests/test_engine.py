@@ -444,10 +444,11 @@ class TestPhotoTemplate(unittest.TestCase):
         from engine import images
         base = {"template": "photo", "title": "Normal report. Still exhausted.", "alt": "x"}
         self.assertTrue(any("photo" in e for e in images.validate(dict(base, photo="content/photos/missing.jpg"))))
-        self.assertEqual(images.validate(dict(base, photo="README.md")), [])
-        self.assertTrue(any("solution" in e for e in images.validate(dict(base, photo="README.md", items=["a"]))))
-        wordy = dict(base, photo="README.md", subtitle="here are many many words that explain everything")
+        self.assertEqual(images.validate(dict(base, photo="content/photos/album-61.jpg")), [])
+        self.assertTrue(any("solution" in e for e in images.validate(dict(base, photo="content/photos/album-61.jpg", items=["a"]))))
+        wordy = dict(base, photo="content/photos/album-61.jpg", subtitle="here are many many words that explain everything")
         self.assertTrue(images.validate(wordy))
+        self.assertTrue(any("not an image" in e for e in images.validate(dict(base, photo="README.md"))))
 
 
 class _Resp:

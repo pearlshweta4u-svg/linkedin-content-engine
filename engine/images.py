@@ -158,9 +158,10 @@ def _photo(spec, w, h):
     scale = float(spec.get("photo_scale", 1.15))
     right = int(spec.get("photo_right", -200))
     top = int(spec.get("photo_top", 0))
+    flip = "transform: scaleX(-1);" if spec.get("photo_flip") else ""
     items = spec.get("items") or []
     css = f"""
-    .ph {{ position:absolute; top:{top}px; right:{right}px; height:{scale * 100:.0f}%; width:auto; }}
+    .ph {{ position:absolute; top:{top}px; right:{right}px; height:{scale * 100:.0f}%; width:auto; {flip} }}
     .veil {{ position:absolute; inset:0; background: linear-gradient(90deg, rgba(247,243,236,1) 0%,
              rgba(247,243,236,.97) 40%, rgba(247,243,236,.75) 52%, rgba(247,243,236,0) 66%); }}
     .col {{ position:absolute; left:72px; top:96px; width:520px; bottom:150px; display:flex; flex-direction:column; }}
@@ -216,6 +217,14 @@ def validate(spec: dict) -> list[str]:
         # the image raises the question, the post answers it.
         if not spec.get("photo") or not (ROOT / spec["photo"]).exists():
             errs.append("photo template needs 'photo' = an existing repo path (content/photos/...)")
+        else:
+            from PIL import Image, UnidentifiedImageError
+            try:
+                with Image.open(ROOT / spec["photo"]) as im:
+                    if im.height / im.width > 1.6:
+                        errs.append(f"photo {spec['photo']} is too tall ({im.width}x{im.height}); pick a 3:4 or 2:3 photo")
+            except UnidentifiedImageError:
+                errs.append(f"photo {spec['photo']} is not an image file")
         if items:
             errs.append("photo template takes no list items: don't give away the solution in the image")
         if len(spec.get("title", "")) > 60:
