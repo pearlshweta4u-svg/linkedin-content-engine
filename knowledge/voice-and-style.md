@@ -16,7 +16,7 @@ The first paragraph is all most people see before "…see more" (about 140 chara
 - Set `hook_style` and rotate it: `curiosity_gap` ("Twenty years on thyroid medicine. Then, in eight weeks, the same dose became too strong for her."), `surprising_number` ("About 136 million people in India are estimated to have prediabetes…"), `contrarian` ("Your iron report can say 'normal' while your iron stores are close to empty."), `story_drop_in`, `relatable_moment`, `direct_question`.
 - Banned openers: "Tomorrow is…", "Today is…", "Did you know…", "Here are…", "In this post…", "As a coach…", "Have you ever wondered…".
 - Write 3 hook options while drafting, keep the strongest, and record the other two in `questions_for_shweta` if they're close.
-- The image headline echoes the hook's curiosity, never the answer.
+- The image headline echoes the hook's curiosity, never the answer. Photo images: at most 18 words, no lists or steps (Shweta, 10 Nov 2026).
 
 ## Storytelling (Monday and Tuesday; rule set by Shweta, 9 Nov 2026)
 Story posts must read as a story, not a lab report. Plan the beats first, store them in the record's `story_structure`, then write.

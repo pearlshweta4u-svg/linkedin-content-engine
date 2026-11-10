@@ -206,10 +206,19 @@ def validate(spec: dict) -> list[str]:
     if t == "stat" and (not spec.get("stat") or len(spec["stat"]) > LIMITS["stat"]):
         errs.append("stat template needs a short 'stat' (max 8 chars)")
     if t == "photo":
+        # Shweta, 10 Nov 2026: photos carry little text and never give away the solution;
+        # the image raises the question, the post answers it.
         if not spec.get("photo") or not (ROOT / spec["photo"]).exists():
             errs.append("photo template needs 'photo' = an existing repo path (content/photos/...)")
-        if len(items) > 3:
-            errs.append("photo template takes at most 3 items")
+        if items:
+            errs.append("photo template takes no list items: don't give away the solution in the image")
+        if len(spec.get("title", "")) > 60:
+            errs.append("photo title too long (max 60 chars): keep it a short curiosity hook")
+        if spec.get("subtitle") and len(spec["subtitle"]) > 45:
+            errs.append("photo subtitle too long (max 45 chars)")
+        words = sum(len(str(spec.get(k) or "").split()) for k in ("eyebrow", "title", "subtitle"))
+        if words > 18:
+            errs.append(f"photo image has {words} words; max 18 (less text, more photo)")
     if t in ("steps", "checklist") and len(items) < 2:
         errs.append(f"{t} template needs at least 2 items")
     return errs

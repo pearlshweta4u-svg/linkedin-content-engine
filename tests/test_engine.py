@@ -442,10 +442,12 @@ class TestHistoryImport(unittest.TestCase):
 class TestPhotoTemplate(unittest.TestCase):
     def test_photo_validation(self):
         from engine import images
-        base = {"template": "photo", "title": "T", "alt": "x", "items": ["a"]}
+        base = {"template": "photo", "title": "Normal report. Still exhausted.", "alt": "x"}
         self.assertTrue(any("photo" in e for e in images.validate(dict(base, photo="content/photos/missing.jpg"))))
-        self.assertTrue(any("at most 3" in e for e in images.validate(dict(base, photo="README.md", items=["a"] * 4))))
         self.assertEqual(images.validate(dict(base, photo="README.md")), [])
+        self.assertTrue(any("solution" in e for e in images.validate(dict(base, photo="README.md", items=["a"]))))
+        wordy = dict(base, photo="README.md", subtitle="here are many many words that explain everything")
+        self.assertTrue(images.validate(wordy))
 
 
 class _Resp:

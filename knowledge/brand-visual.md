@@ -35,4 +35,4 @@ Images by day:
 - Fri: a simple concept visual or none.
 
 ## Photo template (added 10 Nov 2026)
-Her own best posts are real photos (`history/ANALYSIS.md`), so Monday to Wednesday use the `photo` template: her photo from the shared Google Photos album on the right, a cream panel on the left, a **Playfair Display** serif headline (navy), an italic teal line, and up to 3 white points with orange numbers. This mirrors the layout of her own 2 Nov 2026 post. 1080×1350. Photos: no alcohol branding, no repeats within 28 days.
+Her own best posts are real photos (`history/ANALYSIS.md`), so Monday to Wednesday use the `photo` template: her photo from the shared Google Photos album on the right, a cream panel on the left, a **Playfair Display** serif headline (navy), and an optional short italic teal line. **Less text, no answers** (Shweta, 10 Nov 2026): at most 18 words and no list items. The image raises the question; the post answers it. 1080×1350. Photos: no alcohol branding, no repeats within 28 days.
