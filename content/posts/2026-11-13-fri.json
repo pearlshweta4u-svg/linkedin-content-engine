@@ -87,13 +87,13 @@
     "issues": [],
     "checked_at": "2026-11-10T17:22:25+05:30"
   },
-  "approval_status": "pending",
+  "approval_status": "approved",
   "approval": {
     "requested_at": "2026-11-10T17:24:02+05:30",
     "reminder_sent_at": null,
-    "decided_at": null,
-    "decided_by": null,
-    "channel": null,
+    "decided_at": "2026-11-10T17:28:52+05:30",
+    "decided_by": "pearl.shweta4u@gmail.com (email 2026-11-10 17:27 IST)",
+    "channel": "email",
     "note": null
   },
   "publish_status": "not_ready",
@@ -206,6 +206,11 @@
     {
       "at": "2026-11-10T17:24:02+05:30",
       "event": "approval-requested"
+    },
+    {
+      "at": "2026-11-10T17:28:52+05:30",
+      "event": "decision_approve",
+      "by": "pearl.shweta4u@gmail.com (email 2026-11-10 17:27 IST)"
     }
   ],
   "image_spec": {
