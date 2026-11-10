@@ -14,7 +14,7 @@
   "final": "About 136 million people in India are estimated to have prediabetes. You can't feel it, so the only way to know is a number.\n\nWith World Diabetes Day tomorrow, it's a good week to find yours. That estimate, 15.3% of adults, comes from ICMR-INDIAB, India's national study, published in The Lancet Diabetes & Endocrinology in 2023 from data collected between 2008 and 2020. The same study estimated about 101 million people with diabetes.\n\nPrediabetes means your blood sugar is above normal but not yet in the diabetes range. The American Diabetes Association puts it at an HbA1c of 5.7 to 6.4%, or a fasting glucose of 100 to 125 mg/dL.\n\nIf you have PCOS, this applies to you more directly. The 2023 international PCOS guideline says PCOS raises the risk of type 2 diabetes. It recommends checking blood sugar at diagnosis and every one to three years after that, and names the oral glucose tolerance test as the most accurate option.\n\nThe Indian prevention data is encouraging. In the Indian Diabetes Prevention Programme, 55% of people with impaired glucose tolerance in the control group developed diabetes within three years. In the group given lifestyle advice on physical activity and diet, it was 39.3%.\n\nWhat I'd suggest this week:\n\n- Look up your last HbA1c and fasting glucose. If you don't have recent ones, ask your doctor whether you should test.\n- If you're in the prediabetes range, make a plan with your doctor and treat it as the early warning it is.\n- If you have PCOS, ask about an oral glucose tolerance test.\n\nDo you know your HbA1c?\n\n#Prediabetes #PCOS",
   "hashtags": [],
   "image_path": "content/images/2026-11-13-fri.png",
-  "image_alt": "136 million people in India are estimated to have prediabetes, 15.3% of adults. Do you know your number? The prediabetes range is an HbA1c of 5.7 to 6.4%. If you have PCOS, ask about a glucose tolerance test. Lifestyle changes cut new cases in India's prevention trial.",
+  "image_alt": "Shweta Mehta smiling, seated in a garden. Text: Prediabetes. It doesn't hurt. That's the problem. Do you know your number?",
   "sources": [
     {
       "title": "Anjana RM et al. Metabolic NCD health report of India: ICMR-INDIAB national cross-sectional study. Lancet Diabetes Endocrinol 2023;11:474-89",
@@ -85,7 +85,7 @@
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T20:19:23+05:30"
+    "checked_at": "2026-11-10T14:42:04+05:30"
   },
   "approval_status": "pending",
   "approval": {
@@ -172,9 +172,53 @@
       "at": "2026-11-09T20:34:59+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-10T14:41:54+05:30",
+      "event": "image_swapped",
+      "detail": "photo template per Shweta 10 Nov (people/faces for Thu/Fri)"
+    },
+    {
+      "at": "2026-11-10T14:42:04+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-13-fri.png"
+    },
+    {
+      "at": "2026-11-10T14:42:06+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "image_spec": {
+    "template": "photo",
+    "photo": "content/photos/album-13.jpg",
+    "photo_scale": 1.12,
+    "photo_right": -330,
+    "eyebrow": "Prediabetes",
+    "title": "It doesn't hurt. That's the problem.",
+    "subtitle": "Do you know your number?",
+    "alt": "Shweta Mehta smiling, seated in a garden. Text: Prediabetes. It doesn't hurt. That's the problem. Do you know your number?"
+  },
+  "image_public_url": "https://media.zernio.com/temp/1794301924924_acd12b40127a70b1_2026-11-13-fri.png",
+  "drive_file_id": "1Ne0SKONqtn1YO8jccFIJL_zcx0T4YkMg",
+  "hook_style": "surprising_number",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2700,
+      "size": 4068341,
+      "code": null
+    },
+    "checked_at": "2026-11-10T14:42:06+05:30",
+    "text_sha": "67b7dd24e9a9808b",
+    "image_path": "content/images/2026-11-13-fri.png"
+  },
+  "image_spec_previous": {
     "template": "stat",
     "eyebrow": "World Diabetes Day, 14 November",
     "stat": "136M",
@@ -187,24 +231,5 @@
     ],
     "source": "ICMR-INDIAB (Lancet Diabetes & Endocrinology, 2023); ADA Standards of Care 2026; IDPP (Diabetologia, 2006)",
     "alt": "136 million people in India are estimated to have prediabetes, 15.3% of adults. Do you know your number? The prediabetes range is an HbA1c of 5.7 to 6.4%. If you have PCOS, ask about a glucose tolerance test. Lifestyle changes cut new cases in India's prevention trial."
-  },
-  "image_public_url": "https://media.zernio.com/temp/1794236697657_6959006055426ce6_2026-11-13-fri.png",
-  "drive_file_id": "1Ne0SKONqtn1YO8jccFIJL_zcx0T4YkMg",
-  "hook_style": "surprising_number",
-  "zernio_validation": {
-    "valid": true,
-    "post_errors": [],
-    "post_warnings": [],
-    "media": {
-      "valid": true,
-      "format": "png",
-      "width": 2160,
-      "height": 2160,
-      "size": 235493,
-      "code": null
-    },
-    "checked_at": "2026-11-09T20:34:59+05:30",
-    "text_sha": "67b7dd24e9a9808b",
-    "image_path": "content/images/2026-11-13-fri.png"
   }
 }
