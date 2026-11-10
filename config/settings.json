@@ -50,5 +50,16 @@
     "images_folder_id": "1a8B63BnIrDSeJRNsiHPYDF7wQKZZkhJF",
     "images_folder_url": "https://drive.google.com/drive/folders/1a8B63BnIrDSeJRNsiHPYDF7wQKZZkhJF",
     "account": "trainwithshweta@gmail.com"
+  },
+  "photos": {
+    "album_url": "https://photos.app.goo.gl/iSbeyernS9NUzLJFA",
+    "exclude": "videos; any photo showing alcohol branding (e.g. the whisky barrel shots)",
+    "reuse_cooldown_days": 28,
+    "use_for": [
+      "personal_story",
+      "client_story",
+      "educational"
+    ],
+    "local_dir": "content/photos"
   }
 }

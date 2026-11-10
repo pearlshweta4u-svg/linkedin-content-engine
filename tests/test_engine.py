@@ -439,6 +439,15 @@ class TestHistoryImport(unittest.TestCase):
         self.assertTrue(any(p.suffix == ".jpg" for p in (out / "images").iterdir()))
 
 
+class TestPhotoTemplate(unittest.TestCase):
+    def test_photo_validation(self):
+        from engine import images
+        base = {"template": "photo", "title": "T", "alt": "x", "items": ["a"]}
+        self.assertTrue(any("photo" in e for e in images.validate(dict(base, photo="content/photos/missing.jpg"))))
+        self.assertTrue(any("at most 3" in e for e in images.validate(dict(base, photo="README.md", items=["a"] * 4))))
+        self.assertEqual(images.validate(dict(base, photo="README.md")), [])
+
+
 class _Resp:
     def __init__(self, status=201, headers=None, body=b""):
         self.status, self.headers, self._b = status, headers or {}, body

@@ -33,3 +33,6 @@ Images by day:
 - Wed: one simple mechanism diagram (e.g. T4 → T3 with the cofactors).
 - Thu: a portrait checklist or infographic.
 - Fri: a simple concept visual or none.
+
+## Photo template (added 10 Nov 2026)
+Her own best posts are real photos (`history/ANALYSIS.md`), so Monday to Wednesday use the `photo` template: her photo from the shared Google Photos album on the right, a cream panel on the left, a **Playfair Display** serif headline (navy), an italic teal line, and up to 3 white points with orange numbers. This mirrors the layout of her own 2 Nov 2026 post. 1080×1350. Photos: no alcohol branding, no repeats within 28 days.

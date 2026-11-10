@@ -41,7 +41,13 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - If it still fails, email Shweta "No post ready for <D>: <issues>" and stop. A missed day is better than a weak post.
 
 7. **Image** (`images_enabled` is true). Write `image_spec` into the record, then run `python3 -m engine image $D`:
-   - Template by day: Mon/Tue `story` (a headline echoing the hook plus a one-line takeaway), Wed `steps` (2–4 short steps), Thu `checklist` (portrait 1080×1350, up to 7 one-line items of ≤45 characters), Fri `stat` (one verified number, with `source`). Cards are square 1080×1080 so they're readable on phones.
+   - **Mon/Tue/Wed: use her real photo** (her best past posts are real photos) with the `photo` template:
+     1. Fetch the album in `config/settings.json` → `photos.album_url`: the page lists `lh3.googleusercontent.com/pw/...` URLs. Download small previews (`=w400-h400`) to the scratchpad and look at them.
+     2. Pick a photo that fits the post's mood. Never a video (play icon), never alcohol branding, and none in `engine history` → `photos_used_last_28d`.
+     3. Download the chosen photo at `=w2000` to `content/photos/album-<n>.jpg`.
+     4. `image_spec`: `{"template":"photo","photo":"content/photos/album-<n>.jpg","eyebrow","title" (serif headline echoing the hook, ≤80 chars),"subtitle" (italic line),"items" (≤3 points, ≤30 chars each),"photo_right" (px; move until her face is clear of the cream panel, typically -200 to -350),"photo_scale" (~1.1–1.2),"alt"}`.
+     5. Check that her face isn't under the cream panel and that the phone preview is readable.
+   - Template by day (Thu/Fri, or when no suitable photo): Mon/Tue `story` (a headline echoing the hook plus a one-line takeaway), Wed `steps` (2–4 short steps), Thu `checklist` (portrait 1080×1350, up to 7 one-line items of ≤45 characters), Fri `stat` (one verified number, with `source`). Cards are square 1080×1080 so they're readable on phones.
    - Check mobile legibility: `python3 -c "from engine import images; images.phone_preview('content/images/<id>.png','/tmp/p.png')"` and look at /tmp/p.png (360px wide = a phone feed). Body text must be easy to read there.
    - The image must only contain words and numbers that are already in the post or its sources. It must add structure (steps, a checklist, a key number), not repeat the first line. Always set `alt`.
    - If the command says the text doesn't fit, shorten the copy and re-run. Never accept a clipped image.

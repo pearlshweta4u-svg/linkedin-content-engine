@@ -240,6 +240,9 @@ def cmd_history(a):
         "pillars_last_5": [r.get("pillar") for r in recs[-5:]],
         "pillars_missing_last_28d": [p for p in PILLARS[:9] if pillar_counts.get(p, 0) == 0],
         "formats_last_8": [r.get("format") for r in recs[-8:]],
+        "photos_used_last_28d": sorted({(r.get("image_spec") or {}).get("photo") for r in recs
+                                        if (r.get("image_spec") or {}).get("photo")
+                                        and date.fromisoformat(r["date"]) >= today - timedelta(days=28)}),
     }
     hist = ROOT_PATH / "history" / "posts.json"
     if hist.exists():

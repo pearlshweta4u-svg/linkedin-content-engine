@@ -22,7 +22,8 @@ from .config import IMAGES_DIR, ROOT
 FONTS = ROOT / "assets" / "fonts"
 # Mobile-first: LinkedIn's phone feed shows images ~360px wide, so text must be
 # large at 1080px. Square for cards, 4:5 portrait for checklists.
-SIZES = {"story": (1080, 1080), "steps": (1080, 1080), "stat": (1080, 1080), "checklist": (1080, 1350)}
+SIZES = {"story": (1080, 1080), "steps": (1080, 1080), "stat": (1080, 1080), "checklist": (1080, 1350),
+         "photo": (1080, 1350)}
 MIN_FONT_PX = 30  # smallest body text; ~10px on a phone. Fine print (source) is 22px.
 DEFAULT_TEMPLATE = {"personal_story": "story", "client_story": "story", "educational": "steps",
                     "save_worthy": "checklist", "health_wellness": "stat"}
@@ -41,6 +42,8 @@ def _e(s) -> str:
 BASE_CSS = """
 @font-face { font-family: 'Poppins'; font-weight: 600; src: url('{fonts}/Poppins-600.woff2') format('woff2'); }
 @font-face { font-family: 'Poppins'; font-weight: 700; src: url('{fonts}/Poppins-700.woff2') format('woff2'); }
+@font-face { font-family: 'Playfair'; font-weight: 700; src: url('{fonts}/PlayfairDisplay-700.woff2') format('woff2'); }
+@font-face { font-family: 'Playfair'; font-style: italic; font-weight: 500; src: url('{fonts}/PlayfairDisplay-500-italic.woff2') format('woff2'); }
 :root { --navy:#1B2A4A; --teal:#138A8A; --orange:#E8833A; --cream:#F7F3EC; --slate:#5B6475; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: {w}px; height: {h}px; overflow: hidden; }
@@ -148,7 +151,40 @@ def _stat(spec, w, h):
     return _page(css, body, w, h, pad=80)
 
 
-BUILDERS = {"story": _story, "steps": _steps, "checklist": _checklist, "stat": _stat}
+def _photo(spec, w, h):
+    """Her real photo (from her Google Photos album) with a cream text panel on the left,
+    serif headline and up to 3 short points: modelled on her own best designed posts."""
+    photo = (ROOT / spec["photo"]).as_uri()
+    scale = float(spec.get("photo_scale", 1.15))
+    right = int(spec.get("photo_right", -200))
+    top = int(spec.get("photo_top", 0))
+    items = spec.get("items") or []
+    css = f"""
+    .ph {{ position:absolute; top:{top}px; right:{right}px; height:{scale * 100:.0f}%; width:auto; }}
+    .veil {{ position:absolute; inset:0; background: linear-gradient(90deg, rgba(247,243,236,1) 0%,
+             rgba(247,243,236,.97) 40%, rgba(247,243,236,.75) 52%, rgba(247,243,236,0) 66%); }}
+    .col {{ position:absolute; left:72px; top:96px; width:520px; bottom:150px; display:flex; flex-direction:column; }}
+    h1 {{ font-family:'Playfair'; font-weight:700; font-size:70px; line-height:1.06; color: var(--navy); }}
+    .it {{ font-family:'Playfair'; font-style:italic; font-weight:500; font-size:38px; line-height:1.25;
+           color: var(--teal); margin-top: 26px; }}
+    .pts {{ margin-top: 40px; display:flex; flex-direction:column; gap: 16px; }}
+    .pt {{ background: rgba(255,255,255,.92); border-radius: 18px; padding: 18px 22px; display:flex; gap:16px;
+           align-items:center; box-shadow: 0 2px 10px rgba(27,42,74,.08); }}
+    .n {{ font-family:'Poppins'; font-weight:700; font-size:30px; color: var(--orange); flex: 0 0 34px; }}
+    .t {{ font-size: 30px; line-height:1.25; color: var(--navy); }}
+    .foot {{ background: linear-gradient(0deg, rgba(247,243,236,.95), rgba(247,243,236,0)); padding-top: 40px;
+             left:0; right:0; bottom:0; padding: 50px 72px 40px; }}
+    """
+    pts = "".join(f"<div class='pt'><div class='n'>{i + 1}</div><div class='t'>{_e(it)}</div></div>"
+                  for i, it in enumerate(items))
+    body = f"""<img class='ph' src='{photo}'><div class='veil'></div>
+      <div class='col fit' data-name='photo'><div class='eyebrow'>{_e(spec.get('eyebrow'))}</div>
+      <h1>{_e(spec['title'])}</h1>{f"<div class='it'>{_e(spec['subtitle'])}</div>" if spec.get('subtitle') else ''}
+      <div class='pts'>{pts}</div></div>{_foot(spec)}"""
+    return _page(css, body, w, h)
+
+
+BUILDERS = {"story": _story, "steps": _steps, "checklist": _checklist, "stat": _stat, "photo": _photo}
 
 
 def validate(spec: dict) -> list[str]:
@@ -169,6 +205,11 @@ def validate(spec: dict) -> list[str]:
     errs += [f"item {i + 1} too long" for i, it in enumerate(items) if len(it) > LIMITS["item"]]
     if t == "stat" and (not spec.get("stat") or len(spec["stat"]) > LIMITS["stat"]):
         errs.append("stat template needs a short 'stat' (max 8 chars)")
+    if t == "photo":
+        if not spec.get("photo") or not (ROOT / spec["photo"]).exists():
+            errs.append("photo template needs 'photo' = an existing repo path (content/photos/...)")
+        if len(items) > 3:
+            errs.append("photo template takes at most 3 items")
     if t in ("steps", "checklist") and len(items) < 2:
         errs.append(f"{t} template needs at least 2 items")
     return errs

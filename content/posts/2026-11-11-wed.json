@@ -180,5 +180,20 @@
     "checked_at": "2026-11-10T10:13:18+05:30",
     "text_sha": "d6d531f4f5dbc4ef",
     "image_path": "content/images/2026-11-11-wed.png"
+  },
+  "image_spec_candidate": {
+    "template": "photo",
+    "photo": "content/photos/album-61.jpg",
+    "eyebrow": "Still tired?",
+    "title": "Your iron report says \"normal\". Your energy says otherwise.",
+    "subtitle": "Three things to ask before you accept it.",
+    "items": [
+      "Your actual ferritin number",
+      "A CRP alongside it",
+      "Where the iron is going"
+    ],
+    "alt": "Shweta Mehta smiling, seated in a garden. Text: Your iron report says normal. Your energy says otherwise. Three things to ask: your actual ferritin number, a CRP alongside it, and where the iron is going.",
+    "photo_right": -330,
+    "photo_scale": 1.12
   }
 }
