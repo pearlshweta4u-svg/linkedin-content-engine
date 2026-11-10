@@ -14,7 +14,7 @@
   "final": "Your iron report can say \"normal\" while your iron stores are close to empty.\n\nIf you're exhausted and nobody can tell you why, this is worth checking.\n\nThink of haemoglobin as the cash in your wallet and ferritin as your savings. Your wallet can be fine, so you're not anaemic, while your savings are nearly gone.\n\nMost reports only flag ferritin when it's very low, so a low-normal number rarely gets a second look.\n\nA 2012 trial in the Canadian Medical Association Journal tested what happens next. It gave 198 menstruating women with unexplained fatigue either iron or a placebo for 12 weeks. None were anaemic, and all had ferritin under 50. Fatigue scores fell 47.7% with iron and 28.8% with the placebo.\n\nInflammation muddies the number further. Ferritin goes up when the body is inflamed, even if iron stores are low. WHO guidance says that in adults with infection or inflammation, a ferritin below 70 may still point to iron deficiency.\n\nSo with my clients I check:\n\n- Ferritin alongside CRP, not on its own.\n- Where the iron is going: heavy periods, or a gut that isn't absorbing it.\n- Iron timing for anyone on thyroid medication, because the two interfere with each other. Your doctor can tell you how far apart to take them.\n\nIf you're tired and your report says normal, ask for the actual ferritin value and a CRP, and take both to your doctor.\n\n#IronDeficiency #WomensHealth",
   "hashtags": [],
   "image_path": "content/images/2026-11-11-wed.png",
-  "image_alt": "Shweta Mehta smiling, seated in a garden. Text: Your iron report says normal. Your energy says otherwise. Three things to ask: your actual ferritin number, a CRP alongside it, and where the iron is going.",
+  "image_alt": "Shweta Mehta smiling, seated in a garden. Text: Still tired? Your iron report says normal. Your energy says otherwise. So what is the report missing?",
   "sources": [
     {
       "title": "Vaucher P et al. Effect of iron supplementation on fatigue in nonanemic menstruating women with low ferritin: RCT. CMAJ 2012;184(11):1247-54",
@@ -66,7 +66,7 @@
     "decided_at": "2026-11-10T10:13:14+05:30",
     "decided_by": "pearl.shweta4u@gmail.com (email 2026-11-09 20:27 IST)",
     "channel": "email",
-    "note": " | Image swapped to photo template on Shweta's instruction in chat 10 Nov 2026 (\"use photo\")."
+    "note": " | Image swapped to photo template on Shweta's instruction in chat 10 Nov 2026 (\"use photo\"). | Lighter photo image (no list) approved by Shweta in chat 10 Nov 2026 (\"yes, lighter\")."
   },
   "publish_status": "not_ready",
   "linkedin": {
@@ -174,6 +174,26 @@
       "at": "2026-11-10T13:15:44+05:30",
       "event": "copied_to_drive",
       "file_id": "1yhPYH_VRfy9t_W_uOQ9I_EdH6b94ME4x"
+    },
+    {
+      "at": "2026-11-10T13:29:57+05:30",
+      "event": "image_lightened",
+      "detail": "no list items; per Shweta"
+    },
+    {
+      "at": "2026-11-10T13:29:59+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-11-wed.png"
+    },
+    {
+      "at": "2026-11-10T13:30:14+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-11-wed.png"
+    },
+    {
+      "at": "2026-11-10T13:30:27+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "image_spec": {
@@ -181,17 +201,12 @@
     "photo": "content/photos/album-61.jpg",
     "eyebrow": "Still tired?",
     "title": "Your iron report says \"normal\". Your energy says otherwise.",
-    "subtitle": "Three things to ask before you accept it.",
-    "items": [
-      "Your actual ferritin number",
-      "A CRP alongside it",
-      "Where the iron is going"
-    ],
-    "alt": "Shweta Mehta smiling, seated in a garden. Text: Your iron report says normal. Your energy says otherwise. Three things to ask: your actual ferritin number, a CRP alongside it, and where the iron is going.",
+    "subtitle": "So what is the report missing?",
+    "alt": "Shweta Mehta smiling, seated in a garden. Text: Still tired? Your iron report says normal. Your energy says otherwise. So what is the report missing?",
     "photo_right": -330,
     "photo_scale": 1.12
   },
-  "image_public_url": "https://media.zernio.com/temp/1794296715651_23e1dbfd78bb6944_2026-11-11-wed.png",
+  "image_public_url": "https://media.zernio.com/temp/1794297625214_711735c5fbcc1433_2026-11-11-wed.png",
   "drive_file_id": "1yhPYH_VRfy9t_W_uOQ9I_EdH6b94ME4x",
   "hook_style": "contrarian",
   "zernio_validation": {
@@ -203,10 +218,10 @@
       "format": "png",
       "width": 2160,
       "height": 2700,
-      "size": 3514510,
+      "size": 3595932,
       "code": null
     },
-    "checked_at": "2026-11-10T13:15:13+05:30",
+    "checked_at": "2026-11-10T13:30:27+05:30",
     "text_sha": "d6d531f4f5dbc4ef",
     "image_path": "content/images/2026-11-11-wed.png"
   },
