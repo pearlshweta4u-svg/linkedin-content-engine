@@ -14,7 +14,7 @@
   "final": "If everything started aching in your 40s, \"it's just age\" shouldn't be the end of the conversation.\n\nJoint pain, migraines and pelvic pain at midlife are the reason the International Menopause Society chose chronic pain as this year's World Menopause Day theme (18 October). Its white paper describes chronic pain as common in midlife women, often with more than one kind at once.\n\nI see this in my practice. Women come to me for thyroid or weight, and only later mention that their knees, back or hands hurt.\n\nIf that sounds like you, this is the list I'd go through:\n\n1. Track the pain for four weeks next to your cycle, sleep and stress. A pattern on paper is easier for a doctor to work with than a description.\n2. Ask whether perimenopause could be part of it.\n3. Get the basics checked: TSH and free T4, vitamin D, ferritin and CRP. An underactive thyroid can cause muscle aches on its own.\n4. Keep training, adjusted around the sore joint, and see a physiotherapist if it keeps flaring.\n5. Protect your sleep. Pain makes sleep worse, and poor sleep makes pain feel worse.\n6. Be wary of anyone promising HRT will fix it. The same IMS paper says the evidence for hormone therapy in established chronic musculoskeletal pain is limited and inconsistent. HRT can help other menopause symptoms, and that decision belongs with your gynaecologist.\n7. See a doctor promptly for swollen or hot joints, pain that wakes you at night, or morning stiffness that takes a long time to ease.\n\nWhich of these has anyone actually checked for you?\n\n#Perimenopause #WomensHealth",
   "hashtags": [],
   "image_path": "content/images/2026-11-12-thu.png",
-  "image_alt": "Checklist for aching more in your 40s: track pain for four weeks with your cycle and sleep; ask if perimenopause is part of it; check TSH, free T4, vitamin D, ferritin and CRP; train around the sore joint and see a physio; protect your sleep; doubt promises that HRT fixes pain; see a doctor for swollen joints or night pain.",
+  "image_alt": "Shweta Mehta seated in a garden, smiling softly. Text: Aching more in your 40s? Don't stop at it's just age. What should you check first?",
   "sources": [
     {
       "title": "IMS World Menopause Day 2026: Chronic Pain in Midlife",
@@ -84,7 +84,7 @@
   "quality": {
     "passed": true,
     "issues": [],
-    "checked_at": "2026-11-09T20:19:23+05:30"
+    "checked_at": "2026-11-10T14:41:56+05:30"
   },
   "approval_status": "pending",
   "approval": {
@@ -176,9 +176,53 @@
       "at": "2026-11-09T20:34:57+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-10T14:41:54+05:30",
+      "event": "image_swapped",
+      "detail": "photo template per Shweta 10 Nov (people/faces for Thu/Fri)"
+    },
+    {
+      "at": "2026-11-10T14:41:56+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-12-thu.png"
+    },
+    {
+      "at": "2026-11-10T14:41:59+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "image_spec": {
+    "template": "photo",
+    "photo": "content/photos/album-47.jpg",
+    "photo_scale": 1.12,
+    "photo_right": -330,
+    "eyebrow": "Midlife pain",
+    "title": "Aching more in your 40s? Don't stop at \"it's just age\".",
+    "subtitle": "What should you check first?",
+    "alt": "Shweta Mehta seated in a garden, smiling softly. Text: Aching more in your 40s? Don't stop at it's just age. What should you check first?"
+  },
+  "image_public_url": "https://media.zernio.com/temp/1794301917333_c4afba4c9cc2f767_2026-11-12-thu.png",
+  "drive_file_id": "1JVvQNxA3jNcRJwYFCwjZXLs1bAyQK15F",
+  "hook_style": "relatable_moment",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2700,
+      "size": 4161913,
+      "code": null
+    },
+    "checked_at": "2026-11-10T14:41:59+05:30",
+    "text_sha": "4ea9ecb88d53da88",
+    "image_path": "content/images/2026-11-12-thu.png"
+  },
+  "image_spec_previous": {
     "template": "checklist",
     "eyebrow": "Save this",
     "title": "Aching more in your 40s? Don't stop at \"it's just age\"",
@@ -193,24 +237,5 @@
     ],
     "source": "World Menopause Day 2026 theme: Chronic pain at midlife (International Menopause Society)",
     "alt": "Checklist for aching more in your 40s: track pain for four weeks with your cycle and sleep; ask if perimenopause is part of it; check TSH, free T4, vitamin D, ferritin and CRP; train around the sore joint and see a physio; protect your sleep; doubt promises that HRT fixes pain; see a doctor for swollen joints or night pain."
-  },
-  "image_public_url": "https://media.zernio.com/temp/1794236695259_2d774ffc081b75ef_2026-11-12-thu.png",
-  "drive_file_id": "1JVvQNxA3jNcRJwYFCwjZXLs1bAyQK15F",
-  "hook_style": "relatable_moment",
-  "zernio_validation": {
-    "valid": true,
-    "post_errors": [],
-    "post_warnings": [],
-    "media": {
-      "valid": true,
-      "format": "png",
-      "width": 2160,
-      "height": 2700,
-      "size": 288260,
-      "code": null
-    },
-    "checked_at": "2026-11-09T20:34:57+05:30",
-    "text_sha": "4ea9ecb88d53da88",
-    "image_path": "content/images/2026-11-12-thu.png"
   }
 }
