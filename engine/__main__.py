@@ -240,6 +240,9 @@ def cmd_history(a):
         "pillars_last_5": [r.get("pillar") for r in recs[-5:]],
         "pillars_missing_last_28d": [p for p in PILLARS[:9] if pillar_counts.get(p, 0) == 0],
         "formats_last_8": [r.get("format") for r in recs[-8:]],
+        "scenes_unused_28d": sorted(str(p.relative_to(ROOT_PATH)) for p in (ROOT_PATH / "content" / "photos" / "scenes").glob("*.jpg")
+                                    if not any((r.get("image_spec") or {}).get("photo") == str(p.relative_to(ROOT_PATH))
+                                               and date.fromisoformat(r["date"]) >= today - timedelta(days=28) for r in recs)),
         "photos_used_last_28d": sorted({(r.get("image_spec") or {}).get("photo") for r in recs
                                         if (r.get("image_spec") or {}).get("photo")
                                         and date.fromisoformat(r["date"]) >= today - timedelta(days=28)}),

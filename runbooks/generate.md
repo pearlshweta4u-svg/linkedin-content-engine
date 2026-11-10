@@ -9,6 +9,11 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
      - otherwise (already emailed, approved, skipped) → stop. Duplicate prevention.
    - If `config/settings.json` has `"paused": true`, stop.
 
+0b. **Image look-ahead (Monday and Tuesday evening runs)** (Shweta, 10 Nov 2026: "let me know 24 hours before"). Check `engine history` → `scenes_unused_28d` and plan this week's Thursday and Friday topics. If fewer than 2 scenes are unused, or none fits a planned topic, email both addresses **now** (at least 24 hours before the Thursday post is generated):
+    - subject `[LinkedIn] Need more scene photos for Thursday/Friday`;
+    - say which topics, what kind of people-free scene would fit (e.g. "a glass of water on a table", "morning walk path", "kitchen spices"), and how many.
+    She'll send photos; save them to `content/photos/scenes/` and add a row to its README.
+
 1. **Context**
    - Read `knowledge/` (all files) and the category for D (Mon `personal_story`, Tue `client_story`, Wed `educational`, Thu `save_worthy`, Fri `health_wellness`).
    - Run `python3 -m engine history`. Also read `published_before_engine` (her own earlier LinkedIn posts, from `history/posts.json`): don't repeat a topic or story she posted in the last 6 weeks, and treat her top performers as signals of what resonates. Respect `stories_on_cooldown`, `topics_on_cooldown` and `pillars_last_5`, prefer `pillars_missing_last_28d`, avoid the hook shapes in `recent_hooks`, and rotate `formats_last_8`.

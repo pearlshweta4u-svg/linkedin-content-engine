@@ -89,7 +89,7 @@
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": "2026-11-09T20:24:12+05:30",
+    "requested_at": "2026-11-10T17:24:02+05:30",
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
@@ -197,6 +197,15 @@
       "at": "2026-11-10T17:22:31+05:30",
       "event": "image_public_url",
       "url": "https://media.zernio.com/temp/1794311549837_7ae7dbc15fc86396_2026-11-13-fri.png"
+    },
+    {
+      "at": "2026-11-10T17:23:20+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1SQs-fUvF2o2zTyiUqsz0UwvkI2SRPPDW"
+    },
+    {
+      "at": "2026-11-10T17:24:02+05:30",
+      "event": "approval-requested"
     }
   ],
   "image_spec": {
@@ -210,7 +219,7 @@
     "alt": "A calm pink sunset over the sea. Text: Prediabetes. It doesn't hurt. That's the problem. Do you know your number?"
   },
   "image_public_url": "https://media.zernio.com/temp/1794311549837_7ae7dbc15fc86396_2026-11-13-fri.png",
-  "drive_file_id": "1Ne0SKONqtn1YO8jccFIJL_zcx0T4YkMg",
+  "drive_file_id": "1SQs-fUvF2o2zTyiUqsz0UwvkI2SRPPDW",
   "hook_style": "surprising_number",
   "zernio_validation": {
     "valid": true,
