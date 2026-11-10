@@ -3,7 +3,7 @@
 ## Waiting on Shweta
 - [x] Primary publisher with image support: Zernio connected (9 Nov 2026).
 - [ ] Backup: LinkedIn Company Page + developer app + token (docs/SETUP.md steps 1–4).
-- [ ] Confirm on the first live post that brackets and hashtags render correctly via Zernio, then set `zernio.formatting_verified` to true.
+- [x] First live post via Zernio verified 10 Nov 2026: live text identical to the approved text, image attached.
 - [ ] Review the 5 sample posts; answer the `questions_for_shweta` in each.
 - [ ] Answer `knowledge/gaps.md` (own health story, why coaching, story details), ideally as one 10-minute voice-note transcript.
 - [ ] Approve or adjust the visual style in `knowledge/brand-visual.md`; share Canva brand kit / logo if one exists.
