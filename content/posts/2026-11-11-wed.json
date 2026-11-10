@@ -144,6 +144,11 @@
       "at": "2026-11-10T10:13:14+05:30",
       "event": "decision_approve",
       "by": "pearl.shweta4u@gmail.com (email 2026-11-09 20:27 IST)"
+    },
+    {
+      "at": "2026-11-10T10:13:18+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "image_spec": {
@@ -157,7 +162,7 @@
     ],
     "alt": "Three steps: ask for the actual ferritin number; check it with a CRP because inflammation can hide low iron; ask where the iron is going, periods or the gut."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794236693058_0cd122349648f6f2_2026-11-11-wed.png",
+  "image_public_url": "https://media.zernio.com/temp/1794285796951_55c1ea5f912e0bdd_2026-11-11-wed.png",
   "drive_file_id": "1Ww818INV1IUUa42cuIg455PqD2wN24wm",
   "hook_style": "contrarian",
   "zernio_validation": {
@@ -172,7 +177,7 @@
       "size": 189330,
       "code": null
     },
-    "checked_at": "2026-11-09T20:34:55+05:30",
+    "checked_at": "2026-11-10T10:13:18+05:30",
     "text_sha": "d6d531f4f5dbc4ef",
     "image_path": "content/images/2026-11-11-wed.png"
   }
