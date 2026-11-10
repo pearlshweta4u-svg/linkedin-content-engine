@@ -27,7 +27,7 @@ def current_branch() -> str:
 def pull() -> None:
     b = current_branch()
     _git("fetch", "origin", b)
-    _git("rebase", f"origin/{b}")
+    _git("rebase", "FETCH_HEAD")  # works even when no origin/<branch> tracking ref exists
 
 
 def commit_and_push(message: str, paths: list[str], retries: int = 4) -> None:
