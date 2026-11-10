@@ -14,7 +14,7 @@
   "final": "Your iron report can say \"normal\" while your iron stores are close to empty.\n\nIf you're exhausted and nobody can tell you why, this is worth checking.\n\nThink of haemoglobin as the cash in your wallet and ferritin as your savings. Your wallet can be fine, so you're not anaemic, while your savings are nearly gone.\n\nMost reports only flag ferritin when it's very low, so a low-normal number rarely gets a second look.\n\nA 2012 trial in the Canadian Medical Association Journal tested what happens next. It gave 198 menstruating women with unexplained fatigue either iron or a placebo for 12 weeks. None were anaemic, and all had ferritin under 50. Fatigue scores fell 47.7% with iron and 28.8% with the placebo.\n\nInflammation muddies the number further. Ferritin goes up when the body is inflamed, even if iron stores are low. WHO guidance says that in adults with infection or inflammation, a ferritin below 70 may still point to iron deficiency.\n\nSo with my clients I check:\n\n- Ferritin alongside CRP, not on its own.\n- Where the iron is going: heavy periods, or a gut that isn't absorbing it.\n- Iron timing for anyone on thyroid medication, because the two interfere with each other. Your doctor can tell you how far apart to take them.\n\nIf you're tired and your report says normal, ask for the actual ferritin value and a CRP, and take both to your doctor.\n\n#IronDeficiency #WomensHealth",
   "hashtags": [],
   "image_path": "content/images/2026-11-11-wed.png",
-  "image_alt": "Three steps: ask for the actual ferritin number; check it with a CRP because inflammation can hide low iron; ask where the iron is going, periods or the gut.",
+  "image_alt": "Shweta Mehta smiling, seated in a garden. Text: Your iron report says normal. Your energy says otherwise. Three things to ask: your actual ferritin number, a CRP alongside it, and where the iron is going.",
   "sources": [
     {
       "title": "Vaucher P et al. Effect of iron supplementation on fatigue in nonanemic menstruating women with low ferritin: RCT. CMAJ 2012;184(11):1247-54",
@@ -66,7 +66,7 @@
     "decided_at": "2026-11-10T10:13:14+05:30",
     "decided_by": "pearl.shweta4u@gmail.com (email 2026-11-09 20:27 IST)",
     "channel": "email",
-    "note": null
+    "note": " | Image swapped to photo template on Shweta's instruction in chat 10 Nov 2026 (\"use photo\")."
   },
   "publish_status": "not_ready",
   "linkedin": {
@@ -149,39 +149,24 @@
       "at": "2026-11-10T10:13:18+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-10T13:15:08+05:30",
+      "event": "image_swapped",
+      "detail": "photo template approved by Shweta in chat"
+    },
+    {
+      "at": "2026-11-10T13:15:10+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-11-wed.png"
+    },
+    {
+      "at": "2026-11-10T13:15:13+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "image_spec": {
-    "template": "steps",
-    "eyebrow": "Normal ferritin, still tired?",
-    "title": "Three things to ask before you accept a \"normal\" iron report",
-    "items": [
-      "Ask for the actual ferritin number, not just \"normal\"",
-      "Check it with a CRP: inflammation can hide low iron",
-      "Ask where the iron is going: periods or the gut"
-    ],
-    "alt": "Three steps: ask for the actual ferritin number; check it with a CRP because inflammation can hide low iron; ask where the iron is going, periods or the gut."
-  },
-  "image_public_url": "https://media.zernio.com/temp/1794285796951_55c1ea5f912e0bdd_2026-11-11-wed.png",
-  "drive_file_id": "1Ww818INV1IUUa42cuIg455PqD2wN24wm",
-  "hook_style": "contrarian",
-  "zernio_validation": {
-    "valid": true,
-    "post_errors": [],
-    "post_warnings": [],
-    "media": {
-      "valid": true,
-      "format": "png",
-      "width": 2160,
-      "height": 2160,
-      "size": 189330,
-      "code": null
-    },
-    "checked_at": "2026-11-10T10:13:18+05:30",
-    "text_sha": "d6d531f4f5dbc4ef",
-    "image_path": "content/images/2026-11-11-wed.png"
-  },
-  "image_spec_candidate": {
     "template": "photo",
     "photo": "content/photos/album-61.jpg",
     "eyebrow": "Still tired?",
@@ -195,5 +180,35 @@
     "alt": "Shweta Mehta smiling, seated in a garden. Text: Your iron report says normal. Your energy says otherwise. Three things to ask: your actual ferritin number, a CRP alongside it, and where the iron is going.",
     "photo_right": -330,
     "photo_scale": 1.12
+  },
+  "image_public_url": "https://media.zernio.com/temp/1794296710742_4b95e5166e238ec8_2026-11-11-wed.png",
+  "drive_file_id": "1Ww818INV1IUUa42cuIg455PqD2wN24wm",
+  "hook_style": "contrarian",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2700,
+      "size": 3514510,
+      "code": null
+    },
+    "checked_at": "2026-11-10T13:15:13+05:30",
+    "text_sha": "d6d531f4f5dbc4ef",
+    "image_path": "content/images/2026-11-11-wed.png"
+  },
+  "image_spec_previous": {
+    "template": "steps",
+    "eyebrow": "Normal ferritin, still tired?",
+    "title": "Three things to ask before you accept a \"normal\" iron report",
+    "items": [
+      "Ask for the actual ferritin number, not just \"normal\"",
+      "Check it with a CRP: inflammation can hide low iron",
+      "Ask where the iron is going: periods or the gut"
+    ],
+    "alt": "Three steps: ask for the actual ferritin number; check it with a CRP because inflammation can hide low iron; ask where the iron is going, periods or the gut."
   }
 }
