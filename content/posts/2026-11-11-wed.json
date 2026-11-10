@@ -194,6 +194,16 @@
       "at": "2026-11-10T13:30:27+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-10T13:30:30+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794297629360_e772a776ff2e01aa_2026-11-11-wed.png"
+    },
+    {
+      "at": "2026-11-10T14:15:17+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1XkJMaKa4vAmhTLEyUMUa8BxM3IWV3dQc"
     }
   ],
   "image_spec": {
@@ -206,8 +216,8 @@
     "photo_right": -330,
     "photo_scale": 1.12
   },
-  "image_public_url": "https://media.zernio.com/temp/1794297625214_711735c5fbcc1433_2026-11-11-wed.png",
-  "drive_file_id": "1yhPYH_VRfy9t_W_uOQ9I_EdH6b94ME4x",
+  "image_public_url": "https://media.zernio.com/temp/1794297629360_e772a776ff2e01aa_2026-11-11-wed.png",
+  "drive_file_id": "1XkJMaKa4vAmhTLEyUMUa8BxM3IWV3dQc",
   "hook_style": "contrarian",
   "zernio_validation": {
     "valid": true,

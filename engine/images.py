@@ -175,6 +175,12 @@ def _photo(spec, w, h):
     .foot {{ background: linear-gradient(0deg, rgba(247,243,236,.95), rgba(247,243,236,0)); padding-top: 40px;
              left:0; right:0; bottom:0; padding: 50px 72px 40px; }}
     """
+    if not items:  # light layout: headline centred and larger, no empty panel below
+        css += """
+    .col { justify-content: center; top: 0; bottom: 120px; }
+    h1 { font-size: 86px; line-height: 1.04; }
+    .it { font-size: 44px; margin-top: 34px; }
+    """
     pts = "".join(f"<div class='pt'><div class='n'>{i + 1}</div><div class='t'>{_e(it)}</div></div>"
                   for i, it in enumerate(items))
     body = f"""<img class='ph' src='{photo}'><div class='veil'></div>
