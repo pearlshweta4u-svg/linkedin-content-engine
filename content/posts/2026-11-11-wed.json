@@ -68,17 +68,18 @@
     "channel": "email",
     "note": " | Image swapped to photo template on Shweta's instruction in chat 10 Nov 2026 (\"use photo\"). | Lighter photo image (no list) approved by Shweta in chat 10 Nov 2026 (\"yes, lighter\")."
   },
-  "publish_status": "publishing",
+  "publish_status": "published",
   "linkedin": {
-    "urn": null,
-    "url": null,
-    "image_urn": null
+    "urn": "urn:li:share:7526112184754548736",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7526112184754548736/",
+    "image_urn": "https://media.zernio.com/temp/1794364965754_df539e02aa7e76c6_2026-11-11-wed.png",
+    "via": "zernio"
   },
-  "published_at": null,
+  "published_at": "2026-11-11T08:12:43+05:30",
   "attempts": [
     {
       "at": "2026-11-11T08:12:43+05:30",
-      "outcome": null
+      "outcome": "published"
     }
   ],
   "errors": [],
@@ -218,6 +219,11 @@
     {
       "at": "2026-11-11T08:12:44+05:30",
       "event": "publish_started"
+    },
+    {
+      "at": "2026-11-11T08:12:54+05:30",
+      "event": "published",
+      "urn": "urn:li:share:7526112184754548736"
     }
   ],
   "image_spec": {
