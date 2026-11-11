@@ -68,14 +68,19 @@
     "channel": "email",
     "note": " | Image swapped to photo template on Shweta's instruction in chat 10 Nov 2026 (\"use photo\"). | Lighter photo image (no list) approved by Shweta in chat 10 Nov 2026 (\"yes, lighter\")."
   },
-  "publish_status": "not_ready",
+  "publish_status": "publishing",
   "linkedin": {
     "urn": null,
     "url": null,
     "image_urn": null
   },
   "published_at": null,
-  "attempts": [],
+  "attempts": [
+    {
+      "at": "2026-11-11T08:12:43+05:30",
+      "outcome": null
+    }
+  ],
   "errors": [],
   "analytics": {},
   "history": [
@@ -209,6 +214,10 @@
       "at": "2026-11-11T08:12:35+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-11T08:12:44+05:30",
+      "event": "publish_started"
     }
   ],
   "image_spec": {
