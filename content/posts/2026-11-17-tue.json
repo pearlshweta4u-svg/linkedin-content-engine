@@ -1,0 +1,134 @@
+{
+  "post_id": "2026-11-17-tue",
+  "date": "2026-11-17",
+  "scheduled_for": "2026-11-17T08:00:00+05:30",
+  "weekday": "Tuesday",
+  "category": "client_story",
+  "pillar": "gut",
+  "topic": "Raw salads off the plate for a doctor stuck on laxatives",
+  "angle": "A 'healthy' food can be the wrong food for your gut right now; a doctor who knew the theory needed someone to look at his actual plate",
+  "format": "client story (STAR)",
+  "story_ids": [
+    "C05"
+  ],
+  "story_structure": {
+    "situation": "Man in his late 40s, a doctor himself. On laxatives for a month, sleeping 5.5 to 6 hours, fat loss stalled after three years of dieting.",
+    "task": "Get his gut moving on its own and his sleep back before chasing more fat loss. He knew the theory; the gap was what he was actually doing.",
+    "action": "15 to 20 day gut reset: raw vegetables and salads removed, structured meals at set times, training capped at 5 days a week (magnesium too; left out of the post per the no-supplement-names rule).",
+    "result": "No laxatives from the start of the plan; bowels moving unaided 6 of 7 days by day 10; self-rated sleep score 2 to 7. Weight up about 3.5 to 4 kg (stored carbohydrate and water after a 3-year deficit). Self-reported scores.",
+    "lesson": "A 'healthy' food can be the wrong food for your gut at that point. Look at what is already on your plate before adding something new."
+  },
+  "hook": "He's a doctor, and he had been on laxatives for a month. The first thing I took off his plate was salad.",
+  "hook_style": "story_drop_in",
+  "draft": "He's a doctor, and he had been on laxatives for a month. The first thing I took off his plate was salad.\n\nHe was in his late 40s and had been dieting for three years. His weight had stopped moving. He was sleeping five and a half to six hours a night. He knew the theory of gut health better than most of my clients.\n\nThe task wasn't more fat loss. It was getting his gut working on its own again, and getting his sleep back.\n\nSo for the first two to three weeks we left fat loss alone. Raw salads and raw vegetables came off his plate. Meals came at set times. Training was capped at five days a week.\n\nHe stopped the laxatives from the start of the plan. By day 10, his bowels were moving on their own almost every day. The sleep score he gave himself went from 2 to 7.\n\nHis weight went up by about 4 kg. After three years of eating less, his body was refilling its carbohydrate stores, and those hold water. That's not fat.\n\nThe lesson: \"healthy\" food is whatever your gut can handle right now. For him, at that point, raw salads were part of the problem.\n\nIf you're eating clean and your gut keeps getting worse, look at what's on your plate before you add anything new.",
+  "final": "He's a doctor, and he had been on laxatives for a month. The first thing I took off his plate was salad.\n\nHe was in his late 40s, three years into dieting, and his weight had stopped moving. Most nights he slept five and a half to six hours. He knew the theory of gut health better than most people I coach. What he needed was someone to look at what he actually ate every day.\n\nFor the first two to three weeks we put fat loss aside and worked on his gut and his sleep. Raw salads and raw vegetables came off his plate, meals moved to set times, and training was capped at five days a week.\n\nHe didn't use laxatives at all once the plan started. Within ten days his bowels were moving on their own almost every day, and the sleep score he gave himself went from 2 to 7.\n\nHis weight went up by about 4 kg. After three years of eating less, his body was refilling its stored carbohydrate, and that store holds a lot of water along with it.\n\nRaw salads are good food for plenty of people. For his gut, at that point, they were making things harder.\n\nIf you're eating \"clean\" and your gut keeps getting worse, look at what's already on your plate before you add something new.\n\n#GutHealth",
+  "hashtags": [],
+  "image_spec": {
+    "template": "photo",
+    "photo": "content/photos/album-25.jpg",
+    "eyebrow": "Client story",
+    "title": "A doctor on laxatives. The salad came off first.",
+    "subtitle": "What his plate was hiding",
+    "photo_right": -260,
+    "photo_scale": 1.15,
+    "alt": "Shweta sitting outdoors among plants, smiling. Text: Client story. A doctor on laxatives. The salad came off first. What his plate was hiding."
+  },
+  "image_path": "content/images/2026-11-17-tue.png",
+  "image_alt": "Shweta sitting outdoors among plants, smiling. Text: Client story. A doctor on laxatives. The salad came off first. What his plate was hiding.",
+  "sources": [
+    {
+      "title": "Glycogen storage: illusions of easy weight loss, excessive weight regain, and distortions in estimates of body composition",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1615908/",
+      "publisher": "American Journal of Clinical Nutrition (Kreitzman et al.)",
+      "published": "1992-07",
+      "accessed": "2026-11-16",
+      "claim": "Glycogen is stored with roughly 3-4 parts water; restoring glycogen after dieting causes rapid weight regain that is not fat."
+    },
+    {
+      "title": "Stopping or reducing dietary fiber intake reduces constipation and its associated symptoms",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22969234/",
+      "publisher": "World Journal of Gastroenterology (Ho et al.)",
+      "published": "2012-09",
+      "accessed": "2026-11-16",
+      "claim": "Background only, not cited in the post: in a small uncontrolled study of 63 people with idiopathic constipation, reducing fibre improved symptoms. Weak evidence, so the post frames raw salads as a problem for this one client, not a general rule."
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "Man in his late 40s, a doctor, on laxatives for a month, sleeping 5.5-6 hrs, fat-loss plateau after 3 years of dieting",
+      "status": "verified",
+      "source": "case bank C05 (IJ [ME])"
+    },
+    {
+      "claim": "15-20 day gut reset; raw vegetables and salads removed; structured meals; training capped at 5 days a week",
+      "status": "verified",
+      "source": "case bank C05"
+    },
+    {
+      "claim": "No laxatives from the start; bowels unaided 6 of 7 days by day 10 ('almost every day'); sleep score 2 -> 7 (self-reported)",
+      "status": "verified",
+      "source": "case bank C05"
+    },
+    {
+      "claim": "Weight up ~3.5-4 kg ('about 4 kg'), stored carbohydrate (glycogen) and water after a 3-year deficit",
+      "status": "verified",
+      "source": "case bank C05; mechanism: Kreitzman 1992 (PMID 1615908)"
+    },
+    {
+      "claim": "Raw salads were part of the problem for him at that point",
+      "status": "verified as her case-bank lesson; framed as this client only, not a general rule",
+      "source": "case bank C05 lesson angle"
+    }
+  ],
+  "questions_for_shweta": [
+    "Confidentiality: the post says he is a doctor in his late 40s (the case-bank lesson depends on it). OK to keep 'doctor', or should it be 'works in healthcare'?",
+    "Fathom: no recent call with this client (IJ) in the last 10 recordings, so no fresh quotes were used.",
+    "Alternative hooks: (a) 'Three years of dieting, a month on laxatives, and the problem was on his salad plate.' (b) 'A doctor knew everything about gut health in theory. His plate said something else.'",
+    "Magnesium was part of his plan; left out of the post (no supplement names). Add it back if you want."
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-16T18:40:00+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed 'The task wasn't X. It was Y.' contrast and the 'That's not fat.' one-line closer; dropped the 'The lesson:' run-up and the aphorism about healthy food; merged repeated 'He...' sentence openings."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-16T18:40:09+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-16T18:37:35+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-16T18:40:00+05:30",
+      "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-16T18:40:45+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-17-tue.png"
+    }
+  ]
+}
