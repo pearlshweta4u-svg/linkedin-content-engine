@@ -20,13 +20,19 @@ def _git(*args: str) -> str:
     return r.stdout.strip()
 
 
+# The repo's single source of truth. Scheduled cloud sessions start on their own
+# claude/<name> branch; pushing there (16 Nov 2026) left main stale, so every run
+# started from out-of-date records. Always sync with and push to this branch,
+# whatever branch the local checkout is on.
+DATA_BRANCH = "main"
+
+
 def current_branch() -> str:
     return _git("rev-parse", "--abbrev-ref", "HEAD")
 
 
 def pull() -> None:
-    b = current_branch()
-    _git("fetch", "origin", b)
+    _git("fetch", "origin", DATA_BRANCH)
     _git("rebase", "FETCH_HEAD")  # works even when no origin/<branch> tracking ref exists
 
 
@@ -37,11 +43,11 @@ def commit_and_push(message: str, paths: list[str], retries: int = 4) -> None:
     if not _git("status", "--porcelain", *paths):
         return
     _git("commit", "-m", message)
-    b = current_branch()
+    b = DATA_BRANCH
     delay = 2
     for attempt in range(retries + 1):
         try:
-            _git("push", "-u", "origin", b)
+            _git("push", "origin", f"HEAD:refs/heads/{b}")
             return
         except GitSyncError:
             if attempt == retries:
@@ -50,6 +56,7 @@ def commit_and_push(message: str, paths: list[str], retries: int = 4) -> None:
             delay *= 2
             # Someone else pushed: rebase onto it and retry.
             try:
-                _git("pull", "--rebase", "origin", b)
+                _git("fetch", "origin", b)
+                _git("rebase", "FETCH_HEAD")
             except GitSyncError:
                 pass

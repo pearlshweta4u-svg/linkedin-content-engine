@@ -42,25 +42,43 @@
     "issues": [],
     "checked_at": "2026-11-09T20:19:23+05:30"
   },
-  "approval_status": "pending",
+  "approval_status": "approved",
   "approval": {
-    "requested_at": null,
-    "reminder_sent_at": null,
-    "decided_at": null,
-    "decided_by": null,
-    "channel": null,
+    "requested_at": "2026-11-16T07:12:38+05:30",
+    "reminder_sent_at": "2026-11-16T07:12:39+05:30",
+    "decided_at": "2026-11-16T08:12:54+05:30",
+    "decided_by": "pearl.shweta4u@gmail.com",
+    "channel": "email",
     "note": null
   },
-  "publish_status": "not_ready",
+  "publish_status": "published",
   "linkedin": {
-    "urn": null,
-    "url": null,
-    "image_urn": null
+    "urn": "urn:li:share:7527924187647287296",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7527924187647287296/",
+    "image_urn": "https://media.zernio.com/temp/1794796982798_8d72e77a7d812d86_2026-11-16-mon.png",
+    "via": "zernio"
   },
-  "published_at": null,
-  "attempts": [],
+  "published_at": "2026-11-16T08:13:00+05:30",
+  "attempts": [
+    {
+      "at": "2026-11-16T08:13:00+05:30",
+      "outcome": "published"
+    }
+  ],
   "errors": [],
-  "analytics": {},
+  "analytics": {
+    "impressions": 161,
+    "reach": 116,
+    "likes": 11,
+    "comments": 6,
+    "shares": 0,
+    "saves": 0,
+    "sends": 0,
+    "engagementRate": 10.56,
+    "reactions": 11,
+    "reposts": 0,
+    "updated_at": "2026-11-16T12:13:24+05:30"
+  },
   "history": [
     {
       "at": "2026-11-09T14:31:05+05:30",
@@ -127,6 +145,38 @@
       "at": "2026-11-09T20:35:02+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-16T07:12:38+05:30",
+      "event": "approval-requested"
+    },
+    {
+      "at": "2026-11-16T07:12:39+05:30",
+      "event": "reminded"
+    },
+    {
+      "at": "2026-11-16T07:12:39+05:30",
+      "event": "note",
+      "detail": "evening run 15 Nov failed (usage limit); old 9 Nov sample card was published. Records merged into main from claude/* run branches on 16 Nov."
+    },
+    {
+      "at": "2026-11-16T08:12:54+05:30",
+      "event": "decision_approve",
+      "by": "pearl.shweta4u@gmail.com"
+    },
+    {
+      "at": "2026-11-16T08:12:58+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
+    },
+    {
+      "at": "2026-11-16T08:13:00+05:30",
+      "event": "publish_started"
+    },
+    {
+      "at": "2026-11-16T08:13:09+05:30",
+      "event": "published",
+      "urn": "urn:li:share:7527924187647287296"
     }
   ],
   "story_structure": {
@@ -143,7 +193,7 @@
     "subtitle": "A medium pace I can keep, tracked one winning week at a time.",
     "alt": "Card: I coach women through fat loss. At 41, I'm doing it myself right now. A medium pace I can keep, tracked one winning week at a time."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794236699899_cbb0e353aa853d0a_2026-11-16-mon.png",
+  "image_public_url": "https://media.zernio.com/temp/1794796977030_06364d7b3be027c0_2026-11-16-mon.png",
   "drive_file_id": "1K0FPu62ufxBg6yHxRUHOsaB_gxbg8Tt0",
   "hook_style": "story_drop_in",
   "zernio_validation": {
@@ -158,7 +208,7 @@
       "size": 159774,
       "code": null
     },
-    "checked_at": "2026-11-09T20:35:02+05:30",
+    "checked_at": "2026-11-16T08:12:58+05:30",
     "text_sha": "a20e3b16287c07ab",
     "image_path": "content/images/2026-11-16-mon.png"
   }

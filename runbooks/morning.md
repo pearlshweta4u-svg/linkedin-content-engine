@@ -2,7 +2,9 @@
 
 The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any number of times.
 
-0. Clone or pull the repo (see `generate.md` step 0). `D=$(date +%F)` in IST (`TZ=Asia/Kolkata date +%F`). If there's no record for D: at 07:00 only, email "No post was generated for today", then stop.
+0. Clone or pull the repo (see `generate.md` step 0; pull from and push to `main` only). `D=$(date +%F)` in IST (`TZ=Asia/Kolkata date +%F`). If there's no record for D: at 07:00 only, email "No post was generated for today", then stop.
+
+0a. **Missed evening run check** (16 Nov 2026). If the record is `pending` and `approval.requested_at` is empty, last night's run didn't finish. Send the approval email now (generate.md step 8): subject `[LinkedIn] Approve: <Weekday> <D>: <topic> (⚠ evening run missed)`, body from `python3 -m engine email-body $D`, which starts with an ALERT block listing what's old or wrong (e.g. a sample card instead of her photo). Then `engine mark $D approval-requested --git`. Don't regenerate in the morning.
 
 1. **Read the approval reply** (only if `approval_status` is `pending` or `draft`):
    - Gmail search: `subject:"[LinkedIn] Approve" subject:<D> (from:trainwithshweta@gmail.com OR from:pearl.shweta4u@gmail.com) newer_than:3d`. Open the thread with `get_thread` and take the **newest reply written by Shweta** (not the original approval email sent by this system: skip messages whose body starts with "LinkedIn post for").
@@ -13,7 +15,7 @@ The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any
    - Result `edit`: apply her requested changes to `final`, re-apply the Humanizer to the changed parts (her own wording stays as she wrote it), set `humanizer.applied` true, run `engine check`, and send a fresh approval email (same subject + " (revised)").
 
 2. **07:00 run only**:
-   - If still `pending` and `approval.reminder_sent_at` is empty: send a reminder email to both addresses ("Reminder: today's LinkedIn post goes out at 8:00 if you approve. Reply APPROVE / SKIP in the original thread.") with the post text. Then run `python3 -m engine mark $D reminded --git`.
+   - If still `pending` and `approval.reminder_sent_at` is empty: send a reminder email to both addresses ("Reminder: today's LinkedIn post goes out at 8:00 if you approve. Reply APPROVE / SKIP in the original thread.") with the post text. If `python3 -m engine alerts $D` lists anything, put those lines at the top of the reminder under "ALERT: please check before approving". Then run `python3 -m engine mark $D reminded --git`.
    - If `python3 -m engine publish $D --dry-run` output contains `token_warning`, email it.
    - Don't publish at 07:00.
 

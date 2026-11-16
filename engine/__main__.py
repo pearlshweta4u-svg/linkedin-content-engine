@@ -67,7 +67,12 @@ def cmd_check(a):
 def cmd_email_body(a):
     rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
     s = load_settings()
-    lines = [
+    from . import alerts
+    lines = []
+    al = alerts.pre_approval_alerts(rec, s)
+    if al:
+        lines += ["!" * 60, "ALERT: PLEASE CHECK BEFORE APPROVING"] + [f"  * {x}" for x in al] + ["!" * 60, ""]
+    lines += [
         f"LinkedIn post for {rec['weekday']} {rec['date']}, 08:00 IST",
         f"Category: {rec['category']}   Pillar: {rec['pillar']}   Topic: {rec['topic']}",
         "",
@@ -98,6 +103,13 @@ def cmd_email_body(a):
         lines.append("Quality notes: " + "; ".join(warns))
     lines.append(f"\nPost ID: {rec['post_id']}")
     print("\n".join(lines))
+
+
+def cmd_alerts(a):
+    from . import alerts
+    rec = store.load(schedule.post_id_for(_date(a.date))) or sys.exit("no record")
+    al = alerts.pre_approval_alerts(rec, load_settings())
+    print(json.dumps({"post_id": rec["post_id"], "alerts": al}, indent=1, ensure_ascii=False))
 
 
 def cmd_mark(a):
@@ -403,6 +415,7 @@ def main(argv=None):
     sp = sub.add_parser("new"); sp.add_argument("date"); sp.set_defaults(f=cmd_new)
     sp = sub.add_parser("check"); sp.add_argument("date"); sp.set_defaults(f=cmd_check)
     sp = sub.add_parser("email-body"); sp.add_argument("date"); sp.set_defaults(f=cmd_email_body)
+    sp = sub.add_parser("alerts"); sp.add_argument("date"); sp.set_defaults(f=cmd_alerts)
     sp = sub.add_parser("mark"); sp.add_argument("date"); sp.add_argument("what", choices=["approval-requested", "reminded"]); g(sp); sp.set_defaults(f=cmd_mark)
     sp = sub.add_parser("decide"); sp.add_argument("date"); sp.add_argument("--reply-file"); sp.add_argument("--by", default="shweta"); g(sp); sp.set_defaults(f=cmd_decide)
     sp = sub.add_parser("publish"); sp.add_argument("date"); sp.add_argument("--dry-run", action="store_true"); sp.add_argument("--now"); sp.add_argument("--via", choices=["api", "composio"], default="api"); g(sp); sp.set_defaults(f=cmd_publish)

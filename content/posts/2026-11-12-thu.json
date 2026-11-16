@@ -95,16 +95,34 @@
     "channel": "email",
     "note": null
   },
-  "publish_status": "not_ready",
+  "publish_status": "published",
   "linkedin": {
-    "urn": null,
-    "url": null,
-    "image_urn": null
+    "urn": "urn:li:share:7526474543507484674",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7526474543507484674/",
+    "image_urn": "https://media.zernio.com/temp/1794462147138_bb3e30705271f3aa_2026-11-12-thu.png",
+    "via": "zernio"
   },
-  "published_at": null,
-  "attempts": [],
+  "published_at": "2026-11-12T11:12:24+05:30",
+  "attempts": [
+    {
+      "at": "2026-11-12T11:12:24+05:30",
+      "outcome": "published"
+    }
+  ],
   "errors": [],
-  "analytics": {},
+  "analytics": {
+    "impressions": 76,
+    "reach": 54,
+    "likes": 5,
+    "comments": 2,
+    "shares": 0,
+    "saves": 0,
+    "sends": 0,
+    "engagementRate": 9.21,
+    "reactions": 5,
+    "reposts": 0,
+    "updated_at": "2026-11-12T12:13:10+05:30"
+  },
   "history": [
     {
       "at": "2026-11-09T14:31:05+05:30",
@@ -215,6 +233,20 @@
       "at": "2026-11-10T17:28:50+05:30",
       "event": "decision_approve",
       "by": "pearl.shweta4u@gmail.com (email 2026-11-10 17:27 IST)"
+    },
+    {
+      "at": "2026-11-12T11:12:16+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
+    },
+    {
+      "at": "2026-11-12T11:12:25+05:30",
+      "event": "publish_started"
+    },
+    {
+      "at": "2026-11-12T11:12:28+05:30",
+      "event": "published",
+      "urn": "urn:li:share:7526474543507484674"
     }
   ],
   "image_spec": {
@@ -227,7 +259,7 @@
     "subtitle": "Don't stop at \"it's just age\".",
     "alt": "A leaning tree over a calm river at dusk. Text: Aching more in your 40s? Don't stop at it's just age."
   },
-  "image_public_url": "https://media.zernio.com/temp/1794311542260_fc25dc1b916e2546_2026-11-12-thu.png",
+  "image_public_url": "https://media.zernio.com/temp/1794462134738_7224f94c4dc793f9_2026-11-12-thu.png",
   "drive_file_id": "1cjLk7VIsr6SqTU3wZo7GQrmWCCgJeP-U",
   "hook_style": "relatable_moment",
   "zernio_validation": {
@@ -242,7 +274,7 @@
       "size": 4900211,
       "code": null
     },
-    "checked_at": "2026-11-10T17:22:20+05:30",
+    "checked_at": "2026-11-12T11:12:16+05:30",
     "text_sha": "4ea9ecb88d53da88",
     "image_path": "content/images/2026-11-12-thu.png"
   },

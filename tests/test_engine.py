@@ -529,3 +529,42 @@ class TestClientTransport(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PreApprovalAlertTests(unittest.TestCase):
+    """16 Nov 2026: a failed evening run let an old sample card go out unnoticed."""
+    S = {"images_enabled": True, "photos": {"use_for": ["personal_story", "client_story", "educational"]}}
+
+    def rec(self, created, template, category="personal_story", d="2026-11-16"):
+        return {"date": d, "category": category, "image_path": "x.png", "image_spec": {"template": template},
+                "history": [{"at": created, "event": "created"}, {"at": created, "event": "image_rendered"}]}
+
+    def test_fresh_photo_post_has_no_alerts(self):
+        from engine import alerts
+        self.assertEqual(alerts.pre_approval_alerts(self.rec("2026-11-15T18:40:00+05:30", "photo"), self.S), [])
+
+    def test_stale_card_is_flagged_twice(self):
+        from engine import alerts
+        al = alerts.pre_approval_alerts(self.rec("2026-11-09T14:31:05+05:30", "story"), self.S)
+        self.assertEqual(len(al), 2)
+        self.assertIn("2026-11-09", al[0])
+        self.assertIn("album photo", al[1])
+
+    def test_thursday_needs_scene(self):
+        from engine import alerts
+        r = self.rec("2026-11-18T18:40:00+05:30", "checklist", category="save_worthy", d="2026-11-19")
+        self.assertIn("scene", alerts.pre_approval_alerts(r, self.S)[0])
+
+    def test_missing_image_flagged(self):
+        from engine import alerts
+        r = self.rec("2026-11-15T18:40:00+05:30", "photo"); r["image_path"] = None
+        self.assertIn("No image", alerts.pre_approval_alerts(r, self.S)[0])
+
+
+class GitSyncBranchTests(unittest.TestCase):
+    def test_always_targets_main(self):
+        from engine import gitsync
+        self.assertEqual(gitsync.DATA_BRANCH, "main")
+        src = Path(gitsync.__file__).read_text()
+        self.assertIn('f"HEAD:refs/heads/{b}"', src)
+        self.assertNotIn('"push", "-u", "origin", b)', src)

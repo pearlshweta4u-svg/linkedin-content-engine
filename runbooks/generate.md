@@ -3,9 +3,10 @@
 Goal: produce tomorrow's post, humanized and quality-checked, and email it to Shweta for approval.
 
 0. **Setup**
-   - `cd` to the repo (clone `pearlshweta4u-svg/linkedin-content-engine` if missing), then `git pull --rebase`.
+   - `cd` to the repo (clone `pearlshweta4u-svg/linkedin-content-engine` if missing), then `git fetch origin main && git rebase FETCH_HEAD`.
+   - **Always save to `main`.** Scheduled sessions start on their own `claude/...` branch; the engine's `--git` already pushes to `main` (`HEAD:main`). If you ever push by hand, use `git push origin HEAD:main`, never the session branch (16 Nov 2026: runs pushed to side branches and `main` went stale for 4 days).
    - `D=$(python3 -m engine next-slot)`. If the file `content/posts/$D-*.json` already exists:
-     - status `pending` with `approval.requested_at` empty → skip to step 7 (image, if missing) and step 8 (send the approval email). Don't regenerate.
+     - status `pending` with `approval.requested_at` empty → run `python3 -m engine alerts $D`. If it reports an old post or a wrong/missing image (e.g. an early sample card instead of her album/scene photo), redo step 7 (image) and 7b before emailing; otherwise skip to step 8. Don't rewrite the text.
      - otherwise (already emailed, approved, skipped) → stop. Duplicate prevention.
    - If `config/settings.json` has `"paused": true`, stop.
 
@@ -74,7 +75,7 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
 8. **Approval email** (Gmail tool, from trainwithshweta@gmail.com):
    - To both addresses in `notify_emails`.
    - Subject: `[LinkedIn] Approve: <Weekday> <D>: <topic>`
-   - Body: the output of `python3 -m engine email-body $D`.
+   - Body: the output of `python3 -m engine email-body $D`. If it starts with an **ALERT** block, keep it at the top and add ` (⚠ check image)` to the subject.
    - The body already links the image on GitHub (push the image before sending so the link works). Don't attach the PNG: encoded images are too large to pass through the mail tool.
    - In auto mode, use the subject `[LinkedIn] Scheduled: …` and add "Reply SKIP to stop it".
 
