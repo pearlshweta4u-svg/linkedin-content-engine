@@ -1,0 +1,123 @@
+{
+  "post_id": "2026-11-18-wed",
+  "date": "2026-11-18",
+  "scheduled_for": "2026-11-18T08:00:00+05:30",
+  "weekday": "Wednesday",
+  "category": "educational",
+  "pillar": "self_advocacy",
+  "topic": "Normal TSH, but have your thyroid antibodies ever been tested?",
+  "angle": "TSH shows how hard the thyroid is pushed, not whether autoimmunity (Hashimoto's) is present; antibodies are common and not a diagnosis of failure, but they mean yearly TSH monitoring; what to ask your doctor",
+  "format": "explainer + what to ask",
+  "story_ids": [],
+  "story_structure": {},
+  "hook": "Has anyone ever tested your thyroid antibodies? Many women I work with have only ever had a TSH.",
+  "hook_style": "direct_question",
+  "draft": "Has anyone ever tested your thyroid antibodies? Many women I work with have only ever had a TSH.\n\nTSH is a good first test. It's a signal from your brain telling the thyroid to work harder. When the thyroid struggles, TSH goes up.\n\nBut TSH only tells you how hard the thyroid is being pushed. It doesn't tell you why it might be struggling.\n\nA 2022 review in the Polish Archives of Internal Medicine puts it plainly. Anti-TPO antibodies, the marker of Hashimoto's, are present in about 95% of people with it. And you can have the antibodies while your TSH and T4 are still normal.\n\nBefore you panic: antibodies are common. The same review says 15 to 25% of people test positive, far more than ever develop the disease.\n\nWhat it changes is how closely you watch. The review recommends a yearly TSH for people with antibodies and normal thyroid levels, because antibodies are a risk factor for hypothyroidism over time.\n\nIn my practice I also retest. A negative result once isn't negative forever. I've had a client test negative, then positive at a later retest.\n\nIf your thyroid has only ever been checked with TSH, ask your doctor whether an anti-TPO test makes sense for you, and how often to recheck.\n\n#Hashimotos #ThyroidHealth",
+  "final": "Has anyone ever tested your thyroid antibodies? Many women I work with have only ever had a TSH.\n\nTSH is a sensible first test. It's the signal your brain sends to push the thyroid to work harder, so it goes up when the thyroid is struggling.\n\nWhat it can't show is whether your immune system has started attacking the thyroid. That's Hashimoto's, and it has its own blood test, anti-TPO antibodies.\n\nA 2022 review in the Polish Archives of Internal Medicine says these antibodies are present in about 95% of people with Hashimoto's. It also describes people who have them while their TSH and T4 are still normal.\n\nPositive antibodies are common, though. The same review puts it at 15 to 25% of people, far more than ever develop the disease. A positive result on its own doesn't mean your thyroid is failing.\n\nIt does mean watching more closely. The review recommends a TSH test every year for people with antibodies and normal thyroid levels, because the antibodies raise the risk of hypothyroidism over time.\n\nI retest with my clients as well. One of them had negative antibodies at first and positive ones at a later retest.\n\nIf your thyroid has only ever been checked with a TSH, ask your doctor whether an anti-TPO test makes sense for you, and how often to recheck it.\n\n#Hashimotos #ThyroidHealth",
+  "hashtags": [],
+  "image_spec": {
+    "template": "photo",
+    "photo": "content/photos/album-1.jpg",
+    "eyebrow": "Thyroid tests",
+    "title": "Your TSH is normal. Were your antibodies ever tested?",
+    "subtitle": "One test can't answer every question",
+    "photo_right": -260,
+    "photo_scale": 1.15,
+    "alt": "Shweta Mehta smiling, seated with her arms crossed. Text: Thyroid tests. Your TSH is normal. Were your antibodies ever tested?"
+  },
+  "image_path": "content/images/2026-11-18-wed.png",
+  "image_alt": "Shweta Mehta smiling, seated with her arms crossed. Text: Thyroid tests. Your TSH is normal. Were your antibodies ever tested?",
+  "sources": [
+    {
+      "title": "Klubo-Gwiezdzinska J, Wartofsky L. Hashimoto thyroiditis: an evidence-based guide to etiology, diagnosis and treatment. Pol Arch Intern Med 2022;132(3)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9478900/",
+      "publisher": "Polish Archives of Internal Medicine (PMC)",
+      "published": "2022-03-03",
+      "accessed": "2026-11-17",
+      "claim": "Anti-TPO antibodies present in about 95% of Hashimoto's patients; 15-25% seropositivity in the general population, much higher than clinical disease; euthyroid HT = antibodies with normal TSH and T4, requires annual TSH; TPOAbs are risk factors for progression to overt hypothyroidism"
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "Anti-TPO present in ~95% of Hashimoto's",
+      "status": "verified, PMC9478900 full text"
+    },
+    {
+      "claim": "15-25% of people antibody-positive, far more than develop disease",
+      "status": "verified, PMC9478900"
+    },
+    {
+      "claim": "Antibodies with normal TSH and T4 (euthyroid HT); annual TSH recommended",
+      "status": "verified verbatim, PMC9478900"
+    },
+    {
+      "claim": "Antibodies are a risk factor for progression to hypothyroidism over time",
+      "status": "verified, PMC9478900 (no annual rate given, none stated in post)"
+    },
+    {
+      "claim": "TSH is the pituitary's signal to the thyroid and rises when the thyroid underperforms",
+      "status": "standard physiology; not separately cited (thyroid.org, NIDDK and MedlinePlus blocked by network policy this run)"
+    },
+    {
+      "claim": "Many women she works with have only had TSH",
+      "status": "her view, beliefs-and-methodology.md (Hashimoto's section), written as 'women I work with'"
+    },
+    {
+      "claim": "Client negative then positive antibodies on retest",
+      "status": "case C08 (CT), case-bank-clients.md; anonymized, no other detail"
+    },
+    {
+      "claim": "'Hashimoto's is the most common cause of hypothyroidism in iodine-sufficient regions'",
+      "status": "only a search snippet (StatPearls); left out of the post"
+    }
+  ],
+  "questions_for_shweta": [
+    "Alternative hooks: (a) \"Your TSH can be normal while your immune system is already working against your thyroid.\" (b) \"A normal TSH tells you how hard your thyroid is working. It can't tell you why it might start to struggle.\"",
+    "The post mentions one client (C08) whose antibodies turned positive on a later retest, with no other details. OK to include?"
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-17T18:55:00+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed 'But TSH only tells you X. It doesn't tell you why' contrast (stated what TSH can't show directly); cut 'puts it plainly' and 'Before you panic:' staged run-ups; dropped 'A negative result once isn't negative forever' saying-style line; varied sentence rhythm. Checked line by line: no new facts vs draft."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-17T18:39:00+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-17T18:38:09+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-17T18:39:00+05:30",
+      "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-17T18:40:35+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-18-wed.png"
+    }
+  ]
+}
