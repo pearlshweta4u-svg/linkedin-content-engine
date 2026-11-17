@@ -118,6 +118,12 @@
       "at": "2026-11-17T18:40:35+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-18-wed.png"
+    },
+    {
+      "at": "2026-11-17T18:40:48+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1794921047047_82d4db9fc0b41024_2026-11-18-wed.png"
     }
-  ]
+  ],
+  "image_public_url": "https://media.zernio.com/temp/1794921047047_82d4db9fc0b41024_2026-11-18-wed.png"
 }
