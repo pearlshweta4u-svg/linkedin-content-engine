@@ -1,0 +1,130 @@
+{
+  "post_id": "2026-11-19-thu",
+  "date": "2026-11-19",
+  "scheduled_for": "2026-11-19T08:00:00+05:30",
+  "weekday": "Thursday",
+  "category": "save_worthy",
+  "pillar": "sleep_stress",
+  "topic": "Sleep getting worse through perimenopause, and what still helps",
+  "angle": "Newer cohort data: sleep symptoms rise across the transition, largest in late perimenopause, night sweats/hot flushes a big part; insomnia treatment still helps in perimenopause (early). Checklist of what to track and ask; CBT-I first line.",
+  "format": "explainer + checklist",
+  "story_ids": [
+    "C10"
+  ],
+  "story_structure": {},
+  "hook": "Waking every night in your forties can have a hormonal reason. Sleep tends to get worse through perimenopause, hardest near the end.",
+  "hook_style": "curiosity_gap",
+  "draft": "Sleep often gets worse through perimenopause. What still helps is the part most women never hear.\n\nNewer research that followed thousands of women through the menopause transition found sleep trouble climbing stage by stage, and worst in late perimenopause. Night sweats and hot flushes accounted for a good part of the link with changing hormones.\n\nThe same work had a more hopeful finding. Women in perimenopause who got insomnia treatment improved, and not clearly less than women with regular cycles. That part is early evidence from a small group.\n\nOne client in her mid-forties, in late perimenopause on her labs, came to me for afternoon cravings and binge eating. Her sleep got better over our months of work, alongside the other changes.\n\nIf your nights have fallen apart in your forties, this is the list I'd work through:\n\n1. Notice your cycle. Periods changing and new sleep trouble at the same time is worth raising with your doctor as possible perimenopause.\n2. For a few weeks, write down night sweats, hot flushes and every time you wake. A pattern is easier for a doctor to act on.\n3. Bring up the night sweats specifically with your gynaecologist. They're a medical symptom, and there are options to discuss.\n4. Ask about CBT for insomnia, a structured talk-and-habits programme. Doctors' guidelines recommend it as the first treatment for long-term insomnia.\n5. Don't wait it out because \"it's just hormones\". Treatment can still help in perimenopause.\n6. If you're already on a sleep or mood medicine, keep taking it as prescribed and talk to your doctor before changing anything.\n\nWhich of these has anyone checked with you?",
+  "final": "Waking every night in your forties can have a hormonal reason. Sleep tends to get worse through perimenopause, hardest near the end.\n\nNewer research followed thousands of women through the menopause transition. Sleep trouble rose stage by stage and was worst in late perimenopause. Night sweats and hot flushes explained a good part of the link with changing hormones.\n\nThere was a hopeful finding too. Women in perimenopause who had insomnia treatment improved, and not clearly less than women whose cycles were still regular. That part is early evidence from a small group.\n\nOne client in her mid-forties, in late perimenopause on her labs, came to me for afternoon cravings and binge eating. Over our months of work her sleep got better along with everything else.\n\nIf your nights have fallen apart in your forties, this is the list I'd work through:\n\n1. Notice your cycle. If your periods are changing and your sleep is getting worse at the same time, ask your doctor whether perimenopause could be part of it.\n2. For a few weeks, write down night sweats, hot flushes and each time you wake. A written pattern is easier for a doctor to act on.\n3. Tell your gynaecologist about the night sweats specifically. They're a medical symptom with options worth discussing.\n4. Ask about CBT for insomnia, a structured programme that works on sleep habits and the thoughts that keep you awake. Doctors' guidelines recommend it as the first treatment for long-term insomnia.\n5. Don't wait it out because \"it's just hormones\". Treatment can still help in perimenopause.\n6. If you already take a medicine for sleep or mood, keep taking it as prescribed and talk to your doctor before changing anything.\n\nWhich of these would you bring up first?\n\n#Perimenopause #Insomnia #WomensHealth",
+  "hashtags": [],
+  "image_spec": {
+    "template": "scene",
+    "photo": "content/photos/scenes/orange-sunset-waves.jpg",
+    "focus": "50% center",
+    "text_position": "top",
+    "eyebrow": "Midlife sleep",
+    "title": "Waking every night in your forties?",
+    "subtitle": "There may be a hormonal reason.",
+    "alt": "Orange sunset over sea waves. Text: Midlife sleep. Waking every night in your forties? There may be a hormonal reason."
+  },
+  "image_path": "content/images/2026-11-19-thu.png",
+  "image_alt": "Orange sunset over sea waves. Text: Midlife sleep. Waking every night in your forties? There may be a hormonal reason.",
+  "sources": [
+    {
+      "title": "Sleep symptoms, reproductive hormones, and treatment trajectories across the menopausal transition: analyses of two observational cohorts (Kong, Liu, Mao)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13773769/",
+      "publisher": "Frontiers in Endocrinology 17:1959585, doi 10.3389/fendo.2026.1959585",
+      "published": "2026-11-03",
+      "accessed": "2026-11-18",
+      "claim": "SWAN cohort (3,280 women): sleep-symptom burden increased across the menopausal transition; late perimenopause had the largest adjusted difference vs premenopause. Vasomotor symptoms statistically accounted for ~47% of the FSH-sleep and ~40% of the E2-sleep association (decomposition, not causal). Clinical cohort (431 women, digital CBT/relaxation programme and/or medication): sleep quality improved in all groups; perimenopausal trajectory did not differ significantly from regular-cycling (p=0.133; small group of 89)."
+    },
+    {
+      "title": "Management of Chronic Insomnia Disorder in Adults: A Clinical Practice Guideline From the American College of Physicians (Qaseem et al.)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27136449/",
+      "publisher": "Annals of Internal Medicine 2016;165(2):125-133",
+      "published": "2016-07-19",
+      "accessed": "2026-11-18",
+      "claim": "ACP recommends CBT-I as the initial treatment for chronic insomnia disorder in adults."
+    },
+    {
+      "title": "Research report: Sleep stress women midlife Nov 2026",
+      "url": "research/Sleep stress women midlife Nov 2026.md",
+      "publisher": "internal deep-research notes",
+      "published": "2026-11-18",
+      "accessed": "2026-11-18",
+      "claim": "Window scan 19 Oct-18 Nov 2026; supporting snippet-only items (Sleep Medicine 2026 meta-analysis on non-drug insomnia treatment in peri/postmenopause) not used in the post"
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "Sleep trouble rises through the transition, worst in late perimenopause",
+      "status": "Verified on PMC page (abstract: late perimenopause had the largest adjusted burden difference vs premenopause). Note: surgical postmenopause had the highest raw mean; post says 'worst in late perimenopause' for the natural transition stages."
+    },
+    {
+      "claim": "Night sweats and hot flushes explained a good part of the hormone-sleep link",
+      "status": "Verified: ~40-47% statistical decomposition; authors say not causal mediation. Post uses 'explained a good part of the link', no causation."
+    },
+    {
+      "claim": "Perimenopausal women improved with insomnia treatment, not clearly less than regular-cycling women; early, small group",
+      "status": "Verified: difference not significant (p=0.133), n=89; treatment was a digital CBT/relaxation programme and/or medication. Stated as early evidence."
+    },
+    {
+      "claim": "Guidelines recommend CBT for insomnia as first treatment for long-term insomnia",
+      "status": "ACP 2016 guideline (well established). PubMed page not re-opened this session (cookie wall); citation from known guideline."
+    },
+    {
+      "claim": "Client in mid-forties, late perimenopause on labs, afternoon cravings and binge eating, sleep improved over the programme",
+      "status": "C10 in case bank: age 46, late perimenopause confirmed by labs, 3 PM cravings, binge eating, better sleep in 6-month programme. No causation claimed for sleep."
+    }
+  ],
+  "questions_for_shweta": [
+    "The client example is C10 (46, late perimenopause, 3 PM cravings, better sleep). Is 'over our months of work her sleep got better' accurate to how you remember it? If you know what changed her sleep, reply APPROVE WITH EDIT and I'll add it.",
+    "Other hook options: (a) 'Sleep often gets worse through perimenopause. What still helps is the part most women never hear.' (b) 'If you slept well at thirty-five and now wake most nights at forty-five, your hormones may be part of it.'",
+    "Network limits this session: most journal sites (frontiersin.org, sciencedirect.com, menopause.org, nhs.uk, pib.gov.in) were blocked, so only the anchor paper was read in full via PMC."
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-18T18:45:06+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Cut staged hook ('the part most women never hear', unsupported); split stacked research sentence; removed 'The same work had a more hopeful finding' run-up; clarified CBT-I gloss and item wording; varied closing question; no new facts."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-18T18:45:06+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-18T18:44:08+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-18T18:44:58+05:30",
+      "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-18T18:45:07+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-19-thu.png"
+    }
+  ]
+}
