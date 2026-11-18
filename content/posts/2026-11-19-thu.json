@@ -125,6 +125,12 @@
       "at": "2026-11-18T18:45:07+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-19-thu.png"
+    },
+    {
+      "at": "2026-11-18T18:45:28+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1795007727736_7fde4279a3ad6254_2026-11-19-thu.png"
     }
-  ]
+  ],
+  "image_public_url": "https://media.zernio.com/temp/1795007727736_7fde4279a3ad6254_2026-11-19-thu.png"
 }
