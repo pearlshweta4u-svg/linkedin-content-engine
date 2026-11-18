@@ -95,7 +95,7 @@
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": null,
+    "requested_at": "2026-11-18T18:46:08+05:30",
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
@@ -140,6 +140,10 @@
       "at": "2026-11-18T18:45:49+05:30",
       "event": "copied_to_drive",
       "file_id": "1Exryo3f1kdYk_hdyG3YZbtmOCq4i5kpC"
+    },
+    {
+      "at": "2026-11-18T18:46:08+05:30",
+      "event": "approval-requested"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795007734161_e63b1314a0a3f9f5_2026-11-19-thu.png",
