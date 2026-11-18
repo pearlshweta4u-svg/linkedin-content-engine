@@ -25,8 +25,10 @@ go live in APPROVAL MODE. Ask me only what you cannot find yourself, and ask it 
 - Mon: personal story. Use a story arc: moment → struggle → action → change → lesson.
 - Tue: client story. Use STAR + lesson (situation, task, action, result, lesson). Anonymize everything.
   Only use verified outcomes, and state confounders honestly.
-- Wed: educational (one idea, plain language).
-- Thu: save-worthy, researched, current (last 7–30 days): checklist / steps / mistakes. Use the deep-research skill.
+- Wed: educational: one idea in plain language, explained through an anonymized client example.
+- Thu: save-worthy, researched, current (last 7–30 days): checklist / steps / mistakes. Use the deep-research skill,
+  but put NO exact numbers, links or study names in the post: say it in plain words and relate it to a client
+  problem or a personal story. Sources stay in the record and the approval email. Enforce this in the lint.
 - Fri: {{domain}} health/wellness, researched, credible sources only. Use the deep-research skill.
 Rules for every post:
 - Never invent experiences, clients, quotes, numbers or studies.

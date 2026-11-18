@@ -45,6 +45,20 @@ WEAK_OPENERS = ("tomorrow is", "today is", "in this post", "let's talk", "lets t
                 "i want to share", "did you know", "i'm excited", "i am excited", "happy ", "as a coach",
                 "in today's", "have you ever wondered")
 STORY_MAX_NUMBERS = 3
+# Thursday save-worthy posts (Shweta, 18 Nov 2026): research shapes the advice, but the
+# post itself carries no exact numbers, links or study citations; it is told through a
+# client problem or her own story. Sources stay in the record and the approval email.
+SAVE_WORTHY_CITATION_PHRASES = (
+    "et al", "published in", "journal", "a new study", "a recent study", "the study",
+    "this study", "researchers found", "according to a", "according to research",
+    "according to the", "meta-analysis", "randomised", "randomized",
+)
+URL_RE = re.compile(r"https?://|www\.|\b[\w-]+\.(com|org|gov|in|net|io)(/|\b)", re.I)
+LIST_MARKER_RE = re.compile(r"^\s*\d{1,2}[.)]\s", re.M)
+# A client case (C..) or personal story (P..) used only as a brief example (Wed/Thu)
+# rests for this many days; full story posts (Mon/Tue) keep story_cooldown_days.
+EXAMPLE_CATEGORIES = {"educational", "save_worthy"}
+
 NUMBER_CLAIM = re.compile(r"\b\d+(\.\d+)?\s?%|\b\d+\s+(in|out of)\s+\d+\b", re.I)
 
 
@@ -157,6 +171,24 @@ def check(record: dict, settings: dict, history: list[dict] | None = None) -> li
         if len(nums) > STORY_MAX_NUMBERS:
             issues.append(f"WARN: {len(nums)} numbers in a story post; keep the {STORY_MAX_NUMBERS} that matter most")
 
+    # Wednesday: one idea, shown through a client example
+    ids = record.get("story_ids") or []
+    if cat == "educational" and not any(str(i).upper().startswith("C") for i in ids):
+        issues.append("WARN: Wednesday post has no client example; anchor the idea in a case from case-bank-clients.md (add its id to story_ids)")
+    # Thursday: no numbers, links or study citations in the post; relate it to a client or personal story
+    if cat == "save_worthy":
+        body = re.sub(r"(?<!\w)#\w+", "", text)
+        if URL_RE.search(body):
+            issues.append("BLOCK: Thursday post contains a link; keep sources in the record, not the post")
+        cites = sorted({p for p in SAVE_WORTHY_CITATION_PHRASES if p in body.lower()})
+        if cites:
+            issues.append(f"BLOCK: Thursday post cites studies ({', '.join(cites)}); explain the finding in plain words instead")
+        nums = re.findall(r"\d+(?:[.,]\d+)?", LIST_MARKER_RE.sub("", body))
+        if nums:
+            issues.append(f"BLOCK: Thursday post has exact numbers ({', '.join(nums[:5])}); use plain words (\"most\", \"in your forties\")")
+        if not ids:
+            issues.append("WARN: Thursday post isn't linked to a client problem or personal story (story_ids empty)")
+
     # Repetition against history
     history = [h for h in (history or []) if h.get("post_id") != record.get("post_id")]
     published = [h for h in history if h.get("publish_status") == "published" or h.get("approval_status") == "approved"]
@@ -177,12 +209,17 @@ def check(record: dict, settings: dict, history: list[dict] | None = None) -> li
         this_day = None
     if this_day:
         story_cut = this_day - timedelta(days=q["story_cooldown_days"])
+        example_cut = this_day - timedelta(days=q.get("example_cooldown_days", 14))
         topic_cut = this_day - timedelta(days=q["topic_cooldown_days"])
         for h in published:
             hd = date.fromisoformat(h["date"])
             shared = set(record.get("story_ids") or []) & set(h.get("story_ids") or [])
-            if shared and hd >= story_cut:
-                issues.append(f"BLOCK: story {sorted(shared)} used on {h['date']} (cool-down {q['story_cooldown_days']}d)")
+            # Full story posts (Mon/Tue) rest story_cooldown_days; a story used only as an
+            # example in a Wed/Thu post rests example_cooldown_days.
+            as_example = cat in EXAMPLE_CATEGORIES or h.get("category") in EXAMPLE_CATEGORIES
+            if shared and hd >= (example_cut if as_example else story_cut):
+                days = q.get("example_cooldown_days", 14) if as_example else q["story_cooldown_days"]
+                issues.append(f"BLOCK: story {sorted(shared)} used on {h['date']} (cool-down {days}d)")
             if record.get("topic") and h.get("topic", "").strip().lower() == record["topic"].strip().lower() and hd >= topic_cut:
                 issues.append(f"BLOCK: topic repeated from {h['post_id']}")
     return issues

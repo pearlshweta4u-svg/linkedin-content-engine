@@ -22,8 +22,9 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
 2. **Pick the topic**
    - Mon: one story from `story-bank-personal.md` that isn't on cool-down. Use only its verified facts. Put any missing detail into `questions_for_shweta`.
    - Tue: one case from `case-bank-clients.md`. Respect its confounders and caveats. Fathom (if the connector works) may add verbatim phrasing; anonymize it.
-   - Wed: one concept from `beliefs-and-methodology.md` / the pillars. Research any factual claim.
-   - Thu: **use the `deep-research` skill** (anthropic-skills:deep-research). Find a development from the last 7–30 days relevant to her pillars (a new study, guideline, Indian health news). Connect it to a case or her method. Pick a save-worthy format.
+   - Wed: one concept from `beliefs-and-methodology.md` / the pillars, **explained through a client example** from `case-bank-clients.md` (anonymized, verified facts only; put its id in `story_ids`). The idea leads; the client example shows it in real life. Research any factual claim. (Shweta, 18 Nov 2026.) A case used as a Wed/Thu example rests 14 days (`example_cooldown_days`); a full Tuesday story still rests 56.
+   - Thu: **use the `deep-research` skill** (anthropic-skills:deep-research). Find a development from the last 7–30 days relevant to her pillars (a new study, guideline, Indian health news). Pick a save-worthy format (checklist, step-by-step, mistakes).
+     **In the post (Shweta, 18 Nov 2026): no exact numbers, no links, no study or journal names.** Say what the research means in plain words ("most women", "in your forties", "newer guidance says") and relate it to a client problem or her own story (add the C/P id to `story_ids`). The research goes in `sources` and the approval email only. List numbering (1. 2. 3.) is fine. `engine check` blocks digits, links and citation phrases on Thursdays.
    - Fri: **use the `deep-research` skill**. Pick one general-health topic (see the Friday pool), sourced from credible bodies. State evidence strength honestly.
    - If research doesn't support the planned angle, change the angle. Never stretch the evidence.
 

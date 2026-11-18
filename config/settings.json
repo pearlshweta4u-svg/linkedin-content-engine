@@ -32,6 +32,7 @@
     "max_hashtags": 3,
     "hook_lookback_posts": 15,
     "story_cooldown_days": 56,
+    "example_cooldown_days": 14,
     "topic_cooldown_days": 42
   },
   "images_enabled": true,

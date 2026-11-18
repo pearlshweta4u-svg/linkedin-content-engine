@@ -568,3 +568,45 @@ class GitSyncBranchTests(unittest.TestCase):
         src = Path(gitsync.__file__).read_text()
         self.assertIn('f"HEAD:refs/heads/{b}"', src)
         self.assertNotIn('"push", "-u", "origin", b)', src)
+
+
+class WedThuRuleTests(unittest.TestCase):
+    """Shweta, 18 Nov 2026: Wednesday uses a client example; Thursday has no exact
+    numbers, links or study citations and is tied to a client or personal story."""
+    SRC = [{"title": "Guideline", "url": "https://example.org/g", "claim": "x"}]
+
+    def rec(self, text, category, **kw):
+        r = store.new_record(MON, settings())
+        r.update(final=text, category=category, hook_style="relatable_moment", sources=self.SRC)
+        r["humanizer"]["applied"] = True
+        r.update(kw)
+        return quality.check(r, settings())
+
+    def test_wednesday_without_client_example_warns(self):
+        self.assertTrue(any("client example" in i for i in self.rec(GOOD_TEXT, "educational")))
+        self.assertFalse(any("client example" in i for i in self.rec(GOOD_TEXT, "educational", story_ids=["C05"])))
+
+    def test_thursday_blocks_numbers_links_and_citations(self):
+        bad = GOOD_TEXT + "\n\nA 2025 study published in a journal found 38% of women at https://x.com/a."
+        issues = [i for i in self.rec(bad, "save_worthy", story_ids=["C02"]) if i.startswith("BLOCK")]
+        self.assertTrue(any("link" in i for i in issues))
+        self.assertTrue(any("cites studies" in i for i in issues))
+        self.assertTrue(any("exact numbers" in i for i in issues))
+
+    def test_thursday_list_markers_allowed(self):
+        text = GOOD_TEXT + "\n\n1. Ask for the full panel\n2. Ask what normal means for you"
+        issues = self.rec(text, "save_worthy", story_ids=["C02"])
+        self.assertFalse(any("exact numbers" in i for i in issues), issues)
+
+    def test_thursday_without_story_warns(self):
+        self.assertTrue(any("client problem or personal story" in i for i in self.rec(GOOD_TEXT, "save_worthy")))
+
+    def test_example_cooldown_is_shorter(self):
+        hist = [{"post_id": "2026-10-27-tue", "date": "2026-10-27", "category": "client_story",
+                 "story_ids": ["C05"], "publish_status": "published", "final": "x", "topic": "other"}]
+        r = store.new_record(MON, settings())
+        r.update(final=GOOD_TEXT, category="educational", hook_style="relatable_moment", story_ids=["C05"], topic="t")
+        r["humanizer"]["applied"] = True
+        self.assertFalse(any("C05" in i for i in quality.check(r, settings(), hist)))
+        r.update(category="client_story")
+        self.assertTrue(any("C05" in i for i in quality.check(r, settings(), hist)))
