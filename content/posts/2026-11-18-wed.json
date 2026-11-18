@@ -110,7 +110,19 @@
     }
   ],
   "errors": [],
-  "analytics": {},
+  "analytics": {
+    "impressions": 96,
+    "reach": 75,
+    "likes": 9,
+    "comments": 3,
+    "shares": 0,
+    "saves": 0,
+    "sends": 0,
+    "engagementRate": 12.5,
+    "reactions": 9,
+    "reposts": 0,
+    "updated_at": "2026-11-18T12:12:32+05:30"
+  },
   "history": [
     {
       "at": "2026-11-17T18:38:09+05:30",
