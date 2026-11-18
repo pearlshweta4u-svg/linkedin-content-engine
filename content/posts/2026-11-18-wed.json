@@ -86,13 +86,13 @@
     "issues": [],
     "checked_at": "2026-11-17T18:39:00+05:30"
   },
-  "approval_status": "pending",
+  "approval_status": "approved",
   "approval": {
     "requested_at": "2026-11-17T18:42:16+05:30",
     "reminder_sent_at": "2026-11-18T07:12:16+05:30",
-    "decided_at": null,
-    "decided_by": null,
-    "channel": null,
+    "decided_at": "2026-11-18T08:12:47+05:30",
+    "decided_by": "shweta",
+    "channel": "email",
     "note": null
   },
   "publish_status": "not_ready",
@@ -141,6 +141,11 @@
     {
       "at": "2026-11-18T07:12:16+05:30",
       "event": "reminded"
+    },
+    {
+      "at": "2026-11-18T08:12:47+05:30",
+      "event": "decision_approve",
+      "by": "shweta"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1794921066622_61244658f8cdd508_2026-11-18-wed.png",
