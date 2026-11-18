@@ -135,6 +135,11 @@
       "at": "2026-11-18T18:45:36+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-18T18:45:49+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1Exryo3f1kdYk_hdyG3YZbtmOCq4i5kpC"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795007734161_e63b1314a0a3f9f5_2026-11-19-thu.png",
@@ -153,5 +158,6 @@
     "checked_at": "2026-11-18T18:45:36+05:30",
     "text_sha": "b1cc463cce108a80",
     "image_path": "content/images/2026-11-19-thu.png"
-  }
+  },
+  "drive_file_id": "1Exryo3f1kdYk_hdyG3YZbtmOCq4i5kpC"
 }
