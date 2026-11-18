@@ -89,6 +89,13 @@ Rules for every post:
   email). Anything unclear → ask again, never publish.
 - Morning run (Mon–Fri, hourly 07:00–12:00): 07:00 reminder if still pending; from 08:00 validate, then
   publish if approved; 11:00 last call; at 12:00 the slot expires (skip and email), then fetch analytics.
+- Missed evening run: an evening run can fail silently (e.g. the Claude usage limit is reached: the run
+  stops after a few seconds). If the morning run finds the post pending with no approval email sent, it sends
+  the approval email itself with "(⚠ evening run missed)" in the subject. It never regenerates in the morning.
+- Pre-approval ALERTS (`engine alerts <date>`): the top of every approval and reminder email lists anything
+  unusual: post not written by the previous evening's run, image is a text card instead of the person's
+  photo (Mon–Wed) or a scene (Thu/Fri), or no image. Add "(⚠ check image)" to the subject. Without this, an
+  old sample image can get approved and posted unnoticed.
   Email "Posted ✓ <url>" or a clear alert (auth expired → reconnect in Zernio; unknown outcome → check
   manually, never auto-retry).
 
@@ -102,7 +109,12 @@ Rules for every post:
 - Git is the database: write a durable "publishing" lock (commit + push) BEFORE the irreversible call. Pull
   with `git fetch origin main && git rebase FETCH_HEAD`, since fresh clones have no origin/main tracking ref.
   Commit only when the tests pass.
-- CLI commands: new, check, image, image-url, validate, email-body, decide, mark, publish (--dry-run),
+- ALWAYS push to main with `git push origin HEAD:main`, never to the current branch. Scheduled cloud
+  sessions start on their own `claude/<name>` branch; if the engine pushes "the current branch", every run
+  saves to a side branch, main goes stale, and the next run works from out-of-date records (wrong cooldowns,
+  repeated photos, the same post attempted again each hour; only the fixed idempotency key prevents a
+  double post). Put a unit test on this.
+- CLI commands: new, check, alerts, image, image-url, validate, email-body, decide, mark, publish (--dry-run),
   record, mark-published / reset-publish, mode (approval/auto/pause/resume), history, fetch-analytics,
   import-post-url, import-history, status. Unit-test duplicate prevention, the window and expiry, approval
   parsing, escaping, idempotency, the validation gate, hooks and image rules.
@@ -114,7 +126,20 @@ Rules for every post:
   confirm "REPO PUSH: OK" before relying on it. Until that's verified, schedule a one-off backup check
   ~5 min after the first publish slot.
 
-## 8. Order of work
+## 8. Known failure modes (handle each in code or runbooks)
+| Failure | Guard |
+|---|---|
+| Evening run fails (usage limit, crash) | Morning 0a check sends the approval email with ALERTs |
+| Old/sample image left on a record | `engine alerts` in every approval/reminder email; evening run redoes the image |
+| Runs push to side branches | gitsync pushes `HEAD:main` only; test asserts it |
+| Same slot retried by several runs | Zernio fixed Idempotency-Key (UUIDv5 of post id) |
+| Text/image changed after validation | Validation gate (text hash + image path) refuses to publish |
+| Approval reply to an old email | Only replies after `approval.requested_at` count; revisions get a "(revised)" thread |
+| LinkedIn auth expired | `auth_failed` → email "reconnect in Zernio" |
+| Running out of scene photos | Mon/Tue look-ahead email ≥24h before Thursday |
+| Scheduled task can't push or read mail | Person adds repo + connectors to both tasks in the UI; verify "REPO PUSH: OK" |
+
+## 9. Order of work
 1. Discovery (sources, connectors, past posts, gaps), then ask me one batch of questions.
 2. Knowledge base with a source for every fact.
 3. Engine + tests.
@@ -135,3 +160,4 @@ assumed. Never publish anything I haven't approved.
 4. After the scheduled tasks are created: add the repo and the Gmail + Composio connectors to both tasks in the claude.ai UI.
 5. Share the photo album link and upload 5–10 people-free scene photos.
 6. Reply APPROVE to the first emails.
+7. Keep an eye on the Claude usage limit: a run that hits it does nothing. The next morning's email will say "(⚠ evening run missed)".
