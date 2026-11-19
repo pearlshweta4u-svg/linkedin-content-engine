@@ -1,0 +1,159 @@
+{
+  "post_id": "2026-11-20-fri",
+  "date": "2026-11-20",
+  "scheduled_for": "2026-11-20T08:00:00+05:30",
+  "weekday": "Friday",
+  "category": "health_wellness",
+  "pillar": "mental_emotional",
+  "topic": "Mood and mental health with PCOS and Hashimoto's: ask to be screened",
+  "angle": "PCOS guideline says screen every adult for depression and anxiety; Hashimoto's linked with higher odds of both; most Indian women with depression untreated; exercise helps alongside treatment (low-certainty evidence)",
+  "format": "explainer + what to do",
+  "story_ids": [],
+  "story_structure": {},
+  "hook": "If you have PCOS or Hashimoto's, when did a doctor last ask about your mood?",
+  "hook_style": "direct_question",
+  "draft": "If you have PCOS or Hashimoto's, when did a doctor last ask about your mood?\n\nIt's not just about your hormones. It's about how you feel every single day, and the research backs that up.\n\nThe 2023 international PCOS guideline makes a strong recommendation: every adult with PCOS should be screened for depression and anxiety, starting at diagnosis.\n\nFor Hashimoto's, a 2018 meta-analysis in JAMA Psychiatry pooled 19 studies and found about three times the odds of depression and about twice the odds of anxiety disorders. These were observational studies, so they show a link, not cause.\n\nIn my practice, women usually book for hair fall, weight or tiredness. The full picture comes out later, and many have been managing symptoms quietly on their own.\n\nIn India's national mental health survey (2015-16), about 8 in 10 women with depression were not getting treatment. That matters.\n\nMovement is a powerful, evidence-backed tool. A 2024 BMJ review of 218 trials found walking, yoga and strength training all reduced depression symptoms, though the certainty is still low. It works alongside treatment, not instead of it.\n\nWhat I'd suggest:\n\n- If your mood has changed, tell your doctor, just like any other new symptom.\n- If you take medicine for depression or anxiety, talk to your doctor before you change anything.\n- If you ever feel unsafe, call Tele-MANAS on 14416, the government's mental health helpline.\n\nHow has your mood been lately, honestly?\n\n#PCOS #Hashimotos",
+  "final": "If you have PCOS or Hashimoto's, when did a doctor last ask about your mood?\n\nI ask because both conditions are linked with depression and anxiety, and that part rarely comes up in a consultation about reports.\n\nThe 2023 international PCOS guideline makes a strong recommendation that every adult with PCOS is screened for depression and anxiety, starting at diagnosis.\n\nFor Hashimoto's, a 2018 meta-analysis in JAMA Psychiatry pooled 19 studies. People with the condition had about three times the odds of depression and about twice the odds of anxiety disorders. Those were observational studies, so they show a link and can't tell us which comes first.\n\nIn my practice, women usually book for hair fall, weight or tiredness. The full picture comes out later, and many have been managing symptoms quietly on their own for a long time.\n\nIn India's national mental health survey (2015-16), about 8 in 10 women with depression were not getting treatment.\n\nMovement can help as well. A 2024 BMJ review of 218 trials found that walking, yoga and strength training all reduced depression symptoms. The certainty of that evidence is still rated low, so I treat exercise as something to add to treatment, never a replacement for it.\n\nWhat I'd suggest:\n\n- If your mood has changed, tell your doctor, the way you'd mention any other new symptom.\n- If you take medicine for depression or anxiety, talk to your doctor before you change anything.\n- If you ever feel unsafe, call Tele-MANAS on 14416, the government's mental health helpline.\n\nHow has your mood been lately, honestly?\n\n#PCOS #Hashimotos",
+  "hashtags": [
+    "#PCOS",
+    "#Hashimotos"
+  ],
+  "image_spec": {
+    "template": "scene",
+    "photo": "content/photos/scenes/himalayan-river-valley.jpg",
+    "focus": "center center",
+    "text_position": "top",
+    "eyebrow": "PCOS · Hashimoto's",
+    "title": "Your reports get checked. Does your mood?",
+    "subtitle": "When did a doctor last ask?",
+    "alt": "A clear river running through a Himalayan valley. Text: PCOS, Hashimoto's. Your reports get checked. Does your mood? When did a doctor last ask?"
+  },
+  "image_path": "content/images/2026-11-20-fri.png",
+  "image_alt": "A clear river running through a Himalayan valley. Text: PCOS, Hashimoto's. Your reports get checked. Does your mood? When did a doctor last ask?",
+  "sources": [
+    {
+      "title": "Teede HJ et al. Recommendations from the 2023 International Evidence-based Guideline for the Assessment and Management of PCOS. J Clin Endocrinol Metab 2023;108(10):2447-2469",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10505534/",
+      "publisher": "Journal of Clinical Endocrinology & Metabolism (Monash/ESHRE/ASRM guideline)",
+      "published": "2023-08-15",
+      "accessed": "2026-11-19",
+      "claim": "Rec 2.2.1 (strong, high certainty): screen for depression in all adults and adolescents with PCOS; Rec 2.2.2: screen for anxiety in all adults; screen at diagnosis, then by clinical judgement"
+    },
+    {
+      "title": "Siegmann EM et al. Association of Depression and Anxiety Disorders With Autoimmune Thyroiditis: A Systematic Review and Meta-analysis. JAMA Psychiatry 2018;75(6):577-584",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6137529/",
+      "publisher": "JAMA Psychiatry",
+      "published": "2018-05-02",
+      "accessed": "2026-11-19",
+      "claim": "19 studies, 36,174 participants; depression OR 3.56 (2.14-5.94), anxiety OR 2.32 (1.40-3.85); observational, high heterogeneity. (JAMA Key Points, possibly corrected version, give OR 3.31 from 20 studies: snippet only; hence 'about three times')"
+    },
+    {
+      "title": "Arvind BA et al. Prevalence and socioeconomic impact of depressive disorders in India: NMHS 2015-16. BMJ Open 2019;9:e027250",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6609075/",
+      "publisher": "BMJ Open (NIMHANS National Mental Health Survey)",
+      "published": "2019-06",
+      "accessed": "2026-11-19",
+      "claim": "Treatment gap for depression 79.1% overall, 80.1% in women (data 2015-16)"
+    },
+    {
+      "title": "Noetel M et al. Effect of exercise for depression: systematic review and network meta-analysis of randomised controlled trials. BMJ 2024;384:e075847",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10870815/",
+      "publisher": "BMJ",
+      "published": "2024-02-14",
+      "accessed": "2026-11-19",
+      "claim": "218 RCTs, 14,170 participants; walking/jogging, yoga and strength training reduced depressive symptoms; certainty low (walking/jogging) to very low (others); authors: consider alongside psychotherapy and antidepressants"
+    },
+    {
+      "title": "Tele-MANAS: over 18 lakh calls handled (Health Ministry reply)",
+      "url": "https://www.newsonair.gov.in/over-18-lakh-calls-handled-by-tele-manas-73-crore-abha-ids-created-govt",
+      "publisher": "News on AIR (Prasar Bharati, Government of India)",
+      "published": "2025-02",
+      "accessed": "2026-11-19",
+      "claim": "Tele-MANAS national tele-mental health helpline 14416, run with NIMHANS as apex centre; 53 cells, 36 states/UTs, 20 languages"
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "PCOS guideline: strong recommendation to screen all adults for depression and anxiety, at diagnosis",
+      "status": "verified on PMC full text (Rec 2.2.1, 2.2.2, 2.2.4)"
+    },
+    {
+      "claim": "Hashimoto's: ~3x odds depression, ~2x odds anxiety, 19 studies, observational",
+      "status": "verified on PMC abstract; rounded down because corrected JAMA figure is 3.31"
+    },
+    {
+      "claim": "About 8 in 10 women with depression untreated (NMHS 2015-16)",
+      "status": "verified on PMC full text (80.1% women)"
+    },
+    {
+      "claim": "2024 BMJ review of 218 trials: walking, yoga, strength training reduced depression symptoms; low certainty",
+      "status": "verified on PMC full text"
+    },
+    {
+      "claim": "Tele-MANAS 14416, government helpline",
+      "status": "verified on government news site (Feb 2025); exact current call count not used"
+    },
+    {
+      "claim": "'Women usually book for hair fall, weight or tiredness; managing symptoms privately'",
+      "status": "knowledge/case-bank-clients.md patterns + profile.md (hair fall trend); no specific client"
+    },
+    {
+      "claim": "Mood rarely comes up in consultations about reports",
+      "status": "framed as her reason for asking, not a statistic; Shweta to confirm wording (see questions)"
+    },
+    {
+      "claim": "Perimenopause mood risk (Badawy 2024) deliberately left out: Thursday covered perimenopause; sources only snippet-verified",
+      "status": "omitted"
+    }
+  ],
+  "questions_for_shweta": [
+    "Line 2 says the mood side 'rarely comes up in a consultation about reports'. Is that true to your experience? If not, I'll cut it to: 'I ask because both conditions are linked with depression and anxiety.'",
+    "Alternative hooks: (a) 'The international PCOS guideline says every adult with PCOS should be screened for depression and anxiety. Has anyone screened you?' (b) 'Hashimoto's is linked with about three times the odds of depression. Most thyroid follow-ups only look at the report.'",
+    "Comfortable naming the Tele-MANAS helpline (14416)? It's the government's national mental health line."
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-19T18:42:45+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed 'not just X, it's Y' contrast and 'every single day' emphasis; cut one-line closer 'That matters.'; dropped inflated 'powerful, evidence-backed tool' and 'not instead of it' tail; split long Hashimoto's sentence and varied rhythm"
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-19T18:42:46+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-19T18:42:04+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-19T18:42:46+05:30",
+      "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-19T18:42:57+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-20-fri.png"
+    }
+  ]
+}
