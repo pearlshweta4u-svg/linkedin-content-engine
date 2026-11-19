@@ -159,7 +159,28 @@
       "at": "2026-11-19T18:43:14+05:30",
       "event": "image_public_url",
       "url": "https://media.zernio.com/temp/1795093992550_1f7cfc5e4047ce3c_2026-11-20-fri.png"
+    },
+    {
+      "at": "2026-11-19T18:43:18+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
-  "image_public_url": "https://media.zernio.com/temp/1795093992550_1f7cfc5e4047ce3c_2026-11-20-fri.png"
+  "image_public_url": "https://media.zernio.com/temp/1795093996117_cd6c295be093e3bc_2026-11-20-fri.png",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2700,
+      "size": 8082606,
+      "code": null
+    },
+    "checked_at": "2026-11-19T18:43:18+05:30",
+    "text_sha": "be02914f8d86aa91",
+    "image_path": "content/images/2026-11-20-fri.png"
+  }
 }
