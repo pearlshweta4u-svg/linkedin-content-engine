@@ -102,14 +102,19 @@
     "channel": "email",
     "note": null
   },
-  "publish_status": "not_ready",
+  "publish_status": "publishing",
   "linkedin": {
     "urn": null,
     "url": null,
     "image_urn": null
   },
   "published_at": null,
-  "attempts": [],
+  "attempts": [
+    {
+      "at": "2026-11-19T08:12:03+05:30",
+      "outcome": null
+    }
+  ],
   "errors": [],
   "analytics": {},
   "history": [
@@ -154,6 +159,10 @@
       "at": "2026-11-19T08:11:56+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-19T08:12:04+05:30",
+      "event": "publish_started"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795056114000_7b254cf5c3cac638_2026-11-19-thu.png",
