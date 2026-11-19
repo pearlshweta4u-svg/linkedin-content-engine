@@ -102,17 +102,18 @@
     "channel": "email",
     "note": null
   },
-  "publish_status": "publishing",
+  "publish_status": "published",
   "linkedin": {
-    "urn": null,
-    "url": null,
-    "image_urn": null
+    "urn": "urn:li:share:7529011120494305281",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7529011120494305281/",
+    "image_urn": "https://media.zernio.com/temp/1795056125786_5e973d1d04d40cbc_2026-11-19-thu.png",
+    "via": "zernio"
   },
-  "published_at": null,
+  "published_at": "2026-11-19T08:12:03+05:30",
   "attempts": [
     {
       "at": "2026-11-19T08:12:03+05:30",
-      "outcome": null
+      "outcome": "published"
     }
   ],
   "errors": [],
@@ -163,6 +164,11 @@
     {
       "at": "2026-11-19T08:12:04+05:30",
       "event": "publish_started"
+    },
+    {
+      "at": "2026-11-19T08:12:15+05:30",
+      "event": "published",
+      "urn": "urn:li:share:7529011120494305281"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795056114000_7b254cf5c3cac638_2026-11-19-thu.png",
