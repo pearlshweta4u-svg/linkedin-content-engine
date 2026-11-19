@@ -93,13 +93,13 @@
     "issues": [],
     "checked_at": "2026-11-18T18:45:06+05:30"
   },
-  "approval_status": "pending",
+  "approval_status": "approved",
   "approval": {
     "requested_at": "2026-11-18T18:46:08+05:30",
     "reminder_sent_at": null,
-    "decided_at": null,
-    "decided_by": null,
-    "channel": null,
+    "decided_at": "2026-11-19T07:12:49+05:30",
+    "decided_by": "trainwithshweta@gmail.com",
+    "channel": "email",
     "note": null
   },
   "publish_status": "not_ready",
@@ -144,6 +144,11 @@
     {
       "at": "2026-11-18T18:46:08+05:30",
       "event": "approval-requested"
+    },
+    {
+      "at": "2026-11-19T07:12:49+05:30",
+      "event": "decision_approve",
+      "by": "trainwithshweta@gmail.com"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795007734161_e63b1314a0a3f9f5_2026-11-19-thu.png",
