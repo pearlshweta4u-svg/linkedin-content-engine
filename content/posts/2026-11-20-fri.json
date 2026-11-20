@@ -122,14 +122,14 @@
     "issues": [],
     "checked_at": "2026-11-19T18:42:46+05:30"
   },
-  "approval_status": "pending",
+  "approval_status": "approved",
   "approval": {
     "requested_at": "2026-11-19T18:44:06+05:30",
     "reminder_sent_at": "2026-11-20T07:12:16+05:30",
-    "decided_at": null,
-    "decided_by": null,
-    "channel": null,
-    "note": null
+    "decided_at": "2026-11-20T10:12:31+05:30",
+    "decided_by": "pearl.shweta4u@gmail.com (chat)",
+    "channel": "email",
+    "note": "(Approved by Shweta in the Claude chat at 10:12 IST; the approval emails were hidden from the Gmail tools.)"
   },
   "publish_status": "not_ready",
   "linkedin": {
@@ -177,6 +177,11 @@
     {
       "at": "2026-11-20T07:12:16+05:30",
       "event": "reminded"
+    },
+    {
+      "at": "2026-11-20T10:12:31+05:30",
+      "event": "decision_approve",
+      "by": "pearl.shweta4u@gmail.com (chat)"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795093996117_cd6c295be093e3bc_2026-11-20-fri.png",
