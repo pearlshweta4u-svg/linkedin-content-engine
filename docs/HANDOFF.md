@@ -35,9 +35,11 @@ from them, continuously.
   Zernio (`/v1/accounts/<id>/linkedin-post-analytics`, `/v1/inbox/comments/<urn>`). No commenter names stored.
 - **Stores** in `Linkedin-auto-improve`: `data/posts/<post_id>.json` (latest), `data/snapshots.jsonl` (history),
   `data/top10.json`.
-- **Ranks**: top 10 by impressions (Shweta's choice) plus an engagement score
-  (1×reactions + 3×reader comments + 4×reposts + 4×saves + 3×sends; her own replies excluded). Posts under 3 days old
-  are "new" and left out of averages. Weights in `config.json`.
+- **Ranks** (switched 20 Nov after research, `Linkedin-auto-improve/docs/ranking-research.md`): top 10 by **engagement
+  score** (1×reactions + 3×reader comments + 4×reposts + 4×saves + 3×sends; her own replies excluded), not impressions.
+  Context columns: × typical reach (≥3× = reach outlier: study, don't copy), score per 1k impressions (shrunk),
+  "confirmed" (top third on both). Posts under 7 days are provisional; ties within 10%. `exclude` list for rule-breaking
+  posts. All settings in `config.json`.
 - **Learns**: `insights/PLAYBOOK.md` (generated) + `insights/LEARNINGS.md` (hand-written lessons, updated Fridays).
 - **Used by the engine**: `runbooks/generate.md` step 1b runs `refresh --git` and `brief $D`; the post record gets a
   `learning` field `{references, reused, improved}`, also shown in the approval email ("What this post learned from").
@@ -50,9 +52,9 @@ from them, continuously.
   `python3 -m autoimprove import-history --days 90` imports what is in this repo's `history/posts.json`
   (one-time; 4 posts done on 20 Nov: 13, 19, 26 Oct and 2 Nov).
 
-Top 10 on 20 Nov (13 posts tracked): 17 Nov client story 15,094 impressions (score 60); 13 Oct "wet towel" family
-story 3,580; 19 Oct "who takes care of him" 1,056; 26 Oct Navratri 595; 10 Nov 584; 16 Nov 407; 13 Nov 353
-(highest score, 67); 11 Nov 254; 12 Nov 222; 18 Nov 164.
+Top 10 by score on 20 Nov (13 posts tracked): 13 Nov prediabetes 67 (confirmed); 17 Nov client story 60 (15,094
+impressions, reach outlier); 10 Nov 59; 19 Oct 54; 26 Oct 50; 16 Nov 50; 11 Nov 47; 12 Nov 36; 19 Nov 32; 13 Oct 28
+(3,580 impressions, reach outlier). 18 and 20 Nov are outside the top 10.
 
 First lessons (hypotheses): real-people stories (client and family) lead on reach; hook = who + what was wrong +
 counter-intuitive action in line one; readers quote one memorable line back, so every post needs one; Wed/Thu
@@ -82,7 +84,7 @@ python3 -m autoimprove rank                    # top 10 (no network)
 python3 -m autoimprove brief <date>            # what the next post learns from
 python3 -m autoimprove import-history --days 90 --git
 python3 -m autoimprove playbook --git          # rebuild after editing LEARNINGS.md
-python3 -m unittest                            # 14 tests
+python3 -m unittest                            # 16 tests
 ```
 Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both tools already does this).
 
@@ -90,6 +92,7 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
 | Date | Change |
 |---|---|
 | 20 Nov | New repo `Linkedin-auto-improve`: analytics + comments store, top 10, playbook, brief; generate step 1b, `learning` field, 12:00 refresh, Friday lessons. 90-day import of pre-engine posts |
+| 20 Nov | Auto-improve ranks by engagement score (research-backed), with reach-outlier, score/1k and confirmed flags |
 | 20 Nov | Leftover branches deleted by Shweta (`claude/hopeful-dirac-*` here, `claude/file-explanation-1kruih` in auto-improve) |
 | 18 Nov | Wed must use a client example (WARN); Thu blocks digits (list markers OK), links and citation phrases, WARN without story id; `example_cooldown_days` 14 for Wed/Thu examples (Tue stories keep 56) |
 | 18 Nov | CLAUDE.md rule 8: push only to `main`, never the session branch |
@@ -114,7 +117,7 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
       filled `learning`, and that Monday's approval email has "What this post learned from".
 - [ ] Re-check lesson 8 (direct-question hooks, 18 and 20 Nov) after 27 Nov.
 - [ ] Lesson 10: test a Monday family photo with no text on the image, only if Shweta agrees.
-- [ ] Ranking choice: top 10 is by impressions; switch to engagement score in `config.json` if Shweta prefers.
+- [ ] **CTA for Shweta (profile + posts): proposal sent 20 Nov, waiting for her answers** (capacity, links, offer, frequency).
 - [ ] Watch whether new `claude/*` branches still appear after the CLAUDE.md rule 8 change.
 - [ ] Monday 16 Nov questions still open: 10-week cut detail; "same tools" accuracy.
 - [ ] `docs/TODO.md`: LinkedIn API backup token, `knowledge/gaps.md` answers, quarterly review.
