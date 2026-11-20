@@ -19,7 +19,7 @@ emailed for approval, and published only after she replies APPROVE.
 ## 2. Weekly plan
 | Day | Category | Rules | Image |
 |---|---|---|---|
-| Mon | personal_story | Story arc (moment, struggle, action, change, lesson); story bank P01–P16 | Album photo, `photo` template |
+| Mon | personal_story | Story arc (moment, struggle, action, change, lesson); story bank P01–P17 | Album photo, `photo` template |
 | Tue | client_story | STAR + lesson; case bank C01–C14, anonymized; Fathom via Composio | Album photo |
 | Wed | educational | One idea, **explained through a client example** (case id in `story_ids`) | Album photo |
 | Thu | save_worthy | Deep research (last 7–30 days); **no exact numbers, links or study names in the post**; tied to a client problem or her story | Scene photo, no people |
@@ -99,6 +99,7 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
 | Date | Change |
 |---|---|
 | 20 Nov | New repo `Linkedin-auto-improve`: analytics + comments store, top 10, playbook, brief; generate step 1b, `learning` field, 12:00 refresh, Friday lessons. 90-day import of pre-engine posts |
+| 20 Nov | Story bank P17: her 18 Dec 2025 "I turned 40" transformation (Shweta OK'd reuse); open: 14 kg vs 20+ kg, medication framing |
 | 20 Nov | 7 more posts (Nov–Dec 2025) incl. the 18 Dec 2025 breakout; score ignores 1–2-word (CTA keyword) comments; `knowledge/profile.md` names the 18 Dec post |
 | 20 Nov | 13 more posts (Dec 2025–Jun 2026) imported; "vs expected" replaces score/1k; distribution-driven posts excluded |
 | 20 Nov | 18 earlier posts imported (12 Aug–2 Nov); lessons rewritten from 27 posts: personal/family stories lead, listicles and article posts trail |
@@ -121,14 +122,16 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
 - Running `engine fetch-analytics` without `--git` leaves modified post records locally; discard them or use `--git`.
 
 ## 8. Open items
-- [ ] LinkedIn export: the "Basic" part (20 Nov) has no `Shares.csv` (posts), and it holds private data (messages,
-      connections, phones): never commit it. If the `Complete_` part arrives, `engine import-history <zip>` fills
-      remaining gaps (posts between late Sep and 13 Oct, and before 12 Aug), then auto-improve `import-history`.
+- [x] Post history import finished 20 Nov (Shweta: no more posts to send). 47 posts tracked. The LinkedIn "Basic"
+      export has no posts and holds private data (messages, connections, phones): never commit it.
 - [ ] **Sun 22 Nov 18:34: first generation run using the playbook.** Check that it attached `Linkedin-auto-improve`,
       filled `learning`, and that Monday's approval email has "What this post learned from".
 - [ ] Re-check lesson 8 (direct-question hooks, 18 and 20 Nov) after 27 Nov.
 - [ ] Lesson 10: test a Monday family photo with no text on the image, only if Shweta agrees.
-- [ ] **CTA for Shweta (profile + posts): proposal sent 20 Nov, waiting for her answers** (capacity, links, offer, frequency).
+- [ ] **CTA for Shweta (profile + posts): goal = bring in clients** (Shweta, 20 Nov: her old "comment MYSTORY/belly/
+      cycle" keyword CTAs brought no clients). Proposal sent 20 Nov; still waiting for: capacity (24 clients vs cap
+      20: book a call or waitlist?), the action and its links (booking link / WhatsApp / website / newsletter), which
+      offer to mention (15-day trial?), frequency, Premium yes/no, current headline + About text, prospect tracking.
 - [ ] Watch whether new `claude/*` branches still appear after the CLAUDE.md rule 8 change.
 - [ ] Monday 16 Nov questions still open: 10-week cut detail; "same tools" accuracy.
 - [ ] `docs/TODO.md`: LinkedIn API backup token, `knowledge/gaps.md` answers, quarterly review.
