@@ -37,7 +37,7 @@ After her second pregnancy, with a demanding career, she gained significant weig
 - Discovery-call trend: prospects increasingly book with **hair fall** as their first complaint. [ME]
 
 ## LinkedIn history [ME]
-- She has posted on LinkedIn before. An audit of 19 posts found Thursday 3:00–3:45 AM IST was the best-performing slot. The 18 December post was an analytics outlier, and its topic is unknown.
+- She has posted on LinkedIn before. An audit of 19 posts found Thursday 3:00–3:45 AM IST was the best-performing slot. The 18 December 2025 post was the analytics outlier: "I turned 40 this year." (her own post-baby transformation with home-food specifics; 181,514 impressions, 1,094 reactions). It ended with a comment-keyword CTA ("comment MYSTORY"), which the engine doesn't use. Its numbers are from her own 2025 post; confirm with Shweta before reusing any of them. [LI]
 - Her LinkedIn audience **skews IT/tech**, not her target women. This is a strength, not a problem: many women in the 30–50 band work in IT, and so do many clients (IT professionals in Pune, Whitefield and Noida). Write for the professional woman in tech who is tired and told her labs are "normal".
 - Newsletter "The Health Edit" exists (Edition 01: "The Woman Who Tried Everything").
 - Earlier theme set: emotional, women empowerment, educational, relationship, case study.

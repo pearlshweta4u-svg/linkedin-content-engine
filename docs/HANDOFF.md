@@ -51,15 +51,17 @@ from them, continuously.
   cool-downs and runbooks always win.
 - **Pre-engine posts:** Zernio can read numbers and comments of her older posts by URN, but cannot *list* them.
   `python3 -m autoimprove import-history --days 90` imports what is in this repo's `history/posts.json`
-  (one-time). Done 20 Nov: 31 earlier posts (31 Oct 2025 to 2 Nov 2026), 25 of them from post links Shweta sent
+  (one-time). Done 20 Nov: 38 earlier posts (31 Oct 2025 to 2 Nov 2026), 32 of them from post links Shweta sent
   (`engine import-post-url`) and one link-only post via `--url` (text behind LinkedIn's login wall; date estimated
   from its earliest comment). Post ids give the *creation* date, which runs 0–15 days early for scheduled posts.
 
-Top 10 by score on 20 Nov (40 posts tracked, 31 Oct 2025 to 20 Nov 2026): all personal/family. 8 Jan father at 69
-(282); 13 Aug son's arm (270); 23 Jun career change (232); 20 Jan family of four (184); 12 Aug "I have quit sugar"
-(154); 18 Aug partnership (114); 25 Aug son eating (92); 10 Sep calories (84); 1 Jun hair fall (71); 11 Sep why a
-coach (67). Distribution-driven (big reach, low engagement, kept out): 7 Jan skin, 12 Jan belly fat, 3 Feb, 25 Mar,
-17 Nov. Her median reach fell from ~3,100 (H1 2026) to ~250 (Nov): open question, see LEARNINGS 8b.
+Top 10 by score on 20 Nov (47 posts tracked, 31 Oct 2025 to 20 Nov 2026), all personal/family: 18 Dec 2025 "I turned
+40 this year" (2,241; 181,514 impressions, 1,094 reactions, her biggest post ever, ended with a "comment MYSTORY" keyword
+CTA); 13 Aug son's arm (270); 8 Jan father at 69 (261); 23 Jun career change (223); 20 Jan family of four (169);
+12 Aug "I have quit sugar" (154); 18 Aug partnership (108); 25 Aug son eating (92); 10 Sep calories (81); 1 Jun hair
+fall (71). Distribution-driven (kept out): 7 Jan skin, 12 Jan belly fat, 3 Feb, 25 Mar, 17 Nov and the late-2025
+"She's 34/37…" client transformation cards. Comments of 1–2 words (CTA keywords) don't count in the score.
+Her median reach fell from ~3,100 (H1 2026) to ~250 (Nov): open question, see LEARNINGS 8b.
 
 First lessons (hypotheses): real-people stories (client and family) lead on reach; hook = who + what was wrong +
 counter-intuitive action in line one; readers quote one memorable line back, so every post needs one; Wed/Thu
@@ -89,7 +91,7 @@ python3 -m autoimprove rank                    # top 10 (no network)
 python3 -m autoimprove brief <date>            # what the next post learns from
 python3 -m autoimprove import-history --days 90 --git
 python3 -m autoimprove playbook --git          # rebuild after editing LEARNINGS.md
-python3 -m unittest                            # 18 tests
+python3 -m unittest                            # 19 tests
 ```
 Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both tools already does this).
 
@@ -97,6 +99,7 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
 | Date | Change |
 |---|---|
 | 20 Nov | New repo `Linkedin-auto-improve`: analytics + comments store, top 10, playbook, brief; generate step 1b, `learning` field, 12:00 refresh, Friday lessons. 90-day import of pre-engine posts |
+| 20 Nov | 7 more posts (Nov–Dec 2025) incl. the 18 Dec 2025 breakout; score ignores 1–2-word (CTA keyword) comments; `knowledge/profile.md` names the 18 Dec post |
 | 20 Nov | 13 more posts (Dec 2025–Jun 2026) imported; "vs expected" replaces score/1k; distribution-driven posts excluded |
 | 20 Nov | 18 earlier posts imported (12 Aug–2 Nov); lessons rewritten from 27 posts: personal/family stories lead, listicles and article posts trail |
 | 20 Nov | Auto-improve ranks by engagement score (research-backed), with reach-outlier, score/1k and confirmed flags |
