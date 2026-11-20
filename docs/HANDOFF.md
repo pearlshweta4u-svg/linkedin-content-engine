@@ -87,7 +87,7 @@ python3 -m autoimprove rank                    # top 10 (no network)
 python3 -m autoimprove brief <date>            # what the next post learns from
 python3 -m autoimprove import-history --days 90 --git
 python3 -m autoimprove playbook --git          # rebuild after editing LEARNINGS.md
-python3 -m unittest                            # 18 tests
+python3 -m unittest                            # 17 tests
 ```
 Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both tools already does this).
 
