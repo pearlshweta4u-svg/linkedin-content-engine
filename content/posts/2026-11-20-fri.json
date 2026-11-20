@@ -131,17 +131,18 @@
     "channel": "email",
     "note": "(Approved by Shweta in the Claude chat at 10:12 IST; the approval emails were hidden from the Gmail tools.)"
   },
-  "publish_status": "publishing",
+  "publish_status": "published",
   "linkedin": {
-    "urn": null,
-    "url": null,
-    "image_urn": null
+    "urn": "urn:li:share:7529403906783694848",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7529403906783694848/",
+    "image_urn": "https://media.zernio.com/temp/1795149766777_61cba8a7311ef2df_2026-11-20-fri.png",
+    "via": "zernio"
   },
-  "published_at": null,
+  "published_at": "2026-11-20T10:12:44+05:30",
   "attempts": [
     {
       "at": "2026-11-20T10:12:44+05:30",
-      "outcome": null
+      "outcome": "published"
     }
   ],
   "errors": [],
@@ -196,6 +197,11 @@
     {
       "at": "2026-11-20T10:12:45+05:30",
       "event": "publish_started"
+    },
+    {
+      "at": "2026-11-20T10:13:02+05:30",
+      "event": "published",
+      "urn": "urn:li:share:7529403906783694848"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795149760625_8cb30b26f9147ef3_2026-11-20-fri.png",
