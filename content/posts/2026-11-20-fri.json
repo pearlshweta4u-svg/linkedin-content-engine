@@ -146,7 +146,19 @@
     }
   ],
   "errors": [],
-  "analytics": {},
+  "analytics": {
+    "impressions": 8,
+    "reach": 4,
+    "likes": 4,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "sends": 0,
+    "engagementRate": 50,
+    "reactions": 4,
+    "reposts": 0,
+    "updated_at": "2026-11-20T12:13:29+05:30"
+  },
   "history": [
     {
       "at": "2026-11-19T18:42:04+05:30",
