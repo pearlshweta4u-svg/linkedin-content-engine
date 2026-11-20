@@ -37,8 +37,9 @@ from them, continuously.
   `data/top10.json`.
 - **Ranks** (switched 20 Nov after research, `Linkedin-auto-improve/docs/ranking-research.md`): top 10 by **engagement
   score** (1×reactions + 3×reader comments + 4×reposts + 4×saves + 3×sends; her own replies excluded), not impressions.
-  Context columns: × typical reach (≥3× = reach outlier: study, don't copy), score per 1k impressions (shrunk),
-  "confirmed" (top third on both). Posts under 7 days are provisional; ties within 10%. `exclude` list for rule-breaking
+  Context columns: × typical reach (≥3× = reach outlier); vs expected = score ÷ score predicted for that reach
+  (log-log fit; engagement grows ~√reach); reach outliers below 1 are "distribution-driven" and left out of the top 10;
+  "confirmed" = top third on score and vs expected. Posts under 7 days are provisional; ties within 10%. `exclude` list for rule-breaking
   posts. All settings in `config.json`.
 - **Learns**: `insights/PLAYBOOK.md` (generated) + `insights/LEARNINGS.md` (hand-written lessons, updated Fridays).
 - **Used by the engine**: `runbooks/generate.md` step 1b runs `refresh --git` and `brief $D`; the post record gets a
@@ -50,14 +51,15 @@ from them, continuously.
   cool-downs and runbooks always win.
 - **Pre-engine posts:** Zernio can read numbers and comments of her older posts by URN, but cannot *list* them.
   `python3 -m autoimprove import-history --days 90` imports what is in this repo's `history/posts.json`
-  (one-time). Done 20 Nov: 18 earlier posts (12 Aug to 2 Nov), 13 of them from post links Shweta sent
+  (one-time). Done 20 Nov: 31 earlier posts (31 Oct 2025 to 2 Nov 2026), 25 of them from post links Shweta sent
   (`engine import-post-url`) and one link-only post via `--url` (text behind LinkedIn's login wall; date estimated
   from its earliest comment). Post ids give the *creation* date, which runs 0–15 days early for scheduled posts.
 
-Top 10 by score on 20 Nov (27 posts tracked): 13 Aug "arm around my shoulder" 270 (182 reactions, best ever);
-12 Aug "I have quit sugar" 154; 18 Aug partnership 114; 25 Aug son eating 92; 10 Sep "children won't remember
-calories" 84; 11 Sep why I became a coach 67; 13 Nov prediabetes 67; 17 Nov doctor/salad 60; 10 Nov thyroid 59;
-19 Oct "who takes care of him" 54. Listicles and newsletter-article posts rank lowest.
+Top 10 by score on 20 Nov (40 posts tracked, 31 Oct 2025 to 20 Nov 2026): all personal/family. 8 Jan father at 69
+(282); 13 Aug son's arm (270); 23 Jun career change (232); 20 Jan family of four (184); 12 Aug "I have quit sugar"
+(154); 18 Aug partnership (114); 25 Aug son eating (92); 10 Sep calories (84); 1 Jun hair fall (71); 11 Sep why a
+coach (67). Distribution-driven (big reach, low engagement, kept out): 7 Jan skin, 12 Jan belly fat, 3 Feb, 25 Mar,
+17 Nov. Her median reach fell from ~3,100 (H1 2026) to ~250 (Nov): open question, see LEARNINGS 8b.
 
 First lessons (hypotheses): real-people stories (client and family) lead on reach; hook = who + what was wrong +
 counter-intuitive action in line one; readers quote one memorable line back, so every post needs one; Wed/Thu
@@ -87,7 +89,7 @@ python3 -m autoimprove rank                    # top 10 (no network)
 python3 -m autoimprove brief <date>            # what the next post learns from
 python3 -m autoimprove import-history --days 90 --git
 python3 -m autoimprove playbook --git          # rebuild after editing LEARNINGS.md
-python3 -m unittest                            # 17 tests
+python3 -m unittest                            # 18 tests
 ```
 Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both tools already does this).
 
@@ -95,6 +97,7 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
 | Date | Change |
 |---|---|
 | 20 Nov | New repo `Linkedin-auto-improve`: analytics + comments store, top 10, playbook, brief; generate step 1b, `learning` field, 12:00 refresh, Friday lessons. 90-day import of pre-engine posts |
+| 20 Nov | 13 more posts (Dec 2025–Jun 2026) imported; "vs expected" replaces score/1k; distribution-driven posts excluded |
 | 20 Nov | 18 earlier posts imported (12 Aug–2 Nov); lessons rewritten from 27 posts: personal/family stories lead, listicles and article posts trail |
 | 20 Nov | Auto-improve ranks by engagement score (research-backed), with reach-outlier, score/1k and confirmed flags |
 | 20 Nov | Leftover branches deleted by Shweta (`claude/hopeful-dirac-*` here, `claude/file-explanation-1kruih` in auto-improve) |
