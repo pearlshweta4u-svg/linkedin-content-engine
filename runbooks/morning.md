@@ -42,5 +42,6 @@ The same runbook runs at 07, 08, 09, 10, 11 and 12 o'clock. It's safe to run any
 | `validation_required` | Run `engine validate $D --git`. If it is still invalid, email Shweta the Zernio errors and don't publish. |
 
 4. **12:00 run only**: `python3 -m engine fetch-analytics --git` (impressions, reach, reactions, comments, shares, saves for posts from the last 30 days, via Zernio).
+   Then refresh the auto-improve store (separate repo; attach `pearlshweta4u-svg/Linkedin-auto-improve` with add_repo and clone it to `/home/user/Linkedin-auto-improve` if missing): `cd /home/user/Linkedin-auto-improve && git pull --rebase origin main && python3 -m autoimprove refresh --git`. On **Fridays**, also reread `insights/PLAYBOOK.md` and the reader comments in `data/posts/`, update `insights/LEARNINGS.md` with anything new (tie each lesson to the posts that show it; keep it short), then `python3 -m autoimprove playbook --git`. If this step fails, note it in the day's last email; it never blocks publishing.
 
 5. Never edit `publish_status` by hand, and never call LinkedIn directly.

@@ -19,6 +19,13 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - Read `knowledge/` (all files) and the category for D (Mon `personal_story`, Tue `client_story`, Wed `educational`, Thu `save_worthy`, Fri `health_wellness`).
    - Run `python3 -m engine history`. Also read `published_before_engine` (her own earlier LinkedIn posts, from `history/posts.json`): don't repeat a topic or story she posted in the last 6 weeks, and treat her top performers as signals of what resonates. Respect `stories_on_cooldown`, `topics_on_cooldown` and `pillars_last_5`, prefer `pillars_missing_last_28d`, avoid the hook shapes in `recent_hooks`, and rotate `formats_last_8`.
 
+1b. **Learn from what performed** (auto-improve, Shweta, 20 Nov 2026). The learning system lives in a separate repo.
+   - If `/home/user/Linkedin-auto-improve` is missing, attach GitHub repo `pearlshweta4u-svg/Linkedin-auto-improve` (push access) with the add_repo tool and clone it there; otherwise `git -C /home/user/Linkedin-auto-improve pull --rebase origin main`.
+   - `cd /home/user/Linkedin-auto-improve && python3 -m autoimprove refresh --git` (fresh impressions and comments for the last 30 days, re-ranks the top 10, rewrites `insights/PLAYBOOK.md`, pushes to its `main`).
+   - `python3 -m autoimprove brief $D`, then read `insights/PLAYBOOK.md` and `insights/LEARNINGS.md`.
+   - Use the reference posts to choose the hook shape, opening, structure, memorable line and image text for today's post. **Learn the shape, never the content**: every rule in CLAUDE.md, the cool-downs and this runbook still win, and no text is copied from a past post.
+   - If the repo or Zernio is unavailable, carry on without it and add one line to the approval email: "Auto-improve skipped: <reason>".
+
 2. **Pick the topic**
    - Mon: one story from `story-bank-personal.md` that isn't on cool-down. Use only its verified facts. Put any missing detail into `questions_for_shweta`.
    - Tue: one case from `case-bank-clients.md`. Respect its confounders and caveats. Fathom (if the connector works) may add verbatim phrasing; anonymize it.
@@ -31,6 +38,7 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
 3. **Create the record**
    - Run `python3 -m engine new $D`.
    - Fill in `pillar` (one of the keys in `engine/__main__.py` PILLARS), `topic`, `angle`, `format`, `story_ids`, `sources` (`{title, url, publisher, published, accessed, claim}`), `claims_checked`, and `questions_for_shweta`.
+   - Also fill `learning` (from step 1b): `{"references": [<post ids from the brief>], "reused": "<what shape you took from them>", "improved": "<what you are doing better>"}`. The auto-improve refresh reads it to check whether the playbook is helping. Put the same two lines at the end of the approval email under "What this post learned from".
 
 4. **Draft** following `knowledge/voice-and-style.md`. Write it to `draft`.
    - Hook first: write 3 opening options per the Hooks section, pick the most curiosity-driving one that is fully supported by the post's facts, and set `hook_style` (rotate; check `engine history` → recent_hooks).
