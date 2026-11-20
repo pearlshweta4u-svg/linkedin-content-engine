@@ -23,7 +23,7 @@ emailed for approval, and published only after she replies APPROVE.
 | Tue | client_story | STAR + lesson; case bank C01–C14, anonymized; Fathom via Composio | Album photo |
 | Wed | educational | One idea, **explained through a client example** (case id in `story_ids`) | Album photo |
 | Thu | save_worthy | Deep research (last 7–30 days); **no exact numbers, links or study names in the post**; tied to a client problem or her story | Scene photo, no people |
-| Fri | health_wellness | Deep research; evidence strength stated | Scene photo, no people |
+| Fri | health_wellness | Deep research; evidence strength in words; **same as Thursday: no exact numbers, links or study names in the post**; tied to a client problem or her story | Scene photo, no people |
 
 Image text: headline ≤60 chars, subtitle ≤45, ≤18 words, no lists, no answers.
 

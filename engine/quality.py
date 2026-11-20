@@ -58,6 +58,8 @@ LIST_MARKER_RE = re.compile(r"^\s*\d{1,2}[.)]\s", re.M)
 # A client case (C..) or personal story (P..) used only as a brief example (Wed/Thu)
 # rests for this many days; full story posts (Mon/Tue) keep story_cooldown_days.
 EXAMPLE_CATEGORIES = {"educational", "save_worthy"}
+# Same rule for Friday health posts (Shweta, 20 Nov 2026).
+NO_STATS_CATEGORIES = {"save_worthy": "Thursday", "health_wellness": "Friday"}
 
 NUMBER_CLAIM = re.compile(r"\b\d+(\.\d+)?\s?%|\b\d+\s+(in|out of)\s+\d+\b", re.I)
 
@@ -176,18 +178,19 @@ def check(record: dict, settings: dict, history: list[dict] | None = None) -> li
     if cat == "educational" and not any(str(i).upper().startswith("C") for i in ids):
         issues.append("WARN: Wednesday post has no client example; anchor the idea in a case from case-bank-clients.md (add its id to story_ids)")
     # Thursday: no numbers, links or study citations in the post; relate it to a client or personal story
-    if cat == "save_worthy":
+    if cat in NO_STATS_CATEGORIES:
+        day = NO_STATS_CATEGORIES[cat]
         body = re.sub(r"(?<!\w)#\w+", "", text)
         if URL_RE.search(body):
-            issues.append("BLOCK: Thursday post contains a link; keep sources in the record, not the post")
+            issues.append(f"BLOCK: {day} post contains a link; keep sources in the record, not the post")
         cites = sorted({p for p in SAVE_WORTHY_CITATION_PHRASES if p in body.lower()})
         if cites:
-            issues.append(f"BLOCK: Thursday post cites studies ({', '.join(cites)}); explain the finding in plain words instead")
+            issues.append(f"BLOCK: {day} post cites studies ({', '.join(cites)}); explain the finding in plain words instead")
         nums = re.findall(r"\d+(?:[.,]\d+)?", LIST_MARKER_RE.sub("", body))
         if nums:
-            issues.append(f"BLOCK: Thursday post has exact numbers ({', '.join(nums[:5])}); use plain words (\"most\", \"in your forties\")")
+            issues.append(f"BLOCK: {day} post has exact numbers ({', '.join(nums[:5])}); use plain words (\"most\", \"in your forties\")")
         if not ids:
-            issues.append("WARN: Thursday post isn't linked to a client problem or personal story (story_ids empty)")
+            issues.append(f"WARN: {day} post isn't linked to a client problem or personal story (story_ids empty)")
 
     # Repetition against history
     history = [h for h in (history or []) if h.get("post_id") != record.get("post_id")]

@@ -610,3 +610,35 @@ class WedThuRuleTests(unittest.TestCase):
         self.assertFalse(any("C05" in i for i in quality.check(r, settings(), hist)))
         r.update(category="client_story")
         self.assertTrue(any("C05" in i for i in quality.check(r, settings(), hist)))
+
+
+class FridayAndMessageIdTests(unittest.TestCase):
+    SRC = [{"title": "Guideline", "url": "https://example.org/g", "claim": "x"}]
+
+    def test_friday_follows_thursday_rule(self):
+        """Shweta, 20 Nov 2026: Friday posts carry no numbers, links or study names either."""
+        r = store.new_record(MON, settings())
+        r.update(final=GOOD_TEXT + "\n\nA 2023 meta-analysis found 3.5 times the odds.", category="health_wellness",
+                 hook_style="relatable_moment", sources=self.SRC, story_ids=["C02"])
+        r["humanizer"]["applied"] = True
+        issues = quality.check(r, settings())
+        self.assertTrue(any(i.startswith("BLOCK: Friday post has exact numbers") for i in issues), issues)
+        self.assertTrue(any("cites studies" in i for i in issues), issues)
+
+    def test_mark_records_gmail_message_id(self):
+        """20 Nov 2026: Gmail hid a sent approval email from the connector; the send result is the proof."""
+        from engine.__main__ import main
+        with tempfile.TemporaryDirectory() as t:
+            tmp = Path(t)
+            make(tmp, d=date(2026, 11, 20))
+            import engine.store as st
+            old = st.POSTS_DIR if hasattr(st, "POSTS_DIR") else None
+            try:
+                st.POSTS_DIR = tmp
+                main(["mark", "2026-11-20", "approval-requested", "--message-id", "abc123"])
+                rec = store.load("2026-11-20-fri", tmp)
+            finally:
+                if old is not None:
+                    st.POSTS_DIR = old
+        self.assertEqual(rec["approval"]["message_id"], "abc123")
+        self.assertEqual(rec["history"][-1]["message_id"], "abc123")

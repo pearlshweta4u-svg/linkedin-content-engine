@@ -32,7 +32,8 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - Wed: one concept from `beliefs-and-methodology.md` / the pillars, **explained through a client example** from `case-bank-clients.md` (anonymized, verified facts only; put its id in `story_ids`). The idea leads; the client example shows it in real life. Research any factual claim. (Shweta, 18 Nov 2026.) A case used as a Wed/Thu example rests 14 days (`example_cooldown_days`); a full Tuesday story still rests 56.
    - Thu: **use the `deep-research` skill** (anthropic-skills:deep-research). Find a development from the last 7–30 days relevant to her pillars (a new study, guideline, Indian health news). Pick a save-worthy format (checklist, step-by-step, mistakes).
      **In the post (Shweta, 18 Nov 2026): no exact numbers, no links, no study or journal names.** Say what the research means in plain words ("most women", "in your forties", "newer guidance says") and relate it to a client problem or her own story (add the C/P id to `story_ids`). The research goes in `sources` and the approval email only. List numbering (1. 2. 3.) is fine. `engine check` blocks digits, links and citation phrases on Thursdays.
-   - Fri: **use the `deep-research` skill**. Pick one general-health topic (see the Friday pool), sourced from credible bodies. State evidence strength honestly.
+   - Fri: **use the `deep-research` skill**. Pick one general-health topic (see the Friday pool), sourced from credible bodies. State evidence strength honestly, in words.
+     **Same rule as Thursday (Shweta, 20 Nov 2026): no exact numbers, no links, no study or journal names in the post.** Say what the evidence means in plain words and relate it to a client problem or her own story (C/P id in `story_ids`). Sources stay in `sources` and the approval email. `engine check` blocks digits, links and citation phrases on Fridays too.
    - If research doesn't support the planned angle, change the angle. Never stretch the evidence.
 
 3. **Create the record**
@@ -65,7 +66,7 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
      5. Check that her face isn't under the cream panel and that the phone preview is readable.
    - **Thursday and Friday: no photos of Shweta or other people** (Shweta, 10 Nov 2026). Use the `scene` template with a photo from `content/photos/scenes/` (see its README for the mood of each):
      `{"template":"scene","photo":"content/photos/scenes/<file>.jpg","focus":"<css position, e.g. 40% center>","text_position":"top|bottom","eyebrow","title" (≤60),"subtitle" (≤45),"alt"}`, with no list items and at most 18 words. Look at the render: the text must sit on the darker part and stay readable on a phone.
-   - Fallback designed cards only when no photo or scene fits (Thu/Fri, or when no suitable photo): Mon/Tue `story` (a headline echoing the hook plus a one-line takeaway), Wed `steps` (2–4 short steps), Thu `checklist` (portrait 1080×1350, up to 7 one-line items of ≤45 characters), Fri `stat` (one verified number, with `source`). Cards are square 1080×1080 so they're readable on phones.
+   - Fallback designed cards only when no photo or scene fits (Thu/Fri, or when no suitable photo): Mon/Tue `story` (a headline echoing the hook plus a one-line takeaway), Wed `steps` (2–4 short steps), Thu `checklist` (portrait 1080×1350, up to 7 one-line items of ≤45 characters), Fri `story` (a headline and one plain line; no numbers, since 20 Nov 2026). Cards are square 1080×1080 so they're readable on phones.
    - Check mobile legibility: `python3 -c "from engine import images; images.phone_preview('content/images/<id>.png','/tmp/p.png')"` and look at /tmp/p.png (360px wide = a phone feed). Body text must be easy to read there.
    - The image must only contain words and numbers that are already in the post or its sources. It must add structure (steps, a checklist, a key number), not repeat the first line. Always set `alt`.
    - If the command says the text doesn't fit, shorten the copy and re-run. Never accept a clipped image.
@@ -88,4 +89,4 @@ Goal: produce tomorrow's post, humanized and quality-checked, and email it to Sh
    - The body already links the image on GitHub (push the image before sending so the link works). Don't attach the PNG: encoded images are too large to pass through the mail tool.
    - In auto mode, use the subject `[LinkedIn] Scheduled: …` and add "Reply SKIP to stop it".
 
-9. Run `python3 -m engine mark $D approval-requested --git`. This commits the record and pushes. Confirm the push succeeded.
+9. Run `python3 -m engine mark $D approval-requested --message-id <id returned by send_message> --git`. This commits the record and pushes. Confirm the push succeeded.

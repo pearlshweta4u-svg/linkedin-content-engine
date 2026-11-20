@@ -117,9 +117,15 @@ def cmd_mark(a):
     ts = now_ist().isoformat(timespec="seconds")
     if a.what == "approval-requested":
         rec["approval"]["requested_at"] = ts
+        if a.message_id:
+            rec["approval"]["message_id"] = a.message_id
     elif a.what == "reminded":
         rec["approval"]["reminder_sent_at"] = ts
-    store.log_event(rec, a.what)
+        if a.message_id:
+            rec["approval"]["reminder_message_id"] = a.message_id
+    # Gmail's send result is the proof of delivery: Gmail can later hide a sent message
+    # from the connector (20 Nov 2026), so runs must trust this record, not a search.
+    store.log_event(rec, a.what, **({"message_id": a.message_id} if a.message_id else {}))
     _git_persist(a.git)(rec, f"{rec['post_id']}: {a.what}")
     print("ok")
 
@@ -416,7 +422,7 @@ def main(argv=None):
     sp = sub.add_parser("check"); sp.add_argument("date"); sp.set_defaults(f=cmd_check)
     sp = sub.add_parser("email-body"); sp.add_argument("date"); sp.set_defaults(f=cmd_email_body)
     sp = sub.add_parser("alerts"); sp.add_argument("date"); sp.set_defaults(f=cmd_alerts)
-    sp = sub.add_parser("mark"); sp.add_argument("date"); sp.add_argument("what", choices=["approval-requested", "reminded"]); g(sp); sp.set_defaults(f=cmd_mark)
+    sp = sub.add_parser("mark"); sp.add_argument("date"); sp.add_argument("what", choices=["approval-requested", "reminded"]); sp.add_argument("--message-id", help="Gmail message id returned by send_message"); g(sp); sp.set_defaults(f=cmd_mark)
     sp = sub.add_parser("decide"); sp.add_argument("date"); sp.add_argument("--reply-file"); sp.add_argument("--by", default="shweta"); g(sp); sp.set_defaults(f=cmd_decide)
     sp = sub.add_parser("publish"); sp.add_argument("date"); sp.add_argument("--dry-run", action="store_true"); sp.add_argument("--now"); sp.add_argument("--via", choices=["api", "composio"], default="api"); g(sp); sp.set_defaults(f=cmd_publish)
     sp = sub.add_parser("record"); sp.add_argument("date"); sp.add_argument("outcome", choices=["published", "failed", "ambiguous"]); sp.add_argument("--urn"); sp.add_argument("--error"); g(sp); sp.set_defaults(f=cmd_record)

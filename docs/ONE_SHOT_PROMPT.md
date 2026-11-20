@@ -30,6 +30,7 @@ go live in APPROVAL MODE. Ask me only what you cannot find yourself, and ask it 
   but put NO exact numbers, links or study names in the post: say it in plain words and relate it to a client
   problem or a personal story. Sources stay in the record and the approval email. Enforce this in the lint.
 - Fri: {{domain}} health/wellness, researched, credible sources only. Use the deep-research skill.
+  Same as Thursday: no exact numbers, links or study names in the post; relate it to a client problem or a personal story.
 Rules for every post:
 - Never invent experiences, clients, quotes, numbers or studies.
 - Write the person's clinical or professional beliefs as "in my practice/view", not as facts. Cite every statistic.
@@ -91,6 +92,9 @@ Rules for every post:
   email). Anything unclear → ask again, never publish.
 - Morning run (Mon–Fri, hourly 07:00–12:00): 07:00 reminder if still pending; from 08:00 validate, then
   publish if approved; 11:00 last call; at 12:00 the slot expires (skip and email), then fetch analytics.
+- Never resend an approval email the record says was sent: store the Gmail message id from the send result,
+  because Gmail can hide sent messages (often health topics) from the connector. Send the 07:00 reminder as a
+  short NEW email with no post text, so a reply to it is always readable.
 - Missed evening run: an evening run can fail silently (e.g. the Claude usage limit is reached: the run
   stops after a few seconds). If the morning run finds the post pending with no approval email sent, it sends
   the approval email itself with "(⚠ evening run missed)" in the subject. It never regenerates in the morning.

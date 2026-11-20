@@ -8,7 +8,7 @@ All times are Asia/Kolkata (IST). Posts go out Monday–Friday at 08:00. Nothing
 | Tue | `client_story` | Credibility | `case-bank-clients.md` (+ Fathom once it works) | When the lesson makes a factual claim |
 | Wed | `educational` | Authority | `beliefs-and-methodology.md`, explained through a client example from `case-bank-clients.md` | Yes, for any factual claim |
 | Thu | `save_worthy` | Bookmarks and shares | Current topic (last 7–30 days), told through a client problem or her own story; no numbers, links or study names in the post | **Required**, deep research (sources stay in the record and email) |
-| Fri | `health_wellness` | Awareness, healthier decisions | Credible medical sources | **Required** |
+| Fri | `health_wellness` | Awareness, healthier decisions | Credible medical sources, told through a client problem or her own story; no numbers, links or study names in the post | **Required** (sources stay in the record and email) |
 
 ## Topic pillars (rotate, track balance in the index)
 1. **Thyroid & Hashimoto's**: conversion, antibodies, labs beyond TSH, medication timing, iodine.
@@ -36,4 +36,4 @@ Thursday rule (18 Nov 2026): the research shapes the advice but never appears as
 Mental health · gut health · menstrual health · hormonal health · women's health · sleep · stress · nutrition · exercise · preventive screening. Prefer timely hooks: awareness months (e.g. September PCOS Awareness Month, January Thyroid Awareness Month, October Menopause Awareness Month / 18 Oct World Menopause Day, 14 Nov World Diabetes Day), new guidelines and major studies.
 
 Allowed sources (in order): systematic reviews and peer-reviewed studies (PubMed), WHO, ICMR / Indian government health bodies, NIH/NHS/CDC, professional societies (Endocrine Society, ATA, Menopause Society, ESHRE PCOS guideline), established medical institutions (Mayo, Cleveland Clinic, Harvard Health). **Not** blogs, influencers or supplement sellers.
-Every Friday and Thursday post states evidence strength honestly ("early research suggests…" vs "well established"); on Thursdays, in words, without figures or citations.
+Every Friday and Thursday post states evidence strength honestly ("early research suggests…" vs "well established"); on Thursdays and Fridays, in words, without figures or citations.
