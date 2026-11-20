@@ -125,7 +125,7 @@
   "approval_status": "pending",
   "approval": {
     "requested_at": "2026-11-19T18:44:06+05:30",
-    "reminder_sent_at": null,
+    "reminder_sent_at": "2026-11-20T07:12:16+05:30",
     "decided_at": null,
     "decided_by": null,
     "channel": null,
@@ -173,6 +173,10 @@
     {
       "at": "2026-11-19T18:44:06+05:30",
       "event": "approval-requested"
+    },
+    {
+      "at": "2026-11-20T07:12:16+05:30",
+      "event": "reminded"
     }
   ],
   "image_public_url": "https://media.zernio.com/temp/1795093996117_cd6c295be093e3bc_2026-11-20-fri.png",
