@@ -50,11 +50,14 @@ from them, continuously.
   cool-downs and runbooks always win.
 - **Pre-engine posts:** Zernio can read numbers and comments of her older posts by URN, but cannot *list* them.
   `python3 -m autoimprove import-history --days 90` imports what is in this repo's `history/posts.json`
-  (one-time; 4 posts done on 20 Nov: 13, 19, 26 Oct and 2 Nov).
+  (one-time). Done 20 Nov: 18 earlier posts (12 Aug to 2 Nov), 13 of them from post links Shweta sent
+  (`engine import-post-url`) and one link-only post via `--url` (text behind LinkedIn's login wall; date estimated
+  from its earliest comment). Post ids give the *creation* date, which runs 0–15 days early for scheduled posts.
 
-Top 10 by score on 20 Nov (13 posts tracked): 13 Nov prediabetes 67 (confirmed); 17 Nov client story 60 (15,094
-impressions, reach outlier); 10 Nov 59; 19 Oct 54; 26 Oct 50; 16 Nov 50; 11 Nov 47; 12 Nov 36; 19 Nov 32; 13 Oct 28
-(3,580 impressions, reach outlier). 18 and 20 Nov are outside the top 10.
+Top 10 by score on 20 Nov (27 posts tracked): 13 Aug "arm around my shoulder" 270 (182 reactions, best ever);
+12 Aug "I have quit sugar" 154; 18 Aug partnership 114; 25 Aug son eating 92; 10 Sep "children won't remember
+calories" 84; 11 Sep why I became a coach 67; 13 Nov prediabetes 67; 17 Nov doctor/salad 60; 10 Nov thyroid 59;
+19 Oct "who takes care of him" 54. Listicles and newsletter-article posts rank lowest.
 
 First lessons (hypotheses): real-people stories (client and family) lead on reach; hook = who + what was wrong +
 counter-intuitive action in line one; readers quote one memorable line back, so every post needs one; Wed/Thu
@@ -84,7 +87,7 @@ python3 -m autoimprove rank                    # top 10 (no network)
 python3 -m autoimprove brief <date>            # what the next post learns from
 python3 -m autoimprove import-history --days 90 --git
 python3 -m autoimprove playbook --git          # rebuild after editing LEARNINGS.md
-python3 -m unittest                            # 16 tests
+python3 -m unittest                            # 18 tests
 ```
 Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both tools already does this).
 
@@ -92,6 +95,7 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
 | Date | Change |
 |---|---|
 | 20 Nov | New repo `Linkedin-auto-improve`: analytics + comments store, top 10, playbook, brief; generate step 1b, `learning` field, 12:00 refresh, Friday lessons. 90-day import of pre-engine posts |
+| 20 Nov | 18 earlier posts imported (12 Aug–2 Nov); lessons rewritten from 27 posts: personal/family stories lead, listicles and article posts trail |
 | 20 Nov | Auto-improve ranks by engagement score (research-backed), with reach-outlier, score/1k and confirmed flags |
 | 20 Nov | Leftover branches deleted by Shweta (`claude/hopeful-dirac-*` here, `claude/file-explanation-1kruih` in auto-improve) |
 | 18 Nov | Wed must use a client example (WARN); Thu blocks digits (list markers OK), links and citation phrases, WARN without story id; `example_cooldown_days` 14 for Wed/Thu examples (Tue stories keep 56) |
@@ -111,8 +115,9 @@ Push only to `main` in both repos: `git push origin HEAD:main` (`--git` in both 
 - Running `engine fetch-analytics` without `--git` leaves modified post records locally; discard them or use `--git`.
 
 ## 8. Open items
-- [ ] **LinkedIn data-export ZIP: requested by Shweta on 20 Nov.** When it arrives: `engine import-history <zip>`,
-      push; then in auto-improve `import-history --days 90 --git`, review LEARNINGS.md, `playbook --git`.
+- [ ] LinkedIn export: the "Basic" part (20 Nov) has no `Shares.csv` (posts), and it holds private data (messages,
+      connections, phones): never commit it. If the `Complete_` part arrives, `engine import-history <zip>` fills
+      remaining gaps (posts between late Sep and 13 Oct, and before 12 Aug), then auto-improve `import-history`.
 - [ ] **Sun 22 Nov 18:34: first generation run using the playbook.** Check that it attached `Linkedin-auto-improve`,
       filled `learning`, and that Monday's approval email has "What this post learned from".
 - [ ] Re-check lesson 8 (direct-question hooks, 18 and 20 Nov) after 27 Nov.
