@@ -113,6 +113,11 @@
       "at": "2026-11-24T07:26:29+05:30",
       "event": "image_public_url",
       "url": "https://media.zernio.com/temp/1795485387301_d48c0f0f35b41bc3_2026-11-24-tue.png"
+    },
+    {
+      "at": "2026-11-24T07:26:39+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1ljevBVFqI_sUxxlxbvToSN-DM0KaI9pQ"
     }
   ],
   "learning": {
@@ -120,5 +125,6 @@
     "reused": "Auto-improve skipped (repo not attachable this session); followed the STAR rules in the voice guide.",
     "improved": "Hook opens on the twist (iron up, thyroid down) instead of a profile line; numbers kept to two."
   },
-  "image_public_url": "https://media.zernio.com/temp/1795485387301_d48c0f0f35b41bc3_2026-11-24-tue.png"
+  "image_public_url": "https://media.zernio.com/temp/1795485387301_d48c0f0f35b41bc3_2026-11-24-tue.png",
+  "drive_file_id": "1ljevBVFqI_sUxxlxbvToSN-DM0KaI9pQ"
 }
