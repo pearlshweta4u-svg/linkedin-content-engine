@@ -76,13 +76,13 @@
     "issues": [],
     "checked_at": "2026-11-24T07:26:23+05:30"
   },
-  "approval_status": "pending",
+  "approval_status": "approved",
   "approval": {
     "requested_at": "2026-11-24T07:27:00+05:30",
     "reminder_sent_at": null,
-    "decided_at": null,
-    "decided_by": null,
-    "channel": null,
+    "decided_at": "2026-11-24T09:12:29+05:30",
+    "decided_by": "shweta",
+    "channel": "email",
     "note": null,
     "message_id": "1a20b4540cb4bbc6"
   },
@@ -129,6 +129,11 @@
       "at": "2026-11-24T07:27:00+05:30",
       "event": "approval-requested",
       "message_id": "1a20b4540cb4bbc6"
+    },
+    {
+      "at": "2026-11-24T09:12:29+05:30",
+      "event": "decision_approve",
+      "by": "shweta"
     }
   ],
   "learning": {
