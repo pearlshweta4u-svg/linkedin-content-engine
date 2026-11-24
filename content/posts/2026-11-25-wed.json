@@ -122,11 +122,17 @@
       "at": "2026-11-24T07:22:18+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-25-wed.png"
+    },
+    {
+      "at": "2026-11-24T07:22:29+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1795485148267_828767d330f84b41_2026-11-25-wed.png"
     }
   ],
   "learning": {
     "references": [],
     "reused": "Auto-improve skipped (repo not attachable this session); followed voice guide hooks rules instead.",
     "improved": "Rotated hook style to relatable_moment after mostly statement hooks; one client example instead of a study-led opening."
-  }
+  },
+  "image_public_url": "https://media.zernio.com/temp/1795485148267_828767d330f84b41_2026-11-25-wed.png"
 }
