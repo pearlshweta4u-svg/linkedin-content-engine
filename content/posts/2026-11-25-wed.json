@@ -1,0 +1,132 @@
+{
+  "post_id": "2026-11-25-wed",
+  "date": "2026-11-25",
+  "scheduled_for": "2026-11-25T08:00:00+05:30",
+  "weekday": "Wednesday",
+  "category": "educational",
+  "pillar": "thyroid_hashimotos",
+  "topic": "A normal TSH on thyroid medicine means the dose fits, not that you can stop",
+  "angle": "Clients often ask to stop levothyroxine once the report is normal. A normal TSH on dose means the dose suits the body now; treatment is usually long term and the dose changes over life (weight, age, other medicines, iron/calcium absorption), so keep retesting and discuss dose only with the prescribing doctor. Client example C02 (TSH into range on an unchanged dose; CRP did not improve).",
+  "format": "explainer + client example",
+  "story_ids": [
+    "C02"
+  ],
+  "story_structure": {},
+  "hook": "When a thyroid report comes back normal, several of my clients ask me the same thing: can I stop the tablet now?",
+  "hook_style": "relatable_moment",
+  "draft": "When a thyroid report finally comes back normal, several of my clients ask me the same thing. Can I stop the tablet now?\n\nI understand why. Nobody wants to take a pill every morning for the rest of their life.\n\nHere's how I explain it, using one client's numbers.\n\nShe came to me with a TSH above 5 and very low B12, on a small daily dose of thyroid medicine. Over six months we worked on B12, iron, protein and strength training. By the end, her TSH was under 2. Her dose hadn't changed.\n\nThat's a good result. It means the dose now suits her body. It doesn't mean her thyroid can manage without the tablet. The tablet is part of the reason the number looks good.\n\nThyroid medicine replaces a hormone your gland isn't making enough of. A 2019 review in Advances in Therapy says most people with hypothyroidism take it for a long time, usually for the rest of their life. What changes over the years is the dose. Weight, age, other medicines, and iron or calcium supplements can all shift how much you need.\n\nSo a normal report is a reason to keep retesting: a few months after any dose change, then about once a year once things are steady. If you want to talk about your dose, have that conversation with the doctor who prescribed it.\n\nOne honest note on her case: not everything improved. Her inflammation marker didn't come down, and it became the main thing left to address.\n\nIf you're on thyroid medicine, when was your TSH last checked?\n\n#ThyroidHealth #Hypothyroidism",
+  "final": "When a thyroid report comes back normal, several of my clients ask me the same thing: can I stop the tablet now?\n\nI understand the question. Nobody wants to take a pill every morning for the rest of their life.\n\nOne client's numbers explain my answer well. She came to me on a small daily dose of thyroid medicine, with a TSH above 5 and very low B12. Over six months we worked on B12, iron, protein and strength training. By the end her TSH was under 2, and she was on the same dose she started with.\n\nI was happy with that. What it tells me is that her dose now suits her body. It doesn't tell me her thyroid could manage without the tablet, because the tablet is part of why that number looks good.\n\nThyroid medicine replaces a hormone the gland is short of. A 2019 review in Advances in Therapy says people with hypothyroidism usually take it for a long time, typically for the rest of their life. The dose is what tends to change. Body weight, age and some other medicines can shift how much you need, and iron or calcium supplements can reduce how much of the tablet you absorb.\n\nSo a normal report means you keep retesting: a few months after any dose change, then about once a year when things are steady. If you want to talk about your dose, have that conversation with the doctor who prescribed it.\n\nNot everything improved for her, by the way. Her inflammation marker didn't come down, and that became the main thing left to work on.\n\nIf you're on thyroid medicine, when was your TSH last checked?\n\n#ThyroidHealth #Hypothyroidism",
+  "hashtags": [],
+  "image_spec": {
+    "template": "photo",
+    "photo": "content/photos/album-10.jpg",
+    "eyebrow": "Thyroid medicine",
+    "title": "Report normal. Can you stop the tablet?",
+    "subtitle": "What a normal TSH means",
+    "photo_right": -260,
+    "photo_scale": 1.15,
+    "alt": "Shweta Mehta seated in a garden in a brown outfit, looking at the camera. Text: Thyroid medicine. Report normal. Can you stop the tablet? What a normal TSH means."
+  },
+  "image_path": "content/images/2026-11-25-wed.png",
+  "image_alt": "Shweta Mehta seated in a garden in a brown outfit, looking at the camera. Text: Thyroid medicine. Report normal. Can you stop the tablet? What a normal TSH means.",
+  "sources": [
+    {
+      "title": "Duntas LH, Jonklaas J. Levothyroxine Dose Adjustment to Optimise Therapy Throughout a Patient's Lifetime. Adv Ther 2019;36(Suppl 2):30-46",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6822824/",
+      "publisher": "Advances in Therapy (PMC)",
+      "published": "2019-09",
+      "accessed": "2026-11-24",
+      "claim": "'There is currently no other treatment for hypothyroidism, other than providing thyroid hormone replacement'; 'People with hypothyroidism will often need to take levothyroxine for a long time, typically for the rest of their life'; TSH re-confirmed in 3-6 months then checked annually; dose requirements affected by body weight, age and other medications (e.g. oestrogen); 'Calcium supplements and iron also reduce absorption and thereby increase the levothyroxine dose requirement'"
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "Thyroid medicine replaces a hormone the gland is short of",
+      "status": "verified, PMC6822824 (hormone replacement is the treatment)"
+    },
+    {
+      "claim": "Usually taken for a long time, typically for the rest of life",
+      "status": "verified verbatim, PMC6822824"
+    },
+    {
+      "claim": "Body weight, age and some other medicines shift dose needs",
+      "status": "verified, PMC6822824"
+    },
+    {
+      "claim": "Iron or calcium supplements reduce absorption of the tablet",
+      "status": "verified verbatim, PMC6822824"
+    },
+    {
+      "claim": "Retest a few months after a dose change, then about yearly when stable",
+      "status": "verified, PMC6822824 (3-6 months, then annually)"
+    },
+    {
+      "claim": "Several clients ask to stop thyroid medication",
+      "status": "beliefs-and-methodology.md (Medication) and case-bank pattern 'fear of lifelong medication'"
+    },
+    {
+      "claim": "Client: TSH above 5 to under 2 on unchanged dose, very low B12, six months of B12/iron/protein/strength; CRP did not improve",
+      "status": "case C02 (NR): TSH 5.28 -> 1.77 on unchanged 25 mcg, B12 123, CRP 6.0 -> 7.7; dose not stated in post; no causation claimed"
+    }
+  ],
+  "questions_for_shweta": [
+    "Alternative hooks: (a) \"A normal TSH on thyroid tablets is good news. It's also when several of my clients ask if they can stop.\" (b) \"Normal on your thyroid tablet and normal without it are two different reports.\"",
+    "Case C02 (NR) is the example: TSH above 5 to under 2 on the same dose over six months, and her CRP did not improve. Is she happy to be referenced this way (no name, no other details)?",
+    "Auto-improve skipped this run: the Linkedin-auto-improve repo could not be attached in this session, so no playbook brief was used."
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-24T07:30:00+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed staged run-up ('Here's how I explain it'); merged short dramatic sentences ('Her dose hadn't changed.' / 'That's a good result.'); reworked a split not-X-but-Y into one causal sentence; softened the 'One honest note' opener into a plain aside. No new facts."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-24T07:22:24+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-24T07:20:14+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-24T07:20:44+05:30",
+      "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-24T07:22:12+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-25-wed.png"
+    },
+    {
+      "at": "2026-11-24T07:22:18+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-25-wed.png"
+    }
+  ],
+  "learning": {
+    "references": [],
+    "reused": "Auto-improve skipped (repo not attachable this session); followed voice guide hooks rules instead.",
+    "improved": "Rotated hook style to relatable_moment after mostly statement hooks; one client example instead of a study-led opening."
+  }
+}
