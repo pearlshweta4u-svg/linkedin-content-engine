@@ -78,12 +78,13 @@
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": null,
+    "requested_at": "2026-11-24T07:27:00+05:30",
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
     "channel": null,
-    "note": null
+    "note": null,
+    "message_id": "1a20b4540cb4bbc6"
   },
   "publish_status": "not_ready",
   "linkedin": {
@@ -123,6 +124,11 @@
       "at": "2026-11-24T07:26:43+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-24T07:27:00+05:30",
+      "event": "approval-requested",
+      "message_id": "1a20b4540cb4bbc6"
     }
   ],
   "learning": {
