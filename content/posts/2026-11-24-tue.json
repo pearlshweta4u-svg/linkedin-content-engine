@@ -86,14 +86,19 @@
     "note": null,
     "message_id": "1a20b4540cb4bbc6"
   },
-  "publish_status": "not_ready",
+  "publish_status": "publishing",
   "linkedin": {
     "urn": null,
     "url": null,
     "image_urn": null
   },
   "published_at": null,
-  "attempts": [],
+  "attempts": [
+    {
+      "at": "2026-11-24T09:12:43+05:30",
+      "outcome": null
+    }
+  ],
   "errors": [],
   "analytics": {},
   "history": [
@@ -139,6 +144,10 @@
       "at": "2026-11-24T09:12:35+05:30",
       "event": "zernio_validated",
       "detail": "ok"
+    },
+    {
+      "at": "2026-11-24T09:12:43+05:30",
+      "event": "publish_started"
     }
   ],
   "learning": {
