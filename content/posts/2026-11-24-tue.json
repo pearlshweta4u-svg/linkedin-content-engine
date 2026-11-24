@@ -1,0 +1,118 @@
+{
+  "post_id": "2026-11-24-tue",
+  "date": "2026-11-24",
+  "scheduled_for": "2026-11-24T08:00:00+05:30",
+  "weekday": "Tuesday",
+  "category": "client_story",
+  "pillar": "iron_b12_vitd",
+  "topic": "Iron went up, free T3 went down: a retest that pointed back to Hashimoto's",
+  "angle": "STAR client story (C09): Hashimoto's with critically low iron and B12; iron doubled; ferritin rose but free T3 kept falling, pointing to autoimmunity; advised to involve her prescribing doctor. Lesson: a number moving the wrong way is information; retest thyroid while fixing iron/B12 and share every result with your doctor.",
+  "format": "client story (STAR)",
+  "story_ids": [
+    "C09"
+  ],
+  "story_structure": {
+    "situation": "Woman in her 40s with Hashimoto's; iron stores and B12 critically low.",
+    "task": "Rebuild iron and B12 first (her cofactor approach), then retest and watch the thyroid.",
+    "action": "Iron doubled; retests.",
+    "result": "Ferritin rose 25 -> 36, but free T3 kept falling (2.66 -> 2.24), pointing to autoimmunity; advised to loop in her prescribing doctor.",
+    "lesson": "When numbers don't move the way you planned, that's information; retest thyroid while fixing iron/B12 and share every result with your doctor."
+  },
+  "hook": "Her iron finally started going up. The thyroid number I was watching went the other way.",
+  "hook_style": "curiosity_gap",
+  "draft": "Her iron finally started going up. The thyroid number I was watching went the other way.\n\nShe's in her 40s and has Hashimoto's, where the immune system attacks the thyroid. When she came to me, her iron stores and her B12 were both critically low.\n\nThe plan looked simple. Rebuild iron and B12 first, because in my practice low iron is one of the first things I fix in women with thyroid problems. Then retest and watch the thyroid.\n\nSo we doubled her iron and retested.\n\nHer iron stores rose from 25 to 36. That part worked.\n\nHer free T3 didn't. Free T3 is the active thyroid hormone, the form your cells actually use. It kept falling from one test to the next.\n\nIron was going up and free T3 was going down. To me, that pointed back to the autoimmune side of her Hashimoto's. I advised her to take these results to the doctor who prescribes her thyroid medicine.\n\nA number moving the wrong way feels like failure. It's information. It told us iron alone wasn't the answer for her, and that her doctor needed to see it.\n\nIf you're working on iron or B12 with Hashimoto's, retest your thyroid too. And share every result with your doctor, including the ones that went the wrong way.\n\n#Hashimotos #ThyroidHealth",
+  "final": "Her iron finally started going up. The thyroid number I was watching went the other way.\n\nShe's in her 40s and has Hashimoto's, where the immune system attacks the thyroid. When she came to me, her iron stores and her B12 were both critically low.\n\nIn my practice, low iron is one of the first things I fix in women with thyroid problems, so the plan was to rebuild iron and B12 and then retest. We doubled her iron.\n\nAt the retest her iron stores had gone up, from 25 to 36.\n\nHer free T3 hadn't. Free T3 is the active thyroid hormone, the form your cells actually use, and hers kept falling from one test to the next.\n\nWith iron rising and free T3 dropping, I read it as the autoimmune side of her Hashimoto's showing up, and I advised her to take the results to the doctor who prescribes her thyroid medicine.\n\nWhen a number moves the wrong way, I treat it as information. Here it told us iron alone wasn't going to fix this for her, and that her doctor needed to see it.\n\nIf you're working on iron or B12 with Hashimoto's, retest your thyroid as well, and show your doctor every result, including the ones that went the wrong way.\n\n#Hashimotos #ThyroidHealth",
+  "hashtags": [],
+  "image_spec": {
+    "template": "photo",
+    "photo": "content/photos/album-26.jpg",
+    "eyebrow": "Client story",
+    "title": "Her iron went up. Her thyroid went the other way.",
+    "subtitle": "What the retest told us",
+    "photo_right": -260,
+    "photo_scale": 1.15,
+    "alt": "Shweta Mehta seated at a wooden table outdoors, looking to the side. Text: Client story. Her iron went up. Her thyroid went the other way. What the retest told us."
+  },
+  "image_path": "content/images/2026-11-24-tue.png",
+  "image_alt": "Shweta Mehta seated at a wooden table outdoors, looking to the side. Text: Client story. Her iron went up. Her thyroid went the other way. What the retest told us.",
+  "sources": [],
+  "claims_checked": [
+    {
+      "claim": "Client in her 40s, Hashimoto's, ferritin and B12 critically low; iron doubled; ferritin 25 -> 36; free T3 kept falling; pointed to autoimmunity; advised to loop in prescribing doctor",
+      "status": "case C09 (BJ), case-bank-clients.md; free T3 values (2.66 -> 2.24) left out of the post to keep to 3 numbers"
+    },
+    {
+      "claim": "Low iron is one of the first things she fixes in women with thyroid problems",
+      "status": "her view/method, beliefs-and-methodology.md (T4->T3 conversion environment), written as 'in my practice'"
+    },
+    {
+      "claim": "Free T3 is the active thyroid hormone",
+      "status": "standard physiology; beliefs-and-methodology.md core model (T4 mostly inactive, converted to active T3)"
+    },
+    {
+      "claim": "Hashimoto's: the immune system attacks the thyroid",
+      "status": "standard definition"
+    },
+    {
+      "claim": "Iron-deficiency impairs thyroid hormone metabolism (mechanism)",
+      "status": "NOT stated in the post as research: no source verified this run (nhs.uk/thyroid.org blocked, NCBI Bookshelf behind a captcha)"
+    }
+  ],
+  "questions_for_shweta": [
+    "Requested by you this morning, so it is going out late (scheduled slot 08:00 IST). Approve and it will publish at the next publish run.",
+    "Alternative hooks: (a) \"We doubled her iron and it worked. Then her thyroid results got worse.\" (b) \"A retest went the wrong way, and it was the most useful result she got.\"",
+    "Case C09 (BJ): ok to use, with 'in her 40s' and Hashimoto's as the only identifiers? Fathom had no recent call I could match to her, so only case-bank facts are used.",
+    "Is there one line on how she felt (energy, hair, sleep) I can add to the opening? I left it out because it isn't in the case bank.",
+    "Auto-improve skipped: the Linkedin-auto-improve repo could not be attached in this session."
+  ],
+  "humanizer": {
+    "applied": true,
+    "at": "2026-11-24T07:40:00+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed one-line closer ('That part worked.'); merged a row of short staged sentences into fuller ones; reworked the 'feels like failure. It's information.' not-X-but-Y into a plain first-person statement; cut 'And' sentence opener. No new facts."
+  },
+  "quality": {
+    "passed": true,
+    "issues": [],
+    "checked_at": "2026-11-24T07:26:23+05:30"
+  },
+  "approval_status": "pending",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-24T07:24:55+05:30",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-24T07:25:52+05:30",
+      "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-24T07:26:17+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-24-tue.png"
+    }
+  ],
+  "learning": {
+    "references": [],
+    "reused": "Auto-improve skipped (repo not attachable this session); followed the STAR rules in the voice guide.",
+    "improved": "Hook opens on the twist (iron up, thyroid down) instead of a profile line; numbers kept to two."
+  }
+}
