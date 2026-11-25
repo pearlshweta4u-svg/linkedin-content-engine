@@ -148,6 +148,11 @@
       "at": "2026-11-25T18:43:39+05:30",
       "event": "image_public_url",
       "url": "https://media.zernio.com/temp/1795612418326_80443a6d111142df_2026-11-26-thu.png"
+    },
+    {
+      "at": "2026-11-25T18:43:53+05:30",
+      "event": "copied_to_drive",
+      "file_id": "1PMftugP2Oqfed5ac5-2blsZHC94l4RvH"
     }
   ],
   "learning": {
@@ -155,5 +160,6 @@
     "reused": "Auto-improve skipped (repo not attached); kept the shape of recent approved Thursdays: plain-words research, client link, numbered list, one closing question.",
     "improved": "Switched format to 'mistakes to avoid' to rotate away from checklists, and moved to the strength pillar, unused in the last 5 posts."
   },
-  "image_public_url": "https://media.zernio.com/temp/1795612418326_80443a6d111142df_2026-11-26-thu.png"
+  "image_public_url": "https://media.zernio.com/temp/1795612418326_80443a6d111142df_2026-11-26-thu.png",
+  "drive_file_id": "1PMftugP2Oqfed5ac5-2blsZHC94l4RvH"
 }
