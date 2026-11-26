@@ -201,6 +201,11 @@
       "at": "2026-11-26T18:44:01+05:30",
       "event": "image_public_url",
       "url": "https://media.zernio.com/temp/1795698840170_25db9d38f27911e8_2026-11-27-fri.png"
+    },
+    {
+      "at": "2026-11-26T18:44:05+05:30",
+      "event": "zernio_validated",
+      "detail": "ok"
     }
   ],
   "learning": {
@@ -208,5 +213,21 @@
     "reused": "Auto-improve skipped (repo not attached); kept the shape of recent approved Fridays/Thursdays: plain-words research, a 'what I see' line, numbered what-to-do list, one closing question.",
     "improved": "New hook style (relatable_moment) after a run of statements; moved to an everyday kitchen decision instead of a lab marker."
   },
-  "image_public_url": "https://media.zernio.com/temp/1795698840170_25db9d38f27911e8_2026-11-27-fri.png"
+  "image_public_url": "https://media.zernio.com/temp/1795698843617_6b1074bf12902739_2026-11-27-fri.png",
+  "zernio_validation": {
+    "valid": true,
+    "post_errors": [],
+    "post_warnings": [],
+    "media": {
+      "valid": true,
+      "format": "png",
+      "width": 2160,
+      "height": 2700,
+      "size": 7305815,
+      "code": null
+    },
+    "checked_at": "2026-11-26T18:44:05+05:30",
+    "text_sha": "850397857c4df17d",
+    "image_path": "content/images/2026-11-27-fri.png"
+  }
 }
