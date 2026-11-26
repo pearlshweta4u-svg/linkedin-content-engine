@@ -161,12 +161,13 @@
   },
   "approval_status": "pending",
   "approval": {
-    "requested_at": null,
+    "requested_at": "2026-11-26T18:44:49+05:30",
     "reminder_sent_at": null,
     "decided_at": null,
     "decided_by": null,
     "channel": null,
-    "note": null
+    "note": null,
+    "message_id": "1a217fe840ba87e4"
   },
   "publish_status": "not_ready",
   "linkedin": {
@@ -211,6 +212,11 @@
       "at": "2026-11-26T18:44:21+05:30",
       "event": "copied_to_drive",
       "file_id": "10Tn6ulyraiAl8TI0uU9G6l1RnKVNafqq"
+    },
+    {
+      "at": "2026-11-26T18:44:49+05:30",
+      "event": "approval-requested",
+      "message_id": "1a217fe840ba87e4"
     }
   ],
   "learning": {
