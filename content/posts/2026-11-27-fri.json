@@ -4,35 +4,162 @@
   "scheduled_for": "2026-11-27T08:00:00+05:30",
   "weekday": "Friday",
   "category": "health_wellness",
-  "pillar": "",
-  "topic": "",
-  "angle": "",
-  "format": "",
+  "pillar": "thyroid_hashimotos",
+  "topic": "Pink, rock and black salt carry little iodine: keep iodised salt, use less of it",
+  "angle": "Swapping white salt for pink/rock salt drops the main iodine source; WHO-style guidance says less salt and iodised salt work together; excess iodine and high-dose supplements carry their own thyroid risk (Hashimoto's caution)",
+  "format": "explainer + what to do",
   "story_ids": [],
   "story_structure": {},
-  "hook": "",
-  "hook_style": "",
-  "draft": "",
-  "final": "",
-  "hashtags": [],
-  "image_spec": null,
-  "image_path": null,
-  "image_alt": null,
-  "sources": [],
-  "claims_checked": [],
-  "questions_for_shweta": [],
+  "hook": "Many of my clients switched from white salt to pink salt to eat healthier. Few of them knew what they gave up.",
+  "hook_style": "relatable_moment",
+  "draft": "Many of my clients switched from white salt to pink salt to eat healthier. Few of them knew what they gave up.\n\nIodine. Your thyroid needs it to make its hormones. India chose decades ago to add iodine to common salt, and that's how most of us get enough without ever thinking about it.\n\nHere's the catch. Pink salt, rock salt and black salt usually carry very little iodine unless it has been added. The colour and the \"natural\" label don't change that. When salts on shop shelves were tested, the non-iodised ones had only a small fraction of the iodine in iodised salt. And in pregnant women, those who used non-iodised salt had lower iodine levels than those who used iodised salt. That research shows a link, so it can't prove cause, but the direction is consistent.\n\nIn my practice, the switch to pink salt is something I see again and again.\n\nTwo things are true at the same time. Most Indians eat more salt than global guidance recommends. And the salt we do eat should be iodised. Eating less salt and using iodised salt work together.\n\nMore iodine isn't better either. Too much has been linked to thyroid autoimmunity, and thyroid experts warn against high-dose iodine and kelp supplements, especially if you already have a thyroid condition.\n\nWhat I'd suggest:\n\n1. Cook with iodised salt every day. If you love pink or rock salt, keep it for a sprinkle on top, alongside iodised salt.\n2. Use less salt overall, whichever kind you pick.\n3. Keep iodised salt in its closed packet, away from the stove. Iodine fades with time, heat and moisture.\n4. Don't start iodine or kelp supplements on your own, especially with Hashimoto's. Ask your doctor first.\n5. If you take thyroid medicine, keep taking it as prescribed. Salt helps prevent a gap. It doesn't replace your tablet.\n\nWhich salt is in your kitchen right now?\n\n#ThyroidHealth #Hashimotos #WomensHealth",
+  "final": "Many of my clients switched from white salt to pink salt to eat healthier. Few of them knew what they gave up.\n\nWhat they gave up was iodine, which your thyroid needs to make its hormones. India chose decades ago to add iodine to common salt, and that's how most of us get enough without thinking about it.\n\nPink salt, rock salt and black salt usually carry very little iodine unless it has been added, whatever the colour or the \"natural\" label. When salts on shop shelves were tested, the non-iodised ones had only a small fraction of the iodine in iodised salt. Pregnant women who used non-iodised salt also had lower iodine levels than those who used iodised salt. That research shows a link and can't prove cause, but it points the same way.\n\nIn my practice I see this switch again and again.\n\nMost Indians eat more salt than global guidance recommends, and the same guidance says the salt we do eat should be iodised. Eating less salt and using iodised salt work together.\n\nGoing the other way has its own risk. Too much iodine has been linked to thyroid autoimmunity, and thyroid experts warn against high-dose iodine and kelp supplements, especially if you already have a thyroid condition.\n\nWhat I'd suggest:\n\n1. Cook with iodised salt every day. If you love pink or rock salt, keep it for a sprinkle on top.\n2. Use less salt overall, whichever kind you pick.\n3. Keep iodised salt in its closed packet, away from the stove. Iodine fades with time, heat and moisture.\n4. Don't start iodine or kelp supplements on your own, especially with Hashimoto's. Ask your doctor first.\n5. If you take thyroid medicine, keep taking it as prescribed. Salt can't stand in for your tablet.\n\nWhich salt is in your kitchen right now?\n\n#ThyroidHealth #Hashimotos #WomensHealth",
+  "hashtags": [
+    "#ThyroidHealth",
+    "#Hashimotos",
+    "#WomensHealth"
+  ],
+  "image_spec": {
+    "template": "scene",
+    "photo": "content/photos/scenes/mountain-reservoir-panorama.jpg",
+    "focus": "50% center",
+    "text_position": "top",
+    "eyebrow": "Thyroid · Salt",
+    "title": "Switched to pink salt to eat healthier?",
+    "subtitle": "Few knew what they gave up.",
+    "alt": "A mountain reservoir with a low water line. Text: Thyroid, salt. Switched to pink salt to eat healthier? Few knew what they gave up."
+  },
+  "image_path": "content/images/2026-11-27-fri.png",
+  "image_alt": "A mountain reservoir with a low water line. Text: Thyroid, salt. Switched to pink salt to eat healthier? Few knew what they gave up.",
+  "sources": [
+    {
+      "title": "Žmitek K, Pravst I. Iodisation of Salt in Slovenia: Increased Availability of Non-Iodised Salt in the Food Supply. Nutrients 2016;8(7):434",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4963910/",
+      "publisher": "Nutrients (MDPI), via PMC",
+      "published": "2016-07",
+      "accessed": "2026-11-26",
+      "claim": "Non-iodised salts (incl. gourmet sea salt, Himalayan rock salt) averaged 3.5 mg KI/kg vs 24.2 mg KI/kg in iodised salt; iodised rock and sea salts exist, so added iodine is what matters (verified on page)"
+    },
+    {
+      "title": "Wang X et al. Iodine status of pregnant women and use of iodized salt, Zhejiang. Nutrients 2019;11(2):413",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6412776/",
+      "publisher": "Nutrients (MDPI), via PMC",
+      "published": "2019-02",
+      "accessed": "2026-11-26",
+      "claim": "2,642 pregnant women: iodised-salt users had higher median urinary iodine than non-iodised users (inland 152.9 vs 102.2 µg/L; coastal 130.2 vs 104.3); observational (verified by researcher on page)"
+    },
+    {
+      "title": "Mathur P et al. Awareness, behavior, and determinants of dietary salt intake in adults: National NCD Monitoring Survey, India. Sci Rep 2023;13:15890",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10517942/",
+      "publisher": "Scientific Reports (ICMR-NCDIR), via PMC",
+      "published": "2023-09-23",
+      "accessed": "2026-11-26",
+      "claim": "Mean salt intake 8.0 g/day (women 7.1 g), higher than WHO recommendation of up to 5 g daily (verified on page; spot-urine estimate)"
+    },
+    {
+      "title": "Rigutto-Farebrother J, Zimmermann MB. Salt Reduction and Iodine Fortification Policies Are Compatible: Perspectives for Public Health Advocacy. Nutrients 2024;16(15):2517",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11314281/",
+      "publisher": "Nutrients (MDPI), via PMC",
+      "published": "2024-08",
+      "accessed": "2026-11-26",
+      "claim": "Salt reduction (WHO <5 g/day) and iodine fortification are an achievable 'double duty'; USI is the WHO-recommended strategy against iodine deficiency (verified on page)"
+    },
+    {
+      "title": "Krishna E et al. Vast gap in iodization from production to plate: hurdles in achieving universal salt iodization in India. J Family Med Prim Care 2022;11(3):847-851",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9051721/",
+      "publisher": "Journal of Family Medicine and Primary Care, via PMC",
+      "published": "2022-03",
+      "accessed": "2026-11-26",
+      "claim": "Iodine is necessary for thyroid hormone synthesis; iodised salt loses iodine with storage time, open containers, heat/cooking; store in original packet (verified on page)"
+    },
+    {
+      "title": "Luo Y et al. Iodine Excess as an Environmental Risk Factor for Autoimmune Thyroid Disease. Int J Mol Sci 2014;15(7):12895-12912",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4139880/",
+      "publisher": "International Journal of Molecular Sciences, via PMC",
+      "published": "2014-07-21",
+      "accessed": "2026-11-26",
+      "claim": "'Iodine excess is a precipitating environmental factor in the development of autoimmune thyroid disease'; excess from supplements often goes unrecognised (verified on page)"
+    },
+    {
+      "title": "ATA Statement on the Potential Risks of Excess Iodine Ingestion and Exposure (2013; Leung AM et al., Thyroid 2015)",
+      "url": "https://www.thyroid.org/ata-statement-on-the-potential-risks-of-excess-iodine-ingestion-and-exposure",
+      "publisher": "American Thyroid Association",
+      "published": "2013-06-05",
+      "accessed": "2026-11-26",
+      "claim": "Advises against iodine/kelp supplements above 500 mcg/day; people with preexisting thyroid disease are more susceptible to excess iodine (search extracts only; thyroid.org blocked in this session)"
+    },
+    {
+      "title": "FSSAI news brief: prohibition of sale of non-iodised common salt",
+      "url": "https://fssai.gov.in/upload/media/FSSAI_News_Salt_FNB_16_07_2019.pdf",
+      "publisher": "Food Safety and Standards Authority of India",
+      "published": "2019-07-16",
+      "accessed": "2026-11-26",
+      "claim": "Iodisation mandate is for common/white salt; traditional salts such as rock salt, black salt, Himalayan pink salt shall not be mandatorily iodised (search extract only; fssai.gov.in blocked). Context only, not stated in the post."
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "Pink, rock and black salt usually carry very little iodine unless added; tested non-iodised salts had a small fraction of iodised salt's iodine",
+      "status": "verified on PMC (Slovenia 2016); Indian shelf studies (Delhi 2026, Mohali 2023) seen only as abstracts/snippets"
+    },
+    {
+      "claim": "Pregnant women using non-iodised salt had lower iodine; observational",
+      "status": "verified on PMC (Zhejiang 2019); Turkey 2021 rock-salt study snippet only"
+    },
+    {
+      "claim": "Iodine needed to make thyroid hormones",
+      "status": "well established; verified wording in Krishna 2022 (PMC)"
+    },
+    {
+      "claim": "India added iodine to common salt decades ago",
+      "status": "universal salt iodisation since 1983 / NIDDCP 1992 (snippets); Krishna 2022 confirms FSSAI oversees salt iodisation"
+    },
+    {
+      "claim": "Most Indians eat more salt than global guidance recommends",
+      "status": "verified on PMC (ICMR-NCDIR survey: mean 8 g/day vs WHO 5 g); 'most' reflects mean and all subgroups above 5 g"
+    },
+    {
+      "claim": "Same guidance says salt should be iodised; less salt and iodised salt work together",
+      "status": "verified on PMC (Rigutto-Farebrother & Zimmermann 2024); WHO fact sheet itself blocked"
+    },
+    {
+      "claim": "Too much iodine linked to thyroid autoimmunity; experts warn against high-dose iodine and kelp supplements, especially with thyroid disease",
+      "status": "Luo 2014 verified on PMC (observational/animal evidence, contested at population level); ATA statement from search extracts only"
+    },
+    {
+      "claim": "Store in closed packet away from stove; iodine fades with time, heat, moisture",
+      "status": "verified on PMC (Krishna 2022)"
+    },
+    {
+      "claim": "'In my practice I see this switch again and again'",
+      "status": "knowledge/case-bank-clients.md patterns ('Switching to pink salt (iodine gap)') and beliefs-and-methodology.md (Iodine and salt)"
+    },
+    {
+      "claim": "Madras High Court reportedly struck down FSSAI iodisation rule (Aug 2025)",
+      "status": "unverified; deliberately not mentioned in post"
+    }
+  ],
+  "questions_for_shweta": [
+    "No single client case is named: the post rests on your 'switching to pink salt' pattern from the case bank. If a specific client fits (anonymised), tell me and I'll add one line.",
+    "Point 1 says to keep pink or rock salt 'for a sprinkle on top'. Your beliefs file says 'iodized salt alongside other salts'. Happy with that wording?",
+    "Other hook options: (a) 'Pink salt looks like the healthier choice. For your thyroid, it may be the opposite.' (b) 'The salt you switched to for health may be missing the one thing your thyroid needs from salt.'",
+    "Auto-improve skipped: the Linkedin-auto-improve repo can't be attached in this session (no add_repo tool).",
+    "Network limits: only PMC pages could be read in full. The ATA and FSSAI points rest on search extracts (thyroid.org, fssai.gov.in, who.int blocked). Neither is quoted in the post."
+  ],
   "humanizer": {
-    "applied": false,
-    "at": null,
-    "version": null,
-    "changes_summary": ""
+    "applied": true,
+    "at": "2026-11-26T19:05:00+05:30",
+    "version": "3.1.0",
+    "changes_summary": "Removed staged run-up 'Here's the catch.' and the deep-sounding 'Two things are true at the same time.'; merged the one-word fragment 'Iodine.' into a sentence; dropped 'quiet' (stock word) and the 'helps prevent a gap. It doesn't replace' contrast pair; trimmed under the word limit"
   },
   "quality": {
-    "passed": false,
-    "issues": [],
-    "checked_at": null
+    "passed": true,
+    "issues": [
+      "WARN: Friday post isn't linked to a client problem or personal story (story_ids empty)"
+    ],
+    "checked_at": "2026-11-26T18:43:49+05:30"
   },
-  "approval_status": "draft",
+  "approval_status": "pending",
   "approval": {
     "requested_at": null,
     "reminder_sent_at": null,
@@ -55,6 +182,25 @@
     {
       "at": "2026-11-26T18:38:51+05:30",
       "event": "created"
+    },
+    {
+      "at": "2026-11-26T18:43:25+05:30",
+      "event": "ready_for_approval"
+    },
+    {
+      "at": "2026-11-26T18:43:37+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-27-fri.png"
+    },
+    {
+      "at": "2026-11-26T18:43:49+05:30",
+      "event": "image_rendered",
+      "path": "content/images/2026-11-27-fri.png"
     }
-  ]
+  ],
+  "learning": {
+    "references": [],
+    "reused": "Auto-improve skipped (repo not attached); kept the shape of recent approved Fridays/Thursdays: plain-words research, a 'what I see' line, numbered what-to-do list, one closing question.",
+    "improved": "New hook style (relatable_moment) after a run of statements; moved to an everyday kitchen decision instead of a lab marker."
+  }
 }
