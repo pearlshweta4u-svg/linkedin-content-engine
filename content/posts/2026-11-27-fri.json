@@ -196,11 +196,17 @@
       "at": "2026-11-26T18:43:49+05:30",
       "event": "image_rendered",
       "path": "content/images/2026-11-27-fri.png"
+    },
+    {
+      "at": "2026-11-26T18:44:01+05:30",
+      "event": "image_public_url",
+      "url": "https://media.zernio.com/temp/1795698840170_25db9d38f27911e8_2026-11-27-fri.png"
     }
   ],
   "learning": {
     "references": [],
     "reused": "Auto-improve skipped (repo not attached); kept the shape of recent approved Fridays/Thursdays: plain-words research, a 'what I see' line, numbered what-to-do list, one closing question.",
     "improved": "New hook style (relatable_moment) after a run of statements; moved to an everyday kitchen decision instead of a lab marker."
-  }
+  },
+  "image_public_url": "https://media.zernio.com/temp/1795698840170_25db9d38f27911e8_2026-11-27-fri.png"
 }
