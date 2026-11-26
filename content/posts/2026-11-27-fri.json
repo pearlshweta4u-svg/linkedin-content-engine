@@ -1,0 +1,60 @@
+{
+  "post_id": "2026-11-27-fri",
+  "date": "2026-11-27",
+  "scheduled_for": "2026-11-27T08:00:00+05:30",
+  "weekday": "Friday",
+  "category": "health_wellness",
+  "pillar": "",
+  "topic": "",
+  "angle": "",
+  "format": "",
+  "story_ids": [],
+  "story_structure": {},
+  "hook": "",
+  "hook_style": "",
+  "draft": "",
+  "final": "",
+  "hashtags": [],
+  "image_spec": null,
+  "image_path": null,
+  "image_alt": null,
+  "sources": [],
+  "claims_checked": [],
+  "questions_for_shweta": [],
+  "humanizer": {
+    "applied": false,
+    "at": null,
+    "version": null,
+    "changes_summary": ""
+  },
+  "quality": {
+    "passed": false,
+    "issues": [],
+    "checked_at": null
+  },
+  "approval_status": "draft",
+  "approval": {
+    "requested_at": null,
+    "reminder_sent_at": null,
+    "decided_at": null,
+    "decided_by": null,
+    "channel": null,
+    "note": null
+  },
+  "publish_status": "not_ready",
+  "linkedin": {
+    "urn": null,
+    "url": null,
+    "image_urn": null
+  },
+  "published_at": null,
+  "attempts": [],
+  "errors": [],
+  "analytics": {},
+  "history": [
+    {
+      "at": "2026-11-26T18:38:51+05:30",
+      "event": "created"
+    }
+  ]
+}
