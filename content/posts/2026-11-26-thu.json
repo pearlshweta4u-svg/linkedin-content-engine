@@ -114,12 +114,13 @@
   "approval_status": "pending",
   "approval": {
     "requested_at": "2026-11-25T18:44:23+05:30",
-    "reminder_sent_at": null,
+    "reminder_sent_at": "2026-11-26T07:12:26+05:30",
     "decided_at": null,
     "decided_by": null,
     "channel": null,
     "note": null,
-    "message_id": "1a212d7c85f79457"
+    "message_id": "1a212d7c85f79457",
+    "reminder_message_id": "1a21584a58a2d3d4"
   },
   "publish_status": "not_ready",
   "linkedin": {
@@ -164,6 +165,11 @@
       "at": "2026-11-25T18:44:23+05:30",
       "event": "approval-requested",
       "message_id": "1a212d7c85f79457"
+    },
+    {
+      "at": "2026-11-26T07:12:26+05:30",
+      "event": "reminded",
+      "message_id": "1a21584a58a2d3d4"
     }
   ],
   "learning": {
