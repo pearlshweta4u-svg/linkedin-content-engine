@@ -170,7 +170,7 @@
     "message_id": "1a217fe840ba87e4",
     "reminder_message_id": "1a21aab50e9cc6c1"
   },
-  "publish_status": "not_ready",
+  "publish_status": "expired",
   "linkedin": {
     "urn": null,
     "url": null,
@@ -223,6 +223,11 @@
       "at": "2026-11-27T07:12:47+05:30",
       "event": "reminded",
       "message_id": "1a21aab50e9cc6c1"
+    },
+    {
+      "at": "2026-11-27T12:12:58+05:30",
+      "event": "expired",
+      "detail": "not published by 12:00 IST"
     }
   ],
   "learning": {
